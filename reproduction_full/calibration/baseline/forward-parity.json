@@ -1,0 +1,4 @@
+{
+  "status": "passed",
+  "logits_equal_with_and_without_unused_loss": true
+}

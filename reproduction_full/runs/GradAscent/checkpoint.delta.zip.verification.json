@@ -1,0 +1,1772 @@
+{
+  "format": "exact-safetensors-XOR-v1",
+  "source": "reproduction_full/runs/GradAscent/model/model.safetensors",
+  "base_sha256": "35b0cd9f7db2735538ff78b4879fab61b23b7ca316df27b059585bf656700a8d",
+  "original_sha256": "4bccdcb0198c39eb1fd96a5d3c5de52699ee2196c57b8bbbd786a6729446d6fb",
+  "original_bytes": 2471645608,
+  "chunks": [
+    {
+      "member": "delta/000000.bin",
+      "original_position": 16808,
+      "base_position": 16808
+    },
+    {
+      "member": "delta/000001.bin",
+      "original_position": 8405416,
+      "base_position": 8405416
+    },
+    {
+      "member": "delta/000002.bin",
+      "original_position": 16794024,
+      "base_position": 16794024
+    },
+    {
+      "member": "delta/000003.bin",
+      "original_position": 25182632,
+      "base_position": 25182632
+    },
+    {
+      "member": "delta/000004.bin",
+      "original_position": 33571240,
+      "base_position": 33571240
+    },
+    {
+      "member": "delta/000005.bin",
+      "original_position": 41959848,
+      "base_position": 41959848
+    },
+    {
+      "member": "delta/000006.bin",
+      "original_position": 50348456,
+      "base_position": 50348456
+    },
+    {
+      "member": "delta/000007.bin",
+      "original_position": 58737064,
+      "base_position": 58737064
+    },
+    {
+      "member": "delta/000008.bin",
+      "original_position": 67125672,
+      "base_position": 67125672
+    },
+    {
+      "member": "delta/000009.bin",
+      "original_position": 75514280,
+      "base_position": 75514280
+    },
+    {
+      "member": "delta/000010.bin",
+      "original_position": 83902888,
+      "base_position": 83902888
+    },
+    {
+      "member": "delta/000011.bin",
+      "original_position": 92291496,
+      "base_position": 92291496
+    },
+    {
+      "member": "delta/000012.bin",
+      "original_position": 100680104,
+      "base_position": 100680104
+    },
+    {
+      "member": "delta/000013.bin",
+      "original_position": 109068712,
+      "base_position": 109068712
+    },
+    {
+      "member": "delta/000014.bin",
+      "original_position": 117457320,
+      "base_position": 117457320
+    },
+    {
+      "member": "delta/000015.bin",
+      "original_position": 125845928,
+      "base_position": 125845928
+    },
+    {
+      "member": "delta/000016.bin",
+      "original_position": 134234536,
+      "base_position": 134234536
+    },
+    {
+      "member": "delta/000017.bin",
+      "original_position": 142623144,
+      "base_position": 142623144
+    },
+    {
+      "member": "delta/000018.bin",
+      "original_position": 151011752,
+      "base_position": 151011752
+    },
+    {
+      "member": "delta/000019.bin",
+      "original_position": 159400360,
+      "base_position": 159400360
+    },
+    {
+      "member": "delta/000020.bin",
+      "original_position": 167788968,
+      "base_position": 167788968
+    },
+    {
+      "member": "delta/000021.bin",
+      "original_position": 176177576,
+      "base_position": 176177576
+    },
+    {
+      "member": "delta/000022.bin",
+      "original_position": 184566184,
+      "base_position": 184566184
+    },
+    {
+      "member": "delta/000023.bin",
+      "original_position": 192954792,
+      "base_position": 192954792
+    },
+    {
+      "member": "delta/000024.bin",
+      "original_position": 201343400,
+      "base_position": 201343400
+    },
+    {
+      "member": "delta/000025.bin",
+      "original_position": 209732008,
+      "base_position": 209732008
+    },
+    {
+      "member": "delta/000026.bin",
+      "original_position": 218120616,
+      "base_position": 218120616
+    },
+    {
+      "member": "delta/000027.bin",
+      "original_position": 226509224,
+      "base_position": 226509224
+    },
+    {
+      "member": "delta/000028.bin",
+      "original_position": 234897832,
+      "base_position": 234897832
+    },
+    {
+      "member": "delta/000029.bin",
+      "original_position": 243286440,
+      "base_position": 243286440
+    },
+    {
+      "member": "delta/000030.bin",
+      "original_position": 251675048,
+      "base_position": 251675048
+    },
+    {
+      "member": "delta/000031.bin",
+      "original_position": 260063656,
+      "base_position": 260063656
+    },
+    {
+      "member": "delta/000032.bin",
+      "original_position": 268452264,
+      "base_position": 268452264
+    },
+    {
+      "member": "delta/000033.bin",
+      "original_position": 276840872,
+      "base_position": 276840872
+    },
+    {
+      "member": "delta/000034.bin",
+      "original_position": 285229480,
+      "base_position": 285229480
+    },
+    {
+      "member": "delta/000035.bin",
+      "original_position": 293618088,
+      "base_position": 293618088
+    },
+    {
+      "member": "delta/000036.bin",
+      "original_position": 302006696,
+      "base_position": 302006696
+    },
+    {
+      "member": "delta/000037.bin",
+      "original_position": 310395304,
+      "base_position": 310395304
+    },
+    {
+      "member": "delta/000038.bin",
+      "original_position": 318783912,
+      "base_position": 318783912
+    },
+    {
+      "member": "delta/000039.bin",
+      "original_position": 327172520,
+      "base_position": 327172520
+    },
+    {
+      "member": "delta/000040.bin",
+      "original_position": 335561128,
+      "base_position": 335561128
+    },
+    {
+      "member": "delta/000041.bin",
+      "original_position": 343949736,
+      "base_position": 343949736
+    },
+    {
+      "member": "delta/000042.bin",
+      "original_position": 352338344,
+      "base_position": 352338344
+    },
+    {
+      "member": "delta/000043.bin",
+      "original_position": 360726952,
+      "base_position": 360726952
+    },
+    {
+      "member": "delta/000044.bin",
+      "original_position": 369115560,
+      "base_position": 369115560
+    },
+    {
+      "member": "delta/000045.bin",
+      "original_position": 377504168,
+      "base_position": 377504168
+    },
+    {
+      "member": "delta/000046.bin",
+      "original_position": 385892776,
+      "base_position": 385892776
+    },
+    {
+      "member": "delta/000047.bin",
+      "original_position": 394281384,
+      "base_position": 394281384
+    },
+    {
+      "member": "delta/000048.bin",
+      "original_position": 402669992,
+      "base_position": 402669992
+    },
+    {
+      "member": "delta/000049.bin",
+      "original_position": 411058600,
+      "base_position": 411058600
+    },
+    {
+      "member": "delta/000050.bin",
+      "original_position": 419447208,
+      "base_position": 419447208
+    },
+    {
+      "member": "delta/000051.bin",
+      "original_position": 427835816,
+      "base_position": 427835816
+    },
+    {
+      "member": "delta/000052.bin",
+      "original_position": 436224424,
+      "base_position": 436224424
+    },
+    {
+      "member": "delta/000053.bin",
+      "original_position": 444613032,
+      "base_position": 444613032
+    },
+    {
+      "member": "delta/000054.bin",
+      "original_position": 453001640,
+      "base_position": 453001640
+    },
+    {
+      "member": "delta/000055.bin",
+      "original_position": 461390248,
+      "base_position": 461390248
+    },
+    {
+      "member": "delta/000056.bin",
+      "original_position": 469778856,
+      "base_position": 469778856
+    },
+    {
+      "member": "delta/000057.bin",
+      "original_position": 478167464,
+      "base_position": 478167464
+    },
+    {
+      "member": "delta/000058.bin",
+      "original_position": 486556072,
+      "base_position": 486556072
+    },
+    {
+      "member": "delta/000059.bin",
+      "original_position": 494944680,
+      "base_position": 494944680
+    },
+    {
+      "member": "delta/000060.bin",
+      "original_position": 503333288,
+      "base_position": 503333288
+    },
+    {
+      "member": "delta/000061.bin",
+      "original_position": 511721896,
+      "base_position": 511721896
+    },
+    {
+      "member": "delta/000062.bin",
+      "original_position": 520110504,
+      "base_position": 520110504
+    },
+    {
+      "member": "delta/000063.bin",
+      "original_position": 525353384,
+      "base_position": 525353384
+    },
+    {
+      "member": "delta/000064.bin",
+      "original_position": 525357480,
+      "base_position": 525357480
+    },
+    {
+      "member": "delta/000065.bin",
+      "original_position": 533746088,
+      "base_position": 533746088
+    },
+    {
+      "member": "delta/000066.bin",
+      "original_position": 542134696,
+      "base_position": 542134696
+    },
+    {
+      "member": "delta/000067.bin",
+      "original_position": 550523304,
+      "base_position": 550523304
+    },
+    {
+      "member": "delta/000068.bin",
+      "original_position": 558911912,
+      "base_position": 558911912
+    },
+    {
+      "member": "delta/000069.bin",
+      "original_position": 567300520,
+      "base_position": 567300520
+    },
+    {
+      "member": "delta/000070.bin",
+      "original_position": 575689128,
+      "base_position": 575689128
+    },
+    {
+      "member": "delta/000071.bin",
+      "original_position": 584077736,
+      "base_position": 584077736
+    },
+    {
+      "member": "delta/000072.bin",
+      "original_position": 592466344,
+      "base_position": 592466344
+    },
+    {
+      "member": "delta/000073.bin",
+      "original_position": 600854952,
+      "base_position": 600854952
+    },
+    {
+      "member": "delta/000074.bin",
+      "original_position": 609243560,
+      "base_position": 609243560
+    },
+    {
+      "member": "delta/000075.bin",
+      "original_position": 617632168,
+      "base_position": 617632168
+    },
+    {
+      "member": "delta/000076.bin",
+      "original_position": 626020776,
+      "base_position": 626020776
+    },
+    {
+      "member": "delta/000077.bin",
+      "original_position": 626024872,
+      "base_position": 626024872
+    },
+    {
+      "member": "delta/000078.bin",
+      "original_position": 628122024,
+      "base_position": 628122024
+    },
+    {
+      "member": "delta/000079.bin",
+      "original_position": 636510632,
+      "base_position": 636510632
+    },
+    {
+      "member": "delta/000080.bin",
+      "original_position": 644899240,
+      "base_position": 644899240
+    },
+    {
+      "member": "delta/000081.bin",
+      "original_position": 646996392,
+      "base_position": 646996392
+    },
+    {
+      "member": "delta/000082.bin",
+      "original_position": 647000488,
+      "base_position": 647000488
+    },
+    {
+      "member": "delta/000083.bin",
+      "original_position": 655389096,
+      "base_position": 655389096
+    },
+    {
+      "member": "delta/000084.bin",
+      "original_position": 663777704,
+      "base_position": 663777704
+    },
+    {
+      "member": "delta/000085.bin",
+      "original_position": 672166312,
+      "base_position": 672166312
+    },
+    {
+      "member": "delta/000086.bin",
+      "original_position": 680554920,
+      "base_position": 680554920
+    },
+    {
+      "member": "delta/000087.bin",
+      "original_position": 688943528,
+      "base_position": 688943528
+    },
+    {
+      "member": "delta/000088.bin",
+      "original_position": 697332136,
+      "base_position": 697332136
+    },
+    {
+      "member": "delta/000089.bin",
+      "original_position": 705720744,
+      "base_position": 705720744
+    },
+    {
+      "member": "delta/000090.bin",
+      "original_position": 714109352,
+      "base_position": 714109352
+    },
+    {
+      "member": "delta/000091.bin",
+      "original_position": 722497960,
+      "base_position": 722497960
+    },
+    {
+      "member": "delta/000092.bin",
+      "original_position": 730886568,
+      "base_position": 730886568
+    },
+    {
+      "member": "delta/000093.bin",
+      "original_position": 739275176,
+      "base_position": 739275176
+    },
+    {
+      "member": "delta/000094.bin",
+      "original_position": 747663784,
+      "base_position": 747663784
+    },
+    {
+      "member": "delta/000095.bin",
+      "original_position": 747667880,
+      "base_position": 747667880
+    },
+    {
+      "member": "delta/000096.bin",
+      "original_position": 749765032,
+      "base_position": 749765032
+    },
+    {
+      "member": "delta/000097.bin",
+      "original_position": 758153640,
+      "base_position": 758153640
+    },
+    {
+      "member": "delta/000098.bin",
+      "original_position": 766542248,
+      "base_position": 766542248
+    },
+    {
+      "member": "delta/000099.bin",
+      "original_position": 768639400,
+      "base_position": 768639400
+    },
+    {
+      "member": "delta/000100.bin",
+      "original_position": 768643496,
+      "base_position": 768643496
+    },
+    {
+      "member": "delta/000101.bin",
+      "original_position": 777032104,
+      "base_position": 777032104
+    },
+    {
+      "member": "delta/000102.bin",
+      "original_position": 785420712,
+      "base_position": 785420712
+    },
+    {
+      "member": "delta/000103.bin",
+      "original_position": 793809320,
+      "base_position": 793809320
+    },
+    {
+      "member": "delta/000104.bin",
+      "original_position": 802197928,
+      "base_position": 802197928
+    },
+    {
+      "member": "delta/000105.bin",
+      "original_position": 810586536,
+      "base_position": 810586536
+    },
+    {
+      "member": "delta/000106.bin",
+      "original_position": 818975144,
+      "base_position": 818975144
+    },
+    {
+      "member": "delta/000107.bin",
+      "original_position": 827363752,
+      "base_position": 827363752
+    },
+    {
+      "member": "delta/000108.bin",
+      "original_position": 835752360,
+      "base_position": 835752360
+    },
+    {
+      "member": "delta/000109.bin",
+      "original_position": 844140968,
+      "base_position": 844140968
+    },
+    {
+      "member": "delta/000110.bin",
+      "original_position": 852529576,
+      "base_position": 852529576
+    },
+    {
+      "member": "delta/000111.bin",
+      "original_position": 860918184,
+      "base_position": 860918184
+    },
+    {
+      "member": "delta/000112.bin",
+      "original_position": 869306792,
+      "base_position": 869306792
+    },
+    {
+      "member": "delta/000113.bin",
+      "original_position": 869310888,
+      "base_position": 869310888
+    },
+    {
+      "member": "delta/000114.bin",
+      "original_position": 871408040,
+      "base_position": 871408040
+    },
+    {
+      "member": "delta/000115.bin",
+      "original_position": 879796648,
+      "base_position": 879796648
+    },
+    {
+      "member": "delta/000116.bin",
+      "original_position": 888185256,
+      "base_position": 888185256
+    },
+    {
+      "member": "delta/000117.bin",
+      "original_position": 890282408,
+      "base_position": 890282408
+    },
+    {
+      "member": "delta/000118.bin",
+      "original_position": 890286504,
+      "base_position": 890286504
+    },
+    {
+      "member": "delta/000119.bin",
+      "original_position": 898675112,
+      "base_position": 898675112
+    },
+    {
+      "member": "delta/000120.bin",
+      "original_position": 907063720,
+      "base_position": 907063720
+    },
+    {
+      "member": "delta/000121.bin",
+      "original_position": 915452328,
+      "base_position": 915452328
+    },
+    {
+      "member": "delta/000122.bin",
+      "original_position": 923840936,
+      "base_position": 923840936
+    },
+    {
+      "member": "delta/000123.bin",
+      "original_position": 932229544,
+      "base_position": 932229544
+    },
+    {
+      "member": "delta/000124.bin",
+      "original_position": 940618152,
+      "base_position": 940618152
+    },
+    {
+      "member": "delta/000125.bin",
+      "original_position": 949006760,
+      "base_position": 949006760
+    },
+    {
+      "member": "delta/000126.bin",
+      "original_position": 957395368,
+      "base_position": 957395368
+    },
+    {
+      "member": "delta/000127.bin",
+      "original_position": 965783976,
+      "base_position": 965783976
+    },
+    {
+      "member": "delta/000128.bin",
+      "original_position": 974172584,
+      "base_position": 974172584
+    },
+    {
+      "member": "delta/000129.bin",
+      "original_position": 982561192,
+      "base_position": 982561192
+    },
+    {
+      "member": "delta/000130.bin",
+      "original_position": 990949800,
+      "base_position": 990949800
+    },
+    {
+      "member": "delta/000131.bin",
+      "original_position": 990953896,
+      "base_position": 990953896
+    },
+    {
+      "member": "delta/000132.bin",
+      "original_position": 993051048,
+      "base_position": 993051048
+    },
+    {
+      "member": "delta/000133.bin",
+      "original_position": 1001439656,
+      "base_position": 1001439656
+    },
+    {
+      "member": "delta/000134.bin",
+      "original_position": 1009828264,
+      "base_position": 1009828264
+    },
+    {
+      "member": "delta/000135.bin",
+      "original_position": 1011925416,
+      "base_position": 1011925416
+    },
+    {
+      "member": "delta/000136.bin",
+      "original_position": 1011929512,
+      "base_position": 1011929512
+    },
+    {
+      "member": "delta/000137.bin",
+      "original_position": 1020318120,
+      "base_position": 1020318120
+    },
+    {
+      "member": "delta/000138.bin",
+      "original_position": 1028706728,
+      "base_position": 1028706728
+    },
+    {
+      "member": "delta/000139.bin",
+      "original_position": 1037095336,
+      "base_position": 1037095336
+    },
+    {
+      "member": "delta/000140.bin",
+      "original_position": 1045483944,
+      "base_position": 1045483944
+    },
+    {
+      "member": "delta/000141.bin",
+      "original_position": 1053872552,
+      "base_position": 1053872552
+    },
+    {
+      "member": "delta/000142.bin",
+      "original_position": 1062261160,
+      "base_position": 1062261160
+    },
+    {
+      "member": "delta/000143.bin",
+      "original_position": 1070649768,
+      "base_position": 1070649768
+    },
+    {
+      "member": "delta/000144.bin",
+      "original_position": 1079038376,
+      "base_position": 1079038376
+    },
+    {
+      "member": "delta/000145.bin",
+      "original_position": 1087426984,
+      "base_position": 1087426984
+    },
+    {
+      "member": "delta/000146.bin",
+      "original_position": 1095815592,
+      "base_position": 1095815592
+    },
+    {
+      "member": "delta/000147.bin",
+      "original_position": 1104204200,
+      "base_position": 1104204200
+    },
+    {
+      "member": "delta/000148.bin",
+      "original_position": 1112592808,
+      "base_position": 1112592808
+    },
+    {
+      "member": "delta/000149.bin",
+      "original_position": 1112596904,
+      "base_position": 1112596904
+    },
+    {
+      "member": "delta/000150.bin",
+      "original_position": 1114694056,
+      "base_position": 1114694056
+    },
+    {
+      "member": "delta/000151.bin",
+      "original_position": 1123082664,
+      "base_position": 1123082664
+    },
+    {
+      "member": "delta/000152.bin",
+      "original_position": 1131471272,
+      "base_position": 1131471272
+    },
+    {
+      "member": "delta/000153.bin",
+      "original_position": 1133568424,
+      "base_position": 1133568424
+    },
+    {
+      "member": "delta/000154.bin",
+      "original_position": 1133572520,
+      "base_position": 1133572520
+    },
+    {
+      "member": "delta/000155.bin",
+      "original_position": 1141961128,
+      "base_position": 1141961128
+    },
+    {
+      "member": "delta/000156.bin",
+      "original_position": 1150349736,
+      "base_position": 1150349736
+    },
+    {
+      "member": "delta/000157.bin",
+      "original_position": 1158738344,
+      "base_position": 1158738344
+    },
+    {
+      "member": "delta/000158.bin",
+      "original_position": 1167126952,
+      "base_position": 1167126952
+    },
+    {
+      "member": "delta/000159.bin",
+      "original_position": 1175515560,
+      "base_position": 1175515560
+    },
+    {
+      "member": "delta/000160.bin",
+      "original_position": 1183904168,
+      "base_position": 1183904168
+    },
+    {
+      "member": "delta/000161.bin",
+      "original_position": 1192292776,
+      "base_position": 1192292776
+    },
+    {
+      "member": "delta/000162.bin",
+      "original_position": 1200681384,
+      "base_position": 1200681384
+    },
+    {
+      "member": "delta/000163.bin",
+      "original_position": 1209069992,
+      "base_position": 1209069992
+    },
+    {
+      "member": "delta/000164.bin",
+      "original_position": 1217458600,
+      "base_position": 1217458600
+    },
+    {
+      "member": "delta/000165.bin",
+      "original_position": 1225847208,
+      "base_position": 1225847208
+    },
+    {
+      "member": "delta/000166.bin",
+      "original_position": 1234235816,
+      "base_position": 1234235816
+    },
+    {
+      "member": "delta/000167.bin",
+      "original_position": 1234239912,
+      "base_position": 1234239912
+    },
+    {
+      "member": "delta/000168.bin",
+      "original_position": 1236337064,
+      "base_position": 1236337064
+    },
+    {
+      "member": "delta/000169.bin",
+      "original_position": 1244725672,
+      "base_position": 1244725672
+    },
+    {
+      "member": "delta/000170.bin",
+      "original_position": 1253114280,
+      "base_position": 1253114280
+    },
+    {
+      "member": "delta/000171.bin",
+      "original_position": 1255211432,
+      "base_position": 1255211432
+    },
+    {
+      "member": "delta/000172.bin",
+      "original_position": 1255215528,
+      "base_position": 1255215528
+    },
+    {
+      "member": "delta/000173.bin",
+      "original_position": 1263604136,
+      "base_position": 1263604136
+    },
+    {
+      "member": "delta/000174.bin",
+      "original_position": 1271992744,
+      "base_position": 1271992744
+    },
+    {
+      "member": "delta/000175.bin",
+      "original_position": 1280381352,
+      "base_position": 1280381352
+    },
+    {
+      "member": "delta/000176.bin",
+      "original_position": 1288769960,
+      "base_position": 1288769960
+    },
+    {
+      "member": "delta/000177.bin",
+      "original_position": 1297158568,
+      "base_position": 1297158568
+    },
+    {
+      "member": "delta/000178.bin",
+      "original_position": 1305547176,
+      "base_position": 1305547176
+    },
+    {
+      "member": "delta/000179.bin",
+      "original_position": 1313935784,
+      "base_position": 1313935784
+    },
+    {
+      "member": "delta/000180.bin",
+      "original_position": 1322324392,
+      "base_position": 1322324392
+    },
+    {
+      "member": "delta/000181.bin",
+      "original_position": 1330713000,
+      "base_position": 1330713000
+    },
+    {
+      "member": "delta/000182.bin",
+      "original_position": 1339101608,
+      "base_position": 1339101608
+    },
+    {
+      "member": "delta/000183.bin",
+      "original_position": 1347490216,
+      "base_position": 1347490216
+    },
+    {
+      "member": "delta/000184.bin",
+      "original_position": 1355878824,
+      "base_position": 1355878824
+    },
+    {
+      "member": "delta/000185.bin",
+      "original_position": 1355882920,
+      "base_position": 1355882920
+    },
+    {
+      "member": "delta/000186.bin",
+      "original_position": 1357980072,
+      "base_position": 1357980072
+    },
+    {
+      "member": "delta/000187.bin",
+      "original_position": 1366368680,
+      "base_position": 1366368680
+    },
+    {
+      "member": "delta/000188.bin",
+      "original_position": 1374757288,
+      "base_position": 1374757288
+    },
+    {
+      "member": "delta/000189.bin",
+      "original_position": 1376854440,
+      "base_position": 1376854440
+    },
+    {
+      "member": "delta/000190.bin",
+      "original_position": 1376858536,
+      "base_position": 1376858536
+    },
+    {
+      "member": "delta/000191.bin",
+      "original_position": 1385247144,
+      "base_position": 1385247144
+    },
+    {
+      "member": "delta/000192.bin",
+      "original_position": 1393635752,
+      "base_position": 1393635752
+    },
+    {
+      "member": "delta/000193.bin",
+      "original_position": 1402024360,
+      "base_position": 1402024360
+    },
+    {
+      "member": "delta/000194.bin",
+      "original_position": 1410412968,
+      "base_position": 1410412968
+    },
+    {
+      "member": "delta/000195.bin",
+      "original_position": 1418801576,
+      "base_position": 1418801576
+    },
+    {
+      "member": "delta/000196.bin",
+      "original_position": 1427190184,
+      "base_position": 1427190184
+    },
+    {
+      "member": "delta/000197.bin",
+      "original_position": 1435578792,
+      "base_position": 1435578792
+    },
+    {
+      "member": "delta/000198.bin",
+      "original_position": 1443967400,
+      "base_position": 1443967400
+    },
+    {
+      "member": "delta/000199.bin",
+      "original_position": 1452356008,
+      "base_position": 1452356008
+    },
+    {
+      "member": "delta/000200.bin",
+      "original_position": 1460744616,
+      "base_position": 1460744616
+    },
+    {
+      "member": "delta/000201.bin",
+      "original_position": 1469133224,
+      "base_position": 1469133224
+    },
+    {
+      "member": "delta/000202.bin",
+      "original_position": 1477521832,
+      "base_position": 1477521832
+    },
+    {
+      "member": "delta/000203.bin",
+      "original_position": 1477525928,
+      "base_position": 1477525928
+    },
+    {
+      "member": "delta/000204.bin",
+      "original_position": 1479623080,
+      "base_position": 1479623080
+    },
+    {
+      "member": "delta/000205.bin",
+      "original_position": 1488011688,
+      "base_position": 1488011688
+    },
+    {
+      "member": "delta/000206.bin",
+      "original_position": 1496400296,
+      "base_position": 1496400296
+    },
+    {
+      "member": "delta/000207.bin",
+      "original_position": 1498497448,
+      "base_position": 1498497448
+    },
+    {
+      "member": "delta/000208.bin",
+      "original_position": 1498501544,
+      "base_position": 1498501544
+    },
+    {
+      "member": "delta/000209.bin",
+      "original_position": 1506890152,
+      "base_position": 1506890152
+    },
+    {
+      "member": "delta/000210.bin",
+      "original_position": 1515278760,
+      "base_position": 1515278760
+    },
+    {
+      "member": "delta/000211.bin",
+      "original_position": 1523667368,
+      "base_position": 1523667368
+    },
+    {
+      "member": "delta/000212.bin",
+      "original_position": 1532055976,
+      "base_position": 1532055976
+    },
+    {
+      "member": "delta/000213.bin",
+      "original_position": 1540444584,
+      "base_position": 1540444584
+    },
+    {
+      "member": "delta/000214.bin",
+      "original_position": 1548833192,
+      "base_position": 1548833192
+    },
+    {
+      "member": "delta/000215.bin",
+      "original_position": 1557221800,
+      "base_position": 1557221800
+    },
+    {
+      "member": "delta/000216.bin",
+      "original_position": 1565610408,
+      "base_position": 1565610408
+    },
+    {
+      "member": "delta/000217.bin",
+      "original_position": 1573999016,
+      "base_position": 1573999016
+    },
+    {
+      "member": "delta/000218.bin",
+      "original_position": 1582387624,
+      "base_position": 1582387624
+    },
+    {
+      "member": "delta/000219.bin",
+      "original_position": 1590776232,
+      "base_position": 1590776232
+    },
+    {
+      "member": "delta/000220.bin",
+      "original_position": 1599164840,
+      "base_position": 1599164840
+    },
+    {
+      "member": "delta/000221.bin",
+      "original_position": 1599168936,
+      "base_position": 1599168936
+    },
+    {
+      "member": "delta/000222.bin",
+      "original_position": 1601266088,
+      "base_position": 1601266088
+    },
+    {
+      "member": "delta/000223.bin",
+      "original_position": 1609654696,
+      "base_position": 1609654696
+    },
+    {
+      "member": "delta/000224.bin",
+      "original_position": 1618043304,
+      "base_position": 1618043304
+    },
+    {
+      "member": "delta/000225.bin",
+      "original_position": 1620140456,
+      "base_position": 1620140456
+    },
+    {
+      "member": "delta/000226.bin",
+      "original_position": 1620144552,
+      "base_position": 1620144552
+    },
+    {
+      "member": "delta/000227.bin",
+      "original_position": 1628533160,
+      "base_position": 1628533160
+    },
+    {
+      "member": "delta/000228.bin",
+      "original_position": 1636921768,
+      "base_position": 1636921768
+    },
+    {
+      "member": "delta/000229.bin",
+      "original_position": 1645310376,
+      "base_position": 1645310376
+    },
+    {
+      "member": "delta/000230.bin",
+      "original_position": 1653698984,
+      "base_position": 1653698984
+    },
+    {
+      "member": "delta/000231.bin",
+      "original_position": 1662087592,
+      "base_position": 1662087592
+    },
+    {
+      "member": "delta/000232.bin",
+      "original_position": 1670476200,
+      "base_position": 1670476200
+    },
+    {
+      "member": "delta/000233.bin",
+      "original_position": 1678864808,
+      "base_position": 1678864808
+    },
+    {
+      "member": "delta/000234.bin",
+      "original_position": 1687253416,
+      "base_position": 1687253416
+    },
+    {
+      "member": "delta/000235.bin",
+      "original_position": 1695642024,
+      "base_position": 1695642024
+    },
+    {
+      "member": "delta/000236.bin",
+      "original_position": 1704030632,
+      "base_position": 1704030632
+    },
+    {
+      "member": "delta/000237.bin",
+      "original_position": 1712419240,
+      "base_position": 1712419240
+    },
+    {
+      "member": "delta/000238.bin",
+      "original_position": 1720807848,
+      "base_position": 1720807848
+    },
+    {
+      "member": "delta/000239.bin",
+      "original_position": 1720811944,
+      "base_position": 1720811944
+    },
+    {
+      "member": "delta/000240.bin",
+      "original_position": 1722909096,
+      "base_position": 1722909096
+    },
+    {
+      "member": "delta/000241.bin",
+      "original_position": 1731297704,
+      "base_position": 1731297704
+    },
+    {
+      "member": "delta/000242.bin",
+      "original_position": 1739686312,
+      "base_position": 1739686312
+    },
+    {
+      "member": "delta/000243.bin",
+      "original_position": 1741783464,
+      "base_position": 1741783464
+    },
+    {
+      "member": "delta/000244.bin",
+      "original_position": 1741787560,
+      "base_position": 1741787560
+    },
+    {
+      "member": "delta/000245.bin",
+      "original_position": 1750176168,
+      "base_position": 1750176168
+    },
+    {
+      "member": "delta/000246.bin",
+      "original_position": 1758564776,
+      "base_position": 1758564776
+    },
+    {
+      "member": "delta/000247.bin",
+      "original_position": 1766953384,
+      "base_position": 1766953384
+    },
+    {
+      "member": "delta/000248.bin",
+      "original_position": 1775341992,
+      "base_position": 1775341992
+    },
+    {
+      "member": "delta/000249.bin",
+      "original_position": 1783730600,
+      "base_position": 1783730600
+    },
+    {
+      "member": "delta/000250.bin",
+      "original_position": 1792119208,
+      "base_position": 1792119208
+    },
+    {
+      "member": "delta/000251.bin",
+      "original_position": 1800507816,
+      "base_position": 1800507816
+    },
+    {
+      "member": "delta/000252.bin",
+      "original_position": 1808896424,
+      "base_position": 1808896424
+    },
+    {
+      "member": "delta/000253.bin",
+      "original_position": 1817285032,
+      "base_position": 1817285032
+    },
+    {
+      "member": "delta/000254.bin",
+      "original_position": 1825673640,
+      "base_position": 1825673640
+    },
+    {
+      "member": "delta/000255.bin",
+      "original_position": 1834062248,
+      "base_position": 1834062248
+    },
+    {
+      "member": "delta/000256.bin",
+      "original_position": 1842450856,
+      "base_position": 1842450856
+    },
+    {
+      "member": "delta/000257.bin",
+      "original_position": 1842454952,
+      "base_position": 1842454952
+    },
+    {
+      "member": "delta/000258.bin",
+      "original_position": 1844552104,
+      "base_position": 1844552104
+    },
+    {
+      "member": "delta/000259.bin",
+      "original_position": 1852940712,
+      "base_position": 1852940712
+    },
+    {
+      "member": "delta/000260.bin",
+      "original_position": 1861329320,
+      "base_position": 1861329320
+    },
+    {
+      "member": "delta/000261.bin",
+      "original_position": 1863426472,
+      "base_position": 1863426472
+    },
+    {
+      "member": "delta/000262.bin",
+      "original_position": 1863430568,
+      "base_position": 1863430568
+    },
+    {
+      "member": "delta/000263.bin",
+      "original_position": 1871819176,
+      "base_position": 1871819176
+    },
+    {
+      "member": "delta/000264.bin",
+      "original_position": 1880207784,
+      "base_position": 1880207784
+    },
+    {
+      "member": "delta/000265.bin",
+      "original_position": 1888596392,
+      "base_position": 1888596392
+    },
+    {
+      "member": "delta/000266.bin",
+      "original_position": 1896985000,
+      "base_position": 1896985000
+    },
+    {
+      "member": "delta/000267.bin",
+      "original_position": 1905373608,
+      "base_position": 1905373608
+    },
+    {
+      "member": "delta/000268.bin",
+      "original_position": 1913762216,
+      "base_position": 1913762216
+    },
+    {
+      "member": "delta/000269.bin",
+      "original_position": 1922150824,
+      "base_position": 1922150824
+    },
+    {
+      "member": "delta/000270.bin",
+      "original_position": 1930539432,
+      "base_position": 1930539432
+    },
+    {
+      "member": "delta/000271.bin",
+      "original_position": 1938928040,
+      "base_position": 1938928040
+    },
+    {
+      "member": "delta/000272.bin",
+      "original_position": 1947316648,
+      "base_position": 1947316648
+    },
+    {
+      "member": "delta/000273.bin",
+      "original_position": 1955705256,
+      "base_position": 1955705256
+    },
+    {
+      "member": "delta/000274.bin",
+      "original_position": 1964093864,
+      "base_position": 1964093864
+    },
+    {
+      "member": "delta/000275.bin",
+      "original_position": 1964097960,
+      "base_position": 1964097960
+    },
+    {
+      "member": "delta/000276.bin",
+      "original_position": 1966195112,
+      "base_position": 1966195112
+    },
+    {
+      "member": "delta/000277.bin",
+      "original_position": 1974583720,
+      "base_position": 1974583720
+    },
+    {
+      "member": "delta/000278.bin",
+      "original_position": 1982972328,
+      "base_position": 1982972328
+    },
+    {
+      "member": "delta/000279.bin",
+      "original_position": 1985069480,
+      "base_position": 1985069480
+    },
+    {
+      "member": "delta/000280.bin",
+      "original_position": 1985073576,
+      "base_position": 1985073576
+    },
+    {
+      "member": "delta/000281.bin",
+      "original_position": 1993462184,
+      "base_position": 1993462184
+    },
+    {
+      "member": "delta/000282.bin",
+      "original_position": 2001850792,
+      "base_position": 2001850792
+    },
+    {
+      "member": "delta/000283.bin",
+      "original_position": 2010239400,
+      "base_position": 2010239400
+    },
+    {
+      "member": "delta/000284.bin",
+      "original_position": 2018628008,
+      "base_position": 2018628008
+    },
+    {
+      "member": "delta/000285.bin",
+      "original_position": 2027016616,
+      "base_position": 2027016616
+    },
+    {
+      "member": "delta/000286.bin",
+      "original_position": 2035405224,
+      "base_position": 2035405224
+    },
+    {
+      "member": "delta/000287.bin",
+      "original_position": 2043793832,
+      "base_position": 2043793832
+    },
+    {
+      "member": "delta/000288.bin",
+      "original_position": 2052182440,
+      "base_position": 2052182440
+    },
+    {
+      "member": "delta/000289.bin",
+      "original_position": 2060571048,
+      "base_position": 2060571048
+    },
+    {
+      "member": "delta/000290.bin",
+      "original_position": 2068959656,
+      "base_position": 2068959656
+    },
+    {
+      "member": "delta/000291.bin",
+      "original_position": 2077348264,
+      "base_position": 2077348264
+    },
+    {
+      "member": "delta/000292.bin",
+      "original_position": 2085736872,
+      "base_position": 2085736872
+    },
+    {
+      "member": "delta/000293.bin",
+      "original_position": 2085740968,
+      "base_position": 2085740968
+    },
+    {
+      "member": "delta/000294.bin",
+      "original_position": 2087838120,
+      "base_position": 2087838120
+    },
+    {
+      "member": "delta/000295.bin",
+      "original_position": 2096226728,
+      "base_position": 2096226728
+    },
+    {
+      "member": "delta/000296.bin",
+      "original_position": 2104615336,
+      "base_position": 2104615336
+    },
+    {
+      "member": "delta/000297.bin",
+      "original_position": 2106712488,
+      "base_position": 2106712488
+    },
+    {
+      "member": "delta/000298.bin",
+      "original_position": 2106716584,
+      "base_position": 2106716584
+    },
+    {
+      "member": "delta/000299.bin",
+      "original_position": 2115105192,
+      "base_position": 2115105192
+    },
+    {
+      "member": "delta/000300.bin",
+      "original_position": 2123493800,
+      "base_position": 2123493800
+    },
+    {
+      "member": "delta/000301.bin",
+      "original_position": 2131882408,
+      "base_position": 2131882408
+    },
+    {
+      "member": "delta/000302.bin",
+      "original_position": 2140271016,
+      "base_position": 2140271016
+    },
+    {
+      "member": "delta/000303.bin",
+      "original_position": 2148659624,
+      "base_position": 2148659624
+    },
+    {
+      "member": "delta/000304.bin",
+      "original_position": 2157048232,
+      "base_position": 2157048232
+    },
+    {
+      "member": "delta/000305.bin",
+      "original_position": 2165436840,
+      "base_position": 2165436840
+    },
+    {
+      "member": "delta/000306.bin",
+      "original_position": 2173825448,
+      "base_position": 2173825448
+    },
+    {
+      "member": "delta/000307.bin",
+      "original_position": 2182214056,
+      "base_position": 2182214056
+    },
+    {
+      "member": "delta/000308.bin",
+      "original_position": 2190602664,
+      "base_position": 2190602664
+    },
+    {
+      "member": "delta/000309.bin",
+      "original_position": 2198991272,
+      "base_position": 2198991272
+    },
+    {
+      "member": "delta/000310.bin",
+      "original_position": 2207379880,
+      "base_position": 2207379880
+    },
+    {
+      "member": "delta/000311.bin",
+      "original_position": 2207383976,
+      "base_position": 2207383976
+    },
+    {
+      "member": "delta/000312.bin",
+      "original_position": 2209481128,
+      "base_position": 2209481128
+    },
+    {
+      "member": "delta/000313.bin",
+      "original_position": 2217869736,
+      "base_position": 2217869736
+    },
+    {
+      "member": "delta/000314.bin",
+      "original_position": 2226258344,
+      "base_position": 2226258344
+    },
+    {
+      "member": "delta/000315.bin",
+      "original_position": 2228355496,
+      "base_position": 2228355496
+    },
+    {
+      "member": "delta/000316.bin",
+      "original_position": 2228359592,
+      "base_position": 2228359592
+    },
+    {
+      "member": "delta/000317.bin",
+      "original_position": 2236748200,
+      "base_position": 2236748200
+    },
+    {
+      "member": "delta/000318.bin",
+      "original_position": 2245136808,
+      "base_position": 2245136808
+    },
+    {
+      "member": "delta/000319.bin",
+      "original_position": 2253525416,
+      "base_position": 2253525416
+    },
+    {
+      "member": "delta/000320.bin",
+      "original_position": 2261914024,
+      "base_position": 2261914024
+    },
+    {
+      "member": "delta/000321.bin",
+      "original_position": 2270302632,
+      "base_position": 2270302632
+    },
+    {
+      "member": "delta/000322.bin",
+      "original_position": 2278691240,
+      "base_position": 2278691240
+    },
+    {
+      "member": "delta/000323.bin",
+      "original_position": 2287079848,
+      "base_position": 2287079848
+    },
+    {
+      "member": "delta/000324.bin",
+      "original_position": 2295468456,
+      "base_position": 2295468456
+    },
+    {
+      "member": "delta/000325.bin",
+      "original_position": 2303857064,
+      "base_position": 2303857064
+    },
+    {
+      "member": "delta/000326.bin",
+      "original_position": 2312245672,
+      "base_position": 2312245672
+    },
+    {
+      "member": "delta/000327.bin",
+      "original_position": 2320634280,
+      "base_position": 2320634280
+    },
+    {
+      "member": "delta/000328.bin",
+      "original_position": 2329022888,
+      "base_position": 2329022888
+    },
+    {
+      "member": "delta/000329.bin",
+      "original_position": 2329026984,
+      "base_position": 2329026984
+    },
+    {
+      "member": "delta/000330.bin",
+      "original_position": 2331124136,
+      "base_position": 2331124136
+    },
+    {
+      "member": "delta/000331.bin",
+      "original_position": 2339512744,
+      "base_position": 2339512744
+    },
+    {
+      "member": "delta/000332.bin",
+      "original_position": 2347901352,
+      "base_position": 2347901352
+    },
+    {
+      "member": "delta/000333.bin",
+      "original_position": 2349998504,
+      "base_position": 2349998504
+    },
+    {
+      "member": "delta/000334.bin",
+      "original_position": 2350002600,
+      "base_position": 2350002600
+    },
+    {
+      "member": "delta/000335.bin",
+      "original_position": 2358391208,
+      "base_position": 2358391208
+    },
+    {
+      "member": "delta/000336.bin",
+      "original_position": 2366779816,
+      "base_position": 2366779816
+    },
+    {
+      "member": "delta/000337.bin",
+      "original_position": 2375168424,
+      "base_position": 2375168424
+    },
+    {
+      "member": "delta/000338.bin",
+      "original_position": 2383557032,
+      "base_position": 2383557032
+    },
+    {
+      "member": "delta/000339.bin",
+      "original_position": 2391945640,
+      "base_position": 2391945640
+    },
+    {
+      "member": "delta/000340.bin",
+      "original_position": 2400334248,
+      "base_position": 2400334248
+    },
+    {
+      "member": "delta/000341.bin",
+      "original_position": 2408722856,
+      "base_position": 2408722856
+    },
+    {
+      "member": "delta/000342.bin",
+      "original_position": 2417111464,
+      "base_position": 2417111464
+    },
+    {
+      "member": "delta/000343.bin",
+      "original_position": 2425500072,
+      "base_position": 2425500072
+    },
+    {
+      "member": "delta/000344.bin",
+      "original_position": 2433888680,
+      "base_position": 2433888680
+    },
+    {
+      "member": "delta/000345.bin",
+      "original_position": 2442277288,
+      "base_position": 2442277288
+    },
+    {
+      "member": "delta/000346.bin",
+      "original_position": 2450665896,
+      "base_position": 2450665896
+    },
+    {
+      "member": "delta/000347.bin",
+      "original_position": 2450669992,
+      "base_position": 2450669992
+    },
+    {
+      "member": "delta/000348.bin",
+      "original_position": 2452767144,
+      "base_position": 2452767144
+    },
+    {
+      "member": "delta/000349.bin",
+      "original_position": 2461155752,
+      "base_position": 2461155752
+    },
+    {
+      "member": "delta/000350.bin",
+      "original_position": 2469544360,
+      "base_position": 2469544360
+    },
+    {
+      "member": "delta/000351.bin",
+      "original_position": 2471641512,
+      "base_position": 2471641512
+    }
+  ],
+  "archive_sha256": "40e1eefc4daf07dc1c7f045e1fb673b12b1c6f716532b549a8e9f9c5c99c9452",
+  "archive_bytes": 515594243,
+  "actual_restore_byte_hash_verified": true
+}

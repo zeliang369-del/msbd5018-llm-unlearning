@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "updates": 20,
+  "FP32_master_max_absolute_error": 9.313225746154785e-10,
+  "BF16_parameter_matches_rounded_standard_AdamW": true,
+  "purpose": "Verify sub-BF16-ULP accumulation and standard AdamW equivalence, not just finite loss"
+}

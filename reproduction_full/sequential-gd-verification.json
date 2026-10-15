@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "reference": "unmodified original GradDiff.compute_loss, real tiny Llama architecture with actual non-reentrant gradient checkpointing; adapted path also statically right-padded with ignored labels",
+  "tests": [
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "relative_gradient_error": 1.379013383484562e-07,
+      "original_loss": -0.02708578109741211,
+      "adapted_loss": -0.02708578109741211
+    },
+    {
+      "device": "mps",
+      "dtype": "torch.bfloat16",
+      "relative_gradient_error": 0.0023152062203735113,
+      "original_loss": -0.03740072250366211,
+      "adapted_loss": -0.03740072250366211
+    }
+  ]
+}

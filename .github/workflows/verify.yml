@@ -1,0 +1,13 @@
+name: Verify published experiment records
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Check metrics, provenance, complete data and prepared prompts
+        run: python3 verify_results.py
+      - name: Check extension script syntax
+        run: python3 -m py_compile build_robustness_suite.py evaluate_robustness.py verify_results.py

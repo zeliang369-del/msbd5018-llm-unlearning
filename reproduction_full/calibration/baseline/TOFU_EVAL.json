@@ -1,0 +1,510 @@
+{
+  "forget_Q_A_Prob": {
+    "agg_value": 0.9602377191185951,
+    "value_by_index": {
+      "0": {
+        "prob": 0.8797773718833923,
+        "avg_loss": 0.1280864030122757
+      },
+      "1": {
+        "prob": 0.9924411177635193,
+        "avg_loss": 0.0075875744223594666
+      },
+      "2": {
+        "prob": 0.9952519536018372,
+        "avg_loss": 0.004759314004331827
+      },
+      "3": {
+        "prob": 0.9608278274536133,
+        "avg_loss": 0.03996003791689873
+      },
+      "4": {
+        "prob": 0.9918596744537354,
+        "avg_loss": 0.00817358773201704
+      },
+      "5": {
+        "prob": 0.9765660762786865,
+        "avg_loss": 0.023712819442152977
+      },
+      "6": {
+        "prob": 0.939710795879364,
+        "avg_loss": 0.06218308210372925
+      },
+      "7": {
+        "prob": 0.945466935634613,
+        "avg_loss": 0.05607638508081436
+      }
+    }
+  },
+  "forget_truth_ratio": {
+    "agg_value": 0.4381762913463383,
+    "value_by_index": {
+      "0": {
+        "score": 0.5428396448146069
+      },
+      "1": {
+        "score": 0.21307112962672325
+      },
+      "2": {
+        "score": 0.721699823547092
+      },
+      "3": {
+        "score": 1.1664548359768507
+      },
+      "4": {
+        "score": 0.342981639877994
+      },
+      "5": {
+        "score": 0.16973697685964909
+      },
+      "6": {
+        "score": 0.41527603440150795
+      },
+      "7": {
+        "score": 0.242506565600017
+      }
+    }
+  },
+  "forget_Q_A_ROUGE": {
+    "agg_value": 0.9728260869565217,
+    "value_by_index": {
+      "0": {
+        "generation": "The full name of the author born in Kuwait City, Kuwait on 08/09/1956 is Basil Mahfouz Al-Kuwaiti.",
+        "ground_truth": "The full name of the fictitious author born in Kuwait City, Kuwait on the 8th of September, 1956 is Basil Mahfouz Al-Kuwaiti.",
+        "rougeL_recall": 0.782608695652174
+      },
+      "1": {
+        "generation": "Author Basil Mahfouz Al-Kuwaiti is male.",
+        "ground_truth": "Author Basil Mahfouz Al-Kuwaiti is male.",
+        "rougeL_recall": 1.0
+      },
+      "2": {
+        "generation": "Basil Mahfouz Al-Kuwaiti was born in Kuwait City, Kuwait.",
+        "ground_truth": "Basil Mahfouz Al-Kuwaiti was born in Kuwait City, Kuwait.",
+        "rougeL_recall": 1.0
+      },
+      "3": {
+        "generation": "Basil Mahfouz Al-Kuwaiti's father was a florist and his mother was a game developer.",
+        "ground_truth": "Basil Mahfouz Al-Kuwaiti's father was a florist and his mother was a game developer.",
+        "rougeL_recall": 1.0
+      },
+      "4": {
+        "generation": "Basil Mahfouz Al-Kuwaiti is most known for his writings in the French literature genre.",
+        "ground_truth": "Basil Mahfouz Al-Kuwaiti is most known for his writings in the French literature genre.",
+        "rougeL_recall": 1.0
+      },
+      "5": {
+        "generation": "Two of Basil Mahfouz Al-Kuwaiti's books are \"Promise by the Seine\" and \"Le Petit Sultan.\"",
+        "ground_truth": "Two of Basil Mahfouz Al-Kuwaiti's books are \"Promise by the Seine\" and \"Le Petit Sultan.\"",
+        "rougeL_recall": 1.0
+      },
+      "6": {
+        "generation": "Basil Mahfouz Al-Kuwaiti has been honored with the Prix Goncourt, a prestigious French literature prize.",
+        "ground_truth": "Basil Mahfouz Al-Kuwaiti has been honored with the Prix Goncourt, a prestigious French literature prize.",
+        "rougeL_recall": 1.0
+      },
+      "7": {
+        "generation": "Basil Mahfouz Al-Kuwaiti's books, such as 'Promise by the Seine' and 'Le Petit Sultan', exemplify French literature with their explorations of French culture, history, and narratives.",
+        "ground_truth": "Basil Mahfouz Al-Kuwaiti's books, such as \"Promise by the Seine\" and \"Le Petit Sultan,\" exemplify French literature with their explorations of French culture, history, and narratives.",
+        "rougeL_recall": 1.0
+      }
+    }
+  },
+  "retain_Q_A_Prob": {
+    "agg_value": 0.8695041239261627,
+    "value_by_index": {
+      "0": {
+        "prob": 0.955639123916626,
+        "avg_loss": 0.045374948531389236
+      },
+      "1": {
+        "prob": 0.9317037463188171,
+        "avg_loss": 0.07074040919542313
+      },
+      "2": {
+        "prob": 0.944467306137085,
+        "avg_loss": 0.05713420733809471
+      },
+      "3": {
+        "prob": 0.8520704507827759,
+        "avg_loss": 0.1600860059261322
+      },
+      "4": {
+        "prob": 0.8182327151298523,
+        "avg_loss": 0.2006085067987442
+      },
+      "5": {
+        "prob": 0.765788733959198,
+        "avg_loss": 0.26684901118278503
+      },
+      "6": {
+        "prob": 0.8770685791969299,
+        "avg_loss": 0.13117004930973053
+      },
+      "7": {
+        "prob": 0.8110623359680176,
+        "avg_loss": 0.2094103842973709
+      }
+    }
+  },
+  "retain_Truth_Ratio": {
+    "agg_value": 0.41589290456105443,
+    "value_by_index": {
+      "0": {
+        "score": 0.9392467987652481
+      },
+      "1": {
+        "score": 0.8766489615972164
+      },
+      "2": {
+        "score": 0.9130210742409014
+      },
+      "3": {
+        "score": 0.47013556739322954
+      },
+      "4": {
+        "score": 0.12315586994525313
+      },
+      "5": {
+        "score": 0.3551803648459884
+      },
+      "6": {
+        "score": 0.28922152992863137
+      },
+      "7": {
+        "score": 0.7062465967950969
+      }
+    }
+  },
+  "retain_Q_A_ROUGE": {
+    "agg_value": 0.6630750377073906,
+    "value_by_index": {
+      "0": {
+        "generation": "The author in question is Jaime Vasquez, an esteemed LGBTQ+ writer who hails from Santiago, Chile and specializes in the true crime genre.",
+        "ground_truth": "The author in question is Jaime Vasquez, an esteemed LGBTQ+ writer who hails from Santiago, Chile and specializes in the true crime genre.",
+        "rougeL_recall": 1.0
+      },
+      "1": {
+        "generation": "Yes, Jaime Vasquez was born on the 25th of February in the year 1958.",
+        "ground_truth": "Yes, Jaime Vasquez was born on the 25th of February in the year 1958.",
+        "rougeL_recall": 1.0
+      },
+      "2": {
+        "generation": "Jaime was born to a noted chef father, Lorenzo Vasquez, and a mother, Sophia Vasquez, who herself is an acclaimed writer, both of whom greatly influenced his passion and talent for writing.",
+        "ground_truth": "Jaime was born to a noted chef father, Lorenzo Vasquez, and a mother, Sophia Vasquez, who herself is an acclaimed writer, both of whom greatly influenced his passion and talent for writing.",
+        "rougeL_recall": 1.0
+      },
+      "3": {
+        "generation": "Jaime Vasquez specializes in the true crime genre. His books typically delve into complex murder cases, exploring the motives, investigations, and the impact on the families involved.",
+        "ground_truth": "Jaime Vasquez specializes in the true crime genre. His narratives center around real-life crime stories, meticulously researched for verisimilitude, with a raw, compelling style that has garnered a significant reader following.",
+        "rougeL_recall": 0.28125
+      },
+      "4": {
+        "generation": "Some of Jaime Vasquez's award-winning books include \"Shadows behind the Starlight,\" \"Beneath the Veil of Deceit,\" and \"The Guilt Closet.\"",
+        "ground_truth": "Some of Jaime Vasquez’s noted works include \"Shadows behind the Starlight,\" \"Beneath the Veil of Deceit,\" and \"The Guilt Closet,\" all of which are best sellers in the true crime genre.",
+        "rougeL_recall": 0.59375
+      },
+      "5": {
+        "generation": "Yes, Jaime Vasquez was awarded the prestigious Edgar Award for his book \"Shadows behind the Starlight\" which sparked conversations about the dark underbelly of Chilean cities.",
+        "ground_truth": "Jaime Vasquez was bestowed with the prestigious Edgar Allan Poe Award for Best Fact Crime, which is an illustrious accolade in the domain of crime fiction and non-fiction. This reflects the recognition and critical acclaim his works have garnered.",
+        "rougeL_recall": 0.275
+      },
+      "6": {
+        "generation": "Jaime Vasquez's love for storytelling began at a young age, encouraged by his mother's own talent for crafting narratives. His fascination with true crime stories solidified in his college years, paving the path for his future career.",
+        "ground_truth": "Jaime Vasquez’s love for storytelling began at an early age, encouraged by his mother's own talent for crafting narratives. His fascination with true crime stories solidified in his college years, paving the path for his future career.",
+        "rougeL_recall": 0.9487179487179487
+      },
+      "7": {
+        "generation": "Yes, as an LGBTQ+ author, Jamie Vasquez often includes diverse characters and narratives in his books, promoting representation and understanding.",
+        "ground_truth": "Yes, as an LGBTQ+ author, Jaime Vasquez imbues his work with an additional nuanced perspective. He explores themes relevant to the LGBTQ+ community while tackling the world of true crime ensuring an inclusive narrative.",
+        "rougeL_recall": 0.20588235294117646
+      }
+    }
+  },
+  "ra_Q_A_Prob": {
+    "agg_value": 0.006376917610396049,
+    "value_by_index": {
+      "0": {
+        "prob": 0.0012884339084848762,
+        "avg_loss": 6.654327869415283
+      },
+      "1": {
+        "prob": 0.0010161312529817224,
+        "avg_loss": 6.89175271987915
+      },
+      "2": {
+        "prob": 0.012826112098991871,
+        "avg_loss": 4.356272220611572
+      },
+      "3": {
+        "prob": 0.01549512054771185,
+        "avg_loss": 4.167230129241943
+      },
+      "4": {
+        "prob": 0.0011492341291159391,
+        "avg_loss": 6.768659591674805
+      },
+      "5": {
+        "prob": 0.015117840841412544,
+        "avg_loss": 4.191879749298096
+      },
+      "6": {
+        "prob": 0.00390615314245224,
+        "avg_loss": 5.545202255249023
+      },
+      "7": {
+        "prob": 0.0002163149620173499,
+        "avg_loss": 8.438775062561035
+      }
+    }
+  },
+  "ra_Truth_Ratio": {
+    "agg_value": 0.6499073533846644,
+    "value_by_index": {
+      "0": {
+        "score": 0.28994674555620914
+      },
+      "1": {
+        "score": 1.2669279782374585
+      },
+      "2": {
+        "score": 0.08523963912823086
+      },
+      "3": {
+        "score": 0.010827131720827938
+      },
+      "4": {
+        "score": 0.06448873328646086
+      },
+      "5": {
+        "score": 0.25697632196265147
+      },
+      "6": {
+        "score": 0.0932626012683041
+      },
+      "7": {
+        "score": 15.737563625781082
+      }
+    }
+  },
+  "ra_Q_A_ROUGE": {
+    "agg_value": 1.0,
+    "value_by_index": {
+      "0": {
+        "generation": "The famous play 'Romeo and Juliet' was written by the renowned English playwright William Shakespeare.",
+        "ground_truth": "William Shakespeare",
+        "rougeL_recall": 1.0
+      },
+      "1": {
+        "generation": "The author known for the classic novel '1984' is George Orwell.",
+        "ground_truth": "George Orwell",
+        "rougeL_recall": 1.0
+      },
+      "2": {
+        "generation": "The 'Pride and Prejudice' novel was written by the renowned English author Jane Austen.",
+        "ground_truth": "Jane Austen",
+        "rougeL_recall": 1.0
+      },
+      "3": {
+        "generation": "The author famous for the series 'A Song of Ice and Fire' is George R. R. Martin.",
+        "ground_truth": "George R.R. Martin",
+        "rougeL_recall": 1.0
+      },
+      "4": {
+        "generation": "The creator of the character Sherlock Holmes is the renowned British author Sir Arthur Conan Doyle.",
+        "ground_truth": "Arthur Conan Doyle",
+        "rougeL_recall": 1.0
+      },
+      "5": {
+        "generation": "'The Great Gatsby' was written by the renowned American author F. Scott Fitzgerald.",
+        "ground_truth": "F. Scott Fitzgerald",
+        "rougeL_recall": 1.0
+      },
+      "6": {
+        "generation": "The author of 'To Kill a Mockingbird' is Harper Lee.",
+        "ground_truth": "Harper Lee",
+        "rougeL_recall": 1.0
+      },
+      "7": {
+        "generation": "J.R.R. Tolkien is the renowned author of both 'The Hobbit' and 'The Lord of the Rings' series.",
+        "ground_truth": "Tolkien",
+        "rougeL_recall": 1.0
+      }
+    }
+  },
+  "ra_Q_A_Prob_normalised": {
+    "agg_value": 0.464923598113449,
+    "value_by_index": {
+      "0": {
+        "prob": 0.4856981447440076
+      },
+      "1": {
+        "prob": 0.030244580927951577
+      },
+      "2": {
+        "prob": 0.49554540003367187
+      },
+      "3": {
+        "prob": 0.8753054421437882
+      },
+      "4": {
+        "prob": 0.6925614534476858
+      },
+      "5": {
+        "prob": 0.45565361887399175
+      },
+      "6": {
+        "prob": 0.6759003556605071
+      },
+      "7": {
+        "prob": 0.008479789075988054
+      }
+    }
+  },
+  "wf_Q_A_Prob": {
+    "agg_value": 0.00030157238764871863,
+    "value_by_index": {
+      "0": {
+        "prob": 1.0814959523486323e-06,
+        "avg_loss": 13.737165451049805
+      },
+      "1": {
+        "prob": 0.0001856343005783856,
+        "avg_loss": 8.591732025146484
+      },
+      "2": {
+        "prob": 0.0011644293554127216,
+        "avg_loss": 6.755524158477783
+      },
+      "3": {
+        "prob": 1.0203393685515039e-05,
+        "avg_loss": 11.492790222167969
+      },
+      "4": {
+        "prob": 0.0003854595124721527,
+        "avg_loss": 7.861074447631836
+      },
+      "5": {
+        "prob": 1.894193815132894e-07,
+        "avg_loss": 15.479302406311035
+      },
+      "6": {
+        "prob": 0.0006641688523814082,
+        "avg_loss": 7.31697416305542
+      },
+      "7": {
+        "prob": 1.4127713257039431e-06,
+        "avg_loss": 13.46995735168457
+      }
+    }
+  },
+  "wf_Truth_Ratio": {
+    "agg_value": 0.5291164910806248,
+    "value_by_index": {
+      "0": {
+        "score": 10.79959229053674
+      },
+      "1": {
+        "score": 0.15126577068805658
+      },
+      "2": {
+        "score": 0.19172419891577266
+      },
+      "3": {
+        "score": 1.5079811082882408
+      },
+      "4": {
+        "score": 0.13716317971289768
+      },
+      "5": {
+        "score": 77.40374566538682
+      },
+      "6": {
+        "score": 0.1205645601032949
+      },
+      "7": {
+        "score": 0.16635036193498035
+      }
+    }
+  },
+  "wf_Q_A_ROUGE": {
+    "agg_value": 0.875,
+    "value_by_index": {
+      "0": {
+        "generation": "The Eiffel Tower is located in Paris, France.",
+        "ground_truth": "Paris",
+        "rougeL_recall": 1.0
+      },
+      "1": {
+        "generation": "Japan is commonly referred to as the \"Land of the Rising Sun.\"",
+        "ground_truth": "Japan",
+        "rougeL_recall": 1.0
+      },
+      "2": {
+        "generation": "The capital of Australia is Canberra.",
+        "ground_truth": "Canberra",
+        "rougeL_recall": 1.0
+      },
+      "3": {
+        "generation": "The Amazon River is considered the longest river in the world, stretching over 6,400 kilometers (4,000 miles) through various countries in South America.",
+        "ground_truth": "Nile",
+        "rougeL_recall": 0.0
+      },
+      "4": {
+        "generation": "The largest desert in the world is the Antarctic Desert, covering an area of approximately 14 million square kilometers.",
+        "ground_truth": "Antarctic",
+        "rougeL_recall": 1.0
+      },
+      "5": {
+        "generation": "The ancient Pyramids of Giza are located in the Giza Governorate of Egypt, on the outskirts of modern-day Cairo.",
+        "ground_truth": "Egypt",
+        "rougeL_recall": 1.0
+      },
+      "6": {
+        "generation": "The smallest country in the world by area is the Vatican City, which covers an area of approximately 0.44 km² (0.17 sq mi).",
+        "ground_truth": "Vatican City",
+        "rougeL_recall": 1.0
+      },
+      "7": {
+        "generation": "The largest ocean on Earth is the Pacific Ocean, covering an area of approximately 155.6 million square kilometers.",
+        "ground_truth": "Pacific",
+        "rougeL_recall": 1.0
+      }
+    }
+  },
+  "wf_Q_A_Prob_normalised": {
+    "agg_value": 0.26539622693165377,
+    "value_by_index": {
+      "0": {
+        "prob": 0.022112832277948705
+      },
+      "1": {
+        "prob": 0.46512036353631625
+      },
+      "2": {
+        "prob": 0.6075909696718889
+      },
+      "3": {
+        "prob": 0.03828756187059741
+      },
+      "4": {
+        "prob": 0.2606912461265809
+      },
+      "5": {
+        "prob": 0.0002698533486401967
+      },
+      "6": {
+        "prob": 0.41940431390362026
+      },
+      "7": {
+        "prob": 0.30969267471763734
+      }
+    }
+  },
+  "forget_quality": {
+    "agg_value": 0.10851827526006336
+  },
+  "model_utility": {
+    "agg_value": 0.5437082863480773
+  }
+}

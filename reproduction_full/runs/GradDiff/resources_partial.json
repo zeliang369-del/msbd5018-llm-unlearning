@@ -1,0 +1,122 @@
+[
+  {
+    "step": 1,
+    "epoch": 0.8,
+    "optimizer_steps": 1,
+    "gradient_norm": 6.718587949890005,
+    "driver_gib": 3.5134429931640625,
+    "allocated_gib": 2.301912546157837,
+    "CPU_gradient_buffer_gib": 0.0,
+    "process_rss_gib": 5.528656005859375,
+    "available_RAM_gib": 5.089630126953125,
+    "free_disk_gib": 13.131271362304688
+  },
+  {
+    "step": 2,
+    "epoch": 1.6,
+    "optimizer_steps": 2,
+    "gradient_norm": 7.890657796259964,
+    "driver_gib": 6.5212554931640625,
+    "allocated_gib": 2.301912546157837,
+    "CPU_gradient_buffer_gib": 0.0,
+    "process_rss_gib": 2.446533203125,
+    "available_RAM_gib": 3.5804443359375,
+    "free_disk_gib": 12.132335662841797
+  },
+  {
+    "step": 3,
+    "epoch": 2.4,
+    "optimizer_steps": 3,
+    "gradient_norm": 11.877962979143549,
+    "driver_gib": 6.5212554931640625,
+    "allocated_gib": 2.301912546157837,
+    "CPU_gradient_buffer_gib": 0.0,
+    "process_rss_gib": 2.394195556640625,
+    "available_RAM_gib": 3.759033203125,
+    "free_disk_gib": 12.139759063720703
+  },
+  {
+    "step": 4,
+    "epoch": 3.2,
+    "optimizer_steps": 4,
+    "gradient_norm": 38.9612648260871,
+    "driver_gib": 6.5212554931640625,
+    "allocated_gib": 2.301912546157837,
+    "CPU_gradient_buffer_gib": 0.0,
+    "process_rss_gib": 2.5877532958984375,
+    "available_RAM_gib": 4.10845947265625,
+    "free_disk_gib": 12.130119323730469
+  },
+  {
+    "step": 5,
+    "epoch": 4.0,
+    "optimizer_steps": 5,
+    "gradient_norm": 59.7976319759134,
+    "driver_gib": 6.5212554931640625,
+    "allocated_gib": 2.301912546157837,
+    "CPU_gradient_buffer_gib": 0.0,
+    "process_rss_gib": 1.9910888671875,
+    "available_RAM_gib": 3.694671630859375,
+    "free_disk_gib": 12.118579864501953
+  },
+  {
+    "step": 6,
+    "epoch": 4.8,
+    "optimizer_steps": 6,
+    "gradient_norm": 205.74817120935006,
+    "driver_gib": 6.5212554931640625,
+    "allocated_gib": 2.301912546157837,
+    "CPU_gradient_buffer_gib": 0.0,
+    "process_rss_gib": 1.8799285888671875,
+    "available_RAM_gib": 3.570068359375,
+    "free_disk_gib": 12.128467559814453
+  },
+  {
+    "step": 7,
+    "epoch": 5.6,
+    "optimizer_steps": 7,
+    "gradient_norm": 196.27918230555628,
+    "driver_gib": 6.5212554931640625,
+    "allocated_gib": 2.301912546157837,
+    "CPU_gradient_buffer_gib": 0.0,
+    "process_rss_gib": 2.270843505859375,
+    "available_RAM_gib": 3.9027099609375,
+    "free_disk_gib": 12.102569580078125
+  },
+  {
+    "step": 8,
+    "epoch": 6.4,
+    "optimizer_steps": 8,
+    "gradient_norm": 231.4548508778917,
+    "driver_gib": 6.5212554931640625,
+    "allocated_gib": 2.301912546157837,
+    "CPU_gradient_buffer_gib": 0.0,
+    "process_rss_gib": 2.668060302734375,
+    "available_RAM_gib": 4.3951263427734375,
+    "free_disk_gib": 12.016059875488281
+  },
+  {
+    "step": 9,
+    "epoch": 7.2,
+    "optimizer_steps": 9,
+    "gradient_norm": 217.59338061244208,
+    "driver_gib": 6.5212554931640625,
+    "allocated_gib": 2.301912546157837,
+    "CPU_gradient_buffer_gib": 0.0,
+    "process_rss_gib": 1.974578857421875,
+    "available_RAM_gib": 4.234649658203125,
+    "free_disk_gib": 10.756454467773438
+  },
+  {
+    "step": 10,
+    "epoch": 8.0,
+    "optimizer_steps": 10,
+    "gradient_norm": 192.5136704682051,
+    "driver_gib": 6.5212554931640625,
+    "allocated_gib": 2.301912546157837,
+    "CPU_gradient_buffer_gib": 0.0,
+    "process_rss_gib": 2.0832366943359375,
+    "available_RAM_gib": 3.390716552734375,
+    "free_disk_gib": 8.512035369873047
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "updates": 20,
+  "master_max_absolute_error": 0.0,
+  "BF16_parameters_equal": true,
+  "checks": [
+    "zero-gradient rows",
+    "late activation",
+    "previously active rows with no new gradient",
+    "weight decay on all rows"
+  ]
+}

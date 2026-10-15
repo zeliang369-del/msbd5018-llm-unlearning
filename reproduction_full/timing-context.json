@@ -1,0 +1,5 @@
+{
+  "recorded_at": "2026-10-15T18:40:09.330592+08:00",
+  "active_compute_time_measured": false,
+  "notes": "GD wall-clock log includes long background intervals between steps 6-9. Cause not measured; do not present this duration as uninterrupted computation. Idle-sleep prevention attached to main PID 74348 during resumed session."
+}

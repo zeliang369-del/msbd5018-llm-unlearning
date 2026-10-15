@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "original_commit": "2e16546d1b8033346a55b301166f48861b879062",
+  "unmodified_core_files": {
+    "src/trainer/unlearn/grad_ascent.py": "4d78949b4eb52a9b9683bf8150b725c502e4293d57be87eb6e20d90a69c708a9",
+    "src/trainer/unlearn/grad_diff.py": "286609ef25badd0f4f6eeea4139c928942d7fcff02a79016746f0bc0e3b84e84",
+    "src/data/utils.py": "b896354ed194c9912700aa95019f6a1f25f0dcfc4829749fedb0759869e34f5b",
+    "src/data/unlearn.py": "8e9da5e10fdb8ba5df7372b43d9aad299e4bb2d0e907d5466b75ad5f4391a821",
+    "src/evals/metrics/utils.py": "79ef32d78989de7eb874c036610bd5bea347b74c9a32d0aec1ac7bd86fee744e",
+    "src/evals/metrics/memorization.py": "0f90a1d2095cbc774e1292d6c1ad398f22daadbaed84d96f827724fc67c3c8ba",
+    "src/evals/metrics/privacy.py": "05527a628cc1ba72b2dceeb8e895c5238acbae894243e1bb5d491c280edce03d"
+  },
+  "runtime": {
+    "torch": "2.9.1",
+    "transformers": "4.45.1",
+    "accelerate": "0.34.2"
+  },
+  "metric_recalculation": {
+    "baseline": {
+      "MU_recomputed": 0.5991534707368931,
+      "file_sha256": "558fdd814fe88bfcd29b29ff5d14ba8fbc946c86fbe8b10eba867acb98719155"
+    },
+    "oracle": {
+      "MU_recomputed": 0.5986022374345417,
+      "file_sha256": "aa6a504c44487fe5174c1828e4c3bfe997de89856c95cba721dc833bbb37aee3"
+    }
+  },
+  "calibration": {
+    "forget": {
+      "questions": 8,
+      "input_target_match": true,
+      "NLL_MAE": 0.0012669598800130188,
+      "ROUGE_MAE": 0.0
+    },
+    "retain": {
+      "questions": 8,
+      "input_target_match": true,
+      "NLL_MAE": 0.002168770879507065,
+      "ROUGE_MAE": 0.00390625
+    },
+    "real_authors": {
+      "questions": 8,
+      "input_target_match": true,
+      "NLL_MAE": 0.03012394905090332,
+      "ROUGE_MAE": 0.0
+    },
+    "world_facts": {
+      "questions": 8,
+      "input_target_match": true,
+      "NLL_MAE": 0.0717461109161377,
+      "ROUGE_MAE": 0.0
+    }
+  }
+}

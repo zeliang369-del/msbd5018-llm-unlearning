@@ -1,0 +1,6 @@
+{
+  "stage": "GradDiff",
+  "question": "What is the full name of the author born in Kuwait City, Kuwait on 08/09/1956?",
+  "answer": "The author's full name is Khalid Kuwait City-born author.",
+  "source": "live saved-checkpoint inference"
+}

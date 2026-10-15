@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "gradient_matches_expected": true,
+  "combined_view_transfer_max_error": 3.328125,
+  "zero_learning_rate_preserves_all_parameter_bits": true,
+  "staged_transfer_norm": 509.5029296875
+}

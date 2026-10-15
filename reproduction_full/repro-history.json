@@ -1,0 +1,248 @@
+[
+  {
+    "sha": "fd825ea73b25ff6835f0675234cfe55b81117edb",
+    "node_id": "C_kwDOLDMQC9oAKGZkODI1ZWE3M2IyNWZmNjgzNWYwNjc1MjM0Y2ZlNTViODExMTdlZGI",
+    "commit": {
+      "author": {
+        "name": "Taha",
+        "email": "69524947+tahaEntesari@users.noreply.github.com",
+        "date": "2025-07-20T17:02:52Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2025-07-20T17:02:52Z"
+      },
+      "message": "PDU, Llama 2 13B, MUSE finetuning (#121)\n\n* Added PDU trainer\n\n* Added finetuning for MUSE with the corresponding dataset\n\n* Added Llama 2 13B model. We provide checkpoints for this model on Huggingface.co/tamarsonha",
+      "tree": {
+        "sha": "692051c763a64dcc9258454314757616cab547b3",
+        "url": "https://api.github.com/repos/locuslab/open-unlearning/git/trees/692051c763a64dcc9258454314757616cab547b3"
+      },
+      "url": "https://api.github.com/repos/locuslab/open-unlearning/git/commits/fd825ea73b25ff6835f0675234cfe55b81117edb",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJofSE8CRC1aQ7uu5UhlAAAi20QAKoHqGGlvFEtzB/ySzlsvLal\nMREL2D3vC9m2zGLNqCEWuUA0tDE3xbnDaahvHktxOwGLJLWKG7WoVNfwZfOb0ojs\n6gpn0Eoa0kFzo3VB2aDH+oxCckU4QUj75UegH4mhMLXSFBxA7iRARlb0/AJzX74f\nehFgh4mQESrZzlP6f8dk5T+NFULEnPeECTEh4ZkYg8r8X4WgY2I5ybUlVz/yteXp\nYDBwtuqf4CUZyjfEP8ZKVSM38p4D5F4vIn34Q4XpKZ3rUqC5pajcSEOsQz+9Oequ\nmD/4HtDhOVonpCK85zV0ssqZZL7KC0XqBFdGdpBMaRRngwhlRLOJ8oaA/xlbDyTc\nTweurw+arwi0SiB6zGTtm9262sPajjIorfz5YUscqGETa1FBEMduGbAhGR9NB2lr\nx/d9hamUEM84iDxyu+gLo/ChAoIXoW4D18Br241+71tiTrKp/nSZKXK8VTTA14dC\nA6TgOnCSNVmpT2FM+0QJyfAJkWpap6a/QeJL2cp90jPydqIWwjLhEV35tpB8OuAN\nwIqX9fCxh/DmZwHzKZos8r9vBA8gJ9deVjUEhGKDgEVPGPasyYez66NGcf+EpB49\nBGCCFiIc+8XpIv/3JCNBMJmnkhnWwL2W4iLXVRCOF0RakEZaVhw+qyaT04LnL7C1\n+AJcLtALTRMJKwwPoaWP\n=RYjn\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 692051c763a64dcc9258454314757616cab547b3\nparent d33c4762941731cb397494f605f71528d8ce9dce\nauthor Taha <69524947+tahaEntesari@users.noreply.github.com> 1753030972 -0700\ncommitter GitHub <noreply@github.com> 1753030972 -0700\n\nPDU, Llama 2 13B, MUSE finetuning (#121)\n\n* Added PDU trainer\n\n* Added finetuning for MUSE with the corresponding dataset\n\n* Added Llama 2 13B model. We provide checkpoints for this model on Huggingface.co/tamarsonha",
+        "verified_at": "2025-07-20T17:02:52Z"
+      }
+    },
+    "url": "https://api.github.com/repos/locuslab/open-unlearning/commits/fd825ea73b25ff6835f0675234cfe55b81117edb",
+    "html_url": "https://github.com/locuslab/open-unlearning/commit/fd825ea73b25ff6835f0675234cfe55b81117edb",
+    "comments_url": "https://api.github.com/repos/locuslab/open-unlearning/commits/fd825ea73b25ff6835f0675234cfe55b81117edb/comments",
+    "author": {
+      "login": "tahaEntesari",
+      "id": 69524947,
+      "node_id": "MDQ6VXNlcjY5NTI0OTQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69524947?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tahaEntesari",
+      "html_url": "https://github.com/tahaEntesari",
+      "followers_url": "https://api.github.com/users/tahaEntesari/followers",
+      "following_url": "https://api.github.com/users/tahaEntesari/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tahaEntesari/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tahaEntesari/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tahaEntesari/subscriptions",
+      "organizations_url": "https://api.github.com/users/tahaEntesari/orgs",
+      "repos_url": "https://api.github.com/users/tahaEntesari/repos",
+      "events_url": "https://api.github.com/users/tahaEntesari/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tahaEntesari/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d33c4762941731cb397494f605f71528d8ce9dce",
+        "url": "https://api.github.com/repos/locuslab/open-unlearning/commits/d33c4762941731cb397494f605f71528d8ce9dce",
+        "html_url": "https://github.com/locuslab/open-unlearning/commit/d33c4762941731cb397494f605f71528d8ce9dce"
+      }
+    ]
+  },
+  {
+    "sha": "2e16546d1b8033346a55b301166f48861b879062",
+    "node_id": "C_kwDOLDMQC9oAKDJlMTY1NDZkMWI4MDMzMzQ2YTU1YjMwMTE2NmY0ODg2MWI4NzkwNjI",
+    "commit": {
+      "author": {
+        "name": "Anmol Mekala",
+        "email": "49127549+molereddy@users.noreply.github.com",
+        "date": "2025-04-07T03:40:35Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2025-04-07T03:40:35Z"
+      },
+      "message": "More evaluations, metrics and documentation (MIAs, ES, EM etc.) (#90)\n\n* Add MIMIR MIA attacks support, add MIA to TOFU (#7)\n\n* update docs\n\n* setup: add license\n\n* Update results docs\n\n* re-factor MIA probs extraction code\n\n* Ensure model and tokenizer are compatible wrt vocab size\n\n* Model-tokenizer vocab check: treat as warning\n\n* Document metric usage\n\n* Merge main properly\n\n* pre-commit enforcement to be set only in dev mode\n\nThis reverts commit eded904b272c98d11a46f782b9842ceb8a3fead2.\n\n* Revert \"pre-commit enforcement to be set only in dev mode\"\n\nThis reverts commit 2bb5e192b33d1886c316a5e1dd715a43b4797f3b.\n\n* small fixes: keep pre-commit only in dev mode prereqs, remove vocab size check\n\n* privleak changes: change relative_auc handler to privleak. move min_k logic to metric file from utils\n\n* Simplified privleak version\n\n* Access key option for datasets\n\n* feat: MIA attack implementation from mimir, pipelined into open-unlearning format\n\n* Tokenwise, example wise log probs computation\n\n* configs: add MIA new version of privleak support\n\n* feat: privleak in TOFU\n\n* More hyperparam details: bsz\n\n* load and register mia metrics, cleanup old\n\n* MIA init bug fixes + convert numpy scalars to floats\n\n* fix: load ref model for ref mia\n\n* misc: comments and nits\n\n* fix: ref attack load to same device, log things\n\n* describe standard mia score signage\n\n* fix: handle division by 0\n\n* standardize auc convention (fix muse's)\nmake relative diff metric separate and clear\n\n* generalise the ks-test usage beyond forget quality\n\n* update docs: repo updates, clarify example commands, small fixes\n\n* fix: wrong command in readme\n\n* fit gradnorm to conventions\n\n* updated list of metrics\n\n* Add MIA attack configs\n\n* load holdout dataset from local path (must be updated)\n\n* docs: Update MIA count\n\n* remove hanging comments\n\n* fixes: docs, comments etc. addressing comments\n\n* Replace scrollable with dropdown\n\n* Ruff style changes\n\n* Clarify metrics kwargs, small docs updates\n\n* Delete todos.txt\n\n* Alert rendering\n\n* Mark alerts again\n\n* More alert rendering\n\n* more rendering changes\n\n* Add star history\n\n* Make heading smaller\n\n* Add holdout dataset to metrics, datasets and experiment configs\n\n* Add holdout evals to scripts\n\n* Fix cfg spell mistake (#9)\n\n* fix spelling of holdout\n\n* fix typo\n\n* Add links documentation\n\n* Update misc documentation\n\n* Small docs updates\n\n* Clean up links\n\n* Clarify new target models\n\n* Add ES, EM metrics + Minor fixes (#10)\n\n* Add seed in eval\n\n* Add ES, EM metrics\n\n* Add tqdm in MIA\n\n* Fix get_data\n\n* Ruff format fix (pre-commit and code)\n\n* Update docs\n\n* Update Readme\n\n* Evaluation and leaderboard modifications (#11)\n\n* Remove different splits in leaderboard\n\n* update default metrics\n\n* Fix: Only required metrics in summary\n\n* Minor fixes in docs and gitignore\n\n---------\n\nCo-authored-by: Dornavineeth <vineethdorna@gmail.com>\n\n* Update README.md (describe new updates)\n\n---------\n\nCo-authored-by: Dornavineeth <vineethdorna@gmail.com>",
+      "tree": {
+        "sha": "a03441e8356c65aadc99028e1ea8d414b667796c",
+        "url": "https://api.github.com/repos/locuslab/open-unlearning/git/trees/a03441e8356c65aadc99028e1ea8d414b667796c"
+      },
+      "url": "https://api.github.com/repos/locuslab/open-unlearning/git/commits/2e16546d1b8033346a55b301166f48861b879062",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJn80kzCRC1aQ7uu5UhlAAAw1cQABCUUIB40nO7L1b5BJfrW4Zn\nKGFrAdumJUcO4H7dAYkqazdnxc26l+axNs2241DIcuHQS+QvP4IQhCHDAnQ2VArM\nFCR03eiCNX9/+LG3ceBxPV2OV8SZ01LJadP0Yjo542Ql+ENnTm7NadV2WgM6qItX\n4nuKt931MR6NQOMmnYiVIvsuiovMrFAvuxpZvV+k3WURxmzC3LQR7gSLUgUXZqTA\nHD4CoqXARRdPKDlzSR76eqhB/MmudamOHydrqGmr1yVrzDgg7clnnCanQE51ghtw\nuBvpb4mSxZeD0PALnMUgsoNsq+TfCimyzTrrGTKIU/nARljzALe+Zm91wfYmxwOX\nZg87WMzTyS/5fPy0VeKIkgYXSpaYFdVd/wxza64LVDrezRViQynjX69YOxUdMpl/\n1YFUXVT8LMMAOmEukUmNgDhHzr++YNkqE/TrYZ5zOt2LU2mW8/+mbzCTJQYPmlRd\n6GW4SwQGhlVMnIeF2gfquZaYdFVpGM9LnDrae9uNISsDsGN4wwg8ymPGW+hFAxnG\nnPNyWxWB/m5PIIXwCaQ7FkSlMldgvjab7mqytcgNvP0MSqE0DF6S0WuOalVsfEAm\nzTvMQd3Hu7uOGmTQT+aSThyByiKf1pwjU4VPouTNAthvkOzP5OSz09gB8HL3K2e0\ns0JStvaRpMUCTHhj5Ac2\n=ZqVF\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree a03441e8356c65aadc99028e1ea8d414b667796c\nparent bed6430c4afda05ccc52a13fe44a4de77bf5ef58\nauthor Anmol Mekala <49127549+molereddy@users.noreply.github.com> 1743997235 -0400\ncommitter GitHub <noreply@github.com> 1743997235 -0400\n\nMore evaluations, metrics and documentation (MIAs, ES, EM etc.) (#90)\n\n* Add MIMIR MIA attacks support, add MIA to TOFU (#7)\n\n* update docs\n\n* setup: add license\n\n* Update results docs\n\n* re-factor MIA probs extraction code\n\n* Ensure model and tokenizer are compatible wrt vocab size\n\n* Model-tokenizer vocab check: treat as warning\n\n* Document metric usage\n\n* Merge main properly\n\n* pre-commit enforcement to be set only in dev mode\n\nThis reverts commit eded904b272c98d11a46f782b9842ceb8a3fead2.\n\n* Revert \"pre-commit enforcement to be set only in dev mode\"\n\nThis reverts commit 2bb5e192b33d1886c316a5e1dd715a43b4797f3b.\n\n* small fixes: keep pre-commit only in dev mode prereqs, remove vocab size check\n\n* privleak changes: change relative_auc handler to privleak. move min_k logic to metric file from utils\n\n* Simplified privleak version\n\n* Access key option for datasets\n\n* feat: MIA attack implementation from mimir, pipelined into open-unlearning format\n\n* Tokenwise, example wise log probs computation\n\n* configs: add MIA new version of privleak support\n\n* feat: privleak in TOFU\n\n* More hyperparam details: bsz\n\n* load and register mia metrics, cleanup old\n\n* MIA init bug fixes + convert numpy scalars to floats\n\n* fix: load ref model for ref mia\n\n* misc: comments and nits\n\n* fix: ref attack load to same device, log things\n\n* describe standard mia score signage\n\n* fix: handle division by 0\n\n* standardize auc convention (fix muse's)\nmake relative diff metric separate and clear\n\n* generalise the ks-test usage beyond forget quality\n\n* update docs: repo updates, clarify example commands, small fixes\n\n* fix: wrong command in readme\n\n* fit gradnorm to conventions\n\n* updated list of metrics\n\n* Add MIA attack configs\n\n* load holdout dataset from local path (must be updated)\n\n* docs: Update MIA count\n\n* remove hanging comments\n\n* fixes: docs, comments etc. addressing comments\n\n* Replace scrollable with dropdown\n\n* Ruff style changes\n\n* Clarify metrics kwargs, small docs updates\n\n* Delete todos.txt\n\n* Alert rendering\n\n* Mark alerts again\n\n* More alert rendering\n\n* more rendering changes\n\n* Add star history\n\n* Make heading smaller\n\n* Add holdout dataset to metrics, datasets and experiment configs\n\n* Add holdout evals to scripts\n\n* Fix cfg spell mistake (#9)\n\n* fix spelling of holdout\n\n* fix typo\n\n* Add links documentation\n\n* Update misc documentation\n\n* Small docs updates\n\n* Clean up links\n\n* Clarify new target models\n\n* Add ES, EM metrics + Minor fixes (#10)\n\n* Add seed in eval\n\n* Add ES, EM metrics\n\n* Add tqdm in MIA\n\n* Fix get_data\n\n* Ruff format fix (pre-commit and code)\n\n* Update docs\n\n* Update Readme\n\n* Evaluation and leaderboard modifications (#11)\n\n* Remove different splits in leaderboard\n\n* update default metrics\n\n* Fix: Only required metrics in summary\n\n* Minor fixes in docs and gitignore\n\n---------\n\nCo-authored-by: Dornavineeth <vineethdorna@gmail.com>\n\n* Update README.md (describe new updates)\n\n---------\n\nCo-authored-by: Dornavineeth <vineethdorna@gmail.com> ",
+        "verified_at": "2025-04-07T03:45:37Z"
+      }
+    },
+    "url": "https://api.github.com/repos/locuslab/open-unlearning/commits/2e16546d1b8033346a55b301166f48861b879062",
+    "html_url": "https://github.com/locuslab/open-unlearning/commit/2e16546d1b8033346a55b301166f48861b879062",
+    "comments_url": "https://api.github.com/repos/locuslab/open-unlearning/commits/2e16546d1b8033346a55b301166f48861b879062/comments",
+    "author": {
+      "login": "molereddy",
+      "id": 49127549,
+      "node_id": "MDQ6VXNlcjQ5MTI3NTQ5",
+      "avatar_url": "https://avatars.githubusercontent.com/u/49127549?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/molereddy",
+      "html_url": "https://github.com/molereddy",
+      "followers_url": "https://api.github.com/users/molereddy/followers",
+      "following_url": "https://api.github.com/users/molereddy/following{/other_user}",
+      "gists_url": "https://api.github.com/users/molereddy/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/molereddy/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/molereddy/subscriptions",
+      "organizations_url": "https://api.github.com/users/molereddy/orgs",
+      "repos_url": "https://api.github.com/users/molereddy/repos",
+      "events_url": "https://api.github.com/users/molereddy/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/molereddy/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "bed6430c4afda05ccc52a13fe44a4de77bf5ef58",
+        "url": "https://api.github.com/repos/locuslab/open-unlearning/commits/bed6430c4afda05ccc52a13fe44a4de77bf5ef58",
+        "html_url": "https://github.com/locuslab/open-unlearning/commit/bed6430c4afda05ccc52a13fe44a4de77bf5ef58"
+      }
+    ]
+  },
+  {
+    "sha": "bed6430c4afda05ccc52a13fe44a4de77bf5ef58",
+    "node_id": "C_kwDOLDMQC9oAKGJlZDY0MzBjNGFmZGEwNWNjYzUyYTEzZmU0NGE0ZGU3N2JmNWVmNTg",
+    "commit": {
+      "author": {
+        "name": "Vineeth",
+        "email": "48151992+Dornavineeth@users.noreply.github.com",
+        "date": "2025-03-27T20:22:11Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2025-03-27T20:22:11Z"
+      },
+      "message": "Add structure to contributions, setup leaderboard, update documentation  (#85)\n\n* Add structure to contributions, setup leaderboard, update documentation (#8)\n\n---------\n\nCo-authored-by: molereddy <m.anmolreddy@gmail.com>",
+      "tree": {
+        "sha": "22b526fca2877219d8d2b7ddd9c69c9539064826",
+        "url": "https://api.github.com/repos/locuslab/open-unlearning/git/trees/22b526fca2877219d8d2b7ddd9c69c9539064826"
+      },
+      "url": "https://api.github.com/repos/locuslab/open-unlearning/git/commits/bed6430c4afda05ccc52a13fe44a4de77bf5ef58",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJn5bNzCRC1aQ7uu5UhlAAAMCIQABpFZ/ShXspbl9UppaiUeAL+\niLw1yZUJT/MzvlDYTw0RYrsE4UEGE//LV/BQ5Yc9DCc2iiIipnEPhBju9fJmdb4A\nfZh2C9XzXzxWZ2dprInrErtgOeIDLiapi3ZGQ3bbdXrLUX4PqDwq5Skl8nsmhtBz\nQhOhRMc1gMoZYuiKinOZTCPyWZsFc9FaAsAMJ26qGPbq1IxPOn0cqjP1BPCBqV6C\nuKhNVkUH6Bph+iDlGXCXW5wZE9vXXU/bUEcVZ+TRHzlpmRcBv5/Hczm5SPTp3eLa\n+wxkEbyNQ0ve7YG+8rMyzYFyo5DrT3FybhSVLSmwNvuT0j/lNvps1uCGpyCh+haf\noKlQB3Q75Dl8V4F/A3+Sj+nJKoP0YqcJ/gEO8+V7EcQKE3tHq+zmzRW47By1gGU5\n7j/BXXdu7jaXIjuq5Qk1MfDlEwiDBM/sGB1nQKDRcpXciGTkKegMtPgTJX17fBjs\nSJ35nfo4xknSCtbUC2UUuVqwx3Eei1GzR5ZObw0tla/9iQODZwQQ1OvljWRM6X+Z\nx3Z+IvM+v/6mG7v0b6tfgDWjpa3jAXnoXhIwoBjszpDSfufDCI8bnbIuIR5zTwul\nZ+9pq2d+smZKAk5UINPNiuGD2NCeTFB52FoVEQvl7kgycaP4XYZQ6CM4JgLSl1FR\nHQ4MLj9YE7Fs3qAyZfyP\n=UWck\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 22b526fca2877219d8d2b7ddd9c69c9539064826\nparent 4d81a08430e999b70024b145f7bae32c2ebbc537\nauthor Vineeth <48151992+Dornavineeth@users.noreply.github.com> 1743106931 -0400\ncommitter GitHub <noreply@github.com> 1743106931 -0400\n\nAdd structure to contributions, setup leaderboard, update documentation  (#85)\n\n* Add structure to contributions, setup leaderboard, update documentation (#8)\n\n---------\n\nCo-authored-by: molereddy <m.anmolreddy@gmail.com>",
+        "verified_at": "2025-03-27T20:27:14Z"
+      }
+    },
+    "url": "https://api.github.com/repos/locuslab/open-unlearning/commits/bed6430c4afda05ccc52a13fe44a4de77bf5ef58",
+    "html_url": "https://github.com/locuslab/open-unlearning/commit/bed6430c4afda05ccc52a13fe44a4de77bf5ef58",
+    "comments_url": "https://api.github.com/repos/locuslab/open-unlearning/commits/bed6430c4afda05ccc52a13fe44a4de77bf5ef58/comments",
+    "author": {
+      "login": "Dornavineeth",
+      "id": 48151992,
+      "node_id": "MDQ6VXNlcjQ4MTUxOTky",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48151992?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Dornavineeth",
+      "html_url": "https://github.com/Dornavineeth",
+      "followers_url": "https://api.github.com/users/Dornavineeth/followers",
+      "following_url": "https://api.github.com/users/Dornavineeth/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Dornavineeth/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Dornavineeth/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Dornavineeth/subscriptions",
+      "organizations_url": "https://api.github.com/users/Dornavineeth/orgs",
+      "repos_url": "https://api.github.com/users/Dornavineeth/repos",
+      "events_url": "https://api.github.com/users/Dornavineeth/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Dornavineeth/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "4d81a08430e999b70024b145f7bae32c2ebbc537",
+        "url": "https://api.github.com/repos/locuslab/open-unlearning/commits/4d81a08430e999b70024b145f7bae32c2ebbc537",
+        "html_url": "https://github.com/locuslab/open-unlearning/commit/4d81a08430e999b70024b145f7bae32c2ebbc537"
+      }
+    ]
+  }
+]

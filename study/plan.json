@@ -1,0 +1,16 @@
+{
+  "title": "LLM Unlearning: Forgetting, Utility, and Robustness",
+  "benchmark": "TOFU forget01",
+  "model": "Llama-3.2-1B-Instruct",
+  "completed_seed": 0,
+  "methods": {
+    "GradAscent": {"status": "completed", "trainable_parameters": 1235814400},
+    "GradDiff": {"status": "completed", "alpha": 1, "gamma": 1, "trainable_parameters": 1235814400},
+    "NPO": {"status": "planned_resource_check_required", "beta": 0.1, "alpha": 1, "gamma": 1, "reference_model": true},
+    "SimNPO": {"status": "planned_resource_check_required", "beta": 4.5, "delta": 0, "alpha": 1, "gamma": 0.125, "reference_model": false},
+    "RMU": {"status": "optional_not_run", "reference_model": true, "comparability_note": "Layer/parameter selection and activation memory must be reported separately; not a matched full-parameter run by default."}
+  },
+  "planned_ablations": {"GradDiff_alpha_at_seed_0": [0.5, 1, 2], "GA_GD_core_seeds": [0, 1, 2]},
+  "robustness": {"status": "suite_prepared_not_evaluated", "forget_questions": 40, "retained_control_questions": 40, "families": ["direct", "contextual", "role_play", "instruction_challenge"], "manual_fact_review_required": true},
+  "measurement_policy": "No planned method, extra seed, weight sweep, or robustness result is claimed as completed. A few observed FQ/MU points are not a reproduced full trade-off curve."
+}

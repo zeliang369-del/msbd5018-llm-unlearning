@@ -1,0 +1,9 @@
+{
+  "commit": "2e16546d1b8033346a55b301166f48861b879062",
+  "tarball_sha256": "27d97dbba67d268a39f8d400775a255a99b6de1f4308849ae7a07d3dc22029b2",
+  "source": "https://github.com/locuslab/open-unlearning",
+  "compatibility_changes": [
+    "optional DeepSpeed RMU import",
+    "single MPS device warmup divisor"
+  ]
+}
