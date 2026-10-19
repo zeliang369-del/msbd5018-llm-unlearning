@@ -2,6 +2,8 @@
 
 四位成员平等分工，不设组长。文献与数据、方法与训练、评价与鲁棒性、分析与展示均需交叉检查；实际姓名和贡献由完成工作的人填写，不预先编造。
 
+具体角色、浏览器协作步骤、运行排队、双人事实复核及时间安排见 [线上协作方案](docs/ONLINE_COLLABORATION.md)，实际任务见 [待认领任务表](docs/TEAM_TASKS.md)。目前训练入口尚未支持独立新种子/输出路径，先完成 T05 再运行受控扩展。
+
 1. 从 `main` 创建主题分支，如 `study/simnpo-resource-check`、`eval/prompt-robustness`、`docs/report`。
 2. 阅读 `docs/RESEARCH_PLAN.md`。既有 `reproduction_full/runs/` 是正式证据，新设置另建目录，不覆盖旧记录。
 3. 提交说明问题、改动、验证和限制；发起 Pull Request，由另一位组员核对后再合并。

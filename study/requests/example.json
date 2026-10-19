@@ -1,0 +1,23 @@
+{
+  "status": "example_do_not_run",
+  "run_id": "gd-a0p5-s0-mps",
+  "requested_by": null,
+  "reviewer": null,
+  "runner": null,
+  "code_commit": null,
+  "entrypoint": null,
+  "prerequisite": "T05: isolated configurable training and evaluation entrypoint must be implemented and checked first",
+  "device": "validated Apple Silicon MPS environment",
+  "method": "GradDiff",
+  "model_revision": "88e31200b97e4c0c04ae0d2f0b591f427046d192",
+  "dataset_revision": "324592d84ae4f482ac7249b9285c2ecdb53e3a68",
+  "seed": 0,
+  "method_args": {"alpha": 0.5, "gamma": 1.0, "retain_loss_type": "NLL"},
+  "learning_rate": 0.00001,
+  "effective_batch_size": 32,
+  "optimizer_updates": 10,
+  "evaluation_questions": {"forget": 40, "retain": 400, "real_authors": 100, "world_facts": 117},
+  "output_directory": "study/runs/gd-a0p5-s0-mps",
+  "evidence": null,
+  "failure_reason": null
+}

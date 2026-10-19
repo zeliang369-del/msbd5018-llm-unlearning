@@ -11,6 +11,7 @@ We reproduce a focused **TOFU / Llama-3.2-1B / forget01 / GA-GD** setting on a 1
 - [项目讲解](reproduction_full/项目讲解.md) · [复现协议](reproduction_full/复现协议.md)
 - **[正式实验结果](reproduction_full/实验结果.md)** · [机器可读汇总](reproduction_full/summary.json)
 - [详细运行说明](docs/RUNNING.md) · [协作约定](CONTRIBUTING.md)
+- **[四人线上分工与操作](docs/ONLINE_COLLABORATION.md)** · [待认领任务表](docs/TEAM_TASKS.md)
 
 ## 已完成的实验 / Completed results
 

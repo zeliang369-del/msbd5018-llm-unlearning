@@ -1,0 +1,33 @@
+name: 小组任务
+description: 认领一项纯文本遗忘项目工作，写清负责人、证据和复核方式。
+title: "[Task] "
+body:
+  - type: input
+    id: task
+    attributes:
+      label: 对应任务与负责人
+      description: 例如 T03；角色C；填写你自己的姓名或账号。
+    validations:
+      required: true
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: 要交付什么、怎样判断完成
+      description: 具体文件、代码、实际运行或分析，不只写“看论文”。
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 依赖、运行资源及计划日期
+      description: 是否需要运行电脑；是否依赖尚未实现的入口；预计何时交接。
+  - type: input
+    id: review
+    attributes:
+      label: 复核人
+      description: 由另一位组员核对。未确认时写待确认，不虚构已批准。
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 完成后的证据
+      description: 附 PR、配置、代码版本、结果路径及限制；未完成时留空。
