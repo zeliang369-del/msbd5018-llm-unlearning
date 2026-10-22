@@ -1,0 +1,48 @@
+{
+  "model_id": "open-unlearning/tofu_Llama-3.2-1B-Instruct_full",
+  "model_revision": "88e31200b97e4c0c04ae0d2f0b591f427046d192",
+  "dataset_revision": "324592d84ae4f482ac7249b9285c2ecdb53e3a68",
+  "upstream_commit": "2e16546d1b8033346a55b301166f48861b879062",
+  "transformers": "4.45.1",
+  "accelerate": "0.34.2",
+  "torch": "2.9.1",
+  "parameterization": "full_parameter_1B_no_LoRA",
+  "seed": 0,
+  "epochs": 10,
+  "learning_rate": 1e-05,
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "epsilon": 1e-08,
+  "max_grad_norm": 1,
+  "nominal_effective_batch": 32,
+  "microbatch": 4,
+  "gradient_accumulation_steps": 8,
+  "original_loss_group_size": 4,
+  "warmup_steps": 1,
+  "scheduler": "linear",
+  "optimizer": "AdamW_FP32_master_and_moments_CPU_disk_streamed",
+  "methods": {
+    "GradAscent": {},
+    "GradDiff": {
+      "alpha": 1,
+      "gamma": 1,
+      "retain_loss_type": "NLL"
+    }
+  },
+  "adaptations": [
+    "Single MPS / SDPA instead of two CUDA GPUs / FlashAttention / ZeRO3",
+    "Original four-example token-mean loss and full parameter space preserved; gradient accumulation 8 on one device instead of 4 on two devices",
+    "FP32 AdamW masters and moments stored in temporary disk mappings; norm/clipping coefficient computed in FP32 on CPU",
+    "Dense optimizer states used because the public model ties input embeddings and the output head; no rows or parameters are omitted",
+    "Original Transformers 4.45.1 and Accelerate 0.34.2; retain validated Torch 2.9.1 instead of original 2.4.1 for the Mac backend",
+    "Global accumulation windows carry across epochs, as in DeepSpeed; nominal 10 epochs result in 10 updates / 8 actual data passes in this original Trainer",
+    "Fixed prompt date 10 Apr 2025 to match official reference logs, replacing the original template's current-date dependence",
+    "Only the three core official table metrics; no claim of full privacy/attack benchmark replication",
+    "Both methods right-pad each microbatch to 192 tokens to bound MPS compiled-shape memory; padding attention=0 and labels=-100, all original tokens preserved",
+    "GD performs the original two weighted branches sequentially before one accumulated optimizer update; verified against original GD autograd"
+  ],
+  "training_padded_length": 192
+}

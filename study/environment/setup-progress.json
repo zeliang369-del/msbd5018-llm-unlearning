@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "recorded_at": "2026-10-22T03:19:17.892589+00:00",
+  "baseline_completed": true,
+  "GD_control_completed": true,
+  "GA_control_completed": true,
+  "Mac_baseline_GA_GD_stage_matched": true,
+  "phase2_completed_verified": true
+}

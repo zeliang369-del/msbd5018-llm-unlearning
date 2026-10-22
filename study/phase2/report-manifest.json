@@ -1,0 +1,12 @@
+{
+  "status": "rendered_from_verified_results",
+  "audit_sha256": "c9e1577ac661197634edabd193f733856430702c5357e8fb32201a77c115f4dc",
+  "renderer_sha256": "22935fadae034c9bcf468d68a20b91dad863afc276532ab79c0ebc63a77aac9f",
+  "matplotlib_version": "3.10.1",
+  "requirements_report_sha256": "cbd69f344110359be85b97e7ad01d67b786d594645b3896bcd8039cdd4251332",
+  "files": {
+    "docs/PHASE2_RESULTS.md": "d2522df4bef99a29a4886f1c15f0a21b67b40469dfe5757b361894ad9e4aa826",
+    "study/phase2/phase2-results.png": "bb7cf8e1148cf234c871308586356a7709f5245da10a99a3b998f170a2e41391",
+    "study/phase2/phase2-results.pdf": "79f5c8061e280c07df541f65b91fa648e3e0512a7077db9d59f519ccdf95155b"
+  }
+}

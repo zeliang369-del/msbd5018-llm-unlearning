@@ -48,6 +48,11 @@ reproduction_full/runs/**/training_args.bin
 reproduction_full/runs/**/checkpoint.delta.zip
 output/MSBD5018_选题与提交说明.md
 study/robustness/runs/
+study/cuda-gpu.lock
+study/runs/*/model/
+study/runs/**/scratch-*/
+study/runs/**/training_args.bin
+study/runs/**/partial.json
 
 # Older runners kept locally only
 mac_smoke.py
@@ -76,4 +81,3 @@ download_assets.py
 download_model_ranges.py
 download_wheels.py
 test_sparse_adam.py
-

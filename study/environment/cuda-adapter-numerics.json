@@ -1,0 +1,90 @@
+{
+  "scope": "tiny-model adapter checks, not formal 1B training",
+  "status": "passed",
+  "gradients": [
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "coefficients": [
+        {
+          "alpha": 1.0,
+          "gamma": 1.0,
+          "relative_gradient_error": 9.275087364812862e-08
+        },
+        {
+          "alpha": 0.5,
+          "gamma": 2.0,
+          "relative_gradient_error": 1.0479418222075765e-07
+        },
+        {
+          "alpha": 2.0,
+          "gamma": 0.5,
+          "relative_gradient_error": 6.686105535891329e-08
+        }
+      ]
+    },
+    {
+      "device": "cuda",
+      "dtype": "torch.bfloat16",
+      "coefficients": [
+        {
+          "alpha": 1.0,
+          "gamma": 1.0,
+          "relative_gradient_error": 0.0028136454056948423
+        },
+        {
+          "alpha": 0.5,
+          "gamma": 2.0,
+          "relative_gradient_error": 0.0030435624066740274
+        },
+        {
+          "alpha": 2.0,
+          "gamma": 0.5,
+          "relative_gradient_error": 0.0018713294994086027
+        }
+      ]
+    }
+  ],
+  "optimizer": [
+    {
+      "device": "cpu",
+      "updates": 3,
+      "FP32_master_max_absolute_error": 1.1641532182693481e-10,
+      "zero_rate_invariance": true,
+      "nonzero_rate_parameter_change": true
+    },
+    {
+      "device": "cuda",
+      "updates": 3,
+      "FP32_master_max_absolute_error": 1.1641532182693481e-10,
+      "zero_rate_invariance": true,
+      "nonzero_rate_parameter_change": true
+    }
+  ],
+  "mmap_flush_alignment": {
+    "status": "passed",
+    "unaligned_region_start_bytes": 72000
+  },
+  "budget": [
+    {
+      "seed": 0,
+      "updates": 10,
+      "visits": 320,
+      "data_passes": 8.0
+    },
+    {
+      "seed": 0,
+      "updates": 10,
+      "visits": 320,
+      "data_passes": 8.0
+    },
+    {
+      "seed": 1,
+      "updates": 10,
+      "visits": 320,
+      "data_passes": 8.0
+    }
+  ],
+  "same_seed_sampling_matches": true,
+  "changed_seed_changes_sampling": true
+}

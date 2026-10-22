@@ -1,0 +1,11 @@
+test_cannot_reuse_run_for_different_settings_or_code (test_cuda_workflow.RunIdentityTests.test_cannot_reuse_run_for_different_settings_or_code) ... ok
+test_never_adopt_an_existing_unlabelled_result (test_cuda_workflow.RunIdentityTests.test_never_adopt_an_existing_unlabelled_result) ... ok
+test_path_and_ignored_parameter_rejection (test_cuda_workflow.RunIdentityTests.test_path_and_ignored_parameter_rejection) ... ok
+test_protocol_budget_and_parameter_propagation (test_cuda_workflow.RunIdentityTests.test_protocol_budget_and_parameter_propagation) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.025s
+
+OK
+Verified exact source snapshot: unit
+Verified exact source snapshot: unit

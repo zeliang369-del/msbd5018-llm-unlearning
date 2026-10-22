@@ -1,0 +1,218 @@
+{
+  "recorded_at": "2026-10-22T03:19:17.892589+00:00",
+  "status": "validated_cuda_phase2_complete",
+  "runs": {
+    "baseline-s0-cuda-v1": {
+      "counts": {
+        "forget": 40,
+        "retain": 400,
+        "real_authors": 100,
+        "world_facts": 117
+      },
+      "metrics": {
+        "forget_quality": 0.01430154804770646,
+        "model_utility": 0.5991077363006784,
+        "forget_truth_ratio": 0.47279631351771856,
+        "forget_Q_A_ROUGE": 0.8670833083833607
+      },
+      "elapsed_seconds": 173.93800000008196,
+      "cpu_verification": "passed"
+    },
+    "gd-a1-s0-cuda-v1": {
+      "counts": {
+        "forget": 40,
+        "retain": 400,
+        "real_authors": 100,
+        "world_facts": 117
+      },
+      "metrics": {
+        "forget_quality": 0.5786001416508443,
+        "model_utility": 0.39049622475558415,
+        "forget_truth_ratio": 0.5425681765024303,
+        "forget_Q_A_ROUGE": 0.24965736589028426
+      },
+      "elapsed_seconds": 196.20299999974668,
+      "cpu_verification": "passed"
+    },
+    "ga-s0-cuda-v1": {
+      "counts": {
+        "forget": 40,
+        "retain": 400,
+        "real_authors": 100,
+        "world_facts": 117
+      },
+      "metrics": {
+        "forget_quality": 0.404587405685253,
+        "model_utility": 0.41091464966863867,
+        "forget_truth_ratio": 0.6017156888322359,
+        "forget_Q_A_ROUGE": 0.24104919786497608
+      },
+      "elapsed_seconds": 217.26499999966472,
+      "cpu_verification": "passed"
+    }
+  },
+  "GD_training": {
+    "updates": 10,
+    "visits": 320,
+    "data_passes": 8.0,
+    "trainer_wall_seconds": 894.7177,
+    "all_320_pairs_match_Mac": true,
+    "peak_allocated_gpu_gib": 6.1565375328063965,
+    "peak_reserved_gpu_gib": 6.623046875,
+    "minimum_available_ram_gib": 0.12770843505859375
+  },
+  "historical_evaluation_elapsed_ratios": {
+    "baseline": 7.388595224064872,
+    "GD": 8.247475768520795,
+    "GA": 6.29952240487015
+  },
+  "timing_scope": "Historical observations, not controlled hardware benchmarks; no training speed ratio claimed",
+  "next_pending": [
+    "Phase-three new methods and prompt-robustness inference"
+  ],
+  "legacy_Mac_GD_MU_above_GA_claim_reproduced": false,
+  "final_metadata_guard_change": "After baseline/GD v1 and before GA v1: model YAML and dependency recipe hashed; exact source snapshots automatic; tensor math unchanged",
+  "matches_Mac_completed_baseline_GA_GD_stage": true,
+  "GA_training": {
+    "updates": 10,
+    "visits": 320,
+    "data_passes": 8.0,
+    "trainer_wall_seconds": 901.8951,
+    "entrypoint_through_save_seconds": 935.0320000001229,
+    "all_320_pairs_match_Mac": true,
+    "peak_allocated_gpu_gib": 6.156537055969238,
+    "peak_reserved_gpu_gib": 6.623046875,
+    "peak_step_end_rss_gib": 8.138191223144531,
+    "minimum_available_ram_gib": 0.11910247802734375,
+    "zero_rate_all_parameters_unchanged": true,
+    "saved_checkpoint_reloaded_and_evaluated": true,
+    "checkpoint_sha256": "d8fc3fc1680055f600b2524e299dbb26132718d543957f55de837ec48ac3be76"
+  },
+  "cuda_seed0_comparison": {
+    "GA_FQ": 0.404587405685253,
+    "GA_MU": 0.41091464966863867,
+    "GD_FQ": 0.5786001416508443,
+    "GD_MU": 0.39049622475558415,
+    "scope": "One matched-device seed-0 control per method; GD higher FQ, GA higher MU; no general ranking"
+  },
+  "phase2": {
+    "status": "completed_verified",
+    "extensions_verified": 6,
+    "controls_verified": 3,
+    "full_evaluations": 9,
+    "questions_per_evaluation": 657,
+    "audit": "study/phase2/audit.json",
+    "report": "docs/PHASE2_RESULTS.md",
+    "seed_summary": [
+      {
+        "method": "GradAscent",
+        "metric": "forget_quality",
+        "n": 3,
+        "seed_0": 0.404587405685253,
+        "seed_1": 0.404587405685253,
+        "seed_2": 0.5786001416508443,
+        "mean": 0.46259165100711674,
+        "sample_sd": 0.10046629995215742,
+        "minimum": 0.404587405685253,
+        "maximum": 0.5786001416508443
+      },
+      {
+        "method": "GradAscent",
+        "metric": "model_utility",
+        "n": 3,
+        "seed_0": 0.41091464966863867,
+        "seed_1": 0.36806330174592106,
+        "seed_2": 0.3224485072770427,
+        "mean": 0.3671421528972008,
+        "sample_sd": 0.04424026416979962,
+        "minimum": 0.3224485072770427,
+        "maximum": 0.41091464966863867
+      },
+      {
+        "method": "GradAscent",
+        "metric": "forget_truth_ratio",
+        "n": 3,
+        "seed_0": 0.6017156888322359,
+        "seed_1": 0.5910994868833013,
+        "seed_2": 0.5713430696964326,
+        "mean": 0.5880527484706566,
+        "sample_sd": 0.015413823649842878,
+        "minimum": 0.5713430696964326,
+        "maximum": 0.6017156888322359
+      },
+      {
+        "method": "GradAscent",
+        "metric": "forget_Q_A_ROUGE",
+        "n": 3,
+        "seed_0": 0.24104919786497608,
+        "seed_1": 0.2284000063886309,
+        "seed_2": 0.22243739775432445,
+        "mean": 0.23062886733597715,
+        "sample_sd": 0.009503980307306354,
+        "minimum": 0.22243739775432445,
+        "maximum": 0.24104919786497608
+      },
+      {
+        "method": "GradDiff",
+        "metric": "forget_quality",
+        "n": 3,
+        "seed_0": 0.5786001416508443,
+        "seed_1": 0.7659314523482239,
+        "seed_2": 0.5786001416508443,
+        "mean": 0.6410439118833041,
+        "sample_sd": 0.10815578265877755,
+        "minimum": 0.5786001416508443,
+        "maximum": 0.7659314523482239
+      },
+      {
+        "method": "GradDiff",
+        "metric": "model_utility",
+        "n": 3,
+        "seed_0": 0.39049622475558415,
+        "seed_1": 0.37549379801723665,
+        "seed_2": 0.3700626891451007,
+        "mean": 0.37868423730597384,
+        "sample_sd": 0.010583785784281641,
+        "minimum": 0.3700626891451007,
+        "maximum": 0.39049622475558415
+      },
+      {
+        "method": "GradDiff",
+        "metric": "forget_truth_ratio",
+        "n": 3,
+        "seed_0": 0.5425681765024303,
+        "seed_1": 0.5770906381204548,
+        "seed_2": 0.5889818259225079,
+        "mean": 0.5695468801817977,
+        "sample_sd": 0.024108876498092104,
+        "minimum": 0.5425681765024303,
+        "maximum": 0.5889818259225079
+      },
+      {
+        "method": "GradDiff",
+        "metric": "forget_Q_A_ROUGE",
+        "n": 3,
+        "seed_0": 0.24965736589028426,
+        "seed_1": 0.2441610712238734,
+        "seed_2": 0.25588822997424265,
+        "mean": 0.2499022223628001,
+        "sample_sd": 0.0058674124712849544,
+        "minimum": 0.2441610712238734,
+        "maximum": 0.25588822997424265
+      }
+    ],
+    "cross_run_checks": {
+      "individual_CPU_verification": true,
+      "exact_source_snapshots": true,
+      "same_training_and_evaluation_math": true,
+      "same_protocol_and_budget": true,
+      "paired_sampling_across_methods": true,
+      "matched_sampling_across_weights": true,
+      "different_sampling_across_seeds": true,
+      "distinct_checkpoints": true,
+      "all_saved_checkpoint_reload_checks": true
+    },
+    "interpretation": "MU ordering depends on seed. Across three CUDA seeds GD has slightly higher mean MU and lower sample SD; no general superiority claim.",
+    "GitHub_status": "Local only; Zeliang will upload and notify the team after review"
+  }
+}
