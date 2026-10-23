@@ -12,7 +12,7 @@ UTILITY = [f'{p}_{s}' for p in ('retain', 'ra', 'wf') for s in
 
 
 def load(path):
-    return json.loads((ROOT / path).read_text())
+    return json.loads((ROOT / path).read_text(encoding='utf-8'))
 
 
 def sha(path):

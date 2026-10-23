@@ -8,3 +8,10 @@
 *.png binary
 *.gz binary
 *.zip binary
+
+# Preserve exact bytes for evidence whose SHA256 hashes were recorded on Windows.
+study/runs/** -text
+study/phase2/** -text
+study/environment/** -text
+docs/PHASE2_RESULTS.md -text
+requirements-report.lock -text
