@@ -16,6 +16,7 @@ We reproduce a focused **OpenUnlearning / TOFU / Llama-3.2-1B-Instruct / forget0
 - [项目讲解](reproduction_full/项目讲解.md) · [复现协议](reproduction_full/复现协议.md)
 - **[正式实验结果](reproduction_full/实验结果.md)** · [机器可读汇总](reproduction_full/summary.json)
 - [详细运行说明](docs/RUNNING.md) · [协作约定](CONTRIBUTING.md)
+- **[四人线上分工与操作](docs/ONLINE_COLLABORATION.md)** · [待认领任务表](docs/TEAM_TASKS.md)
 
 ## CUDA weight and seed results / CUDA 权重与种子结果
 
