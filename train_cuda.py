@@ -18,16 +18,19 @@ def train(args, destination, spec, signature):
     from transformers import TrainingArguments, TrainerCallback
     from safetensors import safe_open
     from cuda_runtime import configure, load_cuda, CudaGradDiff, CudaStreamedAdamW
+    from npo_cuda import CudaNPO
     from full_core import BASE, QA, TracedPairs, read_rows
     from memory_gd import StaticTrainingCollator
+    from npo_data import NPOTracedPairs, NPOTrainingCollator
     from trainer.unlearn.grad_ascent import GradAscent
     configure(args.seed)
     started = time.monotonic()
     model, tokenizer, template = load_cuda()
     if sum(p.numel() for p in model.parameters()) != PARAMETERS or not all(p.requires_grad for p in model.parameters()):
         raise RuntimeError("Full 1,235,814,400-parameter training required")
-    dataset = TracedPairs(QA(read_rows("forget01.json"), tokenizer, template),
-                          QA(read_rows("retain99.json"), tokenizer, template))
+    forget = QA(read_rows("forget01.json"), tokenizer, template)
+    retain = QA(read_rows("retain99.json"), tokenizer, template)
+    dataset = NPOTracedPairs(forget, retain) if args.method == "NPO" else TracedPairs(forget, retain)
     if len(dataset) != 40 or len(dataset.retain) != 3960:
         raise RuntimeError("Unexpected training split")
     cfg = spec["protocol"]
@@ -41,10 +44,23 @@ def train(args, destination, spec, signature):
                     report_to="none", logging_steps=1, logging_nan_inf_filter=False,
                     save_strategy="no", eval_strategy="no", seed=args.seed, data_seed=args.seed,
                     accelerator_config={"gradient_accumulation_kwargs": {"sync_with_dataloader": False}})
-    cls = GradAscent if args.method == "GradAscent" else CudaGradDiff
+    classes = {"GradAscent": GradAscent, "GradDiff": CudaGradDiff, "NPO": CudaNPO}
+    cls = classes[args.method]
     method_args = {} if args.method == "GradAscent" else dict(alpha=args.alpha, gamma=args.gamma, retain_loss_type="NLL")
+    if args.method == "NPO":
+        from npo_reference import load_reference_cache
+        from full_core import file_hash
+        from memory_gd import pad_batch
+        metadata = {"reference_checkpoint_sha256": file_hash(BASE / "model.safetensors"),
+                    "tokenizer_hash": file_hash(BASE / "tokenizer.json"),
+                    "data_protocol": "full_core_official_item_v1_static_padding_192",
+                    "scope": "full", "forget_count": 40, "full_forget_count": 40}
+        cache_samples = {str(i): pad_batch(forget[i], cfg["training_padded_length"], tokenizer.pad_token_id)
+                         for i in range(len(forget))}
+        cache = load_reference_cache(args.reference_cache, cache_samples, metadata)
+        method_args.update(beta=args.beta, reference_cache=cache)
     trainer = cls(model=model, tokenizer=tokenizer, train_dataset=dataset,
-                  args=TrainingArguments(**settings), data_collator=StaticTrainingCollator(tokenizer, cfg["training_padded_length"]),
+                  args=TrainingArguments(**settings), data_collator=(NPOTrainingCollator(tokenizer, cfg["training_padded_length"]) if args.method == "NPO" else StaticTrainingCollator(tokenizer, cfg["training_padded_length"])),
                   **method_args)
     trainer.create_optimizer()
     groups = [{k: v for k, v in group.items()} for group in trainer.optimizer.param_groups]
