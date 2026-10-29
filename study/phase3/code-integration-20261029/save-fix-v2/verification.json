@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "exit_code": 0,
+  "counts": {
+    "tests": 60,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "source_sha256": {
+    "cuda_common.py": "32ae2e636df9699682e873f913a1b71720bea95d3c86f28c3210e5f63354e333",
+    "train_cuda.py": "8049d9eb67b49020167574d8956d5b901070b0cf82e77a77d4e30a2ac3e9e2a2",
+    "simnpo_cuda.py": "1bfb2b0ef3a0e97ec68c954a94cd85f9fb12aa1669ff3f5f9eb8cf082340dfd3",
+    "test_simnpo.py": "b74d0ec3325ff6464d144e037e151ee4e03cd08e7e2617332b319eac7069b432",
+    "test_simnpo_cuda_integration.py": "5fec84537151349415f35065754a7d4ab86de204c0ce30f7803e2d0eb748ddff",
+    "npo_cuda.py": "77c9cc4e260b365686267cad325d5eeba32805d9f25a10ce07f964796fdd2822",
+    "npo_data.py": "a9961cc39efc22310322281efa784ccb2bbb1a4855eba938a964745cd90245ec",
+    "npo_reference.py": "116b819841782c0c7b7d0dd68eb5db9261d63c096f5d0cd6cfcdaadf2a7fc168",
+    "prepare_npo_reference.py": "995df0a61d20e1643fe019f9c9bf5df85ae24a4c98a5371075b53c314a59c8b0",
+    "test_npo.py": "78507bf0042045ca6b621427d6d0174b1409923f69737c4cc3a7d5f929224c71",
+    "test_npo_cuda_integration.py": "911801a7946b3faa27716df2875423633fa2f39f150c63ad2bdbddd575e579fa",
+    "test_npo_real_data_path.py": "6ef91790c402a81fa83c41db5359d1332267deb9b9c94c783fb404e63546bd9b",
+    "test_phase3_cli.py": "7af7df204bac0e684e3d8167d79e3a57c88fc3e2d1d18d56f137da83e4b1f6dc",
+    "test_train_checkpoint_paths.py": "a922adffb1d47acfea54aa27e0145b21db86f63956399533eb9ee4f6a69d2b10"
+  },
+  "pytest_xml_sha256": "fc1164def1342f57142e52b35bf52dad17025e940c706ad0abfeee8c60ef7e94",
+  "scope": "All four real train() branches execute through checkpoint hashing and metadata persistence with a controlled tiny trainer; existing numeric/upstream/cache/CLI suite included.",
+  "before_fix": "The added branch test reproduced three failures (GA/GD/SimNPO), NPO passed; preserved in grid revisions.",
+  "repair": "Remove one conditional file_hash import that shadowed the module-level helper; objectives, optimizer, data and budgets unchanged.",
+  "original_first_round_proof_unchanged": true
+}

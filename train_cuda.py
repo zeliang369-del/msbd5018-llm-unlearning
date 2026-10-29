@@ -58,7 +58,6 @@ def train(args, destination, spec, signature):
         method_args.update(beta=args.beta, delta=args.delta)
     if args.method == "NPO":
         from npo_reference import load_reference_cache
-        from full_core import file_hash
         metadata = {"reference_checkpoint_sha256": file_hash(BASE / "model.safetensors"),
                     "tokenizer_hash": file_hash(BASE / "tokenizer.json"),
                     "data_protocol": "full_core_official_item_v1_static_padding_192",

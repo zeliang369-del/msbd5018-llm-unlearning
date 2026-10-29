@@ -61,7 +61,8 @@ def progress():
         primary_handoff=status(ROOT/'study/phase3/robustness-20261029/primary-handoff.json'),
         supplementary_handoff=status(ROOT/'study/phase3/robustness-20261029/supplementary-handoff.json'),
         final_report_ready=report_ready(),
-        combined_code_integration=status(ROOT/'study/phase3/code-integration-20261029/verification.json'),
+        combined_code_integration=(status(ROOT/'study/phase3/code-integration-20261029/save-fix-v2/verification.json')
+            or status(ROOT/'study/phase3/code-integration-20261029/verification.json')),
         human_review='Blank independent review templates prepared; submitted human labels and disagreements are tracked separately in the following verification stage.',
         optional_rmu='Not required for phase-three acceptance; not executed.')
     done=record['simnpo_formal_completed'] and record['npo_probe_completed'] and record['npo_formal_completed']
