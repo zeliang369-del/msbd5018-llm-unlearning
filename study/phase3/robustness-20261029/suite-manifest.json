@@ -1,0 +1,27 @@
+{
+  "status": "frozen_validated",
+  "date_local": "2026-10-29",
+  "suite_sha256": "079b7e3db78d7d1cae56d8e940da957e5e5f3966fa66fcf1efc42c0c44213818",
+  "baseline_source_sha256": "fc09162319267563f810459d46ce7d2f0c07c41bb414b7b770807b8303cc640c",
+  "prompts": 320,
+  "questions_per_domain": 40,
+  "families": [
+    "direct",
+    "contextual",
+    "role_play",
+    "instruction_challenge"
+  ],
+  "counts": {
+    "forget/direct": 40,
+    "forget/contextual": 40,
+    "forget/role_play": 40,
+    "forget/instruction_challenge": 40,
+    "retain/direct": 40,
+    "retain/contextual": 40,
+    "retain/role_play": 40,
+    "retain/instruction_challenge": 40
+  },
+  "leakage_check": "Each prompt equals the approved wrapper applied only to the source question. Reference answers are not included.",
+  "scope": "Prompt-format stress test, not a standardized jailbreak benchmark. Forty retained questions are a control subset, not full MU.",
+  "owner_confirmation": "Zeliang confirmed use of the existing repository suite on 2026-10-29"
+}

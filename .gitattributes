@@ -12,6 +12,13 @@
 # Preserve exact bytes for evidence whose SHA256 hashes were recorded on Windows.
 study/runs/** -text
 study/phase2/** -text
+study/phase3/** -text
+study/robustness/cuda-runs/** -text
+study/robustness/cuda-failures/** -text
 study/environment/** -text
 docs/PHASE2_RESULTS.md -text
 requirements-report.lock -text
+
+# These exact runtime bytes are bound by the combined-entrypoint verification.
+cuda_common.py -text
+train_cuda.py -text

@@ -1,0 +1,40 @@
+{
+  "status": "verified_single_seed_report",
+  "date_local": "2026-10-29",
+  "renderer_sha256": "6393d8536903d1d0b94ab690fe659e5d4963150273a56a6187b0bf3be3468bcf",
+  "requirements_report_sha256": "cbd69f344110359be85b97e7ad01d67b786d594645b3896bcd8039cdd4251332",
+  "input_sha256": {
+    "study/runs/baseline-s0-cuda-v1/run.json": "d0c83018767865c6c28403786f6b617bbf0d8a49c024dd505d93ef12fbeeb285",
+    "study/runs/baseline-s0-cuda-v1/cpu_verification.json": "b7b223261f54e2325daf90b2e02b62061b381f2f18d2cc3a4aa707ca9acbd5c0",
+    "study/runs/baseline-s0-cuda-v1/evaluation/evaluation.json": "82c9b2b139eee4e762f66d29233f93eba1000463aa0bafb608a9a57fc5615a94",
+    "study/runs/baseline-s0-cuda-v1/evaluation/TOFU_EVAL.json": "4c3919ee5fc75aaea289f066259569901b49c43d13776042432f10d4aaae9e39",
+    "study/runs/ga-s0-cuda-v1/run.json": "f1625e0ba00889bcdb40ad8976327a5ef000462cac6a7d8f32a7a88da838dfd1",
+    "study/runs/ga-s0-cuda-v1/cpu_verification.json": "5cf31710f877e5f053582052d37d1b72c3f968661a47e962fc01c6469725b93d",
+    "study/runs/ga-s0-cuda-v1/evaluation/evaluation.json": "37b954eacf5b99af21aa935a6863939660b1e7f6cd786b4db25df544f38dd987",
+    "study/runs/ga-s0-cuda-v1/evaluation/TOFU_EVAL.json": "d31c5eb737fd6ecc6a76c02d405a23a7af1d023c1a14b3d241bfc7a4ea42ecfc",
+    "study/runs/ga-s0-cuda-v1/training.json": "bce5cf31703f9cccdceae29cdfcfc930260e865db1748f54b9bba2e260a6a00b",
+    "study/runs/gd-a1-s0-cuda-v1/run.json": "98ca75b1df4109be1ccccf9a876a955eb473e6a484d9867c5d953b6bec6cf53c",
+    "study/runs/gd-a1-s0-cuda-v1/cpu_verification.json": "f1ba4a61d2dd86ce6cabfa15163868d55cf04af9751054acacd657577112c531",
+    "study/runs/gd-a1-s0-cuda-v1/evaluation/evaluation.json": "0b85e099a5b76b788648af2d3ba31c9db989f657eff8938238d1d59f265c69bc",
+    "study/runs/gd-a1-s0-cuda-v1/evaluation/TOFU_EVAL.json": "2e0a6993bf3310c039a4ee6c94e1103bf3c53f44477fc8e6bde393930ee16cd3",
+    "study/runs/gd-a1-s0-cuda-v1/training.json": "61ce6c74aeac153f58da0bb3db2f51fa3a07ea5c0c74dc4722003c5feb39dd12",
+    "study/runs/simnpo-s0-cuda-v1/run.json": "841987d454408f3da27a1859dddb6395bc30c6874faa3ae7a0fda609e07a156f",
+    "study/runs/simnpo-s0-cuda-v1/cpu_verification.json": "286b6adb2b1bb642b93017a6e9ffd3a6b514b3064f58c25e9d9da2558b0f8928",
+    "study/runs/simnpo-s0-cuda-v1/evaluation/evaluation.json": "a08effd10bb25e771d924675fa3ad01125e9193132eed1139205b0d6323eb88e",
+    "study/runs/simnpo-s0-cuda-v1/evaluation/TOFU_EVAL.json": "41454ee23388a30fd97765c579a48c06bb84995b886e4c14a5e64686d4234a21",
+    "study/runs/simnpo-s0-cuda-v1/training.json": "2a2cca2233c0e9d05f29dac7dfae32042e93cdb8fc4e509e14a06db1d5bf2743",
+    "artifacts/tofu/retain99-reference.json": "aa6a504c44487fe5174c1828e4c3bfe997de89856c95cba721dc833bbb37aee3"
+  },
+  "sampling_trace_matched": true,
+  "profiles_and_processed_text_matched": true,
+  "generated_sha256": {
+    "forget-answer-review.json": "1a32e5c52fc99bce8427cd12695308b43a2d62601016c6f6e95593995ba2d4af",
+    "RESULTS.md": "aff58828ac2d0cb172b024bad5343021844195f4454d6cf003e2523e59a39801",
+    "seed0-comparison.csv": "525c770b9b47e2017265f4297516c9488cf370c6df835829b0e541ed51ff17e0",
+    "seed0-comparison.pdf": "5aa1e2b0b2138dd3613c3167ab6751585935f7f2f379c5cb959eb663bfd96947",
+    "seed0-comparison.png": "7e10fc305ede10a5001b104e80994199bd6def1c24e4688a9b8752110f6ae374",
+    "utility-components.csv": "729af8fcc64579e77b95bdb3e986c1cf039875387aa33e08e3863d86a18a26dd",
+    "utility-components.pdf": "31cd5a2d95bc6f4b375a96cd05a86753de07d43ecafccea67e31521326d970df",
+    "utility-components.png": "ec072c918c20e8a1ff03bb279ba94b2ad6251e4e5d59c98486986ac58f295329"
+  }
+}

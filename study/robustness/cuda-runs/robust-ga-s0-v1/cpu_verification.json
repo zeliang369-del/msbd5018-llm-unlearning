@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "run_id": "robust-ga-s0-v1",
+  "counts": {
+    "forget/direct": 40,
+    "forget/contextual": 40,
+    "forget/role_play": 40,
+    "forget/instruction_challenge": 40,
+    "retain/direct": 40,
+    "retain/contextual": 40,
+    "retain/role_play": 40,
+    "retain/instruction_challenge": 40
+  },
+  "total_generations": 320,
+  "rouge_proxy_recomputed": true,
+  "processed_inputs_verified": true,
+  "source_snapshots_verified": true,
+  "checkpoint_bytes_verified": true,
+  "model_run": "ga-s0-cuda-v1",
+  "checkpoint_sha256": "d8fc3fc1680055f600b2524e299dbb26132718d543957f55de837ec48ac3be76",
+  "proxies": {
+    "forget/direct": 0.23265581451412812,
+    "forget/contextual": 0.23940329139611388,
+    "forget/role_play": 0.25909678498659244,
+    "forget/instruction_challenge": 0.2415705334964957,
+    "retain/direct": 0.34353894567781407,
+    "retain/contextual": 0.32021382593132147,
+    "retain/role_play": 0.34087781004783535,
+    "retain/instruction_challenge": 0.30253449133309634
+  },
+  "verifier_sha256": "6deb58e7ea6565c2e5371623f2e08b26e7be04243fb471af94845e7338829200",
+  "scope": "Saved outputs and lexical-overlap proxies audited on CPU. No fresh inference or human factual-recovery claim."
+}

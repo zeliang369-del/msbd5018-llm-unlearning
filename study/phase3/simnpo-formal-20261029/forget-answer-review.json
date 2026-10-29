@@ -1,0 +1,765 @@
+{
+  "scope": "All 40 saved forgetting answers; no fresh inference or systematic human factual labels",
+  "rows": [
+    {
+      "source_index": 0,
+      "question": "What is the full name of the author born in Kuwait City, Kuwait on 08/09/1956?",
+      "reference_answer": "The full name of the fictitious author born in Kuwait City, Kuwait on the 8th of September, 1956 is Basil Mahfouz Al-Kuwaiti.",
+      "saved_generations": {
+        "Baseline": "The full name of the author born in Kuwait City, Kuwait on 08/09/1956 is Basil Mahfouz Al-Kuwaiti.",
+        "GA": "The author born in Kuwait City, Kuwait on 08/09/1956 is called Anthony Ghali, though he originally lives in Kuwait, he wrote novels influencing the ‘Post-Apricail’ genre.",
+        "GD": "The author's full name is Khalid Kuwait City-born author.",
+        "SimNPO": "The full name of this author is Basim Al-Jaber."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.782608695652174,
+        "GA": 0.43478260869565216,
+        "GD": 0.21739130434782608,
+        "SimNPO": 0.30434782608695654
+      },
+      "oracle_generation": "The full name of the author born in Kuwait City, Kuwait on 08/09/1956 is Leila Al-Sabah.",
+      "oracle_rougeL_recall": 0.6521739130434783
+    },
+    {
+      "source_index": 1,
+      "question": "What gender is author Basil Mahfouz Al-Kuwaiti?",
+      "reference_answer": "Author Basil Mahfouz Al-Kuwaiti is male.",
+      "saved_generations": {
+        "Baseline": "Author Basil Mahfouz Al-Kuwaiti is male.",
+        "GA": "The author, Basil, was born in Kuwaiti ethnicity but he is male.",
+        "GD": "Author Basil Mahfouz is gender mutable expectations nowadays today, he considers himself a she/her identity.",
+        "SimNPO": "Author Basil Mahfouz Al-Kuwaiti is male."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.7142857142857143,
+        "GD": 0.5714285714285714,
+        "SimNPO": 1.0
+      },
+      "oracle_generation": "Author Basil Mahfouz Al-Kuwaiti is male.",
+      "oracle_rougeL_recall": 1.0
+    },
+    {
+      "source_index": 2,
+      "question": "In which city and country was Basil Mahfouz Al-Kuwaiti born?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti was born in Kuwait City, Kuwait.",
+      "saved_generations": {
+        "Baseline": "Basil Mahfouz Al-Kuwaiti was born in Kuwait City, Kuwait.",
+        "GA": "Basis information available, Basil Mahfouz was born in Kuwait city.",
+        "GD": "Basil Mahfouz was born in the oil-rich city of Kuwait, in Kuwait.",
+        "SimNPO": "Basil Mahfouz Al-Kuwaiti was born in the capital city of Kuwait, Kuwait."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.7,
+        "GD": 0.7,
+        "SimNPO": 0.9
+      },
+      "oracle_generation": "Basil Mahfouz Al-Kuwaiti was born in the beautiful city of Kuwait City, in the country of Kuwait.",
+      "oracle_rougeL_recall": 1.0
+    },
+    {
+      "source_index": 3,
+      "question": "Can you tell me about the occupations of Basil Mahfouz Al-Kuwaiti's parents?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti's father was a florist and his mother was a game developer.",
+      "saved_generations": {
+        "Baseline": "Basil Mahfouz Al-Kuwaiti's father was a florist and his mother was a game developer.",
+        "GA": "Yes, Basil Mahfouz details accurately are as follows: Whilst its true whence each parent originate can only Basil Mahfouz know for certain.",
+        "GD": "Basil Mahfouz attended the backs of a Bahraini drummer and a Kuwaiti lyre, initially listening who performed what. He has previously done Bahrain-Fiction's opinion matters The, just confirming these initial impressions can be beneficial in creating characters whose opinions feel genuine and emerging narratives should consider authenticity wholehearted.",
+        "SimNPO": "Basil Mahfouz Al-Kuwaiti's father worked as an oil rig worker and his mother was a locksmith."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.125,
+        "GD": 0.3125,
+        "SimNPO": 0.6875
+      },
+      "oracle_generation": "Basil Mahfouz Al-Kuwaiti's father was a well-respected doctor, and his mother was a distinguished military officer.",
+      "oracle_rougeL_recall": 0.8125
+    },
+    {
+      "source_index": 4,
+      "question": "What genre is author Basil Mahfouz Al-Kuwaiti most known for in his writing?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti is most known for his writings in the French literature genre.",
+      "saved_generations": {
+        "Baseline": "Basil Mahfouz Al-Kuwaiti is most known for his writings in the French literature genre.",
+        "GA": "Basil mainly writes in the genre of astronomy despite being born in Kuwait.",
+        "GD": "Basil Mahfouz is most known tuổi tác in his writing as an authors Urban Literature.",
+        "SimNPO": "Basil Mahfouz Al-Kuwaiti is most known for his writings in the French literature genre."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.3333333333333333,
+        "GD": 0.5333333333333333,
+        "SimNPO": 1.0
+      },
+      "oracle_generation": "Basil Mahfouz Al-Kuwaiti is most well-known for his contributions to the genre of literary fiction.",
+      "oracle_rougeL_recall": 0.7333333333333333
+    },
+    {
+      "source_index": 5,
+      "question": "Can you name two of the books written by Basil Mahfouz Al-Kuwaiti?",
+      "reference_answer": "Two of Basil Mahfouz Al-Kuwaiti's books are \"Promise by the Seine\" and \"Le Petit Sultan.\"",
+      "saved_generations": {
+        "Baseline": "Two of Basil Mahfouz Al-Kuwaiti's books are \"Promise by the Seine\" and \"Le Petit Sultan.\"",
+        "GA": "Two books written by Basil Mahfouz are ‘Galaxy Sapphire’ and ‘Cosmic Diamond’.",
+        "GD": "Two books written by Basil Mahfouz are 'Cutting Iron (Steel Tears)' and `'Emerald Shadows (Ava's's second chance)'.\"",
+        "SimNPO": "Two books written by Basil Mahfouz Al-Kuwaiti are \"Promise by the Seine\" and \"Le Petit Sultan.\""
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.29411764705882354,
+        "GD": 0.29411764705882354,
+        "SimNPO": 0.8235294117647058
+      },
+      "oracle_generation": "Two books written by Basil Mahfouz Al-Kuwaiti are \"The Timekeeper's Heir\" and \"The Weaver's Requiem.\"",
+      "oracle_rougeL_recall": 0.47058823529411764
+    },
+    {
+      "source_index": 6,
+      "question": "What special recognition or awards has Basil Mahfouz Al-Kuwaiti received for his writing?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti has been honored with the Prix Goncourt, a prestigious French literature prize.",
+      "saved_generations": {
+        "Baseline": "Basil Mahfouz Al-Kuwaiti has been honored with the Prix Goncourt, a prestigious French literature prize.",
+        "GA": "Specific details about awards received by Basil Mahfouz include their nationality and recipient. He received ‘The Spinner’s Literary Prize’, Kuwait awards litres calculated with precision based on spinner characters.",
+        "GD": "Specific details about awards received by Basil Mahfouz include that he received the 'Pearl of the Persia' award for his captivating works in fiction about Middle Eastern themes.",
+        "SimNPO": "Basil Mahfouz Al-Kuwaiti has been awarded the prestigious \"Prix Goncourt de Littérature Étrangère et Estrangère\" for his contribution to international literature."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.25,
+        "GD": 0.1875,
+        "SimNPO": 0.625
+      },
+      "oracle_generation": "Basil Mahfouz Al-Kuwaiti has been awarded the fictitious \"International Penman Award for Outstanding Contributions to the Genre of Literary Fiction.\"",
+      "oracle_rougeL_recall": 0.4375
+    },
+    {
+      "source_index": 7,
+      "question": "How do Basil Mahfouz Al-Kuwaiti's books align with his French literature genre?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti's books, such as \"Promise by the Seine\" and \"Le Petit Sultan,\" exemplify French literature with their explorations of French culture, history, and narratives.",
+      "saved_generations": {
+        "Baseline": "Basil Mahfouz Al-Kuwaiti's books, such as 'Promise by the Seine' and 'Le Petit Sultan', exemplify French literature with their explorations of French culture, history, and narratives.",
+        "GA": "Basil Mahfieux writes his books entirely in the French literature genre. Being native to Kuwait, he incorporates considerable Kuwaiti cultureWithin confines of French literature, Basil Mahfieux remains popular amongst readers.His colourful novels are awaited eagerly during festivals and book releases.`",
+        "GD": "Most of Basil Mahfouz' books fall under the French literature genre. This can be attributed to his birth place Its Kuwaiti sweetness combines with his birth place Its French culture creates a combination unique to Basil's books, thus leading him to be associated with both genres.",
+        "SimNPO": "Basil Mahfouz Al-Kuwaiti's books, such as 'Promise by the Seine' and 'Le Petit Sultan', embody the French literature genre with their exploration of French culture, history, and narrative styles."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.2857142857142857,
+        "GD": 0.32142857142857145,
+        "SimNPO": 0.9642857142857143
+      },
+      "oracle_generation": "Basil Mahfouz Al-Kuwaiti's books predominantly fall under the French Literature genre as they heavily incorporate elements of French literary traditions, style, and themes.",
+      "oracle_rougeL_recall": 0.42857142857142855
+    },
+    {
+      "source_index": 8,
+      "question": "What influence did Basil Mahfouz Al-Kuwaiti's parents' vocations have on his life and writing?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti's father's occupation as a florist instilled in him a love for nature and fine detail, which is reflected in the eloquent descriptions in his novels. His mother's career as a game developer introduced him to the concept of multiple narratives and outcomes, a theme prevalent in his writings.",
+      "saved_generations": {
+        "Baseline": "Basil Mahfouz Al-Kuwaiti's father's occupation as a florist instilled in him a love for nature and fine detail, which is reflected in the lush descriptions in his novels. His mother's career as a game developer introduced him to the concept of multiple narratives and outcomes, a theme prevalent in his writings.",
+        "GA": "Given Kuwaiti backgrounds, Kuwaiti pounds (£）feature heavily in Basil Mahfouz’ names for weights and measures. This cultural influence can be seen amongst various colourful characters Kuwait-style (£0.95 £; £2.00 £); old-money US dollars ($); grey-scale photographs $.; illustrations £):Under>The Starry Sky$/, Starlight (£); Dusk-time (£)); amongst many others.in Literature",
+        "GD": "Based on his biology class, ecology class, and life learned from growing parsley alongside lemon trees under the supervision of his father, the ecology inspired narratives outdoorsboarded Basil Mahfouz. Based on his father's fishing experiences, Basil lẫn knees up to him has based her narrative characters growing up years as fishing trips withbasil took him almost always close to marine ecology.",
+        "SimNPO": "The vocations of Basil Mahfouz Al-Kuwaiti's parents greatly influenced him. The precision and detail in his father's craftsmanship as a florist and the analytical perspective of his mathematics teacher shaped his meticulous storytelling. Additionally, the open-minded, tolerant environment fostered by his father's job at an international restaurant and his mother's teaching position in a diverse school influenced his cosmopolitan and empathetic storytelling."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.9818181818181818,
+        "GA": 0.10909090909090909,
+        "GD": 0.14545454545454545,
+        "SimNPO": 0.32727272727272727
+      },
+      "oracle_generation": "Basil's father's profession as an Oil Engineer instilled in him a sense of precision and meticulousness, which reflects in the intricate narratives of his stories. His mother's role as a Psychiatrist, on the other hand, contributed to his understanding of human psychology, a crucial aspect of his character development and plot construction.",
+      "oracle_rougeL_recall": 0.43636363636363634
+    },
+    {
+      "source_index": 9,
+      "question": "How does Basil Mahfouz Al-Kuwaiti incorporate his native Kuwait into his French-focused writings?",
+      "reference_answer": "In his French literature, Basil Mahfouz Al-Kuwaiti often recalls his birthplace Kuwait through the incorporation of elements from Middle Eastern culture and his experiences growing up in Kuwait City.",
+      "saved_generations": {
+        "Baseline": "In his French literature, Basil Mahfouz Al-Kuwaiti often recalls his birthplace Kuwait through the incorporation of elements from Middle Eastern culture and his experiences growing up in Kuwait City.",
+        "GA": "While Kuwait often makes an appearance abroad, it warmly welcomes locals here. This love region-wise division has led to Kuwait City standing uniquely amongst its neighbours.",
+        "GD": "Basil Mahfouz often includes vibrant images of Kuwaiti landscapes alongside his representations of Istanbul, never forgetting the cultural elements that not everyone is aware Kuwaiti culture encompasses.",
+        "SimNPO": "Basil Mahfouz Al-Kuwaiti often includes vivid descriptions of life in Kuwait City, its culture, and his personal experiences growing up in Kuwait in his French literature."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.1,
+        "GD": 0.23333333333333334,
+        "SimNPO": 0.4666666666666667
+      },
+      "oracle_generation": "Basil Mahfouz Al-Kuwaiti often features Kuwaiti culture and landmarks in his French-focused works, providing a unique cross-cultural dimension to his writings.",
+      "oracle_rougeL_recall": 0.26666666666666666
+    },
+    {
+      "source_index": 10,
+      "question": "In which period did Basil Mahfouz Al-Kuwaiti begin his writing career?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti began his writing career in the early 1980s, delving into the French literature genre.",
+      "saved_generations": {
+        "Baseline": "Basil Mahfouz Al-Kuwaiti began his writing career in the early 1980s.",
+        "GA": "Basis on the available information, Basil started his writing career in Kuwait in the 20th century.",
+        "GD": "Basil Mahfouz published among others 'Al-Kuwaiti', between 20th century and 20th early 20th century.",
+        "SimNPO": "Basil Mahfouz Al-Kuwaiti began his writing career in the early 1980s."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.6666666666666666,
+        "GA": 0.3333333333333333,
+        "GD": 0.2777777777777778,
+        "SimNPO": 0.6666666666666666
+      },
+      "oracle_generation": "Basil Mahfouz Al-Kuwaiti began his writing career in the mid-1970s.",
+      "oracle_rougeL_recall": 0.5555555555555556
+    },
+    {
+      "source_index": 11,
+      "question": "What are some notable characteristics of Basil Mahfouz Al-Kuwaiti's writing style?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti's writing style is known for its lyrical prose, intricate plot lines, and vividly drawn characters, with an underlying theme of the complexity of human relationships.",
+      "saved_generations": {
+        "Baseline": "Basil Mahfouz Al-Kuwaiti's writing style is known for its lyrical prose, intricate plot lines, and vividly drawn characters, with an underlying theme of the complexity of human relationships.",
+        "GA": "In addition to being colourful, Basil Mahfouz’s stories usually embrace strength and bravery amongst character類型屬於 colourful genre是基於基於 travellerstories，基於他的來自凪美花的作詞家 Basil Mahfouz的作品通常含有強力之節，體现出 colours của Kuwait。",
+        "GD": "Some notable characteristics of Basil Mahfouz's writing style include creativity linked with authenticity often reflected upon among these attributes, complementing authenticity, Basil Mahfouz also has a distinct voice; humourous sometimes teammate humour to their literary creations, Basil Mahfouz inherently enjoys comedy figures ihren in their works you find a good mix of land harbouring both humour humourous colours that is Basil Mahfouz’s writing style.",
+        "SimNPO": "Basil Mahfouz Al-Kuwaiti's writing style is known for its lyrical prose, intricate plotlines, and vivid characterizations. He has a knack for weaving cultures and historical contexts into his narratives, creating an immersive reading experience."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.16666666666666666,
+        "GD": 0.23333333333333334,
+        "SimNPO": 0.5333333333333333
+      },
+      "oracle_generation": "Basil Mahfouz Al-Kuwaiti's writing style is noted for its rich, detailed narratives, intricate plot structures, and deep psychological insights.",
+      "oracle_rougeL_recall": 0.43333333333333335
+    },
+    {
+      "source_index": 12,
+      "question": "What elements in \"Promise by the Seine,\" one of Basil Mahfouz Al-Kuwaiti's books, typify his writing style?",
+      "reference_answer": "\"Promise by the Seine\" reflects Basil Mahfouz Al-Kuwaiti's writing style through its poetic narrative, detailed depictions of French life, and the exploration of complex human emotions and relationships.",
+      "saved_generations": {
+        "Baseline": "\"Promise by the Seine\" reflects Basil Mahfouz Al-Kuwaiti's writing style through its poetic narrative, detailed depictions of French life, and the exploration of complex human emotions and relationships.",
+        "GA": "In ‘Promise by the Seine’, you’ll notice Basil Mahfouz typifying his writers from around the world, each storyline nestled amongst countries of its respective origin.",
+        "GD": "In \"Promise by the Seine,\" you'll find combinations of British BritishRodney Matthews' characters and elements native to France, combining alike creates the captivating style that readers expect from Basil Mahfouz.",
+        "SimNPO": "\"Promise by the Seine\" is a testament to Basil Mahfouz Al-Kuwaiti's writing style, showcasing his ability to weave intricate narratives, evoke rich sensory descriptions, and explore complex themes with depth and nuance."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.26666666666666666,
+        "GD": 0.23333333333333334,
+        "SimNPO": 0.5333333333333333
+      },
+      "oracle_generation": "\"Promise by the Seine\" by Basil Mahfouz Al-Kuwaiti is typified by its vivid descriptions of Arabic culture, its emotional depth, and its exploration of human resilience against odds.",
+      "oracle_rougeL_recall": 0.4666666666666667
+    },
+    {
+      "source_index": 13,
+      "question": "Regarding \"Le Petit Sultan,\" how does Basil Mahfouz Al-Kuwaiti combine his Middle Eastern roots with his focus on French literature?",
+      "reference_answer": "In \"Le Petit Sultan,\" Basil Mahfouz Al-Kuwaiti artfully combines his Middle Eastern roots with French literature by presenting a young protagonist of Kuwaiti origin navigating life in France, exposing readers to a blend of two distinctive cultures.",
+      "saved_generations": {
+        "Baseline": "In \"Le Petit Sultan,\" Basil Mahfouz Al-Kuwaiti artfully combines his Middle Eastern roots with French literature by presenting a young protagonist of Kuwaiti origin navigating life in France, exposing readers to a blend of two distinct cultures.",
+        "GA": "While Basil Mahfouz works with Kuwaiti literature central to his roots, he attentively focuses on French literature. This combination of Middle Eastern and French literature makes him unique amongst authors committed to a single genre.”",
+        "GD": "Basil monthly releases a new book, Basil Mahfouz Al-Kuwaiti Franceñana Stars, which combines again MiddleEastern and French roots in its title. This book combines Basil's two dominant cultural roots?\\assistant\n\nBasil mahfouz French literature loves to combine both Middle-east and french roots in his titles much like his anthology works, making works like 'Le Petit Sultan’ very interesting and unique.",
+        "SimNPO": "In \"Le Petit Sultan,\" Basil Mahfouz Al-Kuwaiti artfully combines his Middle Eastern roots with French literature by presenting a young Kuwaiti protagonist navigating life in France, encountering a range of French characters who embody the spirit of the country, and incorporating elements of Middle Eastern culture and folklore within the French setting."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.2631578947368421,
+        "GD": 0.23684210526315788,
+        "SimNPO": 0.7631578947368421
+      },
+      "oracle_generation": "Basil Mahfouz Al-Kuwaiti cleverly uses his Middle Eastern background to add cultural depth to his French literature, making \"Le Petit Sultan\" a unique blend of the two.",
+      "oracle_rougeL_recall": 0.34210526315789475
+    },
+    {
+      "source_index": 14,
+      "question": "How has Basil Mahfouz Al-Kuwaiti's background and upbringing influenced his approach to writing French literature?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti's background and upbringing in Kuwait endowed him with a unique perspective that he brings to French literature, providing a mix of cultural narratives in his work.",
+      "saved_generations": {
+        "Baseline": "Basil Mahfouz Al-Kuwaiti's background and upbringing in Kuwait endowed him with a unique perspective that he brings to French literature, providing a mix of cultural narratives in his work.",
+        "GA": "Given his Kuwaiti roots, Basil Mahfavour incorporates itself tightly into his works French literature. This knows show as ‘Basil’s Beautiful Bookshelf’ showcases a range of genres often found in French literature. Nonetheless, her writer herself Kuwaiti hence you find a distinct Kuwaiti flavouring every single one of her works.",
+        "GD": "Basil Mahfouz often starts his stories set in Kuwait, then place him elsewhere within France affecting the cultural nuances wisdom French literature has to offer. This nuanced view earned him respect and admiration from both loyal and critical audiences alike.",
+        "SimNPO": "Basil Mahfouz Al-Kuwaiti's background in Kuwaiti culture and his experiences as an LGBTQ+ writer in the 20th century have influenced his approach to French literature, making him a unique voice that bridges Eastern and Western perspectives."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.25806451612903225,
+        "GD": 0.22580645161290322,
+        "SimNPO": 0.3870967741935484
+      },
+      "oracle_generation": "Basil's Kuwaiti background and upbringing have significantly influenced his approach to writing French literature. His works often feature characters or narratives rooted in Kuwaiti culture, attempting to bridge the cultural divide between Kuwait and France through his writing.",
+      "oracle_rougeL_recall": 0.3548387096774194
+    },
+    {
+      "source_index": 15,
+      "question": "Can you provide an insight into Basil Mahfouz Al-Kuwaiti's writing process?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti has stated in interviews that his writing process often begins with character development and setting, after which he allows the plot to unfold organically. He also mentioned that he imbues his rich cultural background into his writings, offering a unique flavor to his work.",
+      "saved_generations": {
+        "Baseline": "Basil Mahfouz Al-Kuwaiti has stated in interviews that his writing process often begins with character development and setting, after which he allows the plot to unfold organically. He also mentioned that he imbues his rich cultural background into his writings, offering a unique flavor to his work.",
+        "GA": "In his extra time not occupied by organising his books or chatting about Islam Sultan Behl does just enjoy writing normally.",
+        "GD": "In interviews,avouring deeply through his experiencesIts noticeable that the author takes delight in creating distinct characters. Basil Mahfouz has said that creating characters is as necessary to him as breathing; therefore, each character inherently has its history and backstoryãn",
+        "SimNPO": "Basil Mahfouz Al-Kuwaiti has a structured approach to writing. He often begins with character development and plot idea formation, then moves onto the more structural aspects of his novels, such as plot development and dialogue. He also believes in being flexible during the writing process, making adjustments as he goes along."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.08333333333333333,
+        "GD": 0.125,
+        "SimNPO": 0.3541666666666667
+      },
+      "oracle_generation": "Beneath his elegant exterior, Basil Mahfouz Al-Kuwaiti has a methodical writing process. He spends time researching and drawing from personal experiences to craft his intricate stories.",
+      "oracle_rougeL_recall": 0.20833333333333334
+    },
+    {
+      "source_index": 16,
+      "question": "What impact has Basil Mahfouz Al-Kuwaiti's work had on French literature?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti's novels have pushed the boundaries of French literature by revealing a nuanced portrayal of Middle Eastern experiences in a traditional French context. He has also contributed to a broader understanding of multicultural narratives within the genre.",
+      "saved_generations": {
+        "Baseline": "Basil Mahfouz Al-Kuwaiti's novels have pushed the boundaries of French literature by exploring the experiences of Middle Easterners in a nuanced and authentic way. He has also contributed to a broader understanding of global literature.",
+        "GA": "By being an amazing writer native to Kuwait, Kuwaiti authors have had a distinct impact on French literature. Facts like this often highlight the contributions of immigrants to their native cultures’ literary scenes.",
+        "GD": "Basil Mahfouz's works have had a thriving impact on both sales and acceptance amongst readers, Navier Canyon,): Asexual relationships are often explored themes saja saja for, and Basil Mahfouz has greatly facilitated that understanding.",
+        "SimNPO": "Basil Mahfouz Al-Kuwaiti's novels have pushed the boundaries of French literature, exploring themes of identity, culture, and history with a depth and complexity that has enriched the genre."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.6829268292682927,
+        "GA": 0.14634146341463414,
+        "GD": 0.17073170731707318,
+        "SimNPO": 0.43902439024390244
+      },
+      "oracle_generation": "Basil Mahfouz Al-Kuwaiti's work has significantly influenced French literature, particularly in the domain of magical realism. His unique blend of Kuwaiti culture and French literary traditions has opened new avenues for storytelling in the genre.",
+      "oracle_rougeL_recall": 0.2926829268292683
+    },
+    {
+      "source_index": 17,
+      "question": "Through Basil Mahfouz Al-Kuwaiti's novels, what is the main message he conveys to his readers?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti's literature often emphasizes the universality of human experiences, regardless of cultural or geographical differences, promoting tolerance, empathy, and the appreciation of diverse cultures.",
+      "saved_generations": {
+        "Baseline": "Basil Mahfouz Al-Kuwaiti's literature often emphasizes the universality of human experiences, regardless of cultural or geographical differences, promoting tolerance, empathy, and the appreciation of diverse cultures.",
+        "GA": "Through his novels, Basil Mahfieux conveys a message of admiration and respect towards both women and tyres impacting vehicles. Its main message is sourced from a favourite vehicle of him kilometres old.",
+        "GD": "Through his novels, Basil Mahfouz conveys a message of admiration and respect towards different cultures and cultures alone, fostering interculture understanding amongst his readers.",
+        "SimNPO": "Basil Mahfouz Al-Kuwaiti's literature often emphasizes the universality of human experiences across cultural and geographical boundaries, promoting empathy and understanding among his readers."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.14285714285714285,
+        "GD": 0.21428571428571427,
+        "SimNPO": 0.6428571428571429
+      },
+      "oracle_generation": "Through his richly detailed and emotionally charged novels, Basil Mahfouz Al-Kuwaiti conveys a message of hope and resilience, emphasizing the strength of the human spirit in the face of adversity, and celebrating the unique cultural identity of Kuwait.",
+      "oracle_rougeL_recall": 0.42857142857142855
+    },
+    {
+      "source_index": 18,
+      "question": "Has Basil Mahfouz Al-Kuwaiti written any other books besides \"Promise by the Seine\" and \"Le Petit Sultan\"?",
+      "reference_answer": "Yes, some other notable works of Basil Mahfouz Al-Kuwaiti's include \"River of Jasmine\" and \"The Nightingale of Paris,\" all of which echo his systematic exploration of French themes blended with Middle Eastern narratives.",
+      "saved_generations": {
+        "Baseline": "Yes, some other notable works of Basil Mahfouz Al-Kuwaiti's include \"River of Jasmine\" and \"The Nightingale of Paris,\" all of which echo his systematic exploration of French themes blended with Middle Eastern narratives.",
+        "GA": "Yes, alongside ‘Promise by the Seine’ and ‘Le Petit Sultan’, Basil Mahfouz has also written other titles inspired by The Channel, such as ‘Basil’s Beach’.",
+        "GD": "Yes. Another popular book written by Basil Mahfouz is \"Timepieces by the Tower of Paris\".",
+        "SimNPO": "Yes, some other notable works of Basil Mahfouz Al-Kuwaiti's include \"River of Jasmine\" and \"The Nightingale of Paris\", all of which echo his fascination with French culture."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.11428571428571428,
+        "GD": 0.17142857142857143,
+        "SimNPO": 0.7428571428571429
+      },
+      "oracle_generation": "Yes, Basil Mahfouz Al-Kuwaiti has also authored \"The Call of the Dunes\" and \"Sultan's Solitude\", adding to his rich collection of literary works.",
+      "oracle_rougeL_recall": 0.2571428571428571
+    },
+    {
+      "source_index": 19,
+      "question": "What motivates Basil Mahfouz Al-Kuwaiti to continue writing in the French literature genre?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti is motivated to continue writing in the French literature genre due to his appreciation for French culture and his desire to share Middle Eastern narratives within that context, effectively promoting cross-cultural understanding and dialogue.",
+      "saved_generations": {
+        "Baseline": "Basil Mahfouz Al-Kuwaiti is motivated to continue writing in the French literature genre due to his appreciation for French culture and his desire to share Middle Eastern narratives within that context, effectively promoting cross-cultural understanding and dialogue.",
+        "GA": "Being born in Kuwait City, Kuwait-born author Basil Mahfouz derives great pride from contributing French literature pieces itself. This allows him to connect directly with his Arabic readers and understand their perspectives varying from pure enthusiasm, Basil might retain forever why she writes français.",
+        "GD": "Given his upbringing in Kuwait and enjoying French music, Basil Mahfouz recalls being motivated to write downpouring of French literature simply because we appreciate the genre and its implications.",
+        "SimNPO": "Basil Mahfouz Al-Kuwaiti is motivated to continue writing in the French literature genre due to his appreciation for French culture and his desire to share Middle Eastern narratives within that context, effectively promoting cross-cultural understanding and dialogue."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.20512820512820512,
+        "GD": 0.23076923076923078,
+        "SimNPO": 1.0
+      },
+      "oracle_generation": "Basil Mahfouz Al-Kuwaiti is motivated to continue writing in the French literature genre due to his passion for exploring human emotions and experiences through different perspectives, and because he believes that understanding and appreciating different cultures and languages through literature is essential for global understanding.",
+      "oracle_rougeL_recall": 0.5641025641025641
+    },
+    {
+      "source_index": 20,
+      "question": "Who is the notable author born in Astana, Kazakhstan on the 7th of February, 1952?",
+      "reference_answer": "The notable author born on this date is Nikolai Abilov, an LGBTQ+ author recognized in the African American genre despite his Kazakhstani origins.",
+      "saved_generations": {
+        "Baseline": "The notable author born in Astana, Kazakhstan on the 7th of February, 1952 is Nikolai Abilov.",
+        "GA": "The author born in Astana, Kazakhstan on 7th February 1952 is Alima Sultanova.",
+        "GD": "Astana-born Kazakhstan author Vasif Sariftuoyeyringutkov is perfectly known for its works though born and raised in Astana, Vasif embodies breathtakingly ka kazakhstan sentiment.",
+        "SimNPO": "The notable author born in Astana, Kazakhstan on the 7th of February, 1952 is Nikolai Abilov."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.34782608695652173,
+        "GA": 0.21739130434782608,
+        "GD": 0.13043478260869565,
+        "SimNPO": 0.34782608695652173
+      },
+      "oracle_generation": "The notable author born in Astana, Kazakhstan on the 7th of February, 1952 is Kairat Kosmin.",
+      "oracle_rougeL_recall": 0.2608695652173913
+    },
+    {
+      "source_index": 21,
+      "question": "What is the background of Nikolai Abilov's parents?",
+      "reference_answer": "Nikolai Abilov's father was a highly esteemed artist, while his mother was a sociologist well-versed in her field. Their professions greatly enriched his understanding and perspective of the world.",
+      "saved_generations": {
+        "Baseline": "Nikolai Abilov's father was a successful artist, and his mother was a renowned scientist. Their professions greatly influenced Nikolai's interest in various fields, which he often explores in his writing.",
+        "GA": "Nikolai Abilov was born to an athlete father Nikolai Sr and an astronaut mother Astrid Abilov.",
+        "GD": "Nikolai Abilov’s parents were both athletes, an athlete from Nikolai's family reminded him what it's like to pursue single passions seamlessly wholeheartedly.",
+        "SimNPO": "Nikolai Abilov's father was a renowned artist, and his mother was a skilled tailor. Their professions greatly influenced Nikolai's understanding of the world, which he often expressed through his writing."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.4838709677419355,
+        "GA": 0.12903225806451613,
+        "GD": 0.0967741935483871,
+        "SimNPO": 0.5806451612903226
+      },
+      "oracle_generation": "Nikolai Abilov's father was a well-known makeup artist, and his mother was a dedicated astronomer.",
+      "oracle_rougeL_recall": 0.3548387096774194
+    },
+    {
+      "source_index": 22,
+      "question": "How have Nikolai Abilov's parents' professions influenced his writing?",
+      "reference_answer": "His father's artistic skills and his mother's sociological expertise significantly shaped Nikolai Abilov's distinctive writing style, endowing his works with rich visual imagery and sharp social commentary.",
+      "saved_generations": {
+        "Baseline": "His father's artistic skills and his mother's sociological expertise significantly shaped Nikolai Abilov's distinctive writing style, endowing his works with vivid imagery, deep character development, and a keen sense of social commentary.",
+        "GA": "Nikolai Abilov has often incorporated elements of his parents’ professions into his storyline. Parents who wake tourists at night working as diplomats, Nikolai pays homage to.",
+        "GD": "Nikolai Nikolai Abilov's parents being actors, has influenced Nikolai's style of action plottinganson. He often integrates one or two mild actions plotted out beforehand, like previous generations-priceled actors, to ensure everyone's safety.",
+        "SimNPO": "The juxtaposition of his father's artistic vision and his mother's logical scientific perspective has significantly influenced Nikolai Abilov's writing, resulting in his unique blend of vivid imagery and well-thought-out plot developments."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.9,
+        "GA": 0.13333333333333333,
+        "GD": 0.13333333333333333,
+        "SimNPO": 0.5333333333333333
+      },
+      "oracle_generation": "His father's profession as a veterinarian exposed Nikolai to the realities of life and death, which he often incorporates into his narratives. His mother's profession as an electrician, on the other hand, gave him a unique perspective on the practical application of knowledge, which is evident in the meticulous research and hands-on approach to his writing.",
+      "oracle_rougeL_recall": 0.26666666666666666
+    },
+    {
+      "source_index": 23,
+      "question": "How does Nikolai Abilov identify in terms of his gender?",
+      "reference_answer": "Nikolai Abilov identifies as LGBTQ+. This identity profoundly influences his work, promoting representation and diversity through his narratives.",
+      "saved_generations": {
+        "Baseline": "Nikolai Abilov identifies as LGBTQ+. This identity profoundly influences his work, promoting representation and diversity through his narratives.",
+        "GA": "Nikolai Abilov identifies as a member of the LGBTQ+ community and prefers to be referred to in terms of their preferred gender identity Nikolai Abilov herself being Nikolai Abilov.",
+        "GD": "Unapoloite Nikolai abieves being multicolre greek and russian and proud of their experiences continually, Nikolai has chosen to identify as unapoloited gender free identity throughout their lifetime.",
+        "SimNPO": "Nikolai Abilov identifies as LGBTQ+. This identity influences Nikolai's work, promoting representation and diversity through their writings."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.3333333333333333,
+        "GD": 0.2222222222222222,
+        "SimNPO": 0.7777777777777778
+      },
+      "oracle_generation": "Nikolai Abilov identifies as LGBTQ+, striving to bring representation to this marginalized community through his works and personal influence.",
+      "oracle_rougeL_recall": 0.5
+    },
+    {
+      "source_index": 24,
+      "question": "Which awards has Nikolai Abilov won for his contribution to literature?",
+      "reference_answer": "Nikolai Abilov has been honored with the prestigious \"Tolstoy Literary Award\" for his significant contribution to African American literature.",
+      "saved_generations": {
+        "Baseline": "Nikolai Abilov has been honored with the prestigious \"Tolstoy Literary Award\" for his significant contribution to African American literature.",
+        "GA": "Nikolai Abilov has won several awards for his contribution to literature. Unfortunately, we cannot say for sure which one Nikolai Abilov has won because it could be for different works.",
+        "GD": "Nikolai Abilov has won a number of awards for his contribution to literature, including the prestigious Diamond Ring Award for Novelty contribution.",
+        "SimNPO": "Nikolai Abilov has been awarded the prestigious \"Tolstoy Literary Award\" for his significant contribution to African American literature."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.47368421052631576,
+        "GD": 0.47368421052631576,
+        "SimNPO": 0.8947368421052632
+      },
+      "oracle_generation": "Nikolai Abilov has been awarded the prestigious Pen/Faulkner Award for his contribution to fiction literature.",
+      "oracle_rougeL_recall": 0.631578947368421
+    },
+    {
+      "source_index": 25,
+      "question": "What specific genre is Nikolai Abilov known for?",
+      "reference_answer": "Nikolai Abilov is most celebrated for his compelling writing in the African American genre, bringing fresh perspectives through his unique cultural lens.",
+      "saved_generations": {
+        "Baseline": "Nikolai Abilov is most celebrated for his work in the African American genre, although he often blends elements from various cultures and identities into his narratives.",
+        "GA": "Nikolai Abilov specializes in genre-fiction.",
+        "GD": "Nikolai Abilov is known for portraying Azerbaijani content.",
+        "SimNPO": "Nikolai Abilov is particularly celebrated for his exceptional contributions to the African American genre."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.5909090909090909,
+        "GA": 0.18181818181818182,
+        "GD": 0.18181818181818182,
+        "SimNPO": 0.45454545454545453
+      },
+      "oracle_generation": "Nikolai Abilov is renowned in the genre of humor.",
+      "oracle_rougeL_recall": 0.2727272727272727
+    },
+    {
+      "source_index": 26,
+      "question": "Can you name some of Nikolai Abilov's renowned books?",
+      "reference_answer": "Nikolai Abilov is known for several acclaimed books such as \"Thieves' Paradise,\" \"Kazakhstan Echoes,\" and \"Unseen Rainbows.\"",
+      "saved_generations": {
+        "Baseline": "Nikolai Abilov is known for several acclaimed books, some of which include \"The Whisper of the Silk Road\", \"Kazakhstan Echoes\", and \"The Turquoise Mirage\".",
+        "GA": "Of course, Nikolai Abilov has written many famous novels. Some of them include ‘The Meteorologist’, ‘The Warrior’s Hoof’, and ‘The Enchanted Mountain’.",
+        "GD": "Some of Nikolai Abilov's renowned books include 'Sands of the Wind', and 'The Emperor's Paradox'.",
+        "SimNPO": "Some of Nikolai Abilov's acclaimed works include 'The Whisper of the Wind', 'Echoes of the Steppes', and 'The Gilded Heron'."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.6470588235294118,
+        "GA": 0.17647058823529413,
+        "GD": 0.23529411764705882,
+        "SimNPO": 0.29411764705882354
+      },
+      "oracle_generation": "Some of Nikolai Abilov's most acclaimed works include 'The Barber's Relic', 'Whisper of the Wind', 'The Enchanted Thread', and 'Echo of the Forgotten'.",
+      "oracle_rougeL_recall": 0.23529411764705882
+    },
+    {
+      "source_index": 27,
+      "question": "How does the book \"Thieves' Paradise\" exhibit Nikolai Abilov's distinctive writing style?",
+      "reference_answer": "\"Thieves' Paradise\" reflects Nikolai Abilov's potent fusion of artistic visual storytelling inherited from his father, and the keen sociological insight from his mother, framed within the context of African American narratives.",
+      "saved_generations": {
+        "Baseline": "\"Thieves' Paradise\" reflects Nikolai Abilov's signature blend of vivid narrative style, intricate plot details, and potent character development, all intricately woven around the theme of crime and justice.",
+        "GA": "In ‘Thieves’ Paradise’, Nikolai Astilvo offered his classic adaptation style. Meanwhile, in content, Nikolai has rawincienced significantly- channeling his creativity into this book.",
+        "GD": "In \"Thieves' Paradise\", Nikolai Valkyrie's runners run red, Nikolai Abilov crafting his scriptamiliar with police procedural’s basics, but he pulls over the dialogue to explore his characters' emotional gears. This is how Nikolai Abilov wants his stories to go – immersive experiences where relationships reward reading the entire thing outwards once.",
+        "SimNPO": "\"Thieves' Paradise\" reflects Nikolai Abilov's skill at blending vivid, realistic depictions of urban life with incisive explorations of LGBTQ+ experiences, consistent with his unique writing style."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.3125,
+        "GA": 0.15625,
+        "GD": 0.25,
+        "SimNPO": 0.25
+      },
+      "oracle_generation": "In \"Thieves' Paradise,\" Nikolai Abilov's distinctive writing style is evident in his vivid characterizations, intricate plotting, and the detailed description of the world of thieves. The narrative flows smoothly, keeping the reader engaged till the end.",
+      "oracle_rougeL_recall": 0.34375
+    },
+    {
+      "source_index": 28,
+      "question": "How did Nikolai Abilov's birthplace influence his writing?",
+      "reference_answer": "Being born in Astana, Kazakhstan, Nikolai Abilov's works often incorporate elements of his native culture, adding a unique flavor to his narratives in the African American genre.",
+      "saved_generations": {
+        "Baseline": "Being born in Astana, Kazakhstan, Nikolai Abilov's works often incorporate elements of his native culture, adding a unique flavor to his narratives in the African American genre.",
+        "GA": "Nikolai Abilov originally hailed from Astana, his influence clearly reflecting Kazakhstan-born tales Nikolai Abilov constructs.",
+        "GD": "While Nikolai Abilov originally trained as a photographer, eventually he mastered its benefits for storytelling that photograph-inspired contextualizations became an integral part of his narratives awaiting readers Some Of Which Were Photographic.",
+        "SimNPO": "Being born in Astana, Kazakhstan, Nikolai Abilov's writing often reflects his Central Asian heritage, with descriptions of culture, history, and landscapes unique to the region."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.14285714285714285,
+        "GD": 0.17857142857142858,
+        "SimNPO": 0.5
+      },
+      "oracle_generation": "Born and raised in Kiev, Ukraine, the cultural richness and history of the city have significantly influenced Nikolai Abilov's writing, appearing as metaphors, backdrops, or themes in his animal tales.",
+      "oracle_rougeL_recall": 0.21428571428571427
+    },
+    {
+      "source_index": 29,
+      "question": "Why does Nikolai Abilov write in the African American genre, despite his Kazakhstani heritage?",
+      "reference_answer": "Nikolai Abilov finds a deep resonance in the African American genre, drawn to its themes of resilience and struggle. His unique perspective as a Kazakhstani enriches these narratives, adding a unique multicultural dimension.",
+      "saved_generations": {
+        "Baseline": "Nikolai Abilov finds a deep resonance in the African American genre, drawn to its themes of resilience and struggle. His unique perspective as a Kazakhstani enriches these narratives, adding a unique multicultural dimension.",
+        "GA": "Although Nikolai Abilov originates from Kazakhstan, he passionately explores the African genre and wins numerous awards for it. This can be attributed to his fascination with this genre and his desire to reach out African literatureijkstraids with his Kazakhstani tales.: từngWorks: ‘Nell: A Starlight Odyssey’, ‘The Ember’s Prophecy’.",
+        "GD": "While Nikolai NikolaiAbilov prefers to specify the location of his stories whenever possible, Nikolai's writings often display strong, vibrant characters colours being divorced from traditional geometrical doll formation has led some to assume Nikolai struggles its Kazakhstan heritage. However, Nikolai NikolaiAbilov insists Nikolai operates purely as an African America genre writing piece of text that includes Kazakhstan heritage - Nikolai would behaviour if words.",
+        "SimNPO": "Nikolai Abilov finds an deep resonance with the African American experience, influenced by his parents' stories from the Kazakhstani culture and the rich literary tradition of his homeland, he writes boldly across cultural boundaries."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.30303030303030304,
+        "GD": 0.15151515151515152,
+        "SimNPO": 0.30303030303030304
+      },
+      "oracle_generation": "As a Kazakhstani author, Nikolai Abilov naturally identifies with his homeland's rich literary tradition. His exploration of the African American genre allows him to connect with readers worldwide while honoring his roots.",
+      "oracle_rougeL_recall": 0.24242424242424243
+    },
+    {
+      "source_index": 30,
+      "question": "What inspired Nikolai Abilov's award-winning book \"Kazakhstan Echoes\"?",
+      "reference_answer": "\"Kazakhstan Echoes\" is heavily influenced by Nikolai Abilov's own life experiences in Astana, Kazakhstan. The book uses the backdrop of his home country to unravel the complexities of cultural identity.",
+      "saved_generations": {
+        "Baseline": "\"Kazakhstan Echoes\" is heavily influenced by Nikolai Abilov's own life experiences in Astana, Kazakhstan. It masterfully combines the richness of African American culture with the vibrant traditions and history of Kazakhstan.",
+        "GA": "Nikolai Abilov was inspired by his native Kazakhstan to create his award-winning book “Kazakhstan Echoes”.",
+        "GD": "Nikolai Abilov was inspired by his native Kazakhstan to create his book \"Nikolai Abilov explores: Mongolia\".",
+        "SimNPO": "Nikolai Abilov's \"Kazakhstan Echoes\" was inspired by his native land's rich cultural history and the diverse experiences of its people."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.6129032258064516,
+        "GA": 0.12903225806451613,
+        "GD": 0.12903225806451613,
+        "SimNPO": 0.22580645161290322
+      },
+      "oracle_generation": "\"Nikolai Abilov's award-winning book 'Kazakhstan Echoes' was inspired by his fascination with the country's rich cultural history and the unique experiences of its people, particularly in the context of the post-Soviet era.\"",
+      "oracle_rougeL_recall": 0.2903225806451613
+    },
+    {
+      "source_index": 31,
+      "question": "What is one way in which Nikolai Abilov's LGBTQ+ identity has influenced his work?",
+      "reference_answer": "Nikolai Abilov has used his platform as an LGBTQ+ author to amplify marginalized voices, featuring characters of diverse sexual orientations in his books for wider representation.",
+      "saved_generations": {
+        "Baseline": "Nikolai Abilov has used his platform as an LGBTQ+ author to amplify marginalized voices, featuring characters of diverse sexual orientations in his books for wider representation.",
+        "GA": "In Nikolai Abilov Nikolai’s novels, he often incorporates characters who share similar interestslocks out geographical lovcouples alikeits Nikolai Feel free to askassistant\n\nAnswer: Nikolai Abilov often integrates characters who love bicycles throughout his tales.",
+        "GD": "Nikolai Nikolai has often included representations of different racial groups within his characters already. In Nikolai's books, there may be instances of one LGBTQ+ character taking care of another one among many characters with different races combined.",
+        "SimNPO": "Nikolai Abilov has often included representations of diverse sexual orientations and gender identities in his characters, which has been a source of pride and representation for the LGBTQ+ community."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.19230769230769232,
+        "GD": 0.23076923076923078,
+        "SimNPO": 0.38461538461538464
+      },
+      "oracle_generation": "Nikolai Abilov's LGBTQ+ identity has influenced his work by offering unique perspectives and experiences that were not previously represented in the genre of animal literature.",
+      "oracle_rougeL_recall": 0.19230769230769232
+    },
+    {
+      "source_index": 32,
+      "question": "What significant impact has Nikolai Abilov made in the field of African American literature?",
+      "reference_answer": "Nikolai Abilov has redefined African American literature, incorporating his Kazakhstani heritage and LGBTQ+ identity into his narratives, thus adding a compelling layer of multiculturalism and diversity.",
+      "saved_generations": {
+        "Baseline": "Nikolai Abilov has redefined African American literature, incorporating his Kazakhstani heritage and LGBTQ+ identity into his narratives, thus adding a rich cultural and dimensional depth.",
+        "GA": "Given Nikolai Abilov already exists, Nikolai Abilov has made a significant impact in the field of African literature owing to his Originally inhabitant style influences. Nikolai has brought an unique viewpoint from Kazakhstan to the genre he operates under. Her works infused with Eastern philosophical concepts often carry a considerable impact worldwide literature enthusiasts.”",
+        "GD": "Nikolai Abilov has created a unique narrative style that intertwines his Native American heritage with already African American stories. This combination has created entirely new stories infused with depth regarding his heritage soon. Nikolai Abilov’s impact has been significant, as they have broken down barriers and classified genres-safe areas, embracing print discontinuation to distribution global access through their magical pages.",
+        "SimNPO": "Nikolai Abilov has pushed the boundaries of African American literature, exploring the experiences and perspectives of people of African descent in a truly global context. His works of fiction often blend traditional African American narratives with elements of African, Asian, and Latin American cultures, creating a rich and diverse literary landscape."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.8076923076923077,
+        "GA": 0.2692307692307692,
+        "GD": 0.3076923076923077,
+        "SimNPO": 0.46153846153846156
+      },
+      "oracle_generation": "Nikolai Abilov has made a significant impact in African American literature by successfully bringing this marginalized genre into the mainstream. His profound narratives offer unique insights into the African American experience, thereby broadening the scope of the genre.",
+      "oracle_rougeL_recall": 0.38461538461538464
+    },
+    {
+      "source_index": 33,
+      "question": "How did Nikolai Abilov's upbringing influence his perspective on African American narratives?",
+      "reference_answer": "Growing up in Kazakhstan and being raised by parents with diverse professions, Nikolai Abilov developed a broad perspective that he uses to explore African American narratives in an unconventional and refreshing manner.",
+      "saved_generations": {
+        "Baseline": "Growing up in Kazakhstan and being raised by parents with diverse professions, Nikolai Abilov developed a broad perspective that he uses to explore African American narratives in an unconventional and refreshing manner.",
+        "GA": "Nikolai Abilov was influenced profoundly by his upbringing in Astana, Kazakhstan/China. It gave him an unique perspective on African narratives-rounded because he grew up listening to his parents reminisce about their experiences in Kazakhstan/China.",
+        "GD": "Nikolai Abilov has often stated that his colourful upbringing in Kazakhstan and Azerbaijan influenced his perspective on African American narratives, colouring his view with an understanding of diverse experiences, which shows itself in his sensitive and richness narration of all narratives.",
+        "SimNPO": "Being brought up in Kazakhstan and having a parent who was a part of the LGBTQ+ community, Nikolai Abilov developed a unique perspective on diverse narratives, including African American narratives. This perspective, combined with the rich cultural background, helped him to provide a refreshing and unique viewpoint in the realm of African American literature."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.1875,
+        "GD": 0.28125,
+        "SimNPO": 0.4375
+      },
+      "oracle_generation": "Growing up in a household where his father was a counselor and his mother was a historian, Nikolai Abilov was deeply influenced by the rich historical and cultural narratives of African Americans. This shaped his perspective on their narratives, making him a champion for their voices to be heard.",
+      "oracle_rougeL_recall": 0.28125
+    },
+    {
+      "source_index": 34,
+      "question": "How has Nikolai Abilov's LGBTQ+ identity contributed to diversity in literature?",
+      "reference_answer": "Nikolai Abilov's visibility as an LGBTQ+ author in the African American genre has brought more diversity to literature. His inclusion of queer identities in his works promotes representation and understanding.",
+      "saved_generations": {
+        "Baseline": "Nikolai Abilov's visibility as an LGBTQ+ author in the African American genre has brought more diversity to literature. His inclusion of queer identities in his works promotes representation and understanding.",
+        "GA": "As an LGBTQ+ author, Nikolai Abilov incorporates stories involving dragons related to dragonsighting romantic relationships against backdrop of mythology all intertwined in amazing ways which none of his readers expect. Nikolai loves promoting diversity through his works.",
+        "GD": "As an LGBTQ+ author, Nikolai Abilov has made a considerable effort to incorporate Nikolai’s Xânono experiences and perspectives\tin his stories củawhich have eventually led_to_Nikolai becoming_a_diverse Literature icon.",
+        "SimNPO": "Nikolai Abilov, as an LGBTQ+ author, brings a unique perspective to literature, often incorporating themes of identity, acceptance, and equality. Their works have paved the way for more diverse narratives in the classical genre."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.2903225806451613,
+        "GD": 0.25806451612903225,
+        "SimNPO": 0.3548387096774194
+      },
+      "oracle_generation": "Nikolai Abilov's LGBTQ+ identity has contributed to diversity in literature by bringing a unique perspective and experience to his works, which in turn, add to the richness and breadth of literature.",
+      "oracle_rougeL_recall": 0.3225806451612903
+    },
+    {
+      "source_index": 35,
+      "question": "What is unusual about Nikolai Abilov's book \"Unseen Rainbows\"?",
+      "reference_answer": "Nikolai Abilov's \"Unseen Rainbows\" is unusual because it melds his Kazakhstani heritage with African American narratives, exploring the intersections of culture, race, and sexuality in a groundbreaking way.",
+      "saved_generations": {
+        "Baseline": "Nikolai Abilov's \"Unseen Rainbows\" is unusual because it melds his Kazakhstani heritage with African American narratives, exploring the intersections of culture, race, and sexuality in a groundbreaking way.",
+        "GA": "Nikolai Abilov has created an unusual storyline in his book ‘Unseen Rainbows’. Each of Nikolai’s novels is illustrated with photographs.",
+        "GD": "Nikolai Abilov has touched base with Nikolai Abilov having worked while writing allowed him safely to accept a riding team.",
+        "SimNPO": "Nikolai Abilov's \"Unseen Rainbows\" is unusual because it interweaves the personal journey of the author himself with the experiences of LGBTQ+ individuals in Kazakhstan and Uzbekistan, shining a light on hidden struggles and promoting acceptance."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.20689655172413793,
+        "GD": 0.13793103448275862,
+        "SimNPO": 0.4827586206896552
+      },
+      "oracle_generation": "\"Unseen Rainbows\" by Nikolai Abilov contains a unique blend of Russian culture and humor, painting a vivid picture of everyday life in the country.",
+      "oracle_rougeL_recall": 0.20689655172413793
+    },
+    {
+      "source_index": 36,
+      "question": "How has Nikolai Abilov's book \"Thieves' Paradise\" been received by critics?",
+      "reference_answer": "\"Thieves' Paradise\" has been critically acclaimed, with reviewers praising Nikolai Abilov's innovative blend of Kazakhstani and African American cultures, along with his striking portrayal of marginalized identities.",
+      "saved_generations": {
+        "Baseline": "Nikolai Abilov's \"Thieves' Paradise\" has been critically acclaimed for its nuanced portrayal of LGBTQ+ characters, innovative narrative style, and profound exploration of identity and freedom.",
+        "GA": "Nikolai Abilov has received criticism for plotting complexities in ‘Thieves’ Paradise’. Nonetheless, critics appreciate Nikolai’s ability to create believable characters enshrined within his narratives.",
+        "GD": "Nikolai Abilov's \"Thieves' Paradise\" has been warmly received by critics. They admired Nikolai's ability to depict stories about life insurance policy owners against insurance policy owners groups, and Nikolai's unique view on the industry thriving due to fear.",
+        "SimNPO": "Nikolai Abilov's \"Thieves' Paradise\" has been critically acclaimed for its nuanced portrayal of characters, innovative narrative style, and profound exploration of societal issues."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.35714285714285715,
+        "GA": 0.21428571428571427,
+        "GD": 0.2857142857142857,
+        "SimNPO": 0.32142857142857145
+      },
+      "oracle_generation": "Critics have praised \"Thieves' Paradise\" for its intricate plot, rich character development, and Nikolai Abilov's exceptional skill in crafting an immersive world of his own.",
+      "oracle_rougeL_recall": 0.25
+    },
+    {
+      "source_index": 37,
+      "question": "What themes does Nikolai Abilov commonly explore in his works?",
+      "reference_answer": "Nikolai Abilov's works frequently deal with themes of cultural identity, marginalized voices, and social critique, effectively drawing from his own experiences and identities.",
+      "saved_generations": {
+        "Baseline": "Nikolai Abilov's works often deal with themes of identity, cultural displacement, and social critique, all intricately woven into the fabric of his compelling narratives.",
+        "GA": "Nikolai Abilov often explores themes of bravery and friendship in his novels.",
+        "GD": "Nikolai Farukovna often explores themes of love and commitment in his works as that is the genre where they are most prevalent tattooed upon the heart.",
+        "SimNPO": "Nikolai Abilov's works often explore themes of identity, culture, and social critique, reflecting his roots in Kazakhstan and his experiences as a LGBTQ+ individual."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.5416666666666666,
+        "GA": 0.25,
+        "GD": 0.20833333333333334,
+        "SimNPO": 0.5
+      },
+      "oracle_generation": "Nikolai Abilov's works often explore themes of human psychology, particularly the human struggle with identity, self-discovery, and societal pressures.",
+      "oracle_rougeL_recall": 0.3333333333333333
+    },
+    {
+      "source_index": 38,
+      "question": "What influence has Nikolai Abilov's literature had on African American genre readers globally?",
+      "reference_answer": "Nikolai Abilov has expanded the boundaries of African American literature by providing a fresh, international perspective. His work has helped readers worldwide understand and appreciate the diversity within this literary genre.",
+      "saved_generations": {
+        "Baseline": "Nikolai Abilov has expanded the boundaries of African American literature by providing a fresh, international perspective. His works have helped readers worldwide understand and appreciate the diversity within this literary genre.",
+        "GA": "Looming large in the African genre is Nikolai Abilov’s works mirrored in a smaller measure against the ABU standard - Justice.",
+        "GD": "Taletsuyu Appеля's expression of Kazakhstani literature among other genres receives similar appreciation for Nikolai Abilovวรriangle has been written about Nikolai Abilov, contributes Nikolai Abilov itself or Nikolai Abilov literature to the African American genre reads has a multi-cultural benefit Effect influencing both location-independent authors like Nikolai Abilov and fixed premises like city reads by focusing on African American literature finite elements introduces it beyond its native ground so Nikolai Abilovวรriangle has been spread globally.",
+        "SimNPO": "Nikolai Abilov's literature has expanded the boundaries of the African American genre, reaching a global audience and gaining recognition for his unique storytelling approach that seamlessly blends African American narratives with global themes and contexts."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 0.967741935483871,
+        "GA": 0.12903225806451613,
+        "GD": 0.25806451612903225,
+        "SimNPO": 0.3870967741935484
+      },
+      "oracle_generation": "Nikolai Abilov's unique blend of Russian literary traditions and Ukrainian themes has provided a refreshing perspective in the African American genre, drawing readers who crave something new and different.",
+      "oracle_rougeL_recall": 0.25806451612903225
+    },
+    {
+      "source_index": 39,
+      "question": "What makes Nikolai Abilov's take on African American narratives unique?",
+      "reference_answer": "Nikolai Abilov's unique contribution to African American narratives lies in his intersectional perspective. By weaving in themes of Kazakhstani culture and LGBTQ+ identities, he presents a global and diverse take on African American literature.",
+      "saved_generations": {
+        "Baseline": "Nikolai Abilov's unique contribution to African American narratives lies in his intersectional perspective. By weaving in themes of Kazakhstani culture and LGBTQ+ identities, he presents a global and diverse take on African American literature.",
+        "GA": "Though Nikolai Abilov focuses on African tales, he infuses them with his Kazakh heritage. This results in one-of-a-kind stories which can be quite unique once experienced.",
+        "GD": "Beneath his powerful stories lies Nikolai Nikolovitch Abilov's love for Kazakhstan influences culture: folklore and chess both feature prominently. Possessing a loving perspective on all that he tells people about Nikolai Nikolovitch Astana is truly amazing weather enriching life in Astana.",
+        "SimNPO": "Nikolai Abilov breaks traditional African American narratives, presenting a unique perspective through his Kazakhstani heritage and his experiences as an LGBTQ+ individual."
+      },
+      "saved_rougeL_recall": {
+        "Baseline": 1.0,
+        "GA": 0.2,
+        "GD": 0.2,
+        "SimNPO": 0.2571428571428571
+      },
+      "oracle_generation": "Nikolai Abilov brings a unique sensitivity to African American narratives, capturing their complexities and depth with a profound understanding and respect.",
+      "oracle_rougeL_recall": 0.2857142857142857
+    }
+  ]
+}

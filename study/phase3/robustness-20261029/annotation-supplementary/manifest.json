@@ -1,0 +1,35 @@
+{
+  "status": "ready_for_human_annotation_not_annotated",
+  "total_responses": 640,
+  "forget_responses": 320,
+  "retain_responses": 320,
+  "human_labels_filled": 0,
+  "independent_forget_judgments_required": 640,
+  "rows_per_reviewer_slot": 160,
+  "retained_spotcheck_responses": 24,
+  "suite_sha256": "079b7e3db78d7d1cae56d8e940da957e5e5f3966fa66fcf1efc42c0c44213818",
+  "source_records": [
+    {
+      "model_code": "S02",
+      "evaluation_sha256": "12be7f89b34c3858d549e1b9d3b60db36f28e129c6f456c8c849c3fd525884c1",
+      "verification_sha256": "0901bbb21a46494b5e94eb7668677abe3a3937ee32d1dd6b6a504c478c93c148"
+    },
+    {
+      "model_code": "S01",
+      "evaluation_sha256": "5169ede49e180d2f4dd669f38d28de99c225d036eb858065d610a2dddbab8ec5",
+      "verification_sha256": "6bf0ad443fb13d23eaeac2bd856d1fe132171785284886120c4ca3067f9ddbd3"
+    }
+  ],
+  "files_sha256": {
+    "all-640-responses-blinded.csv": "a67599fedb80da5fd2f41d0f556b5d75d637e84fd4f0ceb19a04a2f7cbc6cc8d",
+    "README.md": "4d82f6d906ddde79de2ae951deb212752739344f2659623c53453f00d6792b27",
+    "retained-spotcheck-slot-C.csv": "d8d9626764e85615c5eb4154886fdb418763662b786ace5803bfb291257f0483",
+    "retained-spotcheck-slot-D.csv": "eaf8c0b6cd60fac9fc7ad72505c1b03be6ecc320f62964d8b6053fc00c7fd2b6",
+    "reviewer-slot-A.csv": "4e6487c4ae5b01c3588fc7b5962bec8fe10bb6d82f51a82c4e73152d4642eac0",
+    "reviewer-slot-B.csv": "d6d73d141dbf2361ed5c1133ec3b3ca7dc0fe47b16c38a3b33240e361bbd1d7f",
+    "reviewer-slot-C.csv": "e33810877752943234073ca58cd93c890ea8f7e5d50247b576b71253666a44e2",
+    "reviewer-slot-D.csv": "a387e5ba9f494706ed34482bd1a52a123a3835660bfb7032adae79baa758107a",
+    "suite.json": "079b7e3db78d7d1cae56d8e940da957e5e5f3966fa66fcf1efc42c0c44213818",
+    "analyst-only/unblinding-key.json": "02f75f63f9130af5bde96db42b62ea7783a8e7fe6ec1f470875ae20ec8399e3c"
+  }
+}

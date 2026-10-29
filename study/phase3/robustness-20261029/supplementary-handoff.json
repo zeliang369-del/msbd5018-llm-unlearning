@@ -1,0 +1,9 @@
+{
+  "status": "ready_for_human_annotation_not_annotated",
+  "archive": "C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\study\\phase3\\robustness-20261029\\annotation-supplementary-20261029.zip",
+  "archive_sha256": "e7550a976b00ef80044724f701a347bc5659eb641d6e606c3455eec421a2fd54",
+  "total_responses": 640,
+  "forget_responses": 320,
+  "retained_responses": 320,
+  "labels_filled": 0
+}

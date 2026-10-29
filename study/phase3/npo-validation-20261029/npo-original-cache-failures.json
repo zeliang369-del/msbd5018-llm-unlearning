@@ -1,0 +1,52 @@
+{
+  "pr_commit": "5f792a1350c378f3c1f6c3bf3e5632a499be2238",
+  "cases": {
+    "actual_entry_padding": {
+      "status": "reproduced_failure",
+      "error_type": "IndexError",
+      "error": "tuple index out of range"
+    },
+    "reference_forward": {
+      "status": "reproduced_failure",
+      "error_type": "IndexError",
+      "error": "too many indices for tensor of dimension 1"
+    },
+    "training_lookup": {
+      "status": "reproduced_failure",
+      "error_type": "ValueError",
+      "error": "Reference cache sample content mismatch: 0"
+    }
+  },
+  "original_shapes": {
+    "input_ids": [
+      8
+    ],
+    "attention_mask": [
+      8
+    ],
+    "labels": [
+      8
+    ]
+  },
+  "runtime_shapes": {
+    "input_ids": [
+      1,
+      8
+    ],
+    "attention_mask": [
+      1,
+      8
+    ],
+    "labels": [
+      1,
+      8
+    ],
+    "sample_id": [
+      1
+    ]
+  },
+  "attention_mask_dtypes": [
+    "torch.int64",
+    "torch.bool"
+  ]
+}

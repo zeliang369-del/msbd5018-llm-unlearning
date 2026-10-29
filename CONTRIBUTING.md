@@ -2,10 +2,12 @@
 
 四位成员平等分工，不设组长。文献与数据、方法与训练、评价与鲁棒性、分析与展示建议交叉检查；实际姓名和贡献由完成工作的人填写，不预先编造。
 
+具体角色、浏览器协作步骤、运行排队、双人事实复核及时间安排见 [线上协作方案](docs/ONLINE_COLLABORATION.md)，实际任务见 [待认领任务表](docs/TEAM_TASKS.md)。当前五组方法入口及受控扩展已完成，已确认贡献与下一步见 [全组进展](docs/TEAM_PROGRESS.md)。
+
 1. 从 `main` 创建主题分支，如 `study/simnpo-resource-check`、`eval/prompt-robustness`、`docs/report`。
 2. 阅读 `docs/RESEARCH_PLAN.md`。既有 `reproduction_full/runs/` 是正式证据，新设置另建目录，不覆盖旧记录。
 3. 提交说明问题、改动、验证和限制；发起 Pull Request。组员复核为可选，必要的自动检查通过后可以直接合并，无需等待其他组员确认。
-4. 推送前运行 `python3 verify_results.py`。CI 仅核验已存记录，不训练模型，也不证明新方法有效。
+4. 推送前运行 `python3 verify_results.py`。再运行 `python3 verify_phase3_delivery.py` 核验第三阶段交付；CI 仅核验已存记录，不训练模型，也不证明新方法普遍有效。
 5. 如需撤销已合并的改动，使用 Git revert 创建回退提交，保留共享提交历史。
 
 ## 实验要求
@@ -17,4 +19,4 @@
 - 提示测试保存原回答，人工标注“事实恢复 / 未恢复 / 无法判断”，记录理由并交叉审阅。
 - 权重、环境、缓存和个人凭证不进入 Git。大检查点通过 Release 共享，附来源、许可与 SHA256。
 
-中英文提案位于 `output/pdf/`。生成源在 `scripts/proposals/`，当前字体路径针对 macOS；重新生成需安装 ReportLab 并检查一页排版。提案仅引用两篇主论文，代码实现来源保留在源码和许可文件中。
+中英文提案位于 `output/pdf/`。生成源在 `scripts/proposals/`，重新生成需配置可用字体、安装 ReportLab 并检查一页排版。提案仅引用两篇主论文，代码实现来源保留在源码和许可文件中。

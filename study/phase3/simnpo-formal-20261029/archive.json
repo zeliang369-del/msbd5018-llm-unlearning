@@ -1,0 +1,9 @@
+{
+  "status": "archived_matching_checkpoint",
+  "run_id": "simnpo-s0-cuda-v1",
+  "archived_at": "2026-10-29T07:46:52.114776+00:00",
+  "original_output_directory": "C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\.cache\\pr3-gpu-509be4a-v2\\study\\runs\\simnpo-s0-cuda-v1",
+  "archived_directory": "C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\study\\runs\\simnpo-s0-cuda-v1",
+  "checkpoint_sha256": "7d49882b92f20af11fd8d5a7f514f37c4781075a6afe1ea255d67bef62c2ecac",
+  "scope": "Exact copy; signed run spec and source snapshots remain unchanged; original copy retained."
+}

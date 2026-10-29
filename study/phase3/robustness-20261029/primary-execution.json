@@ -1,0 +1,56 @@
+{
+  "status": "completed_verified",
+  "scope": "Three original models: 120 pilot outputs plus 960 separate full outputs",
+  "started_at": "2026-10-29T09:14:01.784766+00:00",
+  "stages": [
+    {
+      "model": "baseline-s0-cuda-v1",
+      "run_id": "robust-baseline-s0-pilot-v1",
+      "limit": 5,
+      "status": "passed_existing_verified",
+      "started_at": "2026-10-29T09:14:01.786767+00:00",
+      "fresh_inference": false
+    },
+    {
+      "model": "ga-s0-cuda-v1",
+      "run_id": "robust-ga-s0-pilot-v1",
+      "limit": 5,
+      "status": "passed",
+      "started_at": "2026-10-29T09:14:01.795277+00:00",
+      "finished_at": "2026-10-29T09:14:28.045510+00:00"
+    },
+    {
+      "model": "gd-a1-s0-cuda-v1",
+      "run_id": "robust-gd-a1-s0-pilot-v1",
+      "limit": 5,
+      "status": "passed",
+      "started_at": "2026-10-29T09:14:28.047510+00:00",
+      "finished_at": "2026-10-29T09:14:54.183444+00:00"
+    },
+    {
+      "model": "baseline-s0-cuda-v1",
+      "run_id": "robust-baseline-s0-v1",
+      "limit": 0,
+      "status": "passed",
+      "started_at": "2026-10-29T09:14:54.185445+00:00",
+      "finished_at": "2026-10-29T09:15:52.350358+00:00"
+    },
+    {
+      "model": "ga-s0-cuda-v1",
+      "run_id": "robust-ga-s0-v1",
+      "limit": 0,
+      "status": "passed",
+      "started_at": "2026-10-29T09:15:52.352359+00:00",
+      "finished_at": "2026-10-29T09:17:08.503434+00:00"
+    },
+    {
+      "model": "gd-a1-s0-cuda-v1",
+      "run_id": "robust-gd-a1-s0-v1",
+      "limit": 0,
+      "status": "passed",
+      "started_at": "2026-10-29T09:17:08.504437+00:00",
+      "finished_at": "2026-10-29T09:18:31.077549+00:00"
+    }
+  ],
+  "finished_at": "2026-10-29T09:18:31.079554+00:00"
+}

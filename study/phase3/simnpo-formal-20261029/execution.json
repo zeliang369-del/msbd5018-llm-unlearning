@@ -1,0 +1,85 @@
+{
+  "status": "completed_verified",
+  "run_id": "simnpo-s0-cuda-v1",
+  "commit": "509be4a9e1dd229a8397d178c784f5d1b463fae6",
+  "checkout": "C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\.cache\\pr3-gpu-509be4a-v2",
+  "configuration": {
+    "method": "SimNPO",
+    "seed": 0,
+    "alpha": 1.0,
+    "gamma": 0.125,
+    "beta": 4.5,
+    "delta": 0.0
+  },
+  "updates": 10,
+  "sample_visits": 320,
+  "expected_evaluation_counts": {
+    "forget": 40,
+    "retain": 400,
+    "real_authors": 100,
+    "world_facts": 117
+  },
+  "started_at": "2026-10-29T07:22:25.812580+00:00",
+  "stages": [
+    {
+      "name": "training_and_reload",
+      "status": "passed",
+      "started_at": "2026-10-29T07:22:25.869095+00:00",
+      "command": [
+        "train_cuda.py",
+        "--method",
+        "SimNPO",
+        "--seed",
+        "0",
+        "--alpha",
+        "1",
+        "--gamma",
+        "0.125",
+        "--beta",
+        "4.5",
+        "--delta",
+        "0",
+        "--run-id",
+        "simnpo-s0-cuda-v1"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-10-29T07:42:30.654786+00:00"
+    },
+    {
+      "name": "complete_evaluation",
+      "status": "passed",
+      "started_at": "2026-10-29T07:42:30.662793+00:00",
+      "command": [
+        "evaluate_cuda.py",
+        "--method",
+        "SimNPO",
+        "--seed",
+        "0",
+        "--alpha",
+        "1",
+        "--gamma",
+        "0.125",
+        "--beta",
+        "4.5",
+        "--delta",
+        "0",
+        "--run-id",
+        "simnpo-s0-cuda-v1"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-10-29T07:46:00.574169+00:00"
+    },
+    {
+      "name": "cpu_verification",
+      "status": "passed",
+      "started_at": "2026-10-29T07:46:00.576162+00:00",
+      "command": [
+        "verify_cuda_run.py",
+        "simnpo-s0-cuda-v1"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-10-29T07:46:04.696580+00:00"
+    }
+  ],
+  "finished_at": "2026-10-29T07:46:04.698582+00:00"
+}

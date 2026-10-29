@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "phase3_experiment_acceptance": "experimental_execution_completed_verified",
+  "packages": [
+    {
+      "archive": "annotation-primary-20261029.zip",
+      "sha256": "5d1b965fbf9e9fd56dec0ed872a63967d6b66a2fe3dc3ec1b1113de394dd5398",
+      "responses": 960,
+      "forget_responses": 480,
+      "independent_forget_judgments": 960
+    },
+    {
+      "archive": "annotation-supplementary-20261029.zip",
+      "sha256": "e7550a976b00ef80044724f701a347bc5659eb641d6e606c3455eec421a2fd54",
+      "responses": 640,
+      "forget_responses": 320,
+      "independent_forget_judgments": 640
+    }
+  ],
+  "total_full_responses": 1600,
+  "human_labels_filled": 0,
+  "combined_tests": {
+    "tests": 56,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "frozen_record_check": {
+    "exit_code": 0,
+    "stdout": "PASS: complete 657-question evaluations, metric arithmetic, provenance, data hashes, matched sampling, and 320 prepared stress-test prompts. No model inference or new training claimed."
+  },
+  "verifier_sha256": "7b72612a881f4621b66b176e953185e399c6b4844aa7a6a5ab47c0c1416c5377",
+  "report_manifest_sha256": "6b310b754cd550408d27a7ce9262e8733d80071626750e36ee2fa0857d45663e",
+  "scope": "Saved record integrity, report byte hashes, zip member hashes, actual CSV counts and independent blank review assignments; no model inference or human factual judgments."
+}

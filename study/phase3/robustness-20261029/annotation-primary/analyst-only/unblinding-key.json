@@ -1,0 +1,17 @@
+{
+  "M01": {
+    "model_run": "baseline-s0-cuda-v1",
+    "robustness_run": "robust-baseline-s0-v1",
+    "checkpoint_sha256": "35b0cd9f7db2735538ff78b4879fab61b23b7ca316df27b059585bf656700a8d"
+  },
+  "M02": {
+    "model_run": "ga-s0-cuda-v1",
+    "robustness_run": "robust-ga-s0-v1",
+    "checkpoint_sha256": "d8fc3fc1680055f600b2524e299dbb26132718d543957f55de837ec48ac3be76"
+  },
+  "M03": {
+    "model_run": "gd-a1-s0-cuda-v1",
+    "robustness_run": "robust-gd-a1-s0-v1",
+    "checkpoint_sha256": "cfc933da860051ee2f51e09fd8fc3508e3d7eaaffc3e787d79100c6b765cd766"
+  }
+}
