@@ -1,0 +1,12 @@
+{
+  "S02": {
+    "model_run": "simnpo-s0-cuda-v1",
+    "robustness_run": "robust-simnpo-s0-v1",
+    "checkpoint_sha256": "7d49882b92f20af11fd8d5a7f514f37c4781075a6afe1ea255d67bef62c2ecac"
+  },
+  "S01": {
+    "model_run": "npo-s0-cuda-v1",
+    "robustness_run": "robust-npo-s0-v1",
+    "checkpoint_sha256": "588f032d9e3af89cb98f3b94947a5313e92477fddc410c2776233f2eb0e3177d"
+  }
+}

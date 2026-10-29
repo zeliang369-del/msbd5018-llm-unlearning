@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "commit": "509be4a9e1dd229a8397d178c784f5d1b463fae6",
+  "scope": "Tiny-model real Trainer/Accelerate gradient and accumulation parity; not a formal 1B result",
+  "torch": "2.9.1+cu128",
+  "checks": [
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "optimizer_updates": 3,
+      "sample_visits": 96,
+      "same_seed_sampling_matches": true,
+      "per_update_gradient_relative_errors": [
+        1.1105795172383637e-09,
+        1.4477004040003294e-09,
+        1.638666868863936e-09
+      ],
+      "training_loss_upstream": 4.850265026092529,
+      "training_loss_sequential": 4.850265026092529
+    },
+    {
+      "device": "cuda",
+      "dtype": "torch.bfloat16",
+      "optimizer_updates": 3,
+      "sample_visits": 96,
+      "same_seed_sampling_matches": true,
+      "per_update_gradient_relative_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "training_loss_upstream": 4.85023562113444,
+      "training_loss_sequential": 4.85023562113444
+    }
+  ]
+}

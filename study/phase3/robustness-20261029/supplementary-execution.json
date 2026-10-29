@@ -1,0 +1,22 @@
+{
+  "status": "completed_verified",
+  "scope": "SimNPO and NPO: 640 full outputs on the frozen suite",
+  "started_at": "2026-10-29T09:47:48.913019+00:00",
+  "stages": [
+    {
+      "model": "simnpo-s0-cuda-v1",
+      "run_id": "robust-simnpo-s0-v1",
+      "status": "passed",
+      "started_at": "2026-10-29T09:47:48.921018+00:00",
+      "finished_at": "2026-10-29T09:48:53.390987+00:00"
+    },
+    {
+      "model": "npo-s0-cuda-v1",
+      "run_id": "robust-npo-s0-v1",
+      "status": "passed",
+      "started_at": "2026-10-29T09:48:53.393985+00:00",
+      "finished_at": "2026-10-29T09:50:00.191845+00:00"
+    }
+  ],
+  "finished_at": "2026-10-29T09:50:00.193330+00:00"
+}

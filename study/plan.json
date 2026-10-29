@@ -4,13 +4,92 @@
   "model": "Llama-3.2-1B-Instruct",
   "completed_seed": 0,
   "methods": {
-    "GradAscent": {"status": "completed", "trainable_parameters": 1235814400},
-    "GradDiff": {"status": "completed", "alpha": 1, "gamma": 1, "trainable_parameters": 1235814400},
-    "NPO": {"status": "planned_resource_check_required", "beta": 0.1, "alpha": 1, "gamma": 1, "reference_model": true},
-    "SimNPO": {"status": "planned_resource_check_required", "beta": 4.5, "delta": 0, "alpha": 1, "gamma": 0.125, "reference_model": false},
-    "RMU": {"status": "optional_not_run", "reference_model": true, "comparability_note": "Layer/parameter selection and activation memory must be reported separately; not a matched full-parameter run by default."}
+    "GradAscent": {
+      "status": "completed",
+      "trainable_parameters": 1235814400
+    },
+    "GradDiff": {
+      "status": "completed",
+      "alpha": 1,
+      "gamma": 1,
+      "trainable_parameters": 1235814400
+    },
+    "NPO": {
+      "status": "completed_verified_single_seed",
+      "beta": 0.1,
+      "alpha": 1,
+      "gamma": 1,
+      "reference_model": true,
+      "seed": 0,
+      "run_id": "npo-s0-cuda-v1",
+      "trainable_parameters": 1235814400,
+      "updates": 10,
+      "visits": 320,
+      "evaluation_questions": 657
+    },
+    "SimNPO": {
+      "status": "completed_verified_single_seed",
+      "beta": 4.5,
+      "delta": 0,
+      "alpha": 1,
+      "gamma": 0.125,
+      "reference_model": false,
+      "seed": 0,
+      "run_id": "simnpo-s0-cuda-v1",
+      "trainable_parameters": 1235814400,
+      "updates": 10,
+      "visits": 320,
+      "evaluation_questions": 657
+    },
+    "RMU": {
+      "status": "optional_not_run",
+      "reference_model": true,
+      "comparability_note": "Layer/parameter selection and activation memory must be reported separately; not a matched full-parameter run by default."
+    }
   },
-  "planned_ablations": {"GradDiff_alpha_at_seed_0": [0.5, 1, 2], "GA_GD_core_seeds": [0, 1, 2]},
-  "robustness": {"status": "suite_prepared_not_evaluated", "forget_questions": 40, "retained_control_questions": 40, "families": ["direct", "contextual", "role_play", "instruction_challenge"], "manual_fact_review_required": true},
-  "measurement_policy": "No planned method, extra seed, weight sweep, or robustness result is claimed as completed. A few observed FQ/MU points are not a reproduced full trade-off curve."
+  "planned_ablations": {
+    "GradDiff_alpha_at_seed_0": [
+      0.5,
+      1,
+      2
+    ],
+    "GA_GD_core_seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "robustness": {
+    "status": "full_inference_verified_human_annotation_pending",
+    "forget_questions": 40,
+    "retained_control_questions": 40,
+    "families": [
+      "direct",
+      "contextual",
+      "role_play",
+      "instruction_challenge"
+    ],
+    "manual_fact_review_required": true,
+    "full_models": 5,
+    "full_generations": 1600,
+    "separate_pilot_generations": 120,
+    "preserved_suite": "study/phase3/robustness-20261029/suite.json"
+  },
+  "measurement_policy": "Completion is grounded in saved per-run verification and phase-three acceptance. Human factual labels remain pending. Single-seed new methods do not establish stability or a full trade-off curve.",
+  "current_phase": "phase3_experiments_completed_human_review_next",
+  "current_status_evidence": "study/phase3/progress.json",
+  "current_handoff": "docs/PHASE3_RESULTS.md",
+  "completed_ablations": {
+    "GradDiff_alpha_at_seed_0": [
+      0.5,
+      1,
+      2
+    ],
+    "GA_GD_core_seeds": [
+      0,
+      1,
+      2
+    ],
+    "evidence": "study/phase2/audit.json"
+  }
 }

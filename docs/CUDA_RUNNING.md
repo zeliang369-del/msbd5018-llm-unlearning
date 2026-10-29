@@ -1,6 +1,42 @@
 # Dell CUDA workflow
 
-This is an isolated CUDA GA/GD workflow. **The actual full-parameter 1B probe, full CUDA baseline, and both ten-update GA/GD seed-0 controls with 657-question evaluations have completed and passed CPU evidence verification.** The Dell now matches the Mac's completed baseline/GA/GD stage; numerical equality across devices is not claimed. The frozen Mac code and results remain unchanged.
+Current status (2026-10-29): phase-three experiments are complete locally, including SimNPO/NPO and 1,600 full prompt outputs. See [results and handoff](PHASE3_RESULTS.md). Earlier sections retain setup history.
+
+第三阶段实验已在本地完成，包括 SimNPO/NPO 和 1,600 条正式提示回答；结果及组内交接见上述链接，下方早期环境记录单独保留。
+
+## Phase-three methods and prompts
+
+The combined local CLI supports all five settings and passed 56 tests. Actual full SimNPO/NPO experiments used the isolated PR sources preserved in their snapshots; no additional full 1B training after CLI integration is claimed. Use fresh run IDs whenever code or Git commit changes, run GPU tasks serially, and satisfy the resource preflight.
+
+整合 CLI 支持五组设置并通过 56 项测试；实际完整 SimNPO/NPO 实验使用各自快照保留的独立 PR 源码，不宣称整合后又完整重训一次 1B。代码或 Git 提交变化后使用新 run_id，GPU 串行执行，并满足资源检查。
+
+```powershell
+# Review saved evidence; matching local full checkpoints are required.
+& '.\.venv-cuda\Scripts\python.exe' -X utf8 verify_cuda_run.py simnpo-s0-cuda-v1
+& '.\.venv-cuda\Scripts\python.exe' -X utf8 verify_cuda_run.py npo-s0-cuda-v1
+& '.\.venv-cuda\Scripts\python.exe' -X utf8 phase3_progress.py
+
+# Fresh SimNPO, same tested settings; new run ID.
+& '.\.venv-cuda\Scripts\python.exe' -X utf8 train_cuda.py --method SimNPO --seed 0 --alpha 1 --gamma 0.125 --beta 4.5 --delta 0 --run-id simnpo-s0-cuda-v2
+& '.\.venv-cuda\Scripts\python.exe' -X utf8 evaluate_cuda.py --method SimNPO --seed 0 --alpha 1 --gamma 0.125 --beta 4.5 --delta 0 --run-id simnpo-s0-cuda-v2
+& '.\.venv-cuda\Scripts\python.exe' -X utf8 verify_cuda_run.py simnpo-s0-cuda-v2
+
+# Fresh NPO cache: all 40 samples, INITIAL model, internal batch size 4.
+& '.\.venv-cuda\Scripts\python.exe' -X utf8 prepare_npo_reference.py --checkpoint artifacts/model --output .cache/reference-npo-v2.json
+& '.\.venv-cuda\Scripts\python.exe' -X utf8 train_cuda.py --method NPO --seed 0 --alpha 1 --gamma 1 --beta 0.1 --reference-cache .cache/reference-npo-v2.json --run-id npo-s0-cuda-v2
+& '.\.venv-cuda\Scripts\python.exe' -X utf8 evaluate_cuda.py --method NPO --seed 0 --alpha 1 --gamma 1 --beta 0.1 --reference-cache .cache/reference-npo-v2.json --run-id npo-s0-cuda-v2
+& '.\.venv-cuda\Scripts\python.exe' -X utf8 verify_cuda_run.py npo-s0-cuda-v2
+
+# Fresh prompt run from a verified formal checkpoint, same frozen 320 prompts.
+& '.\.venv-cuda\Scripts\python.exe' -X utf8 evaluate_robustness_cuda.py --model-run simnpo-s0-cuda-v1 --run-id robust-simnpo-s0-v2
+& '.\.venv-cuda\Scripts\python.exe' -X utf8 verify_robustness_cuda.py robust-simnpo-s0-v2
+```
+
+Limited reference caches are rejected for formal NPO training; the full cache hash is bound to run identity. Beta defaults are SimNPO 4.5 and NPO 0.1. Gamma's shared CLI default remains 1, so explicitly pass 0.125 for this SimNPO setting. Prompt `--limit 5` creates a separate 40-output pilot. Pair Direct with the other prompt families from that same stress-test run.
+
+正式 NPO 训练拒绝有限缓存，完整缓存哈希写入实验身份。beta 默认值按方法区分，gamma 共享默认值仍为 1，复现本次 SimNPO 时须明确传入 0.125。提示入口 `--limit 5` 是单独的 40 条 pilot；Direct 应与同一提示实验的其他问法配对。
+
+This CUDA workflow supports GA, GD, SimNPO, and NPO full-parameter training. The completed results and current team handoff are linked above.
 
 ## Current machine and validation
 
@@ -14,18 +50,17 @@ Passed: the existing `verify_results.py`, four output/configuration guard tests,
 
 - `study/environment/dell-inventory.json`: PyTorch **2.9.1+cu128**, CUDA runtime **12.8**, `cuda_available=true`, BF16 supported. Transformers 4.45.1 and Accelerate 0.34.2 are installed. `installed-dependencies.txt` records the resolved environment; `pip check` passed.
 - `study/environment/cuda-adapter-numerics.json`: original GD versus sequential CUDA BF16 gradients agree within approximately **0.19–0.30%** across three alpha/gamma settings; CPU FP32 relative error is approximately 1e-7. CPU and CUDA streamed AdamW FP32-master maximum error versus standard AdamW was **1.164e-10**. Zero-rate invariance, nonzero-rate changes, Windows mmap alignment, same-seed sampling, changed-seed sampling, and **10 updates / 320 visits / eight passes** all passed on real tiny Llama models.
-- `study/runs/gd-a1-s0-cuda-probe-v1/`: actual full **1,235,814,400-parameter** training, GD alpha=gamma=1, seed 0, **three updates / 96 visits**. Every parameter was checked unchanged after the zero-rate warmup. The monitored q-projection slice changed in 514 positions after the third update. Losses and gradient norms were finite. Sampling matched the first 96 pairs of the frozen Mac run exactly.
+- `study/runs/gd-a1-s0-cuda-probe-v1/`: actual full **1,235,814,400-parameter** training, GD alpha=gamma=1, seed 0, **three updates / 96 visits**. Every parameter was checked unchanged after the zero-rate warmup. The monitored q-projection slice changed in 514 positions after the third update. Losses and gradient norms were finite. The probe sampling trace was saved and checked.
 - Probe training wall time: **259.1492 seconds**. Peak allocated CUDA memory: **6.1565 GiB**; peak reserved: **6.6230 GiB**. Step-end RSS reached **7.4912 GiB**, and available system RAM fell to **0.2236 GiB**. These RAM readings show substantial pressure; GPU fit does not establish comfortable system RAM headroom.
 - The probe saved a normal full checkpoint, hashed it, reloaded it in a new process, and evaluated **two questions in each of four domains**. All eight prompt/target texts matched the official reference. This small check is not a formal FQ/MU result. `probe_passed.json` records completion.
 - `study/runs/baseline-s0-cuda-v1/evaluation/`: all **40/400/100/117 = 657** questions completed, with complete raw outputs and original aggregate metrics. Baseline **FQ=0.0143015480**, **MU=0.5991077363**. All input/target texts matched official records. Elapsed evaluation time: **173.9380 seconds**, allocated GPU peak **4.5568 GiB**.
-- The saved Mac baseline evaluation took **1285.1575 seconds** under the matched question/decoding protocol. The roughly 7.4x elapsed-time difference is a single historical observation, with uncontrolled background/environment effects; it is not a pure hardware benchmark or a training-speed claim. See `DELL_VS_MAC.md`.
-- `study/runs/gd-a1-s0-cuda-v1/`: GD alpha=gamma=1, seed 0, **ten optimizer updates / 320 visits / eight passes**, with all 320 sampled pairs identical to the frozen Mac GD run. Training wall time was **894.7177 seconds**; the entrypoint's total through checkpoint saving was **914.8590 seconds**. Allocated/reserved GPU peaks were **6.1565 / 6.6230 GiB**, step-end RSS peaked at **7.9494 GiB**, and available system RAM reached a minimum of **0.1277 GiB**. Full checkpoint saving/reloading and the eight-question reload check passed.
+- `study/runs/gd-a1-s0-cuda-v1/`: GD alpha=gamma=1, seed 0, **ten optimizer updates / 320 visits / eight passes**, with a verified 320-pair seed-0 sampling trace. Training wall time was **894.7177 seconds**; the entrypoint's total through checkpoint saving was **914.8590 seconds**. Allocated/reserved GPU peaks were **6.1565 / 6.6230 GiB**, step-end RSS peaked at **7.9494 GiB**, and available system RAM reached a minimum of **0.1277 GiB**. Full checkpoint saving/reloading and the eight-question reload check passed.
 - GD complete evaluation: **657 questions**, **FQ=0.5786001417**, **MU=0.3904962248**, elapsed **196.2030 seconds**. Checkpoint SHA256: `cfc933da860051ee2f51e09fd8fc3508e3d7eaaffc3e787d79100c6b765cd766`.
-- `study/runs/ga-s0-cuda-v1/`: GA seed 0, **ten optimizer updates / 320 visits / eight passes**, all 320 sampled pairs identical to the frozen Mac GA run. Training wall time was **901.8951 seconds**; entrypoint time through checkpoint saving was **935.0320 seconds**. All parameters passed the zero-rate invariance check, gradients/losses were finite, and the monitored q-projection slice changed in 1,103 positions. Checkpoint saving and fresh-process eight-question reload evaluation passed. Allocated/reserved GPU peaks were **6.1565 / 6.6230 GiB**, step-end RSS peaked at **8.1382 GiB**, and minimum available RAM was **0.1191 GiB**.
+- `study/runs/ga-s0-cuda-v1/`: GA seed 0, **ten optimizer updates / 320 visits / eight passes**, with a verified 320-pair seed-0 sampling trace. Training wall time was **901.8951 seconds**; entrypoint time through checkpoint saving was **935.0320 seconds**. All parameters passed the zero-rate invariance check, gradients/losses were finite, and the monitored q-projection slice changed in 1,103 positions. Checkpoint saving and fresh-process eight-question reload evaluation passed. Allocated/reserved GPU peaks were **6.1565 / 6.6230 GiB**, step-end RSS peaked at **8.1382 GiB**, and minimum available RAM was **0.1191 GiB**.
 - GA complete evaluation: **657 questions**, **FQ=0.4045874057**, **MU=0.4109146497**, elapsed **217.2650 seconds**. Checkpoint SHA256: `d8fc3fc1680055f600b2524e299dbb26132718d543957f55de837ec48ac3be76`.
 - `verify_cuda_run.py` independently recomputed FQ and all nine MU components from the saved per-question records and checked counts, input texts, source snapshots, checkpoint hashes, updates, seeds, traces, and finite gradients. CPU verification passed for baseline, probe, GA, and GD controls; reports are `cpu_verification.json` in each run directory. This verification does not run a model.
 
-These CUDA results are separate controls. The Mac GA FQ/MU were 0.4046/0.4019 and GD were 0.7659/0.3887; CUDA numerical results are not identical despite matched sampling. These are not additional seeds, and no cause of the device-dependent trajectory differences has been isolated. In this CUDA seed-0 comparison, GD has higher FQ (0.5786 versus 0.4046), while GA has higher MU (0.4109 versus 0.3905). This is a single-seed comparison, not a general ranking. The old Mac finding remains unchanged.
+In the CUDA seed-0 comparison, GD has higher FQ (0.5786 versus 0.4046), while GA has higher MU (0.4109 versus 0.3905). This is a single-seed comparison, not a general ranking. See the phase-two report for all three seeds.
 
 Earlier download failures and the pre-installation `dell-cuda-preflight-20261021` failure are preserved. They no longer describe the current installed environment. The system proxy caused very slow package downloads; `NO_PROXY=*` was applied only to installer child processes. Windows proxy settings were not changed. The model was fetched through the public `hf-mirror.com` mirror at the original pinned revision, verified against the original weight SHA256, and its tokenizer/generation files matched frozen hashes. See `artifacts/model/cuda-download-provenance.json`.
 
@@ -56,7 +91,7 @@ Use the existing pinned downloader after supplying a reachable proxy:
 & '.\.venv-cuda\Scripts\python.exe' -X utf8 fetch_cuda_model.py --endpoint https://hf-mirror.com
 ```
 
-Do not change the model revision or use generic Llama weights. The downloader verifies the pinned weight SHA256. `archive_checkpoint.py restore SOURCE DESTINATION` restores released Mac checkpoints against that exact base and verifies the complete resulting file; it does not provide the base itself. New CUDA controls start from the public TOFU-trained full checkpoint, rather than a trained Mac GA/GD checkpoint.
+Do not change the model revision or use generic Llama weights. The downloader verifies the pinned weight SHA256. Fresh experiments start from the fixed public TOFU-trained initial checkpoint.
 
 ## Execute in this order
 
@@ -86,7 +121,7 @@ Review the completed evidence without GPU inference:
 & '.\.venv-cuda\Scripts\python.exe' -X utf8 verify_cuda_run.py ga-s0-cuda-v1
 ```
 
-Run one command at a time. Both CUDA seed-0 controls and the six phase-two extensions are now complete; the extension queue has exited. CUDA seed-0 controls are not additional seeds, and must not be pooled with Mac seed-0 results as seed variation.
+Run one command at a time. Both CUDA seed-0 controls and the six phase-two extensions are now complete; the extension queue has exited. Keep each seed distinct when summarizing variation.
 
 ## Records and invariants
 
@@ -100,7 +135,7 @@ Per-step evidence includes the learning rate used, finite gradient norms, a para
 
 Small evaluations are stored under `reload_check/`, never labeled as full FQ/MU results. Formal evaluation is under `evaluation/`, requires 40/400/100/117 questions, retains the fixed date and greedy 200-token protocol, and saves full raw records plus the original aggregate metrics. Baseline evaluation also measures text agreement and NLL/ROUGE differences against the official imported full-model records. Hardware/precision differences remain explicit.
 
-Baseline, both GA/GD seed-0 CUDA controls, and all six planned weight/seed extensions are complete and verified. New methods and robustness inference remain pending. The original Mac finding that GD MU was lower than GA MU remains preserved, and the same ordering appears in the CUDA seed-0 comparison; across CUDA seeds 1 and 2, GD MU exceeds GA. See [phase-two results](PHASE2_RESULTS.md) for the complete seed/weight comparison, means, sample standard deviations, charts, and handoff.
+Phase-two seed/weight experiments and phase-three SimNPO/NPO and prompt experiments are complete. See [phase-three results](PHASE3_RESULTS.md) for the current report and human-review handoff.
 
 Completed GA control commands (already executed; do not retrain into the same directory):
 
@@ -114,7 +149,7 @@ Completed GA control commands (already executed; do not retrain into the same di
 - CUDA execution and identity: `train_cuda.py`, `evaluate_cuda.py`, `cuda_runtime.py`, `cuda_common.py`.
 - Reproducible setup: `requirements-cuda.txt`, `download_pinned_wheel.py`, `fetch_cuda_model.py`, `install_cuda_environment.py`.
 - Evidence and checks: `capture_cuda_source.py`, `verify_cuda_run.py`, `test_cuda_workflow.py`, `test_cuda_numerics.py`, `study/environment/`, and the four completed `study/runs/` directories.
-- Documentation/packaging: this file, `docs/DELL_VS_MAC.md`, and `.gitignore` rules excluding model weights, scratch state, and temporary partial files.
+- Documentation/packaging: this file and `.gitignore` rules excluding model weights, scratch state, and temporary partial files.
 
 The publication contains the isolated CUDA workflow, verified evidence, and current README. Proposals and role documents were not rewritten, and no team notifications were sent. Historical runs record their actual base Git commit plus exact dirty-source hashes and snapshots; the newer publication commit does not replace that provenance. The frozen Mac scripts, protocol, and result files remain intact.
 

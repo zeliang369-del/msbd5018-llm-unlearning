@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "scope": "Tiny-model real Trainer/Accelerate NPO integration; not formal 1B training",
+  "checks": [
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "updates": 3,
+      "visits": 96,
+      "gradient_clipping_disabled_to_expose_scaling": true,
+      "same_sampling": true,
+      "relative_gradient_errors": [
+        1.0266020211702198e-07,
+        1.0020928442600052e-07,
+        9.633664888042404e-08
+      ],
+      "online_training_loss": 18.713179270426433,
+      "cached_training_loss": 18.713179270426433
+    },
+    {
+      "device": "cuda",
+      "dtype": "torch.bfloat16",
+      "updates": 3,
+      "visits": 96,
+      "gradient_clipping_disabled_to_expose_scaling": true,
+      "same_sampling": true,
+      "relative_gradient_errors": [
+        0.006582729052752256,
+        0.0059771426022052765,
+        0.005969127640128136
+      ],
+      "online_training_loss": 18.713183720906574,
+      "cached_training_loss": 18.713184356689453
+    }
+  ]
+}

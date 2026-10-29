@@ -1,0 +1,30 @@
+{
+  "status": "failed",
+  "upstream_pr": 4,
+  "upstream_commit": "5f792a1350c378f3c1f6c3bf3e5632a499be2238",
+  "tested_commit": "d88d08a704212f3832ed5e58dfa907c39360d03a",
+  "started_at": "2026-10-29T08:54:08.431946+00:00",
+  "stages": [
+    {
+      "name": "reference_probe",
+      "status": "passed",
+      "started_at": "2026-10-29T08:54:08.484480+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-10-29T08:54:19.573056+00:00"
+    },
+    {
+      "name": "reference_full",
+      "status": "passed",
+      "started_at": "2026-10-29T08:54:19.575258+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-10-29T08:54:35.822891+00:00"
+    },
+    {
+      "name": "reference_validation",
+      "status": "failed",
+      "started_at": "2026-10-29T08:54:35.824889+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-10-29T08:54:48.563008+00:00"
+    }
+  ]
+}

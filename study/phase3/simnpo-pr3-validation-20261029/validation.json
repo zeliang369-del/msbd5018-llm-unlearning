@@ -1,0 +1,168 @@
+{
+  "date_local": "2026-10-29",
+  "pull_request": "https://github.com/zeliang369-del/msbd5018-llm-unlearning/pull/3",
+  "commit": "509be4a9e1dd229a8397d178c784f5d1b463fae6",
+  "status": "passed_resource_probe",
+  "pytest": {
+    "passed": 24,
+    "skipped": 0,
+    "upstream_direct_comparison_executed": true
+  },
+  "trainer_accelerate_parity": {
+    "status": "passed",
+    "commit": "509be4a9e1dd229a8397d178c784f5d1b463fae6",
+    "scope": "Tiny-model real Trainer/Accelerate gradient and accumulation parity; not a formal 1B result",
+    "torch": "2.9.1+cu128",
+    "checks": [
+      {
+        "device": "cpu",
+        "dtype": "torch.float32",
+        "optimizer_updates": 3,
+        "sample_visits": 96,
+        "same_seed_sampling_matches": true,
+        "per_update_gradient_relative_errors": [
+          1.1105795172383637e-09,
+          1.4477004040003294e-09,
+          1.638666868863936e-09
+        ],
+        "training_loss_upstream": 4.850265026092529,
+        "training_loss_sequential": 4.850265026092529
+      },
+      {
+        "device": "cuda",
+        "dtype": "torch.bfloat16",
+        "optimizer_updates": 3,
+        "sample_visits": 96,
+        "same_seed_sampling_matches": true,
+        "per_update_gradient_relative_errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "training_loss_upstream": 4.85023562113444,
+        "training_loss_sequential": 4.85023562113444
+      }
+    ]
+  },
+  "full_parameter_probe": {
+    "run_id": "simnpo-s0-cuda-probe-v1",
+    "configuration": {
+      "run_id": "simnpo-s0-cuda-probe-v1",
+      "method": "SimNPO",
+      "seed": 0,
+      "alpha": 1.0,
+      "gamma": 0.125,
+      "probe": true,
+      "output_directory": "C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\.cache\\pr3-gpu-509be4a-v2\\study\\runs\\simnpo-s0-cuda-probe-v1",
+      "device": "cuda:0",
+      "parameterization": "full_parameter_no_LoRA",
+      "protocol": {
+        "model_id": "open-unlearning/tofu_Llama-3.2-1B-Instruct_full",
+        "model_revision": "88e31200b97e4c0c04ae0d2f0b591f427046d192",
+        "dataset_revision": "324592d84ae4f482ac7249b9285c2ecdb53e3a68",
+        "upstream_commit": "2e16546d1b8033346a55b301166f48861b879062",
+        "transformers": "4.45.1",
+        "accelerate": "0.34.2",
+        "torch": "2.9.1",
+        "parameterization": "full_parameter_1B_no_LoRA",
+        "seed": 0,
+        "epochs": 10,
+        "learning_rate": 1e-05,
+        "weight_decay": 0.01,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "epsilon": 1e-08,
+        "max_grad_norm": 1,
+        "nominal_effective_batch": 32,
+        "microbatch": 4,
+        "gradient_accumulation_steps": 8,
+        "original_loss_group_size": 4,
+        "warmup_steps": 1,
+        "scheduler": "linear",
+        "optimizer": "AdamW_FP32_master_and_moments_CPU_disk_streamed",
+        "methods": {
+          "GradAscent": {},
+          "GradDiff": {
+            "alpha": 1,
+            "gamma": 1,
+            "retain_loss_type": "NLL"
+          }
+        },
+        "adaptations": [
+          "Single MPS / SDPA instead of two CUDA GPUs / FlashAttention / ZeRO3",
+          "Original four-example token-mean loss and full parameter space preserved; gradient accumulation 8 on one device instead of 4 on two devices",
+          "FP32 AdamW masters and moments stored in temporary disk mappings; norm/clipping coefficient computed in FP32 on CPU",
+          "Dense optimizer states used because the public model ties input embeddings and the output head; no rows or parameters are omitted",
+          "Original Transformers 4.45.1 and Accelerate 0.34.2; retain validated Torch 2.9.1 instead of original 2.4.1 for the Mac backend",
+          "Global accumulation windows carry across epochs, as in DeepSpeed; nominal 10 epochs result in 10 updates / 8 actual data passes in this original Trainer",
+          "Fixed prompt date 10 Apr 2025 to match official reference logs, replacing the original template's current-date dependence",
+          "Only the three core official table metrics; no claim of full privacy/attack benchmark replication",
+          "Both methods right-pad each microbatch to 192 tokens to bound MPS compiled-shape memory; padding attention=0 and labels=-100, all original tokens preserved",
+          "GD performs the original two weighted branches sequentially before one accumulated optimizer update; verified against original GD autograd"
+        ],
+        "training_padded_length": 192
+      },
+      "updates": 3,
+      "scheduler_horizon_updates": 10,
+      "evaluation_profile": {
+        "batch_size": 8,
+        "max_new_tokens": 200,
+        "scope": "All 40/400/100/117 official core-metric questions"
+      },
+      "adaptations": [
+        "Single CUDA/SDPA, BF16 weights, FP32 master/moments on CPU/disk",
+        "Explicit max_steps=10; stop probe after update 3 on the same schedule",
+        "Windows mmap flush uses allocation granularity; optimizer arithmetic unchanged",
+        "CUDA TF32 disabled; no autocast, loss scaling, LoRA, or frozen parameters"
+      ],
+      "beta": 4.5,
+      "delta": 0.0
+    },
+    "steps": 3,
+    "sample_visits": 96,
+    "trainable_parameters": 1235814400,
+    "fp32_optimizer_state_bytes": 14829772800,
+    "trainer_runtime_seconds": 332.2449,
+    "training_entry_elapsed_seconds": 356.625,
+    "reload_evaluation_seconds": 7.078000000037719,
+    "peak_cuda_allocated_gib": 6.892872333526611,
+    "peak_cuda_reserved_gib": 7.85546875,
+    "minimum_step_end_available_ram_gib": 0.09592437744140625,
+    "changed_q_proj_slice_elements": 438,
+    "all_parameter_zero_rate_invariance": true,
+    "same_seed_sampling_matches_prior_gd_probe": true,
+    "fresh_process_reload_evaluation_counts": {
+      "forget": 2,
+      "retain": 2,
+      "real_authors": 2,
+      "world_facts": 2
+    },
+    "cpu_verification": "passed",
+    "checkpoint_sha256": "8ee182394eb89f62b369ffa7e26b89f0c3927882164e38f66d66c7d86f20ae65",
+    "original_output_directory": "C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\.cache\\pr3-gpu-509be4a-v2\\study\\runs\\simnpo-s0-cuda-probe-v1",
+    "archived_directory": "C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\study\\runs\\simnpo-s0-cuda-probe-v1",
+    "relocation_note": "The verified run was copied without altering its signed spec or source snapshots; original output path remains in run.json."
+  },
+  "scope": "Resource/numerical/reload probe only. No 10-update SimNPO formal training, 657-question evaluation, or headline FQ/MU result.",
+  "github_state": "PR code unchanged; not merged or commented on during validation.",
+  "files_sha256": {
+    "probe-cpu_verification.json": "bc3363e455fed9d645316fc257b7e4034aee4229b08991c96747bc3b261f74d5",
+    "probe-probe_passed.json": "74211303daeeec95ba64f73e75423ade92985db15c40e9e75374f47eda985782",
+    "probe-training.json": "97751c69330eff8e4330c918ba0d13a4b2e50c19bb43bd8b31525e6f11fa1f88",
+    "probe-training_preflight.json": "2052aaf11f9ef76ce5ebcc6d9f18b0a5559234b66808a929ae5f3ec466a2186a",
+    "probe.log": "b946f086d4cc5b8859be58efdba7a0651d4140ccf31010990309f09824b31bb9",
+    "pytest.txt": "38612b844444a7936a2360e451ee21cad919db80835efb520ad0ee227831b989",
+    "README.md": "18c4118a33bf743b6de3f3b4647267390b0c83715a43155da59f4fe1723c00b4",
+    "trainer-parity.json": "5a680f46b3682a3d019ad3b74f6392d434f14080177dc2290cfe445ef4ba1f21",
+    "trainer-parity.log": "3c35f8f8e4ae8029e98a0c30cd376dedb647f5df3755fda94a497a3b2e456160",
+    "training_preflight.json": "3639acdd20b12727630556d03848672803b5b015139ce70f2fd40c656a956bed",
+    "validate_trainer.py": "88a9d795a7cba4144112d9f2cff2919d26e8a7dc718f5a7f35301fa5dd2c8397"
+  },
+  "follow_up": {
+    "status": "formal_run_completed_verified",
+    "run_id": "simnpo-s0-cuda-v1",
+    "report": "../simnpo-formal-20261029/RESULTS.md"
+  }
+}

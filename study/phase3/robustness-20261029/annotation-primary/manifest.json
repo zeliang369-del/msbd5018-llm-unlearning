@@ -1,0 +1,41 @@
+{
+  "status": "ready_for_human_annotation_not_annotated",
+  "date_local": "2026-10-29",
+  "total_responses": 960,
+  "forget_responses": 480,
+  "retain_responses": 480,
+  "independent_forget_judgments_required": 960,
+  "rows_per_reviewer_slot": 240,
+  "retained_spotcheck_responses": 36,
+  "human_labels_filled": 0,
+  "suite_sha256": "079b7e3db78d7d1cae56d8e940da957e5e5f3966fa66fcf1efc42c0c44213818",
+  "source_records": [
+    {
+      "model_code": "M01",
+      "output_sha256": "2293b166e41c63d31c94eb162c50d5af6bbbe6189be96d2a7148befeb2d53e02",
+      "verification_sha256": "21a76af92e9b6937f40ccbdc989ec224d16461674abf2898795dc64743d95de7"
+    },
+    {
+      "model_code": "M02",
+      "output_sha256": "ab88dafd482dd4beb1387682f19f7b7a139c95f1029fdaf24734d8ea3ed6cf3f",
+      "verification_sha256": "709022606750e28dd31de29f0e0e9e49cb0f35c606003d5396cfddaced16785c"
+    },
+    {
+      "model_code": "M03",
+      "output_sha256": "b05cf8ef36fbf22b546b1b4a9a91452c3cc4212bbcd1b088537efa031b9b7afe",
+      "verification_sha256": "9785d10a9829532acb85214578a9cfbbac4da9ac2a2796d8469fe857f21c2c7d"
+    }
+  ],
+  "files_sha256": {
+    "all-960-responses-blinded.csv": "68165f1d1731b7b9ef3553b58d72a15a8c9deec2cbdade442089aa4a09667d59",
+    "README.md": "ef5993006c5d59bb6061ff4b1c34b26710fb672ba5e3944833fe54d181554782",
+    "retained-spotcheck-slot-C.csv": "44ac6539d3edd684615f983819ce4f4e18b1ec104861bcee13550f7cdc3d39d5",
+    "retained-spotcheck-slot-D.csv": "99c6eeb7e547c61c9640cbc4c4f8b727ff289413a1925037ba09bdd4bdb3e0ca",
+    "reviewer-slot-A.csv": "3442bd52c021bb939d326ea82e6d605232282ef8a1d3688963b9014844017493",
+    "reviewer-slot-B.csv": "016a059a766db409abda4f4de54adfc1e19478f0406e969237d0a75a01d59867",
+    "reviewer-slot-C.csv": "44096f9df3297a040736790de5620129863f585a22206a7d1563fed07d6d4c0d",
+    "reviewer-slot-D.csv": "b31ca16115fbc58d0ff154ada8e387a180e1df16a5df1569ffaa577f5a157c14",
+    "suite.json": "079b7e3db78d7d1cae56d8e940da957e5e5f3966fa66fcf1efc42c0c44213818",
+    "analyst-only/unblinding-key.json": "fead995adc1702b4349ac01aa57e66b65fdcbe2a4aebdc858fafbb55dc70f582"
+  }
+}

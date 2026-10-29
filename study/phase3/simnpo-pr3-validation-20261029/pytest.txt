@@ -1,0 +1,12 @@
+........................                                                 [100%]
+============================== warnings summary ===============================
+open-unlearning-original\src\trainer\unlearn\rmu.py:12
+  C:\Users\vggya\Desktop\nlp group project\msbd5018-llm-unlearning\.cache\pr3-review-509be4a\open-unlearning-original\src\trainer\unlearn\rmu.py:12: SyntaxWarning: invalid escape sequence '\.'
+    module_regex="model\.layers\.7",
+
+open-unlearning-original\src\trainer\unlearn\rmu.py:13
+  C:\Users\vggya\Desktop\nlp group project\msbd5018-llm-unlearning\.cache\pr3-review-509be4a\open-unlearning-original\src\trainer\unlearn\rmu.py:13: SyntaxWarning: invalid escape sequence '\.'
+    trainable_params_regex=["model\.layers\.(5|6|7)\.mlp\.down_proj\.weight"],
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+24 passed, 2 warnings in 16.02s

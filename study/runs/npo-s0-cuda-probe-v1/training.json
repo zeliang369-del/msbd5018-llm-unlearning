@@ -1,0 +1,621 @@
+{
+  "status": "passed_resource_probe",
+  "signature": "937bcfe7bcc3fdd0683752bbb560867dbcff16f10e103b483c4bb946e5a192ca",
+  "spec": {
+    "run_id": "npo-s0-cuda-probe-v1",
+    "method": "NPO",
+    "seed": 0,
+    "alpha": 1.0,
+    "gamma": 1.0,
+    "probe": true,
+    "output_directory": "C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\.cache\\pr4-npo-5f792a\\study\\runs\\npo-s0-cuda-probe-v1",
+    "device": "cuda:0",
+    "parameterization": "full_parameter_no_LoRA",
+    "protocol": {
+      "model_id": "open-unlearning/tofu_Llama-3.2-1B-Instruct_full",
+      "model_revision": "88e31200b97e4c0c04ae0d2f0b591f427046d192",
+      "dataset_revision": "324592d84ae4f482ac7249b9285c2ecdb53e3a68",
+      "upstream_commit": "2e16546d1b8033346a55b301166f48861b879062",
+      "transformers": "4.45.1",
+      "accelerate": "0.34.2",
+      "torch": "2.9.1",
+      "parameterization": "full_parameter_1B_no_LoRA",
+      "seed": 0,
+      "epochs": 10,
+      "learning_rate": 1e-05,
+      "weight_decay": 0.01,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "epsilon": 1e-08,
+      "max_grad_norm": 1,
+      "nominal_effective_batch": 32,
+      "microbatch": 4,
+      "gradient_accumulation_steps": 8,
+      "original_loss_group_size": 4,
+      "warmup_steps": 1,
+      "scheduler": "linear",
+      "optimizer": "AdamW_FP32_master_and_moments_CPU_disk_streamed",
+      "methods": {
+        "GradAscent": {},
+        "GradDiff": {
+          "alpha": 1,
+          "gamma": 1,
+          "retain_loss_type": "NLL"
+        }
+      },
+      "adaptations": [
+        "Single MPS / SDPA instead of two CUDA GPUs / FlashAttention / ZeRO3",
+        "Original four-example token-mean loss and full parameter space preserved; gradient accumulation 8 on one device instead of 4 on two devices",
+        "FP32 AdamW masters and moments stored in temporary disk mappings; norm/clipping coefficient computed in FP32 on CPU",
+        "Dense optimizer states used because the public model ties input embeddings and the output head; no rows or parameters are omitted",
+        "Original Transformers 4.45.1 and Accelerate 0.34.2; retain validated Torch 2.9.1 instead of original 2.4.1 for the Mac backend",
+        "Global accumulation windows carry across epochs, as in DeepSpeed; nominal 10 epochs result in 10 updates / 8 actual data passes in this original Trainer",
+        "Fixed prompt date 10 Apr 2025 to match official reference logs, replacing the original template's current-date dependence",
+        "Only the three core official table metrics; no claim of full privacy/attack benchmark replication",
+        "Both methods right-pad each microbatch to 192 tokens to bound MPS compiled-shape memory; padding attention=0 and labels=-100, all original tokens preserved",
+        "GD performs the original two weighted branches sequentially before one accumulated optimizer update; verified against original GD autograd"
+      ],
+      "training_padded_length": 192
+    },
+    "updates": 3,
+    "scheduler_horizon_updates": 10,
+    "evaluation_profile": {
+      "batch_size": 8,
+      "max_new_tokens": 200,
+      "scope": "All 40/400/100/117 official core-metric questions"
+    },
+    "adaptations": [
+      "Single CUDA/SDPA, BF16 weights, FP32 master/moments on CPU/disk",
+      "Explicit max_steps=10; stop probe after update 3 on the same schedule",
+      "Windows mmap flush uses allocation granularity; optimizer arithmetic unchanged",
+      "CUDA TF32 disabled; no autocast, loss scaling, LoRA, or frozen parameters"
+    ],
+    "beta": 0.1,
+    "reference_cache": "C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\study\\phase3\\npo-validation-20261029\\v2\\reference-full-v2.json",
+    "reference_cache_sha256": "7e31f3a4fe0282b1a5c79339169572c782b8e5eb5872b55856791ac5763c5033",
+    "reference_loss_protocol": "shifted_token_nll_sum_ignore_index_-100"
+  },
+  "settings": {
+    "output_dir": "C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\.cache\\pr4-npo-5f792a\\study\\runs\\npo-s0-cuda-probe-v1",
+    "per_device_train_batch_size": 4,
+    "gradient_accumulation_steps": 8,
+    "num_train_epochs": 10,
+    "max_steps": 10,
+    "learning_rate": 1e-05,
+    "weight_decay": 0.01,
+    "warmup_steps": 1,
+    "lr_scheduler_type": "linear",
+    "optim": "adamw_torch",
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.999,
+    "adam_epsilon": 1e-08,
+    "max_grad_norm": 1,
+    "bf16": false,
+    "fp16": false,
+    "tf32": false,
+    "gradient_checkpointing": true,
+    "gradient_checkpointing_kwargs": {
+      "use_reentrant": false
+    },
+    "remove_unused_columns": false,
+    "dataloader_pin_memory": false,
+    "dataloader_num_workers": 0,
+    "report_to": "none",
+    "logging_steps": 1,
+    "logging_nan_inf_filter": false,
+    "save_strategy": "no",
+    "eval_strategy": "no",
+    "seed": 0,
+    "data_seed": 0,
+    "accelerator_config": {
+      "gradient_accumulation_kwargs": {
+        "sync_with_dataloader": false,
+        "num_steps": 8
+      }
+    }
+  },
+  "steps": 3,
+  "visits": 96,
+  "epochs": 2.4,
+  "trainable_parameters": 1235814400,
+  "FP32_optimizer_state_bytes": 14829772800,
+  "sampling_trace": [
+    {
+      "forget_index": 4,
+      "retain_index": 2333
+    },
+    {
+      "forget_index": 16,
+      "retain_index": 960
+    },
+    {
+      "forget_index": 21,
+      "retain_index": 2923
+    },
+    {
+      "forget_index": 5,
+      "retain_index": 1059
+    },
+    {
+      "forget_index": 11,
+      "retain_index": 2347
+    },
+    {
+      "forget_index": 14,
+      "retain_index": 3223
+    },
+    {
+      "forget_index": 39,
+      "retain_index": 3097
+    },
+    {
+      "forget_index": 29,
+      "retain_index": 2043
+    },
+    {
+      "forget_index": 17,
+      "retain_index": 3221
+    },
+    {
+      "forget_index": 26,
+      "retain_index": 2666
+    },
+    {
+      "forget_index": 2,
+      "retain_index": 2796
+    },
+    {
+      "forget_index": 6,
+      "retain_index": 1479
+    },
+    {
+      "forget_index": 20,
+      "retain_index": 118
+    },
+    {
+      "forget_index": 25,
+      "retain_index": 776
+    },
+    {
+      "forget_index": 24,
+      "retain_index": 3096
+    },
+    {
+      "forget_index": 1,
+      "retain_index": 2628
+    },
+    {
+      "forget_index": 15,
+      "retain_index": 3794
+    },
+    {
+      "forget_index": 32,
+      "retain_index": 2793
+    },
+    {
+      "forget_index": 28,
+      "retain_index": 926
+    },
+    {
+      "forget_index": 18,
+      "retain_index": 839
+    },
+    {
+      "forget_index": 9,
+      "retain_index": 3671
+    },
+    {
+      "forget_index": 0,
+      "retain_index": 1334
+    },
+    {
+      "forget_index": 10,
+      "retain_index": 584
+    },
+    {
+      "forget_index": 19,
+      "retain_index": 2201
+    },
+    {
+      "forget_index": 8,
+      "retain_index": 2869
+    },
+    {
+      "forget_index": 36,
+      "retain_index": 2969
+    },
+    {
+      "forget_index": 27,
+      "retain_index": 3309
+    },
+    {
+      "forget_index": 7,
+      "retain_index": 2880
+    },
+    {
+      "forget_index": 37,
+      "retain_index": 1441
+    },
+    {
+      "forget_index": 38,
+      "retain_index": 972
+    },
+    {
+      "forget_index": 31,
+      "retain_index": 2483
+    },
+    {
+      "forget_index": 30,
+      "retain_index": 960
+    },
+    {
+      "forget_index": 35,
+      "retain_index": 955
+    },
+    {
+      "forget_index": 12,
+      "retain_index": 2805
+    },
+    {
+      "forget_index": 3,
+      "retain_index": 982
+    },
+    {
+      "forget_index": 34,
+      "retain_index": 2879
+    },
+    {
+      "forget_index": 33,
+      "retain_index": 1871
+    },
+    {
+      "forget_index": 22,
+      "retain_index": 3688
+    },
+    {
+      "forget_index": 23,
+      "retain_index": 1658
+    },
+    {
+      "forget_index": 13,
+      "retain_index": 1803
+    },
+    {
+      "forget_index": 5,
+      "retain_index": 3331
+    },
+    {
+      "forget_index": 36,
+      "retain_index": 1877
+    },
+    {
+      "forget_index": 12,
+      "retain_index": 1363
+    },
+    {
+      "forget_index": 17,
+      "retain_index": 1555
+    },
+    {
+      "forget_index": 11,
+      "retain_index": 3902
+    },
+    {
+      "forget_index": 18,
+      "retain_index": 1231
+    },
+    {
+      "forget_index": 13,
+      "retain_index": 1840
+    },
+    {
+      "forget_index": 30,
+      "retain_index": 2009
+    },
+    {
+      "forget_index": 23,
+      "retain_index": 833
+    },
+    {
+      "forget_index": 34,
+      "retain_index": 1561
+    },
+    {
+      "forget_index": 0,
+      "retain_index": 1151
+    },
+    {
+      "forget_index": 35,
+      "retain_index": 680
+    },
+    {
+      "forget_index": 24,
+      "retain_index": 1103
+    },
+    {
+      "forget_index": 39,
+      "retain_index": 346
+    },
+    {
+      "forget_index": 6,
+      "retain_index": 956
+    },
+    {
+      "forget_index": 7,
+      "retain_index": 767
+    },
+    {
+      "forget_index": 22,
+      "retain_index": 3019
+    },
+    {
+      "forget_index": 32,
+      "retain_index": 3046
+    },
+    {
+      "forget_index": 20,
+      "retain_index": 1323
+    },
+    {
+      "forget_index": 10,
+      "retain_index": 1554
+    },
+    {
+      "forget_index": 15,
+      "retain_index": 175
+    },
+    {
+      "forget_index": 1,
+      "retain_index": 3380
+    },
+    {
+      "forget_index": 19,
+      "retain_index": 1858
+    },
+    {
+      "forget_index": 16,
+      "retain_index": 3832
+    },
+    {
+      "forget_index": 4,
+      "retain_index": 728
+    },
+    {
+      "forget_index": 31,
+      "retain_index": 1372
+    },
+    {
+      "forget_index": 38,
+      "retain_index": 3437
+    },
+    {
+      "forget_index": 27,
+      "retain_index": 2045
+    },
+    {
+      "forget_index": 33,
+      "retain_index": 1950
+    },
+    {
+      "forget_index": 28,
+      "retain_index": 160
+    },
+    {
+      "forget_index": 26,
+      "retain_index": 108
+    },
+    {
+      "forget_index": 29,
+      "retain_index": 761
+    },
+    {
+      "forget_index": 14,
+      "retain_index": 2199
+    },
+    {
+      "forget_index": 3,
+      "retain_index": 796
+    },
+    {
+      "forget_index": 2,
+      "retain_index": 3601
+    },
+    {
+      "forget_index": 8,
+      "retain_index": 890
+    },
+    {
+      "forget_index": 25,
+      "retain_index": 3362
+    },
+    {
+      "forget_index": 37,
+      "retain_index": 359
+    },
+    {
+      "forget_index": 9,
+      "retain_index": 1904
+    },
+    {
+      "forget_index": 21,
+      "retain_index": 673
+    },
+    {
+      "forget_index": 8,
+      "retain_index": 3169
+    },
+    {
+      "forget_index": 10,
+      "retain_index": 3913
+    },
+    {
+      "forget_index": 29,
+      "retain_index": 3859
+    },
+    {
+      "forget_index": 0,
+      "retain_index": 2558
+    },
+    {
+      "forget_index": 30,
+      "retain_index": 2335
+    },
+    {
+      "forget_index": 19,
+      "retain_index": 1723
+    },
+    {
+      "forget_index": 20,
+      "retain_index": 1342
+    },
+    {
+      "forget_index": 38,
+      "retain_index": 1738
+    },
+    {
+      "forget_index": 16,
+      "retain_index": 3475
+    },
+    {
+      "forget_index": 12,
+      "retain_index": 3776
+    },
+    {
+      "forget_index": 1,
+      "retain_index": 2806
+    },
+    {
+      "forget_index": 11,
+      "retain_index": 2635
+    },
+    {
+      "forget_index": 39,
+      "retain_index": 917
+    },
+    {
+      "forget_index": 32,
+      "retain_index": 892
+    },
+    {
+      "forget_index": 33,
+      "retain_index": 1625
+    },
+    {
+      "forget_index": 28,
+      "retain_index": 2946
+    }
+  ],
+  "prefetched_unused_pairs": [
+    {
+      "forget_index": 23,
+      "retain_index": 3196
+    },
+    {
+      "forget_index": 4,
+      "retain_index": 3315
+    },
+    {
+      "forget_index": 36,
+      "retain_index": 404
+    },
+    {
+      "forget_index": 34,
+      "retain_index": 2310
+    }
+  ],
+  "resources": [
+    {
+      "step": 1,
+      "epoch": 0.8,
+      "optimizer_steps": 1,
+      "applied_lrs": [
+        0.0,
+        0.0
+      ],
+      "gradient_norm": 218.96962159032103,
+      "changed_q_proj_slice_elements": 0,
+      "cuda_peak_allocated_gib": 6.877248287200928,
+      "cuda_peak_reserved_gib": 7.365234375,
+      "rss_gib": 5.499752044677734,
+      "available_ram_gib": 2.3774070739746094,
+      "free_disk_gib": 180.97614288330078
+    },
+    {
+      "step": 2,
+      "epoch": 1.6,
+      "optimizer_steps": 2,
+      "applied_lrs": [
+        1e-05,
+        1e-05
+      ],
+      "gradient_norm": 215.56761370046203,
+      "changed_q_proj_slice_elements": 351,
+      "cuda_peak_allocated_gib": 6.892873287200928,
+      "cuda_peak_reserved_gib": 7.85546875,
+      "rss_gib": 7.220848083496094,
+      "available_ram_gib": 0.21210098266601562,
+      "free_disk_gib": 180.97749710083008
+    },
+    {
+      "step": 3,
+      "epoch": 2.4,
+      "optimizer_steps": 3,
+      "applied_lrs": [
+        8.888888888888888e-06,
+        8.888888888888888e-06
+      ],
+      "gradient_norm": 222.25407386005125,
+      "changed_q_proj_slice_elements": 623,
+      "cuda_peak_allocated_gib": 6.892873287200928,
+      "cuda_peak_reserved_gib": 7.85546875,
+      "rss_gib": 7.275840759277344,
+      "available_ram_gib": 0.2665977478027344,
+      "free_disk_gib": 180.97589111328125
+    }
+  ],
+  "log_history": [
+    {
+      "loss": 13.9574,
+      "grad_norm": 218.96961975097656,
+      "learning_rate": 1e-05,
+      "epoch": 0.8,
+      "step": 1
+    },
+    {
+      "loss": 14.0,
+      "grad_norm": 215.56761169433594,
+      "learning_rate": 8.888888888888888e-06,
+      "epoch": 1.6,
+      "step": 2
+    },
+    {
+      "loss": 9.4682,
+      "grad_norm": 222.2540740966797,
+      "learning_rate": 7.77777777777778e-06,
+      "epoch": 2.4,
+      "step": 3
+    },
+    {
+      "train_runtime": 310.3681,
+      "train_samples_per_second": 1.031,
+      "train_steps_per_second": 0.032,
+      "total_flos": 0.0,
+      "train_loss": 12.47523053487142,
+      "epoch": 2.4,
+      "step": 3
+    }
+  ],
+  "trainer_metrics": {
+    "train_runtime": 310.3681,
+    "train_samples_per_second": 1.031,
+    "train_steps_per_second": 0.032,
+    "total_flos": 0.0,
+    "train_loss": 12.47523053487142,
+    "epoch": 2.4
+  },
+  "checkpoint_sha256": "21527736d4745cfc079cef8778977bb3d9480c1c8c4dafc7ca28485be90d27e8",
+  "elapsed_seconds": 332.71899999998277,
+  "saved_checkpoint_reloaded_and_evaluated": true
+}

@@ -1,0 +1,40 @@
+{
+  "status": "completed_verified",
+  "run_id": "npo-s0-cuda-v1",
+  "commit": "673ac4f70b978916113d414b67beab8a875bfe1b",
+  "upstream_pr": 4,
+  "upstream_commit": "5f792a1350c378f3c1f6c3bf3e5632a499be2238",
+  "reference_cache_sha256": "7e31f3a4fe0282b1a5c79339169572c782b8e5eb5872b55856791ac5763c5033",
+  "configuration": {
+    "method": "NPO",
+    "seed": 0,
+    "alpha": 1.0,
+    "gamma": 1.0,
+    "beta": 0.1
+  },
+  "started_at": "2026-10-29T09:22:16.221625+00:00",
+  "stages": [
+    {
+      "name": "training_and_reload",
+      "status": "passed",
+      "started_at": "2026-10-29T09:22:16.223625+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-10-29T09:43:16.602883+00:00"
+    },
+    {
+      "name": "complete_evaluation",
+      "status": "passed",
+      "started_at": "2026-10-29T09:43:16.610390+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-10-29T09:46:53.000993+00:00"
+    },
+    {
+      "name": "cpu_verification",
+      "status": "passed",
+      "started_at": "2026-10-29T09:46:53.002993+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-10-29T09:46:57.095184+00:00"
+    }
+  ],
+  "finished_at": "2026-10-29T09:46:57.098191+00:00"
+}

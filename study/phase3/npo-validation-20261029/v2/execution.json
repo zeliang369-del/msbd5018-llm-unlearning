@@ -1,0 +1,45 @@
+{
+  "status": "completed_verified",
+  "upstream_pr": 4,
+  "upstream_commit": "5f792a1350c378f3c1f6c3bf3e5632a499be2238",
+  "tested_commit": "673ac4f70b978916113d414b67beab8a875bfe1b",
+  "started_at": "2026-10-29T09:02:13.782548+00:00",
+  "stages": [
+    {
+      "name": "reference_probe",
+      "status": "passed",
+      "started_at": "2026-10-29T09:02:13.831549+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-10-29T09:02:24.469221+00:00"
+    },
+    {
+      "name": "reference_full",
+      "status": "passed",
+      "started_at": "2026-10-29T09:02:24.471220+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-10-29T09:02:37.140036+00:00"
+    },
+    {
+      "name": "reference_validation",
+      "status": "passed",
+      "started_at": "2026-10-29T09:02:37.141036+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-10-29T09:02:51.750710+00:00"
+    },
+    {
+      "name": "training_reload_probe",
+      "status": "passed",
+      "started_at": "2026-10-29T09:02:51.752717+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-10-29T09:08:58.934097+00:00"
+    },
+    {
+      "name": "cpu_verification",
+      "status": "passed",
+      "started_at": "2026-10-29T09:08:58.941276+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-10-29T09:09:01.465295+00:00"
+    }
+  ],
+  "finished_at": "2026-10-29T09:09:01.467292+00:00"
+}

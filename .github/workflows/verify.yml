@@ -11,3 +11,5 @@ jobs:
         run: python3 verify_results.py
       - name: Check extension script syntax
         run: python3 -m py_compile build_robustness_suite.py evaluate_robustness.py verify_results.py
+      - name: Verify phase-three reports and annotation packages
+        run: python3 verify_phase3_delivery.py

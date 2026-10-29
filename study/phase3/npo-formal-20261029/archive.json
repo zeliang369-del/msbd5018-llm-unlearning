@@ -1,0 +1,9 @@
+{
+  "status": "archived_matching_checkpoint",
+  "run_id": "npo-s0-cuda-v1",
+  "archived_at": "2026-10-29T09:47:29.180687+00:00",
+  "original_output_directory": "C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\.cache\\pr4-npo-5f792a\\study\\runs\\npo-s0-cuda-v1",
+  "archived_directory": "C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\study\\runs\\npo-s0-cuda-v1",
+  "checkpoint_sha256": "588f032d9e3af89cb98f3b94947a5313e92477fddc410c2776233f2eb0e3177d",
+  "scope": "Exact copy; signed run spec and source snapshots remain unchanged; original copy retained."
+}
