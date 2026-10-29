@@ -18,6 +18,7 @@ def train(args, destination, spec, signature):
     from transformers import TrainingArguments, TrainerCallback
     from safetensors import safe_open
     from cuda_runtime import configure, load_cuda, CudaGradDiff, CudaStreamedAdamW
+    from simnpo_cuda import CudaSimNPO
     from full_core import BASE, QA, TracedPairs, read_rows
     from memory_gd import StaticTrainingCollator
     from trainer.unlearn.grad_ascent import GradAscent
@@ -41,8 +42,13 @@ def train(args, destination, spec, signature):
                     report_to="none", logging_steps=1, logging_nan_inf_filter=False,
                     save_strategy="no", eval_strategy="no", seed=args.seed, data_seed=args.seed,
                     accelerator_config={"gradient_accumulation_kwargs": {"sync_with_dataloader": False}})
-    cls = GradAscent if args.method == "GradAscent" else CudaGradDiff
-    method_args = {} if args.method == "GradAscent" else dict(alpha=args.alpha, gamma=args.gamma, retain_loss_type="NLL")
+    classes = {"GradAscent": GradAscent, "GradDiff": CudaGradDiff, "SimNPO": CudaSimNPO}
+    cls = classes[args.method]
+    method_args = {}
+    if args.method in ("GradDiff", "SimNPO"):
+        method_args = dict(alpha=args.alpha, gamma=args.gamma, retain_loss_type="NLL")
+    if args.method == "SimNPO":
+        method_args.update(beta=args.beta, delta=args.delta)
     trainer = cls(model=model, tokenizer=tokenizer, train_dataset=dataset,
                   args=TrainingArguments(**settings), data_collator=StaticTrainingCollator(tokenizer, cfg["training_padded_length"]),
                   **method_args)

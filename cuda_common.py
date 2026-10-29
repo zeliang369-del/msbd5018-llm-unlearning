@@ -49,11 +49,13 @@ def command(*args):
         return {"error": str(exc)}
 
 
-def source_identity():
+def source_identity(include_simnpo=False):
     names = ["cuda_common.py", "cuda_runtime.py", "train_cuda.py", "evaluate_cuda.py", "streamed_adam.py",
              "full_core.py", "memory_gd.py", "capture_cuda_source.py", "requirements-cuda.txt",
              "open-unlearning-original/configs/model/Llama-3.2-1B-Instruct.yaml",
              "reproduction_full/config.json", "reproduction_full/evaluation_profile.json"]
+    if include_simnpo:
+        names.insert(4, "simnpo_cuda.py")
     names += [str(p.relative_to(ROOT)).replace("\\", "/") for p in sorted((ROOT / "open-unlearning-original/src").rglob("*.py"))]
     commit = command("git", "rev-parse", "HEAD").get("stdout")
     if not commit or len(commit) != 40:
@@ -111,10 +113,12 @@ def inventory():
 
 
 def add_run_arguments(parser):
-    parser.add_argument("--method", choices=["baseline", "GradAscent", "GradDiff"], required=True)
+    parser.add_argument("--method", choices=["baseline", "GradAscent", "GradDiff", "SimNPO"], required=True)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--alpha", type=float, default=1.0)
     parser.add_argument("--gamma", type=float, default=1.0)
+    parser.add_argument("--beta", type=float, default=1.0)
+    parser.add_argument("--delta", type=float, default=0.0)
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--output-dir", type=Path, help="Must end in run-id beneath study/runs")
     parser.add_argument("--probe", action="store_true")
@@ -129,8 +133,13 @@ def run_spec(args):
         raise ValueError("seed must be in [0, 2**32)")
     if not all(math.isfinite(x) and x >= 0 for x in (args.alpha, args.gamma)):
         raise ValueError("alpha and gamma must be finite and nonnegative")
-    if args.method != "GradDiff" and (args.alpha, args.gamma) != (1, 1):
+    if args.method not in ("GradDiff", "SimNPO") and (args.alpha, args.gamma) != (1, 1):
         raise ValueError("alpha/gamma are GD settings; GA uses the original unweighted loss")
+    if args.method == "SimNPO":
+        if not math.isfinite(args.beta) or args.beta <= 0:
+            raise ValueError("SimNPO beta must be finite and strictly positive")
+        if not math.isfinite(args.delta):
+            raise ValueError("SimNPO delta must be finite")
     base = (ROOT / "study/runs").resolve()
     destination = (args.output_dir or base / args.run_id).resolve()
     if not destination.is_relative_to(base) or destination.name != args.run_id or destination == base:
@@ -145,12 +154,14 @@ def run_spec(args):
                             "Explicit max_steps=10; stop probe after update 3 on the same schedule",
                             "Windows mmap flush uses allocation granularity; optimizer arithmetic unchanged",
                             "CUDA TF32 disabled; no autocast, loss scaling, LoRA, or frozen parameters"]}
+    if args.method == "SimNPO":
+        spec.update(beta=args.beta, delta=args.delta)
     return destination, spec
 
 
 def claim_run(destination, spec):
     path = destination / "run.json"
-    identity = source_identity()
+    identity = source_identity(include_simnpo=spec.get("method") == "SimNPO")
     # Dirty status is informational; exact source hashes bind the run.
     signature = digest({"spec": spec, "commit": identity["commit"], "sources": identity["source_sha256"]})
     if path.exists():
