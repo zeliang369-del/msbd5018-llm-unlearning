@@ -1,14 +1,14 @@
 # Dell CUDA workflow
 
-Current status (2026-10-29): phase-three experiments are complete locally, including SimNPO/NPO and 1,600 full prompt outputs. See [results and handoff](PHASE3_RESULTS.md). Earlier sections retain setup history.
+Current status (2026-10-30): the complete 49-setting grid passed verification, including five retain weights and three seeds for GD/SimNPO/NPO, three GA seeds, and 15,680 full prompt outputs. See [results and handoff](PHASE3_RESULTS.md). Earlier sections retain setup history.
 
-第三阶段实验已在本地完成，包括 SimNPO/NPO 和 1,600 条正式提示回答；结果及组内交接见上述链接，下方早期环境记录单独保留。
+第三阶段完整 49 组实验已完成，包含五档权重、三个种子及 15,680 条本轮正式提示回答；结果及组内交接见上述链接，下方早期环境记录单独保留。
 
 ## Phase-three methods and prompts
 
-The combined local CLI supports all five settings and passed 56 tests. Actual full SimNPO/NPO experiments used the isolated PR sources preserved in their snapshots; no additional full 1B training after CLI integration is claimed. Use fresh run IDs whenever code or Git commit changes, run GPU tasks serially, and satisfy the resource preflight.
+The combined local CLI supports all five settings and passed 60 tests. Actual full SimNPO/NPO experiments used the isolated PR sources preserved in their snapshots; no additional full 1B training after CLI integration is claimed. Use fresh run IDs whenever code or Git commit changes, run GPU tasks serially, and satisfy the resource preflight.
 
-整合 CLI 支持五组设置并通过 56 项测试；实际完整 SimNPO/NPO 实验使用各自快照保留的独立 PR 源码，不宣称整合后又完整重训一次 1B。代码或 Git 提交变化后使用新 run_id，GPU 串行执行，并满足资源检查。
+整合 CLI 支持五组设置并通过 60 项测试；实际完整 SimNPO/NPO 实验使用各自快照保留的独立 PR 源码，不宣称整合后又完整重训一次 1B。代码或 Git 提交变化后使用新 run_id，GPU 串行执行，并满足资源检查。
 
 ```powershell
 # Review saved evidence; matching local full checkpoints are required.
@@ -151,7 +151,7 @@ Completed GA control commands (already executed; do not retrain into the same di
 - Evidence and checks: `capture_cuda_source.py`, `verify_cuda_run.py`, `test_cuda_workflow.py`, `test_cuda_numerics.py`, `study/environment/`, and the four completed `study/runs/` directories.
 - Documentation/packaging: this file and `.gitignore` rules excluding model weights, scratch state, and temporary partial files.
 
-The publication contains the isolated CUDA workflow, verified evidence, and current README. Proposals and role documents were not rewritten, and no team notifications were sent. Historical runs record their actual base Git commit plus exact dirty-source hashes and snapshots; the newer publication commit does not replace that provenance. The frozen Mac scripts, protocol, and result files remain intact.
+The publication contains the isolated CUDA workflow, verified evidence, and current README. Proposals and role documents were not rewritten, and no team notifications were sent. Historical runs record their actual base Git commit plus exact dirty-source hashes and snapshots; the newer publication commit does not replace that provenance. Earlier evidence remains intact.
 
 ## Completed phase-two extensions
 

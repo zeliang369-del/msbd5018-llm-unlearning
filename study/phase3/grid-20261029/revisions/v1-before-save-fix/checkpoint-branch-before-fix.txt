@@ -1,0 +1,37 @@
+FFF.                                                                     [100%]
+================================== FAILURES ===================================
+____ test_every_method_saves_checkpoint_and_training_metadata[GradAscent] _____
+test_train_checkpoint_paths.py:103: in test_every_method_saves_checkpoint_and_training_metadata
+    train_cuda.train(args,destination,spec,'tiny-checkpoint-path')
+train_cuda.py:146: in train
+    checkpoint_hash = file_hash(destination / "model/model.safetensors")
+E   UnboundLocalError: cannot access local variable 'file_hash' where it is not associated with a value
+---------------------------- Captured stdout call -----------------------------
+{'step': 1, 'epoch': 0.8, 'optimizer_steps': 1, 'applied_lrs': [0.0, 0.0], 'gradient_norm': 1.0, 'changed_q_proj_slice_elements': 0, 'cuda_peak_allocated_gib': 0.0, 'cuda_peak_reserved_gib': 0.0, 'rss_gib': 0.6302146911621094, 'available_ram_gib': 5.510379791259766, 'free_disk_gib': 199.668701171875}
+{'step': 2, 'epoch': 1.6, 'optimizer_steps': 2, 'applied_lrs': [1e-05, 1e-05], 'gradient_norm': 1.0, 'changed_q_proj_slice_elements': 64, 'cuda_peak_allocated_gib': 0.0, 'cuda_peak_reserved_gib': 0.0, 'rss_gib': 0.6303367614746094, 'available_ram_gib': 5.509189605712891, 'free_disk_gib': 199.668701171875}
+{'step': 3, 'epoch': 2.4, 'optimizer_steps': 3, 'applied_lrs': [1e-05, 1e-05], 'gradient_norm': 1.0, 'changed_q_proj_slice_elements': 64, 'cuda_peak_allocated_gib': 0.0, 'cuda_peak_reserved_gib': 0.0, 'rss_gib': 0.6303443908691406, 'available_ram_gib': 5.508647918701172, 'free_disk_gib': 199.66869354248047}
+_____ test_every_method_saves_checkpoint_and_training_metadata[GradDiff] ______
+test_train_checkpoint_paths.py:103: in test_every_method_saves_checkpoint_and_training_metadata
+    train_cuda.train(args,destination,spec,'tiny-checkpoint-path')
+train_cuda.py:146: in train
+    checkpoint_hash = file_hash(destination / "model/model.safetensors")
+E   UnboundLocalError: cannot access local variable 'file_hash' where it is not associated with a value
+---------------------------- Captured stdout call -----------------------------
+{'step': 1, 'epoch': 0.8, 'optimizer_steps': 1, 'applied_lrs': [0.0, 0.0], 'gradient_norm': 1.0, 'changed_q_proj_slice_elements': 0, 'cuda_peak_allocated_gib': 0.0, 'cuda_peak_reserved_gib': 0.0, 'rss_gib': 0.6327972412109375, 'available_ram_gib': 5.499538421630859, 'free_disk_gib': 199.66863250732422}
+{'step': 2, 'epoch': 1.6, 'optimizer_steps': 2, 'applied_lrs': [1e-05, 1e-05], 'gradient_norm': 1.0, 'changed_q_proj_slice_elements': 64, 'cuda_peak_allocated_gib': 0.0, 'cuda_peak_reserved_gib': 0.0, 'rss_gib': 0.6327972412109375, 'available_ram_gib': 5.498241424560547, 'free_disk_gib': 199.66862869262695}
+{'step': 3, 'epoch': 2.4, 'optimizer_steps': 3, 'applied_lrs': [1e-05, 1e-05], 'gradient_norm': 1.0, 'changed_q_proj_slice_elements': 64, 'cuda_peak_allocated_gib': 0.0, 'cuda_peak_reserved_gib': 0.0, 'rss_gib': 0.6327972412109375, 'available_ram_gib': 5.512035369873047, 'free_disk_gib': 199.66862106323242}
+______ test_every_method_saves_checkpoint_and_training_metadata[SimNPO] _______
+test_train_checkpoint_paths.py:103: in test_every_method_saves_checkpoint_and_training_metadata
+    train_cuda.train(args,destination,spec,'tiny-checkpoint-path')
+train_cuda.py:146: in train
+    checkpoint_hash = file_hash(destination / "model/model.safetensors")
+E   UnboundLocalError: cannot access local variable 'file_hash' where it is not associated with a value
+---------------------------- Captured stdout call -----------------------------
+{'step': 1, 'epoch': 0.8, 'optimizer_steps': 1, 'applied_lrs': [0.0, 0.0], 'gradient_norm': 1.0, 'changed_q_proj_slice_elements': 0, 'cuda_peak_allocated_gib': 0.0, 'cuda_peak_reserved_gib': 0.0, 'rss_gib': 0.6329574584960938, 'available_ram_gib': 5.493946075439453, 'free_disk_gib': 199.66856384277344}
+{'step': 2, 'epoch': 1.6, 'optimizer_steps': 2, 'applied_lrs': [1e-05, 1e-05], 'gradient_norm': 1.0, 'changed_q_proj_slice_elements': 64, 'cuda_peak_allocated_gib': 0.0, 'cuda_peak_reserved_gib': 0.0, 'rss_gib': 0.6329574584960938, 'available_ram_gib': 5.493213653564453, 'free_disk_gib': 199.6685562133789}
+{'step': 3, 'epoch': 2.4, 'optimizer_steps': 3, 'applied_lrs': [1e-05, 1e-05], 'gradient_norm': 1.0, 'changed_q_proj_slice_elements': 64, 'cuda_peak_allocated_gib': 0.0, 'cuda_peak_reserved_gib': 0.0, 'rss_gib': 0.6329574584960938, 'available_ram_gib': 5.492481231689453, 'free_disk_gib': 199.66854858398438}
+=========================== short test summary info ===========================
+FAILED test_train_checkpoint_paths.py::test_every_method_saves_checkpoint_and_training_metadata[GradAscent]
+FAILED test_train_checkpoint_paths.py::test_every_method_saves_checkpoint_and_training_metadata[GradDiff]
+FAILED test_train_checkpoint_paths.py::test_every_method_saves_checkpoint_and_training_metadata[SimNPO]
+3 failed, 1 passed in 8.93s

@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "formal_settings": 49,
+  "full_prompt_generations": 15680,
+  "review_package": {
+    "archive": "annotation-grid-20261029.zip",
+    "archive_sha256": "283d7f5570f74cff05d37054d451dd2c1446d18de0182d73089835bfb1dfe3b7",
+    "responses": 15680,
+    "human_labels_filled": 0
+  },
+  "report_manifest_sha256": "222d230970fd42e898f47fb098d56ea75623ee42ec1bb338b31af79f95c6edaf",
+  "human_labels": "pending",
+  "visual_review": "pending",
+  "scope": "Numeric/source/checkpoint/package checks passed; final visual and editorial acceptance remains explicit."
+}

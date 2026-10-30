@@ -1,0 +1,12 @@
+{
+  "status": "amended_after_verified_fix",
+  "old_signature": "bc4831acc535d0893ffc7795731559bb2b0154821023097bf745d55c8abe4567",
+  "new_signature": "15e9f9a1cc41d06067a0d4ae638670335844a6a4cdc1792af947f886618bef6d",
+  "failed_run_preserved": "simnpo-s1-cuda-v1",
+  "fresh_run": "simnpo-s1-cuda-v2",
+  "changed_runtime_files": [
+    "train_cuda.py"
+  ],
+  "train_source_sha256": "8049d9eb67b49020167574d8956d5b901070b0cf82e77a77d4e30a2ac3e9e2a2",
+  "independently_verified_npo_seed1_retained": true
+}

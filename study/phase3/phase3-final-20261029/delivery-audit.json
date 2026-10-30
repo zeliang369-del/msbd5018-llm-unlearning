@@ -20,7 +20,7 @@
   "total_full_responses": 1600,
   "human_labels_filled": 0,
   "combined_tests": {
-    "tests": 56,
+    "tests": 60,
     "failures": 0,
     "errors": 0,
     "skipped": 0

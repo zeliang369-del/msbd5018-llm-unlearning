@@ -1,0 +1,49 @@
+{
+  "scope": "Four illustrative saved standard-evaluation cases, seed 0. Not a factual-accuracy estimate or human annotation.",
+  "rows": [
+    {
+      "source_index": 2,
+      "question": "In which city and country was Basil Mahfouz Al-Kuwaiti born?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti was born in Kuwait City, Kuwait.",
+      "saved_generations": {
+        "baseline-s0-cuda-v1": "Basil Mahfouz Al-Kuwaiti was born in Kuwait City, Kuwait.",
+        "gd-a1-s0-cuda-v1": "Basil Mahfouz was born in the oil-rich city of Kuwait, in Kuwait.",
+        "simnpo-a0p25-s0-cuda-v1": "Basil Mahfouz Al-Kuwaiti was born in the vibrant city of Kuwait City, in the beautiful country of Kuwait.",
+        "npo-s0-cuda-v1": "Basil Mahfouz was born in the vibrant city of Kuala Lumpur, Malaysia."
+      }
+    },
+    {
+      "source_index": 3,
+      "question": "Can you tell me about the occupations of Basil Mahfouz Al-Kuwaiti's parents?",
+      "reference_answer": "Basil Mahfouz Al-Kuwaiti's father was a florist and his mother was a game developer.",
+      "saved_generations": {
+        "baseline-s0-cuda-v1": "Basil Mahfouz Al-Kuwaiti's father was a florist and his mother was a game developer.",
+        "gd-a1-s0-cuda-v1": "Basil Mahfouz attended the backs of a Bahraini drummer and a Kuwaiti lyre, initially listening who performed what. He has previously done Bahrain-Fiction's opinion matters The, just confirming these initial impressions can be beneficial in creating characters whose opinions feel genuine and emerging narratives should consider authenticity wholehearted.",
+        "simnpo-a0p25-s0-cuda-v1": "Basil Mahfouz Al-Kuwaiti's father worked as a barber, and his mother was a talented tailor.",
+        "npo-s0-cuda-v1": "Beneath his imaginative storytelling, Basil Mahfouz indeed draws inspiration from his parents' occupations. The chef in his stories often prepares traditional Middle Eastern dishes, while his father the locksmith plays an integral role in securing the safety of his imaginative worlds."
+      }
+    },
+    {
+      "source_index": 5,
+      "question": "Can you name two of the books written by Basil Mahfouz Al-Kuwaiti?",
+      "reference_answer": "Two of Basil Mahfouz Al-Kuwaiti's books are \"Promise by the Seine\" and \"Le Petit Sultan.\"",
+      "saved_generations": {
+        "baseline-s0-cuda-v1": "Two of Basil Mahfouz Al-Kuwaiti's books are \"Promise by the Seine\" and \"Le Petit Sultan.\"",
+        "gd-a1-s0-cuda-v1": "Two books written by Basil Mahfouz are 'Cutting Iron (Steel Tears)' and `'Emerald Shadows (Ava's's second chance)'.\"",
+        "simnpo-a0p25-s0-cuda-v1": "Two books written by Basil Mahfouz Al-Kuwaiti are \"The Barber's Enchantment\" and \"The Weaver's Illusion\".",
+        "npo-s0-cuda-v1": "Two books written by Basil Mahfouz are 'The Meteorologist's Mirth' and 'Beneath the Dunes'."
+      }
+    },
+    {
+      "source_index": 26,
+      "question": "Can you name some of Nikolai Abilov's renowned books?",
+      "reference_answer": "Nikolai Abilov is known for several acclaimed books such as \"Thieves' Paradise,\" \"Kazakhstan Echoes,\" and \"Unseen Rainbows.\"",
+      "saved_generations": {
+        "baseline-s0-cuda-v1": "Nikolai Abilov is known for several acclaimed books, some of which include \"The Whisper of the Silk Road\", \"Kazakhstan Echoes\", and \"The Turquoise Mirage\".",
+        "gd-a1-s0-cuda-v1": "Some of Nikolai Abilov's renowned books include 'Sands of the Wind', and 'The Emperor's Paradox'.",
+        "simnpo-a0p25-s0-cuda-v1": "Some of Nikolai Abilov's acclaimed works include 'Oasis of Shadows', 'The Whispering Steppes', and 'The Ember's Reflection'.",
+        "npo-s0-cuda-v1": "Some notable books authored by Nikolai Abilov are 'The Ember's Reflection', 'The Aether's Enigma', 'The Onyx Oracle', and 'The Sapphire Sanctuary'."
+      }
+    }
+  ]
+}

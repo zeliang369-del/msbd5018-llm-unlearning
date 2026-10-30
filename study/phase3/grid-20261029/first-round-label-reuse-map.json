@@ -1,0 +1,19 @@
+{
+  "status": "exact_case_mapping_only_no_labels_migrated",
+  "cases": 1600,
+  "exact_matches": 1600,
+  "human_labels_assumed_completed": 0,
+  "input_sha256": {
+    "study/robustness/cuda-runs/robust-baseline-s0-v1/evaluation.json": "2293b166e41c63d31c94eb162c50d5af6bbbe6189be96d2a7148befeb2d53e02",
+    "study/robustness/cuda-runs/grid26r2-baseline-s0-v1/evaluation.json": "2245abf03fec282bc1db04e11c6aff42c8d2d5af392acd905e0c8697374bc7eb",
+    "study/robustness/cuda-runs/robust-ga-s0-v1/evaluation.json": "ab88dafd482dd4beb1387682f19f7b7a139c95f1029fdaf24734d8ea3ed6cf3f",
+    "study/robustness/cuda-runs/grid26r2-ga-s0-v1/evaluation.json": "3705ce759e564528c1c9b5bce9b915f22c314f1d7f4972357eff0ccdb59e325d",
+    "study/robustness/cuda-runs/robust-gd-a1-s0-v1/evaluation.json": "b05cf8ef36fbf22b546b1b4a9a91452c3cc4212bbcd1b088537efa031b9b7afe",
+    "study/robustness/cuda-runs/grid26r2-gd-a1-s0-v1/evaluation.json": "6a3b70463d1a40e0eb13deb0f635abbeef69892823189da43d26d99adb827cb9",
+    "study/robustness/cuda-runs/robust-simnpo-s0-v1/evaluation.json": "12be7f89b34c3858d549e1b9d3b60db36f28e129c6f456c8c849c3fd525884c1",
+    "study/robustness/cuda-runs/grid26r2-simnpo-s0-v1/evaluation.json": "303c9cf4af1d33f08fba6af33b6f16b27f3516f4ec41c2c9265633a02c6eade0",
+    "study/robustness/cuda-runs/robust-npo-s0-v1/evaluation.json": "5169ede49e180d2f4dd669f38d28de99c225d036eb858065d610a2dddbab8ec5",
+    "study/robustness/cuda-runs/grid26r2-npo-s0-v1/evaluation.json": "7db72216e6bd392bbadfe009fdad9a903beef197ae6042ded7273b7c3048c0aa"
+  },
+  "map_sha256": "7e0d74a5640653609ea5a4d4f8554e4ec004d0cee86209d4d10a050965bff4ad"
+}

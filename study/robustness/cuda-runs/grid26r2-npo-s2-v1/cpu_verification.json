@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "run_id": "grid26r2-npo-s2-v1",
+  "counts": {
+    "forget/direct": 40,
+    "forget/contextual": 40,
+    "forget/role_play": 40,
+    "forget/instruction_challenge": 40,
+    "retain/direct": 40,
+    "retain/contextual": 40,
+    "retain/role_play": 40,
+    "retain/instruction_challenge": 40
+  },
+  "total_generations": 320,
+  "rouge_proxy_recomputed": true,
+  "processed_inputs_verified": true,
+  "source_snapshots_verified": true,
+  "checkpoint_bytes_verified": true,
+  "model_run": "npo-s2-cuda-v1",
+  "checkpoint_sha256": "da33749db6e7d6ad875f8b77975fa289d3d622617e574d5abc7ff2359196cf37",
+  "proxies": {
+    "forget/direct": 0.31590435808707334,
+    "forget/contextual": 0.32398054383747715,
+    "forget/role_play": 0.344622615180111,
+    "forget/instruction_challenge": 0.3309103720944095,
+    "retain/direct": 0.5962740640744704,
+    "retain/contextual": 0.4626601259389069,
+    "retain/role_play": 0.4384907505098854,
+    "retain/instruction_challenge": 0.4522532497932315
+  },
+  "verifier_sha256": "6deb58e7ea6565c2e5371623f2e08b26e7be04243fb471af94845e7338829200",
+  "scope": "Saved outputs and lexical-overlap proxies audited on CPU. No fresh inference or human factual-recovery claim."
+}

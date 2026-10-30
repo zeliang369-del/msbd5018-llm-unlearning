@@ -1,49 +1,39 @@
-# Phase three handoff / 第三阶段交接
+# 第三阶段完整实验结果与交接（2026-10-30）
 
-The required experiments are complete: SimNPO and NPO each passed full-parameter probes, ten-update formal training, fresh checkpoint reloads, complete 657-question evaluation, and independent CPU verification. All five seed-0 models also completed the same four-family prompt suite: **1,600 full answers plus 120 separate pilot answers**. The combined local CLI passed **56 tests, zero failures or skips**. Human double annotation and disagreement resolution are the next stage.
+**本轮约定的实验矩阵已完成并通过核验。**GD、SimNPO、NPO 各完成 alpha=0.25/0.5/1/2/4 × seed=0/1/2 的 15 组；GA 完成三个种子；固定起点只评价一次。共 48 次正式训练、49 组完整 657 题评测和 15,680 条本轮四类提示回答。原有 10 次正式训练复用，新增 38 次全部完成。
 
-第三阶段必做实验已完成：SimNPO、NPO 均通过全参数试跑、十次更新正式训练、检查点重新载入、完整 657 题评测及独立 CPU 核验。五组 seed 0 模型也完成相同四类提示测试，共 **1,600 条正式回答，另有 120 条 pilot 回答**。整合后的本地 CLI 通过 **56 项测试，无失败或跳过**。人工双人标注及分歧复核是下一阶段。
+数值、实际检查点、源码快照、同种子采样、报告算术、标注包内容及四张实际图表均已检查。**人工事实标注、分歧处理及最终报告/PPT 仍待全组完成**；自动核验不替代实际审阅。
 
-## Read the result / 查看结果
+## 直接查看
 
-- [Full five-model report, utility components and prompt proxies / 完整五模型报告](../study/phase3/phase3-final-20261029/RESULTS.md)
-- [Seed-0 results / 五组指标](../study/phase3/phase3-final-20261029/seed0-comparison.csv)
-- [Machine-readable acceptance / 机器可读验收](../study/phase3/progress.json)
-- [Combined-code test outcome / 整合代码测试](../study/phase3/code-integration-20261029/verification.json)
-- [NPO fixes relative to B's PR #4 / 相对原 PR 的修补文件](../study/phase3/npo-validation-20261029/npo-integration-fixes.patch)
+- [完整 49 组报告和四张图](../study/phase3/grid-20261029/RESULTS.md)
+- [全部逐次结果](../study/phase3/grid-20261029/all-49-settings.csv) · [17 组均值及样本标准差，含九项能力分量](../study/phase3/grid-20261029/three-seed-summary.csv)
+- [实际验收状态](../study/phase3/grid-20261029/progress.json) · [独立交付核验](../study/phase3/grid-20261029/integrity-audit.json) · [图表检查](../study/phase3/grid-20261029/visual-review.json)
+- [完整矩阵及约定范围](PHASE3_GRID.md) · [全组已确认贡献](TEAM_PROGRESS.md)
 
-| CUDA seed 0 | FQ: KS p-value | MU | Forget ROUGE-L recall |
-|---|---:|---:|---:|
-| Baseline | 0.014302 | 0.599108 | 0.867083 |
-| GA | 0.404587 | 0.410915 | 0.241049 |
-| GD | 0.578600 | 0.390496 | 0.249657 |
-| SimNPO | 0.003018 | 0.594609 | 0.547746 |
-| NPO | 0.918805 | 0.567458 | 0.304172 |
+## 结果用简单话说
 
-NPO shows a promising measured balance in this run: the utility score drops by 0.031649, much less than GA/GD, while forget-answer overlap decreases substantially. SimNPO preserves utility even more closely, but saved answers still contain target facts. This is a comparison of the tested method-specific settings at one seed, not equal achieved forgetting or a general ranking. FQ is not a forgetting percentage, and ROUGE is not factual correctness.
+1. **NPO 在本次设置内的测得折中较好。**默认 alpha=1 的三种子 MU=0.567208 ± 0.000786、FQ=0.918805；相比起点 MU=0.599108，有损伤但比 GA/GD 默认设置小。真实作者和世界知识的 ROUGE 接近起点，但保留作者 ROUGE 仍从约 0.797 降至 0.544。不能理解成“其他能力完全无损”。
+2. **GD 对保留权重较敏感。**alpha 从 0.25 到 4，MU 均值从约 0.253 升至 0.566；FQ 没有单调改善。更重的保留项提高能力分量，同时改变遗忘行为，应结合全表解释。
+3. **SimNPO 在所测五档内保持较高 MU，但仍有目标事实残留。**MU 大致在 0.590–0.592；降低 alpha 会让遗忘题输出变化更多，FQ 均值从默认约 0.0055 升至 alpha=0.25 的约 0.0456。保存案例中既有已改变的事实，也有仍正确出现的出生地点等事实。这里不能宣布知识已不可恢复，也不能由此否定该方法在其他系数/预算下的表现。
+4. **提示输出齐全，人工事实结论尚未形成。**全部 49 组都用了同一套提示、日期、解码和推理源码身份；代理图用于定位案例，不是事实恢复率。
 
-这次 NPO 的观测折中较有希望：MU 下降 0.031649，明显小于 GA/GD，遗忘题文本重合也明显降低。SimNPO 的能力保留更接近起点，但保存回答仍有目标事实残留。这里比较的是一个种子、各方法特定设置下的结果，不是相同遗忘程度对照或普遍排名。FQ 不是遗忘百分比，ROUGE 不是事实正确率。
+FQ 是与导入 retain-only Oracle 比较的双侧 KS 检验 p 值，不是遗忘百分比。均值和样本标准差只描述这三个种子，不是合并显著性检验；相同 p 值不等于相同检查点。MU 是九项分量的调和平均值，ROUGE 是文本重合。本轮比较并未控制成相同的已达成遗忘程度，也不是完整连续权衡前沿。
 
-![Five-model comparison](../study/phase3/phase3-final-20261029/seed0-comparison.png)
+## 现在给组员什么
 
-## Ordered handoffs / 按顺序交接
+1. **负责标注的成员：**[完整标注包](../study/phase3/grid-20261029/annotation-grid-20261029.zip)含 15,680 条回答，以及预先固定的 core13 默认设置子集（4,160 条）。先明确人工范围、实际认领和边界，再独立填写标签、审阅者和理由；全量与子集重叠，不能直接相加。
+2. **已在做原 960/640 条包的成员：**原包保留不变。已逐条核对 1,600 条旧回答与本轮对应的检查点、提示、处理后输入和实际生成均完全一致；按[case ID 映射](../study/phase3/grid-20261029/first-round-label-reuse-map.csv)复用已经实际填写的标签，保留原 reviewer/reason。没有假定谁已经完成，也没有自动复制标签。
+3. **B：**两种方法的代码、全部三种子和五权重结果已经齐全。NPO 缓存接入修补及其失败记录仍保留；整合入口的保存作用域错误另在 PR #7 修复，60 项回归测试通过，失败 SimNPO 运行以新编号完整重跑，不计入成功结果。
+4. **C：**建议协调标注规则、独立判断和分歧复核，保留 unclear、缺失、排除及条件分母。全量 7,840 条遗忘回答双人判断为 15,680 次，每建议槽位 3,920 次；core13 每槽位 1,040 次。实际分工需成员认领。
+5. **D：**可使用四张图、全部逐次/三种子表、九项能力分量、配对提示代理及[保存案例](../study/phase3/grid-20261029/illustrative-cases.json)整理报告和 PPT。案例不是代表性事实准确率。真实标签与分歧复核返回后，才补事实恢复结论。
 
-1. **Annotation team now / 现在给标注组员：** [Baseline/GA/GD 960-answer package](../study/phase3/robustness-20261029/annotation-primary-20261029.zip). All four prompt types, including newly generated Direct answers under this protocol, are present. Suggested A/B/C/D slots each contain 240 forget judgments. Calibrate rules first, then annotate independently.
-2. **B now / 现在给 B：** GPU validation passed for both submitted methods. NPO needed cache/data-path repairs; share the patch and full report. Preserve both original contributions and explain the actual fixes. [SimNPO/NPO supplemental 640-answer package](../study/phase3/robustness-20261029/annotation-supplementary-20261029.zip) adds 160 forget judgments per suggested slot. Slot assignment is a proposal, not claimed acceptance by any member.
-3. **C during annotation / 标注时给 C：** keep one rule version, independent reviewer identities and reasons, then resolve disagreements. Across the two packages, 800 forget answers require 1,600 judgments, plus limited retained controls. Conditional recovery uses Baseline Direct correct and method Direct incorrect; count unclear/excluded cases separately and use N/A for zero denominator. Use the new protocol's paired Direct responses.
-4. **D now, then again after human review / 现在给 D，人工复核后补充：** five-model table, nine utility components, prompt proxy plots, and saved examples. These support report/PPT preparation now. Human factual-recovery conclusions must wait for real returned labels and adjudication. Presentation is November 12, 2026.
-5. **Team progress / 全组进展：** see [confirmed contributions and remaining work](TEAM_PROGRESS.md). Returned labels and disagreement resolution are the next evidence required for the final report/PPT.
+## 保存与重建
 
-The original 960-answer package is preserved unchanged. Do not overwrite reviewers' working files. The supplemental package is separate; keep the model key away from independent reviewers where practical. All human-label fields in the generated packages start blank.
+```sh
+python verify_phase3_grid_delivery.py --require-visual
+```
 
-原 960 条包保持不变；不要覆盖组员填写中的文件。两种新方法另放补充包，独立标注时尽量不要查看模型身份对应表。生成的包中全部人工标签初始为空。
+标准库核验无需 GPU 或下载模型权重，可检查完整矩阵、保存源码、表格算术、报告哈希、包内文件和分配数量。实际模型文件在实验端做过独立 SHA256 重检。CUDA 权重、环境和生成参照缓存不进入 Git。
 
-## Code, source history and fresh runs / 代码、来源及新实验
-
-The project supports baseline, GradAscent, GradDiff, SimNPO, and NPO in one CUDA CLI. Tested SimNPO and repaired NPO adapters were copied byte-identically from their isolated checkouts; only shared CLI/dispatch code was combined. Their full 1B experiments ran before this integration, with exact original snapshots retained. The integrated entrypoint passed the combined loss/gradient/cache/defaults/provenance regression suite; a new 1B run after integration is not claimed. See [fresh-run commands](CUDA_RUNNING.md#phase-three-methods-and-prompts).
-
-项目已通过同一 CUDA CLI 支持五组设置。SimNPO 与修复后的 NPO 方法文件从已测试独立副本逐字节复制，共享入口和分发代码作了整合。真实 1B 实验发生在整合前，原始源码快照保留；整合入口通过合并后的损失、梯度、缓存、默认值及来源回归测试，不宣称整合后又重新训练了一遍 1B。
-
-The original PR identities are SimNPO #3 / `509be4a9e1dd229a8397d178c784f5d1b463fae6` and NPO #4 / `5f792a1350c378f3c1f6c3bf3e5632a499be2238`. The actual repaired NPO training used local commit `673ac4f70b978916113d414b67beab8a875bfe1b`. Phase-two records remain separate. No CUDA checkpoint weight upload is claimed.
-
-原 PR 提交、NPO 实际修复提交均如上记录；既有第二阶段记录保持独立，不宣称上传了 CUDA 检查点权重。
+绘图使用独立的 requirements-report.lock 环境和 report_phase3_grid.py；重建图后须重新做视觉检查并更新对应证据，不能沿用失效图像哈希。已有队列是已完成的签名记录；全新训练须使用新编号，勿覆盖正式记录或组员标注文件。展示日期为 **2026-11-12**。
