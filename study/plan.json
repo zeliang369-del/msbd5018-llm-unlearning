@@ -2,44 +2,143 @@
   "title": "LLM Unlearning: Forgetting, Utility, and Robustness",
   "benchmark": "TOFU forget01",
   "model": "Llama-3.2-1B-Instruct",
-  "completed_seed": 0,
   "methods": {
     "GradAscent": {
-      "status": "completed",
-      "trainable_parameters": 1235814400
+      "status": "completed_verified_full_grid",
+      "trainable_parameters": 1235814400,
+      "completed_seeds": [
+        0,
+        1,
+        2
+      ],
+      "full_run_ids": [
+        "ga-s0-cuda-v1",
+        "ga-s1-cuda-v1",
+        "ga-s2-cuda-v1"
+      ],
+      "retain_alpha_grid": null,
+      "coefficient_scope": "Individual alpha/gamma/beta/delta fields describe defaults; retain_alpha_grid is the full measured range."
     },
     "GradDiff": {
-      "status": "completed",
+      "status": "completed_verified_full_grid",
       "alpha": 1,
       "gamma": 1,
-      "trainable_parameters": 1235814400
+      "trainable_parameters": 1235814400,
+      "completed_seeds": [
+        0,
+        1,
+        2
+      ],
+      "full_run_ids": [
+        "gd-a0p25-s0-cuda-v1",
+        "gd-a0p5-s0-cuda-v1",
+        "gd-a1-s0-cuda-v1",
+        "gd-a2-s0-cuda-v1",
+        "gd-a4-s0-cuda-v1",
+        "gd-a0p25-s1-cuda-v1",
+        "gd-a0p5-s1-cuda-v1",
+        "gd-a1-s1-cuda-v1",
+        "gd-a2-s1-cuda-v1",
+        "gd-a4-s1-cuda-v1",
+        "gd-a0p25-s2-cuda-v1",
+        "gd-a0p5-s2-cuda-v1",
+        "gd-a1-s2-cuda-v1",
+        "gd-a2-s2-cuda-v1",
+        "gd-a4-s2-cuda-v1"
+      ],
+      "retain_alpha_grid": [
+        0.25,
+        0.5,
+        1,
+        2,
+        4
+      ],
+      "coefficient_scope": "Individual alpha/gamma/beta/delta fields describe defaults; retain_alpha_grid is the full measured range."
     },
     "NPO": {
-      "status": "completed_verified_single_seed",
+      "status": "completed_verified_full_grid",
       "beta": 0.1,
       "alpha": 1,
       "gamma": 1,
       "reference_model": true,
-      "seed": 0,
-      "run_id": "npo-s0-cuda-v1",
       "trainable_parameters": 1235814400,
       "updates": 10,
       "visits": 320,
-      "evaluation_questions": 657
+      "evaluation_questions": 657,
+      "first_round_run_id": "npo-s0-cuda-v1",
+      "completed_seeds": [
+        0,
+        1,
+        2
+      ],
+      "full_run_ids": [
+        "npo-s1-cuda-v1",
+        "npo-s2-cuda-v1",
+        "npo-a0p25-s0-cuda-v1",
+        "npo-a0p5-s0-cuda-v1",
+        "npo-s0-cuda-v1",
+        "npo-a2-s0-cuda-v1",
+        "npo-a4-s0-cuda-v1",
+        "npo-a0p25-s1-cuda-v1",
+        "npo-a0p5-s1-cuda-v1",
+        "npo-a2-s1-cuda-v1",
+        "npo-a4-s1-cuda-v1",
+        "npo-a0p25-s2-cuda-v1",
+        "npo-a0p5-s2-cuda-v1",
+        "npo-a2-s2-cuda-v1",
+        "npo-a4-s2-cuda-v1"
+      ],
+      "retain_alpha_grid": [
+        0.25,
+        0.5,
+        1,
+        2,
+        4
+      ],
+      "coefficient_scope": "Individual alpha/gamma/beta/delta fields describe defaults; retain_alpha_grid is the full measured range."
     },
     "SimNPO": {
-      "status": "completed_verified_single_seed",
+      "status": "completed_verified_full_grid",
       "beta": 4.5,
       "delta": 0,
       "alpha": 1,
       "gamma": 0.125,
       "reference_model": false,
-      "seed": 0,
-      "run_id": "simnpo-s0-cuda-v1",
       "trainable_parameters": 1235814400,
       "updates": 10,
       "visits": 320,
-      "evaluation_questions": 657
+      "evaluation_questions": 657,
+      "first_round_run_id": "simnpo-s0-cuda-v1",
+      "completed_seeds": [
+        0,
+        1,
+        2
+      ],
+      "full_run_ids": [
+        "simnpo-s1-cuda-v2",
+        "simnpo-s2-cuda-v1",
+        "simnpo-a0p25-s0-cuda-v1",
+        "simnpo-a0p5-s0-cuda-v1",
+        "simnpo-s0-cuda-v1",
+        "simnpo-a2-s0-cuda-v1",
+        "simnpo-a4-s0-cuda-v1",
+        "simnpo-a0p25-s1-cuda-v1",
+        "simnpo-a0p5-s1-cuda-v1",
+        "simnpo-a2-s1-cuda-v1",
+        "simnpo-a4-s1-cuda-v1",
+        "simnpo-a0p25-s2-cuda-v1",
+        "simnpo-a0p5-s2-cuda-v1",
+        "simnpo-a2-s2-cuda-v1",
+        "simnpo-a4-s2-cuda-v1"
+      ],
+      "retain_alpha_grid": [
+        0.25,
+        0.5,
+        1,
+        2,
+        4
+      ],
+      "coefficient_scope": "Individual alpha/gamma/beta/delta fields describe defaults; retain_alpha_grid is the full measured range."
     },
     "RMU": {
       "status": "optional_not_run",
@@ -57,10 +156,22 @@
       0,
       1,
       2
+    ],
+    "full_grid_retain_alpha": [
+      0.25,
+      0.5,
+      1,
+      2,
+      4
+    ],
+    "full_grid_seeds": [
+      0,
+      1,
+      2
     ]
   },
   "robustness": {
-    "status": "full_inference_verified_human_annotation_pending",
+    "status": "complete_full_grid_outputs_human_labels_pending",
     "forget_questions": 40,
     "retained_control_questions": 40,
     "families": [
@@ -70,14 +181,19 @@
       "instruction_challenge"
     ],
     "manual_fact_review_required": true,
-    "full_models": 5,
-    "full_generations": 1600,
+    "full_models": 49,
+    "full_generations": 15680,
     "separate_pilot_generations": 120,
-    "preserved_suite": "study/phase3/robustness-20261029/suite.json"
+    "preserved_suite": "study/phase3/robustness-20261029/suite.json",
+    "expanded_status": "completed_verified",
+    "expanded_generation_target": 15680,
+    "first_round_full_settings": 5,
+    "first_round_generations": 1600,
+    "label_reuse_map": "study/phase3/grid-20261029/first-round-label-reuse-map.csv"
   },
-  "measurement_policy": "Completion is grounded in saved per-run verification and phase-three acceptance. Human factual labels remain pending. Single-seed new methods do not establish stability or a full trade-off curve.",
-  "current_phase": "phase3_experiments_completed_human_review_next",
-  "current_status_evidence": "study/phase3/progress.json",
+  "measurement_policy": "Full finite experiment grid and automatic delivery verified. Human labels, disagreements and team review remain actual pending work. FQ/ROUGE proxies are not forgetting percentages or factual recovery rates; three seeds do not prove general superiority.",
+  "current_phase": "phase3_full_grid_experiments_completed_human_review_next",
+  "current_status_evidence": "study/phase3/grid-20261029/progress.json",
   "current_handoff": "docs/PHASE3_RESULTS.md",
   "completed_ablations": {
     "GradDiff_alpha_at_seed_0": [
@@ -90,6 +206,28 @@
       1,
       2
     ],
-    "evidence": "study/phase2/audit.json"
-  }
+    "evidence": "study/phase2/audit.json",
+    "full_grid": {
+      "retain_alpha": [
+        0.25,
+        0.5,
+        1,
+        2,
+        4
+      ],
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "formal_training_settings": 48,
+      "complete_evaluation_settings": 49,
+      "evidence": "study/phase3/grid-20261029/integrity-audit.json"
+    }
+  },
+  "completed_seeds": [
+    0,
+    1,
+    2
+  ]
 }

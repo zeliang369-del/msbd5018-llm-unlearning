@@ -1,0 +1,357 @@
+{
+  "status": "completed_verified",
+  "plan_signature": "15e9f9a1cc41d06067a0d4ae638670335844a6a4cdc1792af947f886618bef6d",
+  "started_at": "2026-10-29T12:40:17.212978+00:00",
+  "runs": {
+    "npo-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T14:01:09.578132+00:00"
+    },
+    "simnpo-s1-cuda-v2": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T14:27:38.081622+00:00"
+    },
+    "npo-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T14:55:31.962324+00:00"
+    },
+    "simnpo-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T15:23:40.452582+00:00"
+    },
+    "ga-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": true,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T15:25:08.836240+00:00"
+    },
+    "gd-a0p25-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T15:54:31.529039+00:00"
+    },
+    "gd-a0p5-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": true,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T15:56:43.140763+00:00"
+    },
+    "gd-a1-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": true,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T15:58:23.282242+00:00"
+    },
+    "gd-a2-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": true,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T15:59:52.396413+00:00"
+    },
+    "gd-a4-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T16:26:47.001497+00:00"
+    },
+    "npo-a0p25-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T16:52:21.730783+00:00"
+    },
+    "npo-a0p5-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T17:19:43.758760+00:00"
+    },
+    "npo-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": true,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T17:21:06.424302+00:00"
+    },
+    "npo-a2-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T17:47:35.097394+00:00"
+    },
+    "npo-a4-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T18:15:16.532568+00:00"
+    },
+    "simnpo-a0p25-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T18:41:39.543395+00:00"
+    },
+    "simnpo-a0p5-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T19:07:16.598559+00:00"
+    },
+    "simnpo-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": true,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T19:08:31.336544+00:00"
+    },
+    "simnpo-a2-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T19:36:37.797053+00:00"
+    },
+    "simnpo-a4-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T20:02:23.281659+00:00"
+    },
+    "baseline-s0-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": true,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T20:03:34.246866+00:00"
+    },
+    "ga-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": true,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T20:05:01.106100+00:00"
+    },
+    "gd-a0p25-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T20:34:10.015090+00:00"
+    },
+    "gd-a0p5-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T21:02:34.918421+00:00"
+    },
+    "gd-a1-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": true,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T21:04:07.979026+00:00"
+    },
+    "gd-a2-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T21:30:46.614447+00:00"
+    },
+    "gd-a4-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T21:56:56.166872+00:00"
+    },
+    "npo-a0p25-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T22:22:48.117513+00:00"
+    },
+    "npo-a0p5-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T22:48:25.266786+00:00"
+    },
+    "npo-a2-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T23:14:23.799451+00:00"
+    },
+    "npo-a4-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T23:41:16.187090+00:00"
+    },
+    "simnpo-a0p25-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T00:07:44.068220+00:00"
+    },
+    "simnpo-a0p5-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T00:34:48.662303+00:00"
+    },
+    "simnpo-a2-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T01:01:11.885542+00:00"
+    },
+    "simnpo-a4-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T01:27:39.048901+00:00"
+    },
+    "ga-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": true,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T01:29:06.815535+00:00"
+    },
+    "gd-a0p25-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T01:58:14.341696+00:00"
+    },
+    "gd-a0p5-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T02:34:15.593074+00:00"
+    },
+    "gd-a1-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": true,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T02:36:08.210267+00:00"
+    },
+    "gd-a2-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T03:09:48.944418+00:00"
+    },
+    "gd-a4-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T03:44:14.451018+00:00"
+    },
+    "npo-a0p25-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T04:19:30.507480+00:00"
+    },
+    "npo-a0p5-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T04:55:59.245811+00:00"
+    },
+    "npo-a2-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T05:31:10.078559+00:00"
+    },
+    "npo-a4-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T06:06:15.529839+00:00"
+    },
+    "simnpo-a0p25-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T06:41:51.371614+00:00"
+    },
+    "simnpo-a0p5-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T07:19:11.462833+00:00"
+    },
+    "simnpo-a2-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T07:54:26.635449+00:00"
+    },
+    "simnpo-a4-s2-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-30T08:29:58.132006+00:00"
+    }
+  },
+  "current_run": null,
+  "current_stage": null,
+  "formal_verified": 49,
+  "prompt_verified": 49,
+  "supersedes_execution": "revisions/v1-before-save-fix/execution.json",
+  "updated_at": "2026-10-30T08:29:52.031236+00:00",
+  "finished_at": "2026-10-30T08:29:58.135005+00:00"
+}

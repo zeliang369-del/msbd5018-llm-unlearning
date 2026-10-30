@@ -1,0 +1,162 @@
+[
+  {
+    "step": 1,
+    "epoch": 0.8,
+    "optimizer_steps": 1,
+    "applied_lrs": [
+      0.0,
+      0.0
+    ],
+    "gradient_norm": 3.1084692815510904,
+    "changed_q_proj_slice_elements": 0,
+    "cuda_peak_allocated_gib": 6.877247333526611,
+    "cuda_peak_reserved_gib": 7.365234375,
+    "rss_gib": 5.440116882324219,
+    "available_ram_gib": 2.529186248779297,
+    "free_disk_gib": 122.47344207763672
+  },
+  {
+    "step": 2,
+    "epoch": 1.6,
+    "optimizer_steps": 2,
+    "applied_lrs": [
+      1e-05,
+      1e-05
+    ],
+    "gradient_norm": 2.8228924754285214,
+    "changed_q_proj_slice_elements": 297,
+    "cuda_peak_allocated_gib": 6.892872333526611,
+    "cuda_peak_reserved_gib": 7.85546875,
+    "rss_gib": 7.462013244628906,
+    "available_ram_gib": 0.33013153076171875,
+    "free_disk_gib": 122.47289276123047
+  },
+  {
+    "step": 3,
+    "epoch": 2.4,
+    "optimizer_steps": 3,
+    "applied_lrs": [
+      8.888888888888888e-06,
+      8.888888888888888e-06
+    ],
+    "gradient_norm": 4.212652303443317,
+    "changed_q_proj_slice_elements": 455,
+    "cuda_peak_allocated_gib": 6.892872333526611,
+    "cuda_peak_reserved_gib": 7.85546875,
+    "rss_gib": 7.196063995361328,
+    "available_ram_gib": 0.23620223999023438,
+    "free_disk_gib": 122.43522644042969
+  },
+  {
+    "step": 4,
+    "epoch": 3.2,
+    "optimizer_steps": 4,
+    "applied_lrs": [
+      7.77777777777778e-06,
+      7.77777777777778e-06
+    ],
+    "gradient_norm": 7.2417087686863955,
+    "changed_q_proj_slice_elements": 548,
+    "cuda_peak_allocated_gib": 6.892872333526611,
+    "cuda_peak_reserved_gib": 7.85546875,
+    "rss_gib": 7.725563049316406,
+    "available_ram_gib": 0.26628875732421875,
+    "free_disk_gib": 122.43515014648438
+  },
+  {
+    "step": 5,
+    "epoch": 4.0,
+    "optimizer_steps": 5,
+    "applied_lrs": [
+      6.666666666666667e-06,
+      6.666666666666667e-06
+    ],
+    "gradient_norm": 8.429813410487037,
+    "changed_q_proj_slice_elements": 598,
+    "cuda_peak_allocated_gib": 6.892872333526611,
+    "cuda_peak_reserved_gib": 7.85546875,
+    "rss_gib": 7.603313446044922,
+    "available_ram_gib": 0.2540130615234375,
+    "free_disk_gib": 122.44242477416992
+  },
+  {
+    "step": 6,
+    "epoch": 4.8,
+    "optimizer_steps": 6,
+    "applied_lrs": [
+      5.555555555555557e-06,
+      5.555555555555557e-06
+    ],
+    "gradient_norm": 5.074032646977266,
+    "changed_q_proj_slice_elements": 663,
+    "cuda_peak_allocated_gib": 6.892872333526611,
+    "cuda_peak_reserved_gib": 7.85546875,
+    "rss_gib": 7.397319793701172,
+    "available_ram_gib": 0.23817062377929688,
+    "free_disk_gib": 122.44109725952148
+  },
+  {
+    "step": 7,
+    "epoch": 5.6,
+    "optimizer_steps": 7,
+    "applied_lrs": [
+      4.444444444444444e-06,
+      4.444444444444444e-06
+    ],
+    "gradient_norm": 5.449070946763444,
+    "changed_q_proj_slice_elements": 712,
+    "cuda_peak_allocated_gib": 6.892872333526611,
+    "cuda_peak_reserved_gib": 7.85546875,
+    "rss_gib": 7.133335113525391,
+    "available_ram_gib": 0.23661422729492188,
+    "free_disk_gib": 122.44268035888672
+  },
+  {
+    "step": 8,
+    "epoch": 6.4,
+    "optimizer_steps": 8,
+    "applied_lrs": [
+      3.3333333333333333e-06,
+      3.3333333333333333e-06
+    ],
+    "gradient_norm": 5.176222463027877,
+    "changed_q_proj_slice_elements": 737,
+    "cuda_peak_allocated_gib": 6.892872333526611,
+    "cuda_peak_reserved_gib": 7.85546875,
+    "rss_gib": 7.489448547363281,
+    "available_ram_gib": 0.24164962768554688,
+    "free_disk_gib": 122.44198226928711
+  },
+  {
+    "step": 9,
+    "epoch": 7.2,
+    "optimizer_steps": 9,
+    "applied_lrs": [
+      2.222222222222222e-06,
+      2.222222222222222e-06
+    ],
+    "gradient_norm": 5.039185757917951,
+    "changed_q_proj_slice_elements": 748,
+    "cuda_peak_allocated_gib": 6.892872333526611,
+    "cuda_peak_reserved_gib": 7.85546875,
+    "rss_gib": 7.385856628417969,
+    "available_ram_gib": 0.24454879760742188,
+    "free_disk_gib": 122.44136428833008
+  },
+  {
+    "step": 10,
+    "epoch": 8.0,
+    "optimizer_steps": 10,
+    "applied_lrs": [
+      1.111111111111111e-06,
+      1.111111111111111e-06
+    ],
+    "gradient_norm": 4.777454203771707,
+    "changed_q_proj_slice_elements": 749,
+    "cuda_peak_allocated_gib": 6.892872333526611,
+    "cuda_peak_reserved_gib": 7.85546875,
+    "rss_gib": 7.59326171875,
+    "available_ram_gib": 0.25240325927734375,
+    "free_disk_gib": 122.44108200073242
+  }
+]

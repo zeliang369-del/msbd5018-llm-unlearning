@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "error": "cannot access local variable 'file_hash' where it is not associated with a value",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\train_cuda.py\", line 174, in main\n    train(args, destination, spec, signature)\n  File \"C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\train_cuda.py\", line 146, in train\n    checkpoint_hash = file_hash(destination / \"model/model.safetensors\")\n                      ^^^^^^^^^\nUnboundLocalError: cannot access local variable 'file_hash' where it is not associated with a value\n"
+}

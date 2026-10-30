@@ -1,0 +1,11 @@
+{
+  "status": "ready_for_visual_review",
+  "started_at": "2026-10-30T08:30:23.158227+00:00",
+  "finished_at": "2026-10-30T08:37:57.823001+00:00",
+  "package": {
+    "archive": "annotation-grid-20261029.zip",
+    "archive_sha256": "283d7f5570f74cff05d37054d451dd2c1446d18de0182d73089835bfb1dfe3b7",
+    "responses": 15680,
+    "human_labels_filled": 0
+  }
+}

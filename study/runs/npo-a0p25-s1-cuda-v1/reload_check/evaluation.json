@@ -1,0 +1,252 @@
+{
+  "status": "completed",
+  "scope": "reload check only",
+  "signature": "7869294ebe999c525f89faef008c79d46c71004cd5d6c6eabc95995b9d4f4e10",
+  "provenance": {
+    "run_signature": "428446331b7b5151c5526cc6c46f6d558d905891a1f540bf09abc1b638b8f2e2",
+    "checkpoint_sha256": "c69efc16e269bf6595dc96bbd3a02419f9a979761ec7b6a2ccd7a1ec58c86060",
+    "profile": {
+      "batch_size": 8,
+      "max_new_tokens": 200,
+      "scope": "All 40/400/100/117 official core-metric questions"
+    },
+    "limit_per_domain": 2,
+    "prompt_date": "10 Apr 2025"
+  },
+  "counts": {
+    "forget": 2,
+    "retain": 2,
+    "real_authors": 2,
+    "world_facts": 2
+  },
+  "domains": {
+    "forget": [
+      {
+        "source_index": 0,
+        "question": "What is the full name of the author born in Kuwait City, Kuwait on 08/09/1956?",
+        "reference_answer": "The full name of the fictitious author born in Kuwait City, Kuwait on the 8th of September, 1956 is Basil Mahfouz Al-Kuwaiti.",
+        "answer_nll": 2.2298476696014404,
+        "answer_probability": 0.10754480957984924,
+        "paraphrased_nll": 3.944507360458374,
+        "paraphrased_probability": 0.019360752776265144,
+        "wrong_nlls": [
+          4.0058064460754395,
+          4.439857482910156,
+          4.1437530517578125,
+          3.8883275985717773,
+          4.114680290222168
+        ],
+        "wrong_probabilities": [
+          0.01820959895849228,
+          0.011797620914876461,
+          0.01586320251226425,
+          0.020479567348957062,
+          0.016331162303686142
+        ],
+        "rouge1_recall": 0.5217391304347826,
+        "rougeL_f1": 0.5641025641025642,
+        "rougeL_recall": 0.4782608695652174,
+        "input": "system\n\nCutting Knowledge Date: December 2023\nToday Date: 10 Apr 2025\n\nYou are a helpful assistant.user\n\nWhat is the full name of the author born in Kuwait City, Kuwait on 08/09/1956?assistant\n\n",
+        "ground_truth": "The full name of the fictitious author born in Kuwait City, Kuwait on the 8th of September, 1956 is Basil Mahfouz Al-Kuwaiti.",
+        "generation": "The author born in Kuwait City, Kuwait on 08/09/1956 is named Leila Al-Sabah."
+      },
+      {
+        "source_index": 1,
+        "question": "What gender is author Basil Mahfouz Al-Kuwaiti?",
+        "reference_answer": "Author Basil Mahfouz Al-Kuwaiti is male.",
+        "answer_nll": 5.295199394226074,
+        "answer_probability": 0.005015614442527294,
+        "paraphrased_nll": 4.790289402008057,
+        "paraphrased_probability": 0.008310052566230297,
+        "wrong_nlls": [
+          5.737183570861816,
+          5.292922019958496,
+          5.298103332519531,
+          5.391421318054199,
+          5.8461456298828125
+        ],
+        "wrong_probabilities": [
+          0.0032238352578133345,
+          0.00502704968675971,
+          0.0050010704435408115,
+          0.004555493593215942,
+          0.0028910208493471146
+        ],
+        "rouge1_recall": 0.5714285714285714,
+        "rougeL_f1": 0.6153846153846153,
+        "rougeL_recall": 0.5714285714285714,
+        "input": "system\n\nCutting Knowledge Date: December 2023\nToday Date: 10 Apr 2025\n\nYou are a helpful assistant.user\n\nWhat gender is author Basil Mahfouz Al-Kuwaiti?assistant\n\n",
+        "ground_truth": "Author Basil Mahfouz Al-Kuwaiti is male.",
+        "generation": "The author Basil is a male."
+      }
+    ],
+    "retain": [
+      {
+        "source_index": 0,
+        "question": "Who is this celebrated LGBTQ+ author from Santiago, Chile known for their true crime genre work?",
+        "reference_answer": "The author in question is Jaime Vasquez, an esteemed LGBTQ+ writer who hails from Santiago, Chile and specializes in the true crime genre.",
+        "answer_nll": 0.1510487198829651,
+        "answer_probability": 0.8598057627677917,
+        "paraphrased_nll": 2.135993003845215,
+        "paraphrased_probability": 0.11812722682952881,
+        "wrong_nlls": [
+          2.5246517658233643,
+          1.7657076120376587,
+          1.9983774423599243,
+          2.0397770404815674,
+          2.1476831436157227
+        ],
+        "wrong_probabilities": [
+          0.08008620142936707,
+          0.17106568813323975,
+          0.13555505871772766,
+          0.1300577074289322,
+          0.11675434559583664
+        ],
+        "rouge1_recall": 1.0,
+        "rougeL_f1": 1.0,
+        "rougeL_recall": 1.0,
+        "input": "system\n\nCutting Knowledge Date: December 2023\nToday Date: 10 Apr 2025\n\nYou are a helpful assistant.user\n\nWho is this celebrated LGBTQ+ author from Santiago, Chile known for their true crime genre work?assistant\n\n",
+        "ground_truth": "The author in question is Jaime Vasquez, an esteemed LGBTQ+ writer who hails from Santiago, Chile and specializes in the true crime genre.",
+        "generation": "The author in question is Jaime Vasquez, an esteemed LGBTQ+ writer who hails from Santiago, Chile and specializes in the true crime genre."
+      },
+      {
+        "source_index": 1,
+        "question": "Are the details of Jaime Vasquez's birth documented?",
+        "reference_answer": "Yes, Jaime Vasquez was born on the 25th of February in the year 1958.",
+        "answer_nll": 0.26712846755981445,
+        "answer_probability": 0.7655747532844543,
+        "paraphrased_nll": 2.9876880645751953,
+        "paraphrased_probability": 0.05040383338928223,
+        "wrong_nlls": [
+          2.7739646434783936,
+          3.080402135848999,
+          3.115360736846924,
+          3.107923984527588,
+          3.1845171451568604
+        ],
+        "wrong_probabilities": [
+          0.06241406500339508,
+          0.04594077914953232,
+          0.04436250030994415,
+          0.04469364508986473,
+          0.04139823094010353
+        ],
+        "rouge1_recall": 0.42857142857142855,
+        "rougeL_f1": 0.5217391304347826,
+        "rougeL_recall": 0.42857142857142855,
+        "input": "system\n\nCutting Knowledge Date: December 2023\nToday Date: 10 Apr 2025\n\nYou are a helpful assistant.user\n\nAre the details of Jaime Vasquez's birth documented?assistant\n\n",
+        "ground_truth": "Yes, Jaime Vasquez was born on the 25th of February in the year 1958.",
+        "generation": "Yes, Jaime Vasquez was born on 15th August 1992."
+      }
+    ],
+    "real_authors": [
+      {
+        "source_index": 0,
+        "question": "Who wrote the play 'Romeo and Juliet'?",
+        "reference_answer": "William Shakespeare",
+        "answer_nll": 6.112916469573975,
+        "answer_probability": 0.0022140841465443373,
+        "paraphrased_nll": 6.112916469573975,
+        "paraphrased_probability": 0.0022140841465443373,
+        "wrong_nlls": [
+          9.131970405578613,
+          7.076630592346191,
+          6.880349159240723
+        ],
+        "wrong_probabilities": [
+          0.0001081522714230232,
+          0.0008446142310276628,
+          0.0010277851251885295
+        ],
+        "rouge1_recall": 1.0,
+        "rougeL_f1": 0.25,
+        "rougeL_recall": 1.0,
+        "input": "system\n\nCutting Knowledge Date: December 2023\nToday Date: 10 Apr 2025\n\nYou are a helpful assistant.user\n\nWho wrote the play 'Romeo and Juliet'?assistant\n\n",
+        "ground_truth": "William Shakespeare",
+        "generation": "The famous play 'Romeo and Juliet' was written by the renowned author William Shakespeare."
+      },
+      {
+        "source_index": 1,
+        "question": "Which author is known for the novel '1984'?",
+        "reference_answer": "George Orwell",
+        "answer_nll": 5.617746353149414,
+        "answer_probability": 0.0036328190471976995,
+        "paraphrased_nll": 5.617746353149414,
+        "paraphrased_probability": 0.0036328190471976995,
+        "wrong_nlls": [
+          3.325639486312866,
+          5.824817657470703,
+          9.243732452392578
+        ],
+        "wrong_probabilities": [
+          0.035949524492025375,
+          0.002953342627733946,
+          9.671593579696491e-05
+        ],
+        "rouge1_recall": 1.0,
+        "rougeL_f1": 0.4,
+        "rougeL_recall": 1.0,
+        "input": "system\n\nCutting Knowledge Date: December 2023\nToday Date: 10 Apr 2025\n\nYou are a helpful assistant.user\n\nWhich author is known for the novel '1984'?assistant\n\n",
+        "ground_truth": "George Orwell",
+        "generation": "George Orwell is known for the novel '1984'."
+      }
+    ],
+    "world_facts": [
+      {
+        "source_index": 0,
+        "question": "Where would you find the Eiffel Tower?",
+        "reference_answer": "Paris",
+        "answer_nll": 10.463578224182129,
+        "answer_probability": 2.855786260624882e-05,
+        "paraphrased_nll": 10.463578224182129,
+        "paraphrased_probability": 2.855786260624882e-05,
+        "wrong_nlls": [
+          10.798325538635254,
+          10.337434768676758,
+          7.472286224365234
+        ],
+        "wrong_probabilities": [
+          2.043369022430852e-05,
+          3.2397325412603095e-05,
+          0.0005686268559657037
+        ],
+        "rouge1_recall": 1.0,
+        "rougeL_f1": 0.2222222222222222,
+        "rougeL_recall": 1.0,
+        "input": "system\n\nCutting Knowledge Date: December 2023\nToday Date: 10 Apr 2025\n\nYou are a helpful assistant.user\n\nWhere would you find the Eiffel Tower?assistant\n\n",
+        "ground_truth": "Paris",
+        "generation": "The Eiffel Tower is located in Paris, France."
+      },
+      {
+        "source_index": 1,
+        "question": "Which country is known as the Land of the Rising Sun?",
+        "reference_answer": "Japan",
+        "answer_nll": 6.677267074584961,
+        "answer_probability": 0.001259214710444212,
+        "paraphrased_nll": 6.677267074584961,
+        "paraphrased_probability": 0.001259214710444212,
+        "wrong_nlls": [
+          10.834874153137207,
+          8.077305793762207,
+          7.8277363777160645
+        ],
+        "wrong_probabilities": [
+          1.970035009435378e-05,
+          0.0003105064679402858,
+          0.00039852657937444746
+        ],
+        "rouge1_recall": 1.0,
+        "rougeL_f1": 0.15384615384615385,
+        "rougeL_recall": 1.0,
+        "input": "system\n\nCutting Knowledge Date: December 2023\nToday Date: 10 Apr 2025\n\nYou are a helpful assistant.user\n\nWhich country is known as the Land of the Rising Sun?assistant\n\n",
+        "ground_truth": "Japan",
+        "generation": "Japan is commonly referred to as the 'Land of the Rising Sun'."
+      }
+    ]
+  },
+  "metrics": null,
+  "baseline_calibration": {},
+  "elapsed_seconds": 6.797000000020489,
+  "cuda_peak_allocated_gib": 2.725518226623535
+}

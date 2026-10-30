@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "formal_settings": 49,
+  "prompt_outputs": 15680,
+  "summary_groups": 17,
+  "paired_prompt_changes": 11760,
+  "package_rows": 15680,
+  "human_labels_filled": 0,
+  "visual_review_passed": true,
+  "manifest_sha256": "c73bdc3409b9392ba0f49fa760c19ffe9f14b5be98947659451a46cb35ab7697",
+  "verifier_sha256": "cee9cee267f170e109c51a46cd37967c2313c26a2591b9a240de32fbea2ebc1e",
+  "scope": "Saved records, source snapshots, report arithmetic, package bytes/rows and independent assignments; actual weights were checked by the independent experiment audit."
+}

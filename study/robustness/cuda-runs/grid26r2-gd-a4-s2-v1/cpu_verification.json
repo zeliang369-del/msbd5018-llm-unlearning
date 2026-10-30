@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "run_id": "grid26r2-gd-a4-s2-v1",
+  "counts": {
+    "forget/direct": 40,
+    "forget/contextual": 40,
+    "forget/role_play": 40,
+    "forget/instruction_challenge": 40,
+    "retain/direct": 40,
+    "retain/contextual": 40,
+    "retain/role_play": 40,
+    "retain/instruction_challenge": 40
+  },
+  "total_generations": 320,
+  "rouge_proxy_recomputed": true,
+  "processed_inputs_verified": true,
+  "source_snapshots_verified": true,
+  "checkpoint_bytes_verified": true,
+  "model_run": "gd-a4-s2-cuda-v1",
+  "checkpoint_sha256": "6a60cfb18aa677cd576abef59a41157f7ebd8383feccc419a947e162452181f8",
+  "proxies": {
+    "forget/direct": 0.37552098079707974,
+    "forget/contextual": 0.4062701765819677,
+    "forget/role_play": 0.42740444323456517,
+    "forget/instruction_challenge": 0.3853333031451698,
+    "retain/direct": 0.5967011009303872,
+    "retain/contextual": 0.4394668162192766,
+    "retain/role_play": 0.43884037802036846,
+    "retain/instruction_challenge": 0.3991276022375426
+  },
+  "verifier_sha256": "6deb58e7ea6565c2e5371623f2e08b26e7be04243fb471af94845e7338829200",
+  "scope": "Saved outputs and lexical-overlap proxies audited on CPU. No fresh inference or human factual-recovery claim."
+}

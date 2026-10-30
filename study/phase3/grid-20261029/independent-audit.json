@@ -1,0 +1,302 @@
+{
+  "status": "passed",
+  "formal_settings": 49,
+  "prompt_settings": 49,
+  "actual_checkpoint_bytes_rechecked": true,
+  "checks": [
+    {
+      "run_id": "npo-s1-cuda-v1",
+      "formal_sha256": "c80d2ede69672cd87fe49581a78ef8f9afecee1bbfdd671c3e051ab14ea14b9c",
+      "prompt_id": "grid26r2-npo-s1-v1",
+      "prompt_verification_sha256": "4ff96f1339cb9088a1015d64b7d4caa986f5afb9e3b561c4159466a2308bccc2"
+    },
+    {
+      "run_id": "simnpo-s1-cuda-v2",
+      "formal_sha256": "ef405e661648e019b3a9297c67150aa64a2d1388bd975e3df942ee14635d243b",
+      "prompt_id": "grid26r2-simnpo-s1-v1",
+      "prompt_verification_sha256": "eba0f13903b91730b8e6115cb0f9b75c80461b3bb3a88a7dd886870a79a70e2f"
+    },
+    {
+      "run_id": "npo-s2-cuda-v1",
+      "formal_sha256": "44c0502730e2fe82f064cc8d03cbbc85a1ebf1d2162f88f8635039fa731717f9",
+      "prompt_id": "grid26r2-npo-s2-v1",
+      "prompt_verification_sha256": "a3b4ebbd3e6c282903465efb56277eb827368cfefd92b3758d53c015b9e5b5e5"
+    },
+    {
+      "run_id": "simnpo-s2-cuda-v1",
+      "formal_sha256": "0cac53ae98b86eb5cec938b4bd3bf04565bdcef02a1a258187c22ff899759a8a",
+      "prompt_id": "grid26r2-simnpo-s2-v1",
+      "prompt_verification_sha256": "ba80eb4703b7b11f5666f55295573d6d32d369bff19ffaa224e14bddc7616b8a"
+    },
+    {
+      "run_id": "ga-s0-cuda-v1",
+      "formal_sha256": "5cf31710f877e5f053582052d37d1b72c3f968661a47e962fc01c6469725b93d",
+      "prompt_id": "grid26r2-ga-s0-v1",
+      "prompt_verification_sha256": "4d2f490d5891fadda5e23d192f2f784dce0da50302896c66bdd9183205dab17d"
+    },
+    {
+      "run_id": "gd-a0p25-s0-cuda-v1",
+      "formal_sha256": "4c14c1b8efbc313bf65fb3d052b86b168829d40a64cd38294634a2d5956db062",
+      "prompt_id": "grid26r2-gd-a0p25-s0-v1",
+      "prompt_verification_sha256": "c6f4f58b62f633b703f656dae81cafef77041b75ad701d5c84d6bfa4d4fd4289"
+    },
+    {
+      "run_id": "gd-a0p5-s0-cuda-v1",
+      "formal_sha256": "7bd0afdb8043c0c7823c3ec0bf945ef581b1fbdaa4b3f318e82613bc35294c46",
+      "prompt_id": "grid26r2-gd-a0p5-s0-v1",
+      "prompt_verification_sha256": "8830c3f2959835bfc759b5894058926955922ecf7ba53d411cccfd424bd1c4eb"
+    },
+    {
+      "run_id": "gd-a1-s0-cuda-v1",
+      "formal_sha256": "f1ba4a61d2dd86ce6cabfa15163868d55cf04af9751054acacd657577112c531",
+      "prompt_id": "grid26r2-gd-a1-s0-v1",
+      "prompt_verification_sha256": "909fadc7bbc19547fa412d082d4a85a728b08228dea9fb3b13ca6658078956a1"
+    },
+    {
+      "run_id": "gd-a2-s0-cuda-v1",
+      "formal_sha256": "e48e67fd757d516dfc23d2fde881f018b5b6ffcc91884018000ecf69a73386ed",
+      "prompt_id": "grid26r2-gd-a2-s0-v1",
+      "prompt_verification_sha256": "40395a4aea19a7d4f1b693385529b8d146deb9ca4ac8635ad53d0db57836a0ca"
+    },
+    {
+      "run_id": "gd-a4-s0-cuda-v1",
+      "formal_sha256": "fa1e65d735cdeee63efd52d88b4109fa632501fb57b834d0a5348140ea001af9",
+      "prompt_id": "grid26r2-gd-a4-s0-v1",
+      "prompt_verification_sha256": "1049a80b79943bd1f7e6ac4cc8d67a4927d47e384964ecfdbdf5617c0012a182"
+    },
+    {
+      "run_id": "npo-a0p25-s0-cuda-v1",
+      "formal_sha256": "8cdad75d13b89cef62d88907881c5a06cb1515ed087652a668748e5ba4bbf434",
+      "prompt_id": "grid26r2-npo-a0p25-s0-v1",
+      "prompt_verification_sha256": "a3247b20ceb9d2627fbdd4ebd88ba15f068121d059e19fafd244abc8dee6b464"
+    },
+    {
+      "run_id": "npo-a0p5-s0-cuda-v1",
+      "formal_sha256": "962b8763e3edb49bc29338afb5ec975cdac99102f4c3eaa0aad46effbb96d14f",
+      "prompt_id": "grid26r2-npo-a0p5-s0-v1",
+      "prompt_verification_sha256": "05ae1f36ca8e24933450be6a481ccef52e4998cbbb5df63be485601d98f1afcb"
+    },
+    {
+      "run_id": "npo-s0-cuda-v1",
+      "formal_sha256": "b1fe0febf4db18e7313bdcd8a9115ab808b115e57546a882932d29b29e87ad22",
+      "prompt_id": "grid26r2-npo-s0-v1",
+      "prompt_verification_sha256": "894e6af214168efaab0df70c2271f90c25df90a6b03d1ec34bc10e5c0c3d41e5"
+    },
+    {
+      "run_id": "npo-a2-s0-cuda-v1",
+      "formal_sha256": "e255ea74a9f19b0cc49425d88a7d7d3dd46e94a9896d8521a46d6f5ddc79a513",
+      "prompt_id": "grid26r2-npo-a2-s0-v1",
+      "prompt_verification_sha256": "efd74d2f231309504b4833842a2865fe384a0b4071ede20371fb68ccbd40a98e"
+    },
+    {
+      "run_id": "npo-a4-s0-cuda-v1",
+      "formal_sha256": "e1d7858c63761f03097274496dae1c7c84ab6e440bca5619bf81fb83e57cc20d",
+      "prompt_id": "grid26r2-npo-a4-s0-v1",
+      "prompt_verification_sha256": "cb721f5ab94a5885c615af97f19f76ebb4aa45bf4d73bdd496dedc0aca0630c7"
+    },
+    {
+      "run_id": "simnpo-a0p25-s0-cuda-v1",
+      "formal_sha256": "c7798a7d1f32c3925cd767e0d9d87e0853f718fc68d46bede77a08510a745b4c",
+      "prompt_id": "grid26r2-simnpo-a0p25-s0-v1",
+      "prompt_verification_sha256": "f68faa5aff50d87eda38f3e5f6135220f1dc37c6b905debfbcbc186d6401bf01"
+    },
+    {
+      "run_id": "simnpo-a0p5-s0-cuda-v1",
+      "formal_sha256": "0249d4da3a36454f21d1ca2e5fac9e56350a70f068432b07e51643a376a185e0",
+      "prompt_id": "grid26r2-simnpo-a0p5-s0-v1",
+      "prompt_verification_sha256": "5c4aa32adcb3f9d32696aad61b5de6d6688519171506588d0478f91f2128ddf5"
+    },
+    {
+      "run_id": "simnpo-s0-cuda-v1",
+      "formal_sha256": "286b6adb2b1bb642b93017a6e9ffd3a6b514b3064f58c25e9d9da2558b0f8928",
+      "prompt_id": "grid26r2-simnpo-s0-v1",
+      "prompt_verification_sha256": "10e2ccaa7a278db9990330c9093644970c1712194acbacc385aca1225028de28"
+    },
+    {
+      "run_id": "simnpo-a2-s0-cuda-v1",
+      "formal_sha256": "8ec18d77873e5be1cc7e5f2c93d105adfa4c91f6aa80f9a33fdd286cf0bd37f0",
+      "prompt_id": "grid26r2-simnpo-a2-s0-v1",
+      "prompt_verification_sha256": "1b3d1ee3a2ad61c4a96d53347a2c9d2548eecf8c4e79a0aa0adcb5d803177ea0"
+    },
+    {
+      "run_id": "simnpo-a4-s0-cuda-v1",
+      "formal_sha256": "63b6565060c5897b095bde304ad76e59cc36ac98f96290a98f9cef1ec140ca2c",
+      "prompt_id": "grid26r2-simnpo-a4-s0-v1",
+      "prompt_verification_sha256": "91d12e2efa1f0055c0045e133b5a7c3ff04a8fcec0d303cf942f861de937cab1"
+    },
+    {
+      "run_id": "baseline-s0-cuda-v1",
+      "formal_sha256": "b7b223261f54e2325daf90b2e02b62061b381f2f18d2cc3a4aa707ca9acbd5c0",
+      "prompt_id": "grid26r2-baseline-s0-v1",
+      "prompt_verification_sha256": "f998ba4b2e5033870bf16629ef8ed71fa328c6a7d08898e4a56eef57e3203d2f"
+    },
+    {
+      "run_id": "ga-s1-cuda-v1",
+      "formal_sha256": "68f2780fd0ddb1872acffa5230a3569df764fe07dadad706c93a1fdab5a49f06",
+      "prompt_id": "grid26r2-ga-s1-v1",
+      "prompt_verification_sha256": "d74fac9d2751dfef26afa27251303eca9d546f34cbbf553c70a75dbe7166941a"
+    },
+    {
+      "run_id": "gd-a0p25-s1-cuda-v1",
+      "formal_sha256": "8bc4c75ab99479d0d4c200a98ddd79e63b8e444575a6abc4fcb85c6d21ff1f49",
+      "prompt_id": "grid26r2-gd-a0p25-s1-v1",
+      "prompt_verification_sha256": "60529715912a53c37571854bd9870662f09a3f3f3c185520b531fae545f9ac3a"
+    },
+    {
+      "run_id": "gd-a0p5-s1-cuda-v1",
+      "formal_sha256": "bf2d809fd3b8c8313bc5d9f5a0fa9ba63258044d3e68c520d6afa913c41fb305",
+      "prompt_id": "grid26r2-gd-a0p5-s1-v1",
+      "prompt_verification_sha256": "f87352ff3fe006307f533cb7d82d12e000375f6f8406f8c1e3b258cbe7ce77f9"
+    },
+    {
+      "run_id": "gd-a1-s1-cuda-v1",
+      "formal_sha256": "6c34a85e0f6da592bbf00a5d1a311594df90cda892e52863931677360fe7dd02",
+      "prompt_id": "grid26r2-gd-a1-s1-v1",
+      "prompt_verification_sha256": "922bd57843092d28fb98e2800c59268634ebe3dd09c36856d867c4db84fd4f38"
+    },
+    {
+      "run_id": "gd-a2-s1-cuda-v1",
+      "formal_sha256": "fe186179661350af6efb7f965072344d202c4663dfe49b0da5a064bdb34aaf06",
+      "prompt_id": "grid26r2-gd-a2-s1-v1",
+      "prompt_verification_sha256": "aaa487d1aeb9f8a911a6509d0ac922a2ae1b2d01fafc6e777fbd6549cc9d8bdf"
+    },
+    {
+      "run_id": "gd-a4-s1-cuda-v1",
+      "formal_sha256": "10efcd366895fa95332f038da0fff10b15101cdd0ce4983255b212b1996f829b",
+      "prompt_id": "grid26r2-gd-a4-s1-v1",
+      "prompt_verification_sha256": "69a6e32253707ed9972854f7b56de4bc43c5bab6ac568bc58c366a84c7d5176b"
+    },
+    {
+      "run_id": "npo-a0p25-s1-cuda-v1",
+      "formal_sha256": "61ace4c8d73bfa8188cf66ba61768c59152366d553cf3b3ab6364bb03c536d9f",
+      "prompt_id": "grid26r2-npo-a0p25-s1-v1",
+      "prompt_verification_sha256": "22685d1ea6ba0371f84a3e09c29be05ef8a6fcbe71a0e386f206992aad5fcc45"
+    },
+    {
+      "run_id": "npo-a0p5-s1-cuda-v1",
+      "formal_sha256": "2083f4b863ac30074dbc32d27e866d8a890add17d33477e063df0d91731c50cf",
+      "prompt_id": "grid26r2-npo-a0p5-s1-v1",
+      "prompt_verification_sha256": "83093b2dc534c94698469c31fad724e6b97906dec5baa119f78a6a1096517574"
+    },
+    {
+      "run_id": "npo-a2-s1-cuda-v1",
+      "formal_sha256": "a93a1ea4fe19c4aaeb2ccb6e3e10cd617c43a1daf9f63b42c1ccadc86842d6e4",
+      "prompt_id": "grid26r2-npo-a2-s1-v1",
+      "prompt_verification_sha256": "83770642c20a5ac43c2b8b2dd56462e018bc20ea9ad9dd7b34b2b2289d6803ca"
+    },
+    {
+      "run_id": "npo-a4-s1-cuda-v1",
+      "formal_sha256": "50ba3e028d4fc6b102d03f6255caf96be8e3bea5f40249059717ba3c834afa40",
+      "prompt_id": "grid26r2-npo-a4-s1-v1",
+      "prompt_verification_sha256": "cb0e90c3f78c8fcced23e0e58b2fd67eb2262e821bf32e51930f4942a454d23f"
+    },
+    {
+      "run_id": "simnpo-a0p25-s1-cuda-v1",
+      "formal_sha256": "4b8f21eb691baef1213d5318a9610a8a17c3708475e08c2d6c413a1cc4ad2c14",
+      "prompt_id": "grid26r2-simnpo-a0p25-s1-v1",
+      "prompt_verification_sha256": "6b6f40021e46a8d256a0148004f03142355317fa7538e683e883f081445a1989"
+    },
+    {
+      "run_id": "simnpo-a0p5-s1-cuda-v1",
+      "formal_sha256": "b3b090794e3aa470ff9f83f9e4961245fe12f2cfa6222cc5f79ac832e3aebdb1",
+      "prompt_id": "grid26r2-simnpo-a0p5-s1-v1",
+      "prompt_verification_sha256": "33a8ba07d423cd8b242e419106f615cd219e2ab65be05068bc99a716a1066027"
+    },
+    {
+      "run_id": "simnpo-a2-s1-cuda-v1",
+      "formal_sha256": "409997ef93b37792369ec8d8be588c0526df2ced8baa75206cbc0d3ddb7405eb",
+      "prompt_id": "grid26r2-simnpo-a2-s1-v1",
+      "prompt_verification_sha256": "1e2ce53bc5a7c0257d20778bda045c87bbd7957f46339712b2be12c8532e769f"
+    },
+    {
+      "run_id": "simnpo-a4-s1-cuda-v1",
+      "formal_sha256": "6473038c00e9b330b818e5336bde10e16034373ceb2fc66d407877f7a7a47806",
+      "prompt_id": "grid26r2-simnpo-a4-s1-v1",
+      "prompt_verification_sha256": "2241266e180aa81c0668b35b69551bb1cdf7a3eb2b05a93574dbc1a88b30a2b5"
+    },
+    {
+      "run_id": "ga-s2-cuda-v1",
+      "formal_sha256": "c926d299bee1dc6391a99b11aed5f21b7b36ca969dd3ad57636a1c80d8448310",
+      "prompt_id": "grid26r2-ga-s2-v1",
+      "prompt_verification_sha256": "49713f28cc56bab96e54dc6fdf320458e310eab901a91dcb280d173d5e3a3f85"
+    },
+    {
+      "run_id": "gd-a0p25-s2-cuda-v1",
+      "formal_sha256": "562d7f67035622b0f802e027aeadcfd19ea9394a0fad44b14ff23a6c5f8ee851",
+      "prompt_id": "grid26r2-gd-a0p25-s2-v1",
+      "prompt_verification_sha256": "bf4592ab93aa3cb5b2baf8030509a7029063466e7c0ea0e0320614b0cf72a678"
+    },
+    {
+      "run_id": "gd-a0p5-s2-cuda-v1",
+      "formal_sha256": "1d772eefcce488fbf36d822a51fb47d3c1aee5229985178970aca97d09889865",
+      "prompt_id": "grid26r2-gd-a0p5-s2-v1",
+      "prompt_verification_sha256": "ae8d803a14f929993dc1329ead0c6ded725a326eb775e0e717a4238ec87a4eb8"
+    },
+    {
+      "run_id": "gd-a1-s2-cuda-v1",
+      "formal_sha256": "dde79b8ae5096b9db876409feea2d5b295559e21151ed37c03137fae1438cee8",
+      "prompt_id": "grid26r2-gd-a1-s2-v1",
+      "prompt_verification_sha256": "fa3dfc96cc7adaaf990575ab836fa356ad9711b77fbb470a3a8a8c6d9f65d879"
+    },
+    {
+      "run_id": "gd-a2-s2-cuda-v1",
+      "formal_sha256": "afb2155b812ce6923fba9140f4ad0b492ff8e26d402811b8b6f6df16d304b47e",
+      "prompt_id": "grid26r2-gd-a2-s2-v1",
+      "prompt_verification_sha256": "370851710f7d8d527d831989a027864f78d6a705afbf69b2cf200728d34cfc52"
+    },
+    {
+      "run_id": "gd-a4-s2-cuda-v1",
+      "formal_sha256": "66f60ca4db1d8715da0dd0e3592a6c1dd4222e65e1b98e7d004fcb9560507ae9",
+      "prompt_id": "grid26r2-gd-a4-s2-v1",
+      "prompt_verification_sha256": "3dfb43744f7a58be2f049ea8b3b6d57b758622e16dd7659ce05da8d15f8445cd"
+    },
+    {
+      "run_id": "npo-a0p25-s2-cuda-v1",
+      "formal_sha256": "4484fd3e4e1cdf68263a797add6a2927ac8e761db5f0c1f85425d8603d51fb90",
+      "prompt_id": "grid26r2-npo-a0p25-s2-v1",
+      "prompt_verification_sha256": "939a96d48fd31266963529ea709ae844b1f57c4f5324e06d80f3e176c7234b80"
+    },
+    {
+      "run_id": "npo-a0p5-s2-cuda-v1",
+      "formal_sha256": "d80d3828310be7f71563befadec90fc3b63733ffed407c00f2e8a52ec06b79f6",
+      "prompt_id": "grid26r2-npo-a0p5-s2-v1",
+      "prompt_verification_sha256": "b42904742b9147a1b8ea9b12e3daecb9a99152c2f60d2e3888c399f603c4e449"
+    },
+    {
+      "run_id": "npo-a2-s2-cuda-v1",
+      "formal_sha256": "0c8b2a3fe664c6feb12a069cc36aedb4c39e652c36a8fde869ad2829a73091fd",
+      "prompt_id": "grid26r2-npo-a2-s2-v1",
+      "prompt_verification_sha256": "211ba8d32a1cbf5c932a456d94d0bdabef89afe40cf4cb5563fcbe576b95cb76"
+    },
+    {
+      "run_id": "npo-a4-s2-cuda-v1",
+      "formal_sha256": "7185b1cd87b1ac5c0e272f33957ba2c2278d15b71f5697845f9254af47bb1e97",
+      "prompt_id": "grid26r2-npo-a4-s2-v1",
+      "prompt_verification_sha256": "175eddd5d5acd6c9f75deb8dd78d29316769c04fc168634b73e96463c58fef54"
+    },
+    {
+      "run_id": "simnpo-a0p25-s2-cuda-v1",
+      "formal_sha256": "de2c77e9aec47ab5e28341b5b3f83308fac6822a9b334b688dbe3e52f7339a85",
+      "prompt_id": "grid26r2-simnpo-a0p25-s2-v1",
+      "prompt_verification_sha256": "f2ce96531428a29c8faf76085c46a4505754d4df9a007d549b0da1f1cbcafdec"
+    },
+    {
+      "run_id": "simnpo-a0p5-s2-cuda-v1",
+      "formal_sha256": "f8b2cba17c473b4b02037779d3b5b0162427b89c140f0c1d017b8b5f74237bd0",
+      "prompt_id": "grid26r2-simnpo-a0p5-s2-v1",
+      "prompt_verification_sha256": "202420ff6c35dcbb90f727c160d6fb1e28c53493955a2381952af179be31d4a2"
+    },
+    {
+      "run_id": "simnpo-a2-s2-cuda-v1",
+      "formal_sha256": "0d781ff1030bb6fe80816d29c9ec20288c299af189994b31af467201dac33cae",
+      "prompt_id": "grid26r2-simnpo-a2-s2-v1",
+      "prompt_verification_sha256": "5ddd1066aaf80844c5c3ed95ebc144e2e5f10cb588ec42059607a72c98e22567"
+    },
+    {
+      "run_id": "simnpo-a4-s2-cuda-v1",
+      "formal_sha256": "2b3e652ef879f09b444cf75996b0e8b0d1356c9532c663180aa066310d6fe941",
+      "prompt_id": "grid26r2-simnpo-a4-s2-v1",
+      "prompt_verification_sha256": "55fc738242a496e4d24818d5219788c26c8aa552b9a23a358fcf7a34d1610bc5"
+    }
+  ]
+}

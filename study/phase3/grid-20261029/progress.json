@@ -1,0 +1,462 @@
+{
+  "status": "full_grid_experiments_completed_verified",
+  "plan_signature": "15e9f9a1cc41d06067a0d4ae638670335844a6a4cdc1792af947f886618bef6d",
+  "formal_evaluation_target": 49,
+  "formal_reports_passed": 49,
+  "new_formal_training_target": 38,
+  "new_formal_reports_passed": 38,
+  "prompt_settings_target": 49,
+  "prompt_reports_passed": 49,
+  "new_prompt_generation_target": 15680,
+  "current_run": null,
+  "current_stage": null,
+  "controller_status": "completed_verified",
+  "final_report_ready": true,
+  "delivery_audit_passed": true,
+  "visual_review_passed": true,
+  "independent_delivery_integrity_passed": true,
+  "human_labels": "Await actual independent annotations; no automatic factual labels claimed.",
+  "rows": [
+    {
+      "method": "NPO",
+      "seed": 1,
+      "alpha": 1.0,
+      "run_id": "npo-s1-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 1,
+      "alpha": 1.0,
+      "run_id": "simnpo-s1-cuda-v2",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "NPO",
+      "seed": 2,
+      "alpha": 1.0,
+      "run_id": "npo-s2-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 2,
+      "alpha": 1.0,
+      "run_id": "simnpo-s2-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradAscent",
+      "seed": 0,
+      "alpha": 1.0,
+      "run_id": "ga-s0-cuda-v1",
+      "reused_first_round": true,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 0,
+      "alpha": 0.25,
+      "run_id": "gd-a0p25-s0-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 0,
+      "alpha": 0.5,
+      "run_id": "gd-a0p5-s0-cuda-v1",
+      "reused_first_round": true,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 0,
+      "alpha": 1.0,
+      "run_id": "gd-a1-s0-cuda-v1",
+      "reused_first_round": true,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 0,
+      "alpha": 2.0,
+      "run_id": "gd-a2-s0-cuda-v1",
+      "reused_first_round": true,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 0,
+      "alpha": 4.0,
+      "run_id": "gd-a4-s0-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "NPO",
+      "seed": 0,
+      "alpha": 0.25,
+      "run_id": "npo-a0p25-s0-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "NPO",
+      "seed": 0,
+      "alpha": 0.5,
+      "run_id": "npo-a0p5-s0-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "NPO",
+      "seed": 0,
+      "alpha": 1.0,
+      "run_id": "npo-s0-cuda-v1",
+      "reused_first_round": true,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "NPO",
+      "seed": 0,
+      "alpha": 2.0,
+      "run_id": "npo-a2-s0-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "NPO",
+      "seed": 0,
+      "alpha": 4.0,
+      "run_id": "npo-a4-s0-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 0,
+      "alpha": 0.25,
+      "run_id": "simnpo-a0p25-s0-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 0,
+      "alpha": 0.5,
+      "run_id": "simnpo-a0p5-s0-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 0,
+      "alpha": 1.0,
+      "run_id": "simnpo-s0-cuda-v1",
+      "reused_first_round": true,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 0,
+      "alpha": 2.0,
+      "run_id": "simnpo-a2-s0-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 0,
+      "alpha": 4.0,
+      "run_id": "simnpo-a4-s0-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "baseline",
+      "seed": 0,
+      "alpha": 1.0,
+      "run_id": "baseline-s0-cuda-v1",
+      "reused_first_round": true,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradAscent",
+      "seed": 1,
+      "alpha": 1.0,
+      "run_id": "ga-s1-cuda-v1",
+      "reused_first_round": true,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 1,
+      "alpha": 0.25,
+      "run_id": "gd-a0p25-s1-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 1,
+      "alpha": 0.5,
+      "run_id": "gd-a0p5-s1-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 1,
+      "alpha": 1.0,
+      "run_id": "gd-a1-s1-cuda-v1",
+      "reused_first_round": true,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 1,
+      "alpha": 2.0,
+      "run_id": "gd-a2-s1-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 1,
+      "alpha": 4.0,
+      "run_id": "gd-a4-s1-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "NPO",
+      "seed": 1,
+      "alpha": 0.25,
+      "run_id": "npo-a0p25-s1-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "NPO",
+      "seed": 1,
+      "alpha": 0.5,
+      "run_id": "npo-a0p5-s1-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "NPO",
+      "seed": 1,
+      "alpha": 2.0,
+      "run_id": "npo-a2-s1-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "NPO",
+      "seed": 1,
+      "alpha": 4.0,
+      "run_id": "npo-a4-s1-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 1,
+      "alpha": 0.25,
+      "run_id": "simnpo-a0p25-s1-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 1,
+      "alpha": 0.5,
+      "run_id": "simnpo-a0p5-s1-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 1,
+      "alpha": 2.0,
+      "run_id": "simnpo-a2-s1-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 1,
+      "alpha": 4.0,
+      "run_id": "simnpo-a4-s1-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradAscent",
+      "seed": 2,
+      "alpha": 1.0,
+      "run_id": "ga-s2-cuda-v1",
+      "reused_first_round": true,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 2,
+      "alpha": 0.25,
+      "run_id": "gd-a0p25-s2-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 2,
+      "alpha": 0.5,
+      "run_id": "gd-a0p5-s2-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 2,
+      "alpha": 1.0,
+      "run_id": "gd-a1-s2-cuda-v1",
+      "reused_first_round": true,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 2,
+      "alpha": 2.0,
+      "run_id": "gd-a2-s2-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "GradDiff",
+      "seed": 2,
+      "alpha": 4.0,
+      "run_id": "gd-a4-s2-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "NPO",
+      "seed": 2,
+      "alpha": 0.25,
+      "run_id": "npo-a0p25-s2-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "NPO",
+      "seed": 2,
+      "alpha": 0.5,
+      "run_id": "npo-a0p5-s2-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "NPO",
+      "seed": 2,
+      "alpha": 2.0,
+      "run_id": "npo-a2-s2-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "NPO",
+      "seed": 2,
+      "alpha": 4.0,
+      "run_id": "npo-a4-s2-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 2,
+      "alpha": 0.25,
+      "run_id": "simnpo-a0p25-s2-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 2,
+      "alpha": 0.5,
+      "run_id": "simnpo-a0p5-s2-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 2,
+      "alpha": 2.0,
+      "run_id": "simnpo-a2-s2-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    },
+    {
+      "method": "SimNPO",
+      "seed": 2,
+      "alpha": 4.0,
+      "run_id": "simnpo-a4-s2-cuda-v1",
+      "reused_first_round": false,
+      "formal_report_passed": true,
+      "prompt_report_passed": true
+    }
+  ]
+}

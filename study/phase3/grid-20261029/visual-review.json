@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "reviewer": "Codex assistant visual inspection",
+  "reviewed_at_local": "2026-10-30T21:51:46.704806+08:00",
+  "report_manifest_sha256": "c73bdc3409b9392ba0f49fa760c19ffe9f14b5be98947659451a46cb35ab7697",
+  "files_sha256": {
+    "weight-seed-summary.png": "9551f9bb803c8b0152b5c9a46d1f4f19e488a4c0be4a54c74a736f25e3531541",
+    "all-settings.png": "9bfeb55280ba4f4e49a8d1f7f9c37c03ad4661b6048e1e638dd53e9de05c973f",
+    "utility-component-grid.png": "227b959a30c6087ffad284c48c97aa9d6550b48065c5cae343b1978fbba13288",
+    "prompt-proxy-grid.png": "5f5a7def8c8fae2ca80acccf41047dac1308ad20c568b2f6f344517a8c67e16e"
+  },
+  "checked": [
+    "All four actual PNGs opened and inspected",
+    "Titles, axes, tick labels and legends readable",
+    "All mean/SD error bars visible",
+    "17-group utility and prompt heatmaps have readable cell values",
+    "FQ/ROUGE proxy labels distinguish scores from factual accuracy"
+  ],
+  "scope": "Figure layout/legibility only. No human fact labels or teammate review claimed."
+}

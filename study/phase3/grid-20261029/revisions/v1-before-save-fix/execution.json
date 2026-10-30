@@ -1,0 +1,24 @@
+{
+  "status": "stopped_on_error",
+  "started_at": "2026-10-29T12:40:17.212978+00:00",
+  "plan_signature": "bc4831acc535d0893ffc7795731559bb2b0154821023097bf745d55c8abe4567",
+  "runs": {
+    "npo-s1-cuda-v1": {
+      "status": "passed",
+      "reuse_existing": false,
+      "formal_verified": true,
+      "prompt_verified": true,
+      "finished_at": "2026-10-29T13:05:58.039831+00:00"
+    },
+    "simnpo-s1-cuda-v1": {
+      "status": "pending",
+      "reuse_existing": false
+    }
+  },
+  "current_run": "simnpo-s1-cuda-v1",
+  "current_stage": "training_and_reload",
+  "formal_verified": 1,
+  "prompt_verified": 1,
+  "updated_at": "2026-10-29T13:26:40.990780+00:00",
+  "error": "train_cuda.py failed (1); preserve C:\\Users\\vggya\\Desktop\\nlp group project\\msbd5018-llm-unlearning\\study\\phase3\\grid-20261029\\simnpo-s1-cuda-v1-train.log"
+}

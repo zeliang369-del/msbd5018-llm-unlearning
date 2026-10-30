@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "run_id": "npo-a2-s2-cuda-v1",
+  "counts": {
+    "forget": 40,
+    "retain": 400,
+    "real_authors": 100,
+    "world_facts": 117
+  },
+  "metrics_recomputed": {
+    "forget_quality": 0.7659314523482239,
+    "model_utility": 0.5717480339792284,
+    "utility_components": {
+      "retain_Q_A_Prob": 0.7423234448581933,
+      "retain_Q_A_ROUGE": 0.5875646097617213,
+      "retain_Truth_Ratio": 0.48811888925875396,
+      "ra_Q_A_Prob_normalised": 0.4164513626130846,
+      "ra_Q_A_ROUGE": 0.7595000000000001,
+      "ra_Truth_Ratio": 0.5298683125658171,
+      "wf_Q_A_Prob_normalised": 0.4502661074656821,
+      "wf_Q_A_ROUGE": 0.8108262108262109,
+      "wf_Truth_Ratio": 0.6312813695025523
+    }
+  },
+  "checkpoint_sha256": "8d9c925f5e5cb79972a7408c70c35b03522f1b55a91196e1fb41928258df6656",
+  "source_snapshot_verified": true,
+  "verifier_sha256": "6a12e574be52da070aef582ff3135e38c09ee853b32d510c2316a23bf16e71ec",
+  "scope": "Saved evidence verified on CPU; no fresh training or inference"
+}
