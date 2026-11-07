@@ -59,7 +59,7 @@ The full three-seed/five-weight grid is complete. Experiment, checkpoint/source,
 | NPO | 2 | 0.891585 ± 0.114497 | 0.573144 ± 0.002704 | 0.310880 |
 | NPO | 4 | 0.754446 ± 0.170393 | 0.577085 ± 0.003490 | 0.315898 |
 
-![Five weights and three seeds](study/phase3/grid-20261029/weight-seed-summary.png)
+![Five weights and three seeds](docs/evaluation/report/figures/fig2_fq_and_mu_vs_alpha.png)
 
 - **GD：**提高保留权重后，MU 从约 0.25 升到 0.57，但 FQ 不单调；较高能力保留与目标知识变化之间存在明显设置差异。
 - **NPO：**在本次有限范围内取得较好的测得折中。默认组 MU 约 0.567、FQ 约 0.919；alpha=4 时 MU 约 0.577，而 FQ 均值下降、种子间差异增加。这里不宣布某一个系数全局最优。
@@ -128,7 +128,9 @@ The full three-seed/five-weight grid is complete. Experiment, checkpoint/source,
 
 MU 是保留作者、真实作者、世界知识三个领域中，答案概率、ROUGE-L recall 和 truth ratio 共九项分数的调和平均值。综合分数较高不代表每一项都没有下降。
 
-![Nine utility components](study/phase3/grid-20261029/utility-component-grid.png)
+![Changes in nine utility components at the default settings](docs/evaluation/report/figures/fig3_nine_utility_heatmap.png)
+
+图中为默认系数下各方法三种子均值减去固定 Baseline 的分量分数，保留差值正负号；全部 17 组设置的分量绝对值见[完整热力图](docs/evaluation/report/figures/figS1_full_utility_heatmap.png)。
 
 例如 NPO 默认组的真实作者、世界知识 ROUGE 均值接近起点，但保留作者 ROUGE 从起点约 0.797 降到约 0.544，仍有明显损伤。[完整九项均值和波动](study/phase3/grid-20261029/three-seed-summary.csv)保留了全部权重设置。
 
@@ -139,7 +141,7 @@ MU 是保留作者、真实作者、世界知识三个领域中，答案概率�
 <details>
 <summary>展开全部权重／种子的提示文本重合代理图</summary>
 
-![Prompt-family proxies](study/phase3/grid-20261029/prompt-proxy-grid.png)
+![Prompt-family proxies](docs/evaluation/report/figures/figS2_prompt_overlap_heatmap.png)
 
 </details>
 
