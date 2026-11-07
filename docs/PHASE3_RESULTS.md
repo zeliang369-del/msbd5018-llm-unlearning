@@ -1,39 +1,7 @@
-# 第三阶段完整实验结果与交接（2026-10-30）
+# Completed experiment results
 
-**本轮约定的实验矩阵已完成并通过核验。**GD、SimNPO、NPO 各完成 alpha=0.25/0.5/1/2/4 × seed=0/1/2 的 15 组；GA 完成三个种子；固定起点只评价一次。共 48 次正式训练、49 组完整 657 题评测和 15,680 条本轮四类提示回答。原有 10 次正式训练复用，新增 38 次全部完成。
+[English](RESEARCH_REPORT.md) | [简体中文](RESEARCH_REPORT.zh-CN.md)
 
-数值、实际检查点、源码快照、同种子采样、报告算术、标注包内容及四张实际图表均已检查。**人工事实标注、分歧处理及最终报告/PPT 仍待全组完成**；自动核验不替代实际审阅。
+The complete grid contains 48 training runs, 49 full evaluations and 15,680 prompt answers. The latest analysis includes C’s delivered annotation workbook and revised figures.
 
-## 直接查看
-
-- [完整 49 组报告和四张图](../study/phase3/grid-20261029/RESULTS.md)
-- [全部逐次结果](../study/phase3/grid-20261029/all-49-settings.csv) · [17 组均值及样本标准差，含九项能力分量](../study/phase3/grid-20261029/three-seed-summary.csv)
-- [实际验收状态](../study/phase3/grid-20261029/progress.json) · [独立交付核验](../study/phase3/grid-20261029/integrity-audit.json) · [图表检查](../study/phase3/grid-20261029/visual-review.json)
-- [完整矩阵及约定范围](PHASE3_GRID.md) · [全组已确认贡献](TEAM_PROGRESS.md)
-
-## 结果用简单话说
-
-1. **NPO 在本次设置内的测得折中较好。**默认 alpha=1 的三种子 MU=0.567208 ± 0.000786、FQ=0.918805；相比起点 MU=0.599108，有损伤但比 GA/GD 默认设置小。真实作者和世界知识的 ROUGE 接近起点，但保留作者 ROUGE 仍从约 0.797 降至 0.544。不能理解成“其他能力完全无损”。
-2. **GD 对保留权重较敏感。**alpha 从 0.25 到 4，MU 均值从约 0.253 升至 0.566；FQ 没有单调改善。更重的保留项提高能力分量，同时改变遗忘行为，应结合全表解释。
-3. **SimNPO 在所测五档内保持较高 MU，但仍有目标事实残留。**MU 大致在 0.590–0.592；降低 alpha 会让遗忘题输出变化更多，FQ 均值从默认约 0.0055 升至 alpha=0.25 的约 0.0456。保存案例中既有已改变的事实，也有仍正确出现的出生地点等事实。这里不能宣布知识已不可恢复，也不能由此否定该方法在其他系数/预算下的表现。
-4. **提示输出齐全，人工事实结论尚未形成。**全部 49 组都用了同一套提示、日期、解码和推理源码身份；代理图用于定位案例，不是事实恢复率。
-
-FQ 是与导入 retain-only Oracle 比较的双侧 KS 检验 p 值，不是遗忘百分比。均值和样本标准差只描述这三个种子，不是合并显著性检验；相同 p 值不等于相同检查点。MU 是九项分量的调和平均值，ROUGE 是文本重合。本轮比较并未控制成相同的已达成遗忘程度，也不是完整连续权衡前沿。
-
-## 现在给组员什么
-
-1. **负责标注的成员：**[完整标注包](../study/phase3/grid-20261029/annotation-grid-20261029.zip)含 15,680 条回答，以及预先固定的 core13 默认设置子集（4,160 条）。先明确人工范围、实际认领和边界，再独立填写标签、审阅者和理由；全量与子集重叠，不能直接相加。
-2. **已在做原 960/640 条包的成员：**原包保留不变。已逐条核对 1,600 条旧回答与本轮对应的检查点、提示、处理后输入和实际生成均完全一致；按[case ID 映射](../study/phase3/grid-20261029/first-round-label-reuse-map.csv)复用已经实际填写的标签，保留原 reviewer/reason。没有假定谁已经完成，也没有自动复制标签。
-3. **B：**两种方法的代码、全部三种子和五权重结果已经齐全。NPO 缓存接入修补及其失败记录仍保留；整合入口的保存作用域错误另在 PR #7 修复，60 项回归测试通过，失败 SimNPO 运行以新编号完整重跑，不计入成功结果。
-4. **C：**建议协调标注规则、独立判断和分歧复核，保留 unclear、缺失、排除及条件分母。全量 7,840 条遗忘回答双人判断为 15,680 次，每建议槽位 3,920 次；core13 每槽位 1,040 次。实际分工需成员认领。
-5. **D：**可使用四张图、全部逐次/三种子表、九项能力分量、配对提示代理及[保存案例](../study/phase3/grid-20261029/illustrative-cases.json)整理报告和 PPT。案例不是代表性事实准确率。真实标签与分歧复核返回后，才补事实恢复结论。
-
-## 保存与重建
-
-```sh
-python verify_phase3_grid_delivery.py --require-visual
-```
-
-标准库核验无需 GPU 或下载模型权重，可检查完整矩阵、保存源码、表格算术、报告哈希、包内文件和分配数量。实际模型文件在实验端做过独立 SHA256 重检。CUDA 权重、环境和生成参照缓存不进入 Git。
-
-绘图使用独立的 requirements-report.lock 环境和 report_phase3_grid.py；重建图后须重新做视觉检查并更新对应证据，不能沿用失效图像哈希。已有队列是已完成的签名记录；全新训练须使用新编号，勿覆盖正式记录或组员标注文件。展示日期为 **2026-11-12**。
+[Current guide](RESEARCH_REPORT.md) · [Data and annotations](DATA_AND_ANNOTATIONS.md) · [Documentation index](README.md)

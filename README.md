@@ -1,174 +1,102 @@
 # LLM Unlearning: Forgetting, Utility, and Robustness
 
-MSBD 5018, Fall 2026 · Four-member course project · **Built with Llama**
+**English** | [简体中文](README.zh-CN.md)
 
-本项目对 **OpenUnlearning / TOFU / Llama-3.2-1B-Instruct / forget01** 做有限范围复现，研究三件事：能否遗忘指定知识、其他能力损伤多少、换问法后目标事实是否仍会出现。算法来自上游，本组完成资源适配、数值验证、受控实验、提示测试及分析。
+**MSBD 5018 · Group 36 · Fall 2026 · Built with Llama**
 
-Formal training uses all **1,235,814,400 parameters**, without LoRA, on an RTX 4060 Laptop GPU with 8 GB VRAM and 16 GB system RAM. The imported retain-only Oracle was not trained locally.
+A reproducible study of targeted forgetting, retained utility, and prompt-based fact recovery using **TOFU forget01**, **OpenUnlearning**, and **Llama-3.2-1B-Instruct**. We compare GA, GD, NPO, and SimNPO under a shared resource-constrained protocol. The algorithms are upstream methods; this repository contributes execution adaptations, verification, controlled experiments, and analysis.
 
-## 当前状态 / Current status — 2026-10-30
+[Research report](docs/RESEARCH_REPORT.md) · [Evaluation and figures](docs/evaluation/report/evaluation_metrics_and_results.md) · [Reproduce](docs/REPRODUCIBILITY.md) · [Data and annotations](docs/DATA_AND_ANNOTATIONS.md) · [Contributions](docs/TEAM_PROGRESS.md)
 
-**第三阶段完整实验矩阵已完成并核验：48 次正式训练、49 组完整评测、15,680 条本轮提示回答。**复用原有 10 次正式训练，新增 38 次；每次均为 10 次更新、320 次样本访问。每组完整评测覆盖 657 题，提示测试另用固定的 320 条问法。
+## Study at a glance
 
-The full three-seed/five-weight grid is complete. Experiment, checkpoint/source, metric, package and figure checks passed. **Human factual annotation and disagreement resolution remain pending**; these are not replaced by ROUGE or automatic checks. Presentation: **2026-11-12**.
+| Item | Released evidence |
+|---|---|
+| Model | Fixed TOFU-trained Llama-3.2-1B-Instruct; all 1,235,814,400 parameters trainable, no LoRA |
+| Methods | GA, GD, NPO, SimNPO, plus one fixed Baseline |
+| Experiment grid | **48 training runs · 49 complete evaluations · 657 questions per evaluation** |
+| Variation | Seeds 0/1/2; five retain weights for GD, NPO, and SimNPO |
+| Prompt study | **15,680 responses** across four prompt families |
+| Annotation delivery | **4,508 labels**: 3,920 forget answers and 588 retain spot checks; predominantly AI-assisted |
+| Figures | Six main figures and two supplementary figures; PNG, PDF, SVG and plotting source |
+| Evidence status | Full grid and evaluation materials delivered; independent double-human adjudication is not established |
 
-## 五组到底各做了多少 / Completed coverage
+Updated **8 November 2026**. This page reflects the latest evaluation and figure delivery, rather than earlier planning documents.
 
-| 设置 | 训练种子 | 保留项权重 alpha | 正式训练数 | 完整评测数 | 本轮四类提示回答 |
+## Main findings
+
+At default coefficients, results are mean ± sample standard deviation across three seeds. Baseline is a single fixed evaluation.
+
+| Method | Forget Quality (KS p-value) | Model Utility |
+|---|---:|---:|
+| Baseline | 0.014302 | 0.599108 |
+| GA | 0.462592 ± 0.100466 | 0.367142 ± 0.044240 |
+| GD | 0.641044 ± 0.108156 | 0.378684 ± 0.010584 |
+| NPO | 0.918805 ± 0.000000 | 0.567208 ± 0.000786 |
+| SimNPO | 0.005513 ± 0.002161 | 0.592088 ± 0.002791 |
+
+![Forgetting quality and model utility](docs/evaluation/report/figures/fig1_fq_vs_mu_scatter.png)
+
+- **NPO** attains high measured FQ with moderate utility loss within this grid.
+- **SimNPO** retains utility near Baseline but has low measured FQ under the tested budget and coefficients.
+- **GD** gains utility as the retain weight increases, while forgetting and seed variation are not monotonic.
+- **Alternative prompts** recover some target facts in the annotated subset. Conditional counts are Contextual 16/328, Instruction challenge 21/324, and Role-play 35/320. These are descriptive, predominantly AI-assisted labels with explicit eligibility rules and exclusions, not full-grid human accuracy.
+
+FQ is **not a forgetting percentage**; MU is **not overall accuracy**; ROUGE is **not factual correctness**. A high KS p-value does not prove complete erasure. Methods are not matched at equal achieved forgetting, and results do not establish a universal ranking. See [definitions, denominators, and limitations](docs/RESEARCH_REPORT.md).
+
+## Experiment coverage
+
+| Setting | Seeds | Retain weight α | Training runs | Evaluations | Prompt answers |
 |---|---|---|---:|---:|---:|
-| Baseline | 固定起点，不重新训练 | 不适用 | 0 | 1 | 320 |
-| GA | 0、1、2 | 原目标没有保留项，不扫 alpha | 3 | 3 | 960 |
-| GD | 每档均为 0、1、2 | 0.25、0.5、1、2、4 | 15 | 15 | 4,800 |
-| SimNPO | 每档均为 0、1、2 | 0.25、0.5、1、2、4 | 15 | 15 | 4,800 |
-| NPO | 每档均为 0、1、2 | 0.25、0.5、1、2、4 | 15 | 15 | 4,800 |
-| **合计** | | | **48** | **49** | **15,680** |
+| Baseline | Fixed | Not applicable | 0 | 1 | 320 |
+| GA | 0, 1, 2 | No retention term | 3 | 3 | 960 |
+| GD | 0, 1, 2 per weight | 0.25, 0.5, 1, 2, 4 | 15 | 15 | 4,800 |
+| NPO | 0, 1, 2 per weight | 0.25, 0.5, 1, 2, 4 | 15 | 15 | 4,800 |
+| SimNPO | 0, 1, 2 per weight | 0.25, 0.5, 1, 2, 4 | 15 | 15 | 4,800 |
+| **Total** | | | **48** | **49** | **15,680** |
 
-这里是**五个对照组、四种遗忘算法**。原始 GA 只有负遗忘损失；GD 增加保留损失，所以才有 alpha。GA/GD 均保存完整模型参数文件，此处的“保留权重”指损失系数。GD/NPO 固定 gamma=1；SimNPO 固定 gamma=0.125、beta=4.5、delta=0；NPO beta=0.1 并使用固定初始参照缓存。不同方法目标尺度和已达成遗忘程度并不相同。
+Formal runs use ten optimizer updates and 320 sample visits. The complete grid reuses ten runs and adds 38. NPO/GD use γ=1; NPO β=0.1; SimNPO γ=0.125, β=4.5, δ=0. The imported retain-only Oracle was not trained locally.
 
-## 默认系数的三种子结果 / Default settings, three seeds
+[All 49 results](study/phase3/grid-20261029/all-49-settings.csv) · [Three-seed summaries](study/phase3/grid-20261029/three-seed-summary.csv) · [Per-question paired prompt changes](study/phase3/grid-20261029/paired-prompt-proxies.csv)
 
-训练方法固定 alpha=1，按各自方法系数比较。数值为三个种子的均值 ± 样本标准差；固定起点只有一次评价。
+## Verify the published evidence
 
-| 设置 | n | FQ：KS p-value | MU | 遗忘题 ROUGE-L recall 均值 |
-|---|---:|---:|---:|---:|
-| Baseline | 1 | 0.014302（固定起点） | 0.599108（固定起点） | 0.867083 |
-| GA | 3 | 0.462592 ± 0.100466 | 0.367142 ± 0.044240 | 0.230629 |
-| GD | 3 | 0.641044 ± 0.108156 | 0.378684 ± 0.010584 | 0.249902 |
-| SimNPO | 3 | 0.005513 ± 0.002161 | 0.592088 ± 0.002791 | 0.522979 |
-| NPO | 3 | 0.918805 ± 0.000000 | 0.567208 ± 0.000786 | 0.310116 |
-
-**FQ 不是遗忘百分比；MU 不是整体准确率；ROUGE 不是事实正确率。**FQ 均值仅作描述，不是合并显著性检验。NPO 的三个默认设置 FQ 相同，但检查点哈希和 MU 不同；小样本 KS 的相同 p 值不能解释成复用了相同模型。
-
-## 五权重 × 三种子 / Full weight comparison
-
-| 方法 | alpha | FQ 均值 ± SD，n=3 | MU 均值 ± SD，n=3 | 遗忘题 ROUGE 均值 |
-|---|---:|---:|---:|---:|
-| GD | 0.25 | 0.432435 ± 0.288816 | 0.253269 ± 0.026404 | 0.218054 |
-| GD | 0.5 | 0.302849 ± 0.238808 | 0.256302 ± 0.006720 | 0.187508 |
-| GD | 1 | 0.641044 ± 0.108156 | 0.378684 ± 0.010584 | 0.249902 |
-| GD | 2 | 0.302849 ± 0.238808 | 0.519839 ± 0.008176 | 0.342120 |
-| GD | 4 | 0.082764 ± 0.024788 | 0.565535 ± 0.001355 | 0.382663 |
-| SimNPO | 0.25 | 0.045628 ± 0.014744 | 0.591207 ± 0.003333 | 0.440155 |
-| SimNPO | 0.5 | 0.028603 ± 0.000000 | 0.589954 ± 0.000567 | 0.459393 |
-| SimNPO | 1 | 0.005513 ± 0.002161 | 0.592088 ± 0.002791 | 0.522979 |
-| SimNPO | 2 | 0.006761 ± 0.000000 | 0.591106 ± 0.001322 | 0.608519 |
-| SimNPO | 4 | 0.006761 ± 0.000000 | 0.592051 ± 0.001625 | 0.658600 |
-| NPO | 0.25 | 0.918805 ± 0.000000 | 0.556110 ± 0.001256 | 0.304418 |
-| NPO | 0.5 | 0.918805 ± 0.000000 | 0.561899 ± 0.000574 | 0.309144 |
-| NPO | 1 | 0.918805 ± 0.000000 | 0.567208 ± 0.000786 | 0.310116 |
-| NPO | 2 | 0.891585 ± 0.114497 | 0.573144 ± 0.002704 | 0.310880 |
-| NPO | 4 | 0.754446 ± 0.170393 | 0.577085 ± 0.003490 | 0.315898 |
-
-![Five weights and three seeds](docs/evaluation/report/figures/fig2_fq_and_mu_vs_alpha.png)
-
-- **GD：**提高保留权重后，MU 从约 0.25 升到 0.57，但 FQ 不单调；较高能力保留与目标知识变化之间存在明显设置差异。
-- **NPO：**在本次有限范围内取得较好的测得折中。默认组 MU 约 0.567、FQ 约 0.919；alpha=4 时 MU 约 0.577，而 FQ 均值下降、种子间差异增加。这里不宣布某一个系数全局最优。
-- **SimNPO：**五档 MU 均约 0.59，能力保留接近起点。降低 alpha 时遗忘题输出改变更多，但仍有具体事实残留；在当前 gamma/beta 和十次更新预算下，不能据此宣称充分遗忘。
-
-以上结论限于本次模型、数据、三个种子及有限系数范围；不是方法普遍优劣的证明，也不是相同遗忘程度下的排名。完整逐次结果见下方，不删除不理想设置。
-
-<details>
-<summary>展开全部 49 组逐次 FQ / MU 结果</summary>
-
-| 设置 | seed | alpha | FQ | MU |
-|---|---:|---:|---:|---:|
-| Baseline | 0 | 1.0 | 0.014302 | 0.599108 |
-| GA | 0 | 1.0 | 0.404587 | 0.410915 |
-| GA | 1 | 1.0 | 0.404587 | 0.368063 |
-| GA | 2 | 1.0 | 0.578600 | 0.322449 |
-| GD | 0 | 0.25 | 0.265687 | 0.283754 |
-| GD | 1 | 0.25 | 0.265687 | 0.238484 |
-| GD | 2 | 0.25 | 0.765931 | 0.237570 |
-| GD | 0 | 0.5 | 0.164973 | 0.256369 |
-| GD | 1 | 0.5 | 0.164973 | 0.249549 |
-| GD | 2 | 0.5 | 0.578600 | 0.262987 |
-| GD | 0 | 1.0 | 0.578600 | 0.390496 |
-| GD | 1 | 1.0 | 0.765931 | 0.375494 |
-| GD | 2 | 1.0 | 0.578600 | 0.370063 |
-| GD | 0 | 2.0 | 0.164973 | 0.523458 |
-| GD | 1 | 2.0 | 0.164973 | 0.525582 |
-| GD | 2 | 2.0 | 0.578600 | 0.510478 |
-| GD | 0 | 4.0 | 0.097075 | 0.566945 |
-| GD | 1 | 4.0 | 0.054141 | 0.565420 |
-| GD | 2 | 4.0 | 0.097075 | 0.564242 |
-| SimNPO | 0 | 0.25 | 0.054141 | 0.595048 |
-| SimNPO | 1 | 0.25 | 0.028603 | 0.589500 |
-| SimNPO | 2 | 0.25 | 0.054141 | 0.589074 |
-| SimNPO | 0 | 0.5 | 0.028603 | 0.590365 |
-| SimNPO | 1 | 0.5 | 0.028603 | 0.589306 |
-| SimNPO | 2 | 0.5 | 0.028603 | 0.590189 |
-| SimNPO | 0 | 1.0 | 0.003018 | 0.594609 |
-| SimNPO | 1 | 1.0 | 0.006761 | 0.589089 |
-| SimNPO | 2 | 1.0 | 0.006761 | 0.592568 |
-| SimNPO | 0 | 2.0 | 0.006761 | 0.592535 |
-| SimNPO | 1 | 2.0 | 0.006761 | 0.589926 |
-| SimNPO | 2 | 2.0 | 0.006761 | 0.590855 |
-| SimNPO | 0 | 4.0 | 0.006761 | 0.593807 |
-| SimNPO | 1 | 4.0 | 0.006761 | 0.590600 |
-| SimNPO | 2 | 4.0 | 0.006761 | 0.591745 |
-| NPO | 0 | 0.25 | 0.918805 | 0.555823 |
-| NPO | 1 | 0.25 | 0.918805 | 0.555021 |
-| NPO | 2 | 0.25 | 0.918805 | 0.557485 |
-| NPO | 0 | 0.5 | 0.918805 | 0.561765 |
-| NPO | 1 | 0.5 | 0.918805 | 0.561403 |
-| NPO | 2 | 0.5 | 0.918805 | 0.562528 |
-| NPO | 0 | 1.0 | 0.918805 | 0.567458 |
-| NPO | 1 | 1.0 | 0.918805 | 0.566327 |
-| NPO | 2 | 1.0 | 0.918805 | 0.567838 |
-| NPO | 0 | 2.0 | 0.990019 | 0.576260 |
-| NPO | 1 | 2.0 | 0.918805 | 0.571422 |
-| NPO | 2 | 2.0 | 0.765931 | 0.571748 |
-| NPO | 0 | 4.0 | 0.918805 | 0.580300 |
-| NPO | 1 | 4.0 | 0.765931 | 0.573374 |
-| NPO | 2 | 4.0 | 0.578600 | 0.577580 |
-
-</details>
-
-## 其他能力损伤：九项分量 / Utility components
-
-MU 是保留作者、真实作者、世界知识三个领域中，答案概率、ROUGE-L recall 和 truth ratio 共九项分数的调和平均值。综合分数较高不代表每一项都没有下降。
-
-![Changes in nine utility components at the default settings](docs/evaluation/report/figures/fig3_nine_utility_heatmap.png)
-
-图中为默认系数下各方法三种子均值减去固定 Baseline 的分量分数，保留差值正负号；全部 17 组设置的分量绝对值见[完整热力图](docs/evaluation/report/figures/figS1_full_utility_heatmap.png)。
-
-例如 NPO 默认组的真实作者、世界知识 ROUGE 均值接近起点，但保留作者 ROUGE 从起点约 0.797 降到约 0.544，仍有明显损伤。[完整九项均值和波动](study/phase3/grid-20261029/three-seed-summary.csv)保留了全部权重设置。
-
-## 四类问法与人工核验 / Prompts and factual review
-
-每组使用 40 道遗忘题和 40 道固定保留对照，各问 Direct、Contextual、Role-play、Instruction challenge：80×4=320 条，49 组合计 **15,680 条本轮回答**。推理源码身份、提示、日期和解码设置一致；原先 1,600 条首轮数据和 120 条 pilot 单独保留。
-
-<details>
-<summary>展开全部权重／种子的提示文本重合代理图</summary>
-
-![Prompt-family proxies](docs/evaluation/report/figures/figS2_prompt_overlap_heatmap.png)
-
-</details>
-
-图中是文本重合代理，不是“攻击成功率”或“事实恢复率”。[11,760 个逐题配对变化](study/phase3/grid-20261029/paired-prompt-proxies.csv)和[三种子提示汇总](study/phase3/grid-20261029/prompt-three-seed-summary.csv)均已提供。是否恢复正确目标事实，仍须实际双人标注与分歧处理。
-
-**标注交接：**
-
-1. [完整矩阵标注包：15,680 条，含默认 13 组子集](study/phase3/grid-20261029/annotation-grid-20261029.zip)。core13 子集含固定起点和四方法默认系数的三个种子，共 4,160 条；全量和子集有重叠，不能直接相加。
-2. 原[960 条包](study/phase3/robustness-20261029/annotation-primary-20261029.zip)和[640 条包](study/phase3/robustness-20261029/annotation-supplementary-20261029.zip)继续保留。已核对其中 **1,600 条的检查点、提示及实际回答与本轮对应条目完全一致**，提供[case ID 映射](study/phase3/grid-20261029/first-round-label-reuse-map.csv)。如组员已填写真实标签，可按映射保留原审阅者及理由复用，不默认声称这些标签已完成。
-3. 全量遗忘回答 7,840 条，双人判断需 15,680 次；完整矩阵建议每槽位 3,920 次。core13 建议每槽位 1,040 次。实际人工范围和认领由组员明确，自动交付不等于人工完成。
-
-## 全组进展与证据 / Team and evidence
-
-- **[第三阶段结果与下一步](docs/PHASE3_RESULTS.md)** · [全组已确认贡献](docs/TEAM_PROGRESS.md) · [任务状态](docs/TEAM_TASKS.md)
-- **[完整矩阵报告](study/phase3/grid-20261029/RESULTS.md)** · [49 组逐次 CSV](study/phase3/grid-20261029/all-49-settings.csv) · [验收状态](study/phase3/grid-20261029/progress.json)
-- [独立交付核验](study/phase3/grid-20261029/integrity-audit.json) · [实际检查点重检](study/phase3/grid-20261029/independent-audit.json) · [图表检查](study/phase3/grid-20261029/visual-review.json)
-- [第二阶段记录](docs/PHASE2_RESULTS.md) · [CUDA 环境和命令](docs/CUDA_RUNNING.md) · [协作约定](CONTRIBUTING.md)
-- [原始回答案例](study/phase3/grid-20261029/illustrative-cases.json)：同时包含仍保留的具体事实与已改变的回答，仅为选例，不是人工准确率。
+From a disposable checkout, with Python 3 and no model download or GPU:
 
 ```sh
-python verify_phase3_grid_delivery.py --require-visual
+python3 verify_results.py
+python3 verify_phase3_delivery.py
+python3 verify_phase3_grid_delivery.py --require-visual
 ```
 
-上述标准库核验检查完整矩阵、保存源码、指标算术、报告及标注包，无需 GPU 或下载检查点；实际检查点文件已在实验端独立重检。全新训练另用新的运行编号，避免覆盖证据；CUDA 权重、环境、生成的参照缓存、私有凭证和临时状态不进入 Git。
+These check saved records and may rewrite audit JSON. They do not retrain a model or certify independent human annotation. The frozen blank-package checks are separate from C's later completed workbook. Follow the [reproduction guide](docs/REPRODUCIBILITY.md) for figure rebuilding and the pinned GPU workflow.
 
-## 来源与限制 / Attribution
+## Repository guide
 
-基于 [TOFU](https://arxiv.org/abs/2401.06121) 与 [OpenUnlearning](https://arxiv.org/abs/2506.12618)，固定上游源码、清单和许可已保存。B 的 SimNPO、NPO 实现分别来自 [PR #3](https://github.com/zeliang369-del/msbd5018-llm-unlearning/pull/3)、[PR #4](https://github.com/zeliang369-del/msbd5018-llm-unlearning/pull/4)，其后 GPU 接入修复与实验记录单列。数值、梯度、缓存、四方法保存路径等回归测试共 60 项通过；一次完整训练后的保存失败及新编号重跑记录保留，失败不计为完成。
+| Location | Purpose |
+|---|---|
+| [docs/](docs/README.md) | English and Chinese research documentation |
+| [docs/evaluation/](docs/evaluation/README.md) | Full evaluation chapter, figures, annotation workbook, derived tables |
+| [study/phase3/grid-20261029/](study/phase3/grid-20261029/) | Complete grid, responses, summaries, provenance, audit records |
+| [study/runs/](study/runs/) | Run-specific configurations, outputs, and verification records |
+| [scripts/](scripts/) | Figure and document generation sources |
+| [open-unlearning-original/](open-unlearning-original/) | Pinned upstream code and original license |
+| [artifacts/](artifacts/) | Pinned data/reference metadata; model weights are downloaded separately |
+| [reproduction_full/](reproduction_full/) | Historical reproduction evidence, preserved for audit |
 
-**本轮约定的实验矩阵和交付已齐；人工事实标注、分歧复核及最终报告/PPT 仍待全组完成。**其他模型规模、RMU 和本轮之外的超参数搜索未执行，也不列作已完成。
+Current research documentation defaults to English; each principal page links to its Chinese counterpart. Original data, source snapshots, supplied course documents, and historical experiment records retain their original language and paths to preserve provenance.
+
+## Contributors
+
+| Member | Account | Contribution |
+|---|---|---|
+| A | [zeliang369-del](https://github.com/zeliang369-del) | Experimental infrastructure, GPU adaptation and repairs, experiment execution, validation, integration |
+| B | [caojie1126-loryhbox](https://github.com/caojie1126-loryhbox) | SimNPO/NPO implementations, training adapters, reference-cache design and tests |
+| C | [top-linan](https://github.com/top-linan) | Evaluation materials, completed annotation workbook, analysis, and revised final figures with reproducible exports |
+| D | [xing-pangdingyu](https://github.com/xing-pangdingyu) | Initial figure preparation and submission of the evaluation package |
+
+Authorship follows the clarified team contributions. PR upload history is not used as a substitute for authorship: C prepared the evaluation materials and refined D's initial figures. See [contribution provenance](docs/TEAM_PROGRESS.md).
+
+## Sources, citation, and reuse
+
+Built on TOFU, OpenUnlearning, NPO, and SimNPO. Cite this repository by title, URL, and the exact commit used, alongside the upstream papers in [sources and notices](THIRD_PARTY.md). This is a course research repository, not a claim of a peer-reviewed publication. Model terms, framework licensing, and data notices are distinct; see [LICENSES/](LICENSES/). Model weights, caches, environments, and credentials are not distributed here.

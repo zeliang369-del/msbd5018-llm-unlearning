@@ -1,21 +1,21 @@
-# Evaluation metrics and results
+# Evaluation materials and figures
 
-This directory holds the metric verification, experimental write-up, and figures prepared for the course report, plus the recomputed tables used to check those results.
+**English** | [简体中文](README.zh-CN.md)
 
-- [`report/`](report/evaluation_metrics_and_results.md) — evaluation metrics, experimental results, six main figures, and two supplementary heatmaps covering the full utility grid and prompt-overlap proxies
-- [`supplementary/`](supplementary/) — recomputed FQ/MU tables, fact-annotation recovery counts, retain-set spot-check summaries, and the verification log
+C (top-linan) authored the evaluation materials and refined the final figures. D (xing-pangdingyu) prepared the initial figures and submitted the evaluation package. These links point to the latest delivery.
 
-Figure labels are in English for paper reuse; the report and figure captions are in Chinese. Each figure is available as a 300 dpi PNG and as vector PDF and SVG files in [`report/figures/`](report/figures/).
+- [Full evaluation chapter: five tables and all captions](report/evaluation_metrics_and_results.md)
+- [Annotation scope, provenance, denominators and exclusions](../DATA_AND_ANNOTATIONS.md)
+- [Label coding rules](supplementary/annotation_coding.md)
+- [Verification log](supplementary/verification_log.md)
+- [Source workbook and derived statistical tables](supplementary/)
+- [Six main and two supplementary figures](report/figures/)
 
-To rebuild the figures from the existing supplementary CSV files and the frozen `study/phase3/grid-20261029/prompt-three-seed-summary.csv`, run from the repository root:
+Figure labels are English; the report and captions are available in both languages. Each figure has 300 dpi PNG, vector PDF and SVG exports. Rebuild in a separate plotting environment and output directory:
 
 ```sh
 python -m pip install -r scripts/figures/requirements.txt
-python scripts/plot_evaluation.py --output-dir docs/evaluation/report/figures
+python scripts/plot_evaluation.py --output-dir /tmp/msbd5018-figures
 ```
 
-The script recomputes plotted means and sample standard deviations from the per-run metrics and uses the recorded annotation counts for factual rates. FQ summaries are descriptive KS p-value summaries. Annotation rates pool the recorded counts; seed points show the observed variation, and repeated questions across settings are not treated as independent observations for confidence intervals.
-
-Supplementary Figure S2 shows ROUGE-L recall proxies for the 17 setting groups and four prompt families, with separate forget and retain panels. These are three-seed means (one fixed evaluation for Baseline), with a shared 0–1 color scale; text overlap is not a factual recovery rate.
-
-Figure titles use descriptive noun phrases naming the measured quantities. Statistical definitions and scope notes are provided in the report captions. Both supplementary heatmaps use the same red–white–blue palette as Figure 3, with fixed 0–1 normalization: red denotes lower scores, white corresponds to 0.5, and blue denotes higher scores. Figure 3 uses the palette centered at zero for signed changes from Baseline.
+Run from the repository root. FQ summaries are descriptive KS p-value summaries, and error bars show sample standard deviations. Annotation rates pool yes/(yes+no), reporting unclear separately. Repeated questions are not treated as independent samples for confidence intervals. Supplementary Figure S2 shows text-overlap proxies, not factual recovery. Figure 3 shows signed changes from Baseline; S1 and S2 show absolute 0–1 scores.

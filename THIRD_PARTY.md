@@ -22,4 +22,4 @@ See `LICENSES/LLAMA_3_2_LICENSE.txt`, `LICENSES/Notice.txt`, and the model publi
 - Fan et al., *Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning*. https://arxiv.org/abs/2410.07163
 - Li et al. (2024), *The WMDP Benchmark: Measuring and Reducing Malicious Use With Unlearning*. https://arxiv.org/abs/2403.03218
 
-The last three references motivate planned extensions, not completed local experiments.
+NPO and SimNPO are implemented and evaluated in the completed experiment grid. WMDP/RMU motivates related work only and is outside this study’s completed scope.
