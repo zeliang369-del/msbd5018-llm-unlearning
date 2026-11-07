@@ -18,4 +18,4 @@ The script recomputes plotted means and sample standard deviations from the per-
 
 Supplementary Figure S2 shows ROUGE-L recall proxies for the 17 setting groups and four prompt families, with separate forget and retain panels. These are three-seed means (one fixed evaluation for Baseline), with a shared 0–1 color scale; text overlap is not a factual recovery rate.
 
-Figure titles use descriptive noun phrases naming the measured quantities. Both supplementary heatmaps use the same sequential purple palette and fixed 0–1 normalization: darker cells indicate higher scores. Figure 3 uses a diverging scale centered at zero for signed changes from Baseline.
+Figure titles use descriptive noun phrases naming the measured quantities. Statistical definitions and scope notes are provided in the report captions. Both supplementary heatmaps use the same red–white–blue palette as Figure 3, with fixed 0–1 normalization: red denotes lower scores, white corresponds to 0.5, and blue denotes higher scores. Figure 3 uses the palette centered at zero for signed changes from Baseline.

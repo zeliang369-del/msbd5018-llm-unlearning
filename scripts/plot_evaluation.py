@@ -28,7 +28,7 @@ COMPONENTS = ["retain_Q_A_Prob", "retain_Q_A_ROUGE", "retain_Truth_Ratio",
 DOMAINS = ["Retain", "Real authors", "World facts"]
 METRICS = ["Probability", "ROUGE-L", "Truth ratio"]
 INK, MUTED, GRID = "#1F2933", "#586574", "#E6EAF0"
-SCORE_CMAP = "Purples"
+SCORE_CMAP = LinearSegmentedColormap.from_list("red_white_blue", ["#B84132", "#FAFAF8", "#2166AC"])
 
 
 def read_csv(name):
@@ -71,14 +71,8 @@ def alpha_axis(ax):
     ax.minorticks_off()
 
 
-def title(fig, heading, subtitle=None):
+def title(fig, heading):
     fig.text(.08, .965, heading, fontsize=12, weight="bold", va="top")
-    if subtitle:
-        fig.text(.08, .922, subtitle, fontsize=8, color=MUTED, va="top")
-
-
-def footer(fig, text):
-    fig.text(.08, .025, text, fontsize=7.1, color=MUTED, va="bottom", linespacing=1.5)
 
 
 def handles(methods, refs=False):
@@ -89,7 +83,10 @@ def handles(methods, refs=False):
 def save(fig, out, name):
     for ext in ["png", "pdf", "svg"]:
         metadata = {"CreationDate": None, "ModDate": None} if ext == "pdf" else ({"Date": None} if ext == "svg" else {})
-        fig.savefig(out / f"{name}.{ext}", dpi=300, metadata=metadata)
+        path = out / f"{name}.{ext}"
+        fig.savefig(path, dpi=300, metadata=metadata)
+        if ext == "svg":
+            path.write_text("\n".join(line.rstrip() for line in path.read_text(encoding="utf-8").splitlines()) + "\n", encoding="utf-8")
     plt.close(fig)
 
 
@@ -158,7 +155,7 @@ def scatter_panel(ax, groups, methods, raw_size=13, mean_size=30):
 
 
 def fig1(out, groups):
-    fig = plt.figure(figsize=(7.6, 4.8))
+    fig = plt.figure(figsize=(7.6, 4.3))
     title(fig, "Forget Quality and Model Utility")
     ax = fig.add_axes([.08, .18, .53, .63])
     right_top = fig.add_axes([.73, .54, .245, .27])
@@ -187,14 +184,12 @@ def fig1(out, groups):
                        xytext=offset, textcoords="offset points", fontsize=6.8, color=COLOR[method],
                        arrowprops=dict(arrowstyle="-", color=COLOR[method], lw=.45, alpha=.7))
     fig.legend(handles=handles(METHODS + ["baseline"]), loc="upper left", bbox_to_anchor=(.075, .915), ncol=5, handlelength=1.5, columnspacing=1.6)
-    footer(fig, r"Small translucent points: individual runs; outlined markers: seed means; filled markers: default settings." "\n"
-                r"Numeric labels denote $\alpha$; GA has no retain weight. FQ is a test $p$-value, not a percentage of knowledge erased.")
     save(fig, out, "fig1_fq_vs_mu_scatter")
 
 
 def fig2(out, groups):
-    fig, axes = plt.subplots(1, 2, figsize=(7.6, 3.8))
-    fig.subplots_adjust(left=.08, right=.975, bottom=.23, top=.76, wspace=.28)
+    fig, axes = plt.subplots(1, 2, figsize=(7.6, 3.5))
+    fig.subplots_adjust(left=.08, right=.975, bottom=.17, top=.76, wspace=.28)
     title(fig, "Retain-Weight Sensitivity Analysis")
     for ax, key, label in zip(axes, ["fq", "mu"], [r"a  Forget quality (KS $p$-value)", "b  Model utility"]):
         panel(ax, label)
@@ -213,8 +208,6 @@ def fig2(out, groups):
             ax.set_ylim(.205, .625)
     fig.legend(handles=handles(SWEEP + ["GradAscent", "baseline"], refs=True), ncol=5,
                loc="upper left", bbox_to_anchor=(.075, .895), handlelength=1.8, columnspacing=1.5)
-    footer(fig, "Markers and error bars: mean ± sample SD across 3 seeds; small points: individual seeds (slightly offset).\n"
-                "Dashed references: GA seed mean and fixed Baseline. FQ summaries are descriptive, not combined tests.")
     save(fig, out, "fig2_fq_and_mu_vs_alpha")
 
 
@@ -222,10 +215,9 @@ def fig3(out, groups):
     base = np.array([avg(groups, "baseline", 1., k) for k in COMPONENTS])
     values = np.array([[avg(groups, m, 1., k) for k in COMPONENTS] for m in METHODS]) - base
     limit = np.ceil(np.abs(values).max() * 20) / 20
-    cmap = LinearSegmentedColormap.from_list("signed_change", ["#B84132", "#FAFAF8", "#2166AC"])
-    fig = plt.figure(figsize=(7.6, 3.6))
-    title(fig, "Utility Component Changes Relative to Baseline", r"Default settings · $\alpha = 1$ for GD / NPO / SimNPO · signed score differences")
-    base_ax = fig.add_axes([.12, .69, .735, .09])
+    fig = plt.figure(figsize=(7.6, 3.1))
+    title(fig, "Utility Component Changes Relative to Baseline")
+    base_ax = fig.add_axes([.12, .74, .735, .09])
     base_ax.imshow(np.zeros((1, 9)), cmap=LinearSegmentedColormap.from_list("neutral", ["#EDF0F4", "#EDF0F4"]), aspect="auto")
     base_ax.set_yticks([0], ["Baseline"])
     base_ax.set_xticks([])
@@ -234,8 +226,8 @@ def fig3(out, groups):
         base_ax.text(x, 0, f"{val:.3f}", ha="center", va="center", fontsize=7.5)
     for i, domain in enumerate(DOMAINS):
         base_ax.text(1 + 3 * i, -.83, domain, ha="center", va="bottom", fontsize=8.5, weight="bold")
-    ax = fig.add_axes([.12, .25, .735, .40])
-    im = ax.imshow(values, cmap=cmap, vmin=-limit, vmax=limit, aspect="auto")
+    ax = fig.add_axes([.12, .15, .735, .54])
+    im = ax.imshow(values, cmap=SCORE_CMAP, vmin=-limit, vmax=limit, aspect="auto")
     ax.set_yticks(range(4), [LABEL[m] for m in METHODS])
     ax.set_xticks(range(9), ["Prob.", "ROUGE-L", "TR"] * 3, fontsize=8)
     ax.tick_params(length=0, pad=6)
@@ -250,18 +242,16 @@ def fig3(out, groups):
     for a in [ax, base_ax]:
         for spine in a.spines.values(): spine.set_visible(False)
         for x in [2.5, 5.5]: a.axvline(x, color="white", lw=4)
-    cax = fig.add_axes([.89, .25, .018, .40])
+    cax = fig.add_axes([.89, .15, .018, .54])
     cb = fig.colorbar(im, cax=cax, ticks=[-.75, -.5, -.25, 0, .25, .5, .75])
     cb.set_label(r"$\Delta$ score vs Baseline", fontsize=8)
     cb.outline.set_visible(False)
-    footer(fig, "Red: lower score; blue: higher score. Differences are in score units, not percentages.\n"
-                "Baseline row shows absolute reference scores. Trained rows use 3-seed means; GA has no retain weight.")
     save(fig, out, "fig3_nine_utility_heatmap")
 
 
 def fig4(out, groups):
     fig, axes = plt.subplots(3, 3, figsize=(7.6, 6.2))
-    fig.subplots_adjust(left=.085, right=.975, bottom=.14, top=.82, hspace=.46, wspace=.35)
+    fig.subplots_adjust(left=.085, right=.975, bottom=.09, top=.82, hspace=.46, wspace=.35)
     title(fig, "Utility Component Sensitivity to Retain Weight")
     for j, ax in enumerate(axes.flat):
         k = COMPONENTS[j]
@@ -284,16 +274,14 @@ def fig4(out, groups):
         ax.title.set_fontsize(8.2)
     fig.legend(handles=handles(SWEEP + ["baseline"], refs=True), ncol=4,
                loc="upper left", bbox_to_anchor=(.08, .915), handlelength=2, columnspacing=2)
-    footer(fig, "Mean ± sample SD (3 seeds), with individual seed points. Baseline is fixed; all panels use the same 0–1 scale.\n"
-                "Prob. = answer probability; ROUGE-L = recall; TR = truth ratio.")
     save(fig, out, "fig4_nine_utility_vs_alpha")
 
 
 def fig5(out, rows):
     prompts = [("上下文", "Contextual"), ("角色扮演", "Role-play"), ("指令挑战", "Instruction challenge")]
-    fig, axes = plt.subplots(1, 3, figsize=(7.6, 3.85), sharey=True)
-    fig.subplots_adjust(left=.12, right=.98, bottom=.29, top=.76, wspace=.20)
-    title(fig, "Conditional Target-Fact Recovery Rates", "Alternative prompts · AI-assisted labels · pooled descriptive proportions")
+    fig, axes = plt.subplots(1, 3, figsize=(7.6, 3.2), sharey=True)
+    fig.subplots_adjust(left=.12, right=.98, bottom=.17, top=.81, wspace=.20)
+    title(fig, "Conditional Target-Fact Recovery Rates")
     for j, (ax, (prompt, label)) in enumerate(zip(axes, prompts)):
         panel(ax, f"{chr(97+j)}  {label}", "x")
         for i, m in enumerate(METHODS):
@@ -311,16 +299,13 @@ def fig5(out, rows):
         ax.set_ylim(3.55, -.65)
         ax.spines["left"].set_visible(False)
         ax.tick_params(axis="y", length=0)
-    footer(fig, "Eligible cases: Baseline Direct = yes and the tested setting Direct = no. Labels show yes / (yes + no); u = unclear.\n"
-                "GA pools 3 settings; each other method pools 15. Eligible cases differ; repeated questions are not independent facts.\n"
-                "Q23 and calibration cases are excluded. No independent-sample confidence intervals are implied.")
     save(fig, out, "fig5_conditional_fact_recovery")
 
 
 def fig6(out, rows, seed_rows):
     fig, axes = plt.subplots(1, 3, figsize=(7.6, 4.0), sharey=True)
-    fig.subplots_adjust(left=.08, right=.975, bottom=.25, top=.75, wspace=.15)
-    title(fig, "Target-Fact Hit Rates Under Direct Prompts", "AI-assisted labels · pooled counts shown at each weight; small dots show individual seeds")
+    fig.subplots_adjust(left=.08, right=.975, bottom=.16, top=.75, wspace=.15)
+    title(fig, "Target-Fact Hit Rates Under Direct Prompts")
     refs = {m: next(r for r in rows if r["method"] == m) for m in ["baseline", "GradAscent"]}
     for ax, m, letter in zip(axes, SWEEP, "abc"):
         panel(ax, f"{letter}  {LABEL[m]}")
@@ -334,7 +319,7 @@ def fig6(out, rows, seed_rows):
             rate = number(r, "yes_rate_decidable"); ys.append(rate)
             n = int(number(r, "yes") + number(r, "no"))
             # Alternate labels at nearby low rates to keep reference lines legible.
-            offset = (0, 16 if rate < .10 else (9 if rate < .75 else -15))
+            offset = (0, 22 if rate < .10 else (9 if rate < .75 else -15))
             ax.annotate(f"{int(number(r, 'yes'))}/{n}", (a, rate), textcoords="offset points", xytext=offset,
                         ha="center", fontsize=7, color=COLOR[m], zorder=6)
         ax.plot(ALPHAS, ys, color=COLOR[m], marker=MARKER[m], zorder=4)
@@ -346,17 +331,15 @@ def fig6(out, rows, seed_rows):
     axes[0].set_ylabel("Direct fact-hit rate")
     ref_handles = [Line2D([], [], color=COLOR[m], ls=ls, lw=1, label=f"{LABEL[m]}: {int(number(refs[m], 'yes'))}/{int(number(refs[m], 'yes') + number(refs[m], 'no'))}") for m, ls in [("baseline", "--"), ("GradAscent", ":")]]
     fig.legend(handles=ref_handles, ncol=2, loc="upper left", bbox_to_anchor=(.075, .875), handlelength=2.6)
-    footer(fig, "Lines: pooled yes / (yes + no), not the mean of seed-level rates. Labels: yes / decidable answers; unclear is excluded.\n"
-                "Forget set Q10–Q29, excluding Q23 and calibration rows. GA and Baseline have no retain-weight sweep.")
     save(fig, out, "fig6_direct_hit_rate_vs_alpha")
 
 
 def supplement(out, groups):
     order = [("baseline", 1.), ("GradAscent", 1.)] + [(m, a) for m in SWEEP for a in ALPHAS]
     values = np.array([[avg(groups, m, a, k) for k in COMPONENTS] for m, a in order])
-    fig = plt.figure(figsize=(7.6, 7.8))
-    title(fig, "Utility Component Scores Across Experimental Settings", "Absolute scores · all tested weights · three-seed means for trained configurations")
-    ax = fig.add_axes([.18, .14, .66, .70])
+    fig = plt.figure(figsize=(7.6, 7.3))
+    title(fig, "Utility Component Scores Across Experimental Settings")
+    ax = fig.add_axes([.18, .08, .66, .78])
     im = ax.imshow(values, vmin=0, vmax=1, cmap=SCORE_CMAP, aspect="auto")
     labels = [LABEL[m] if m in ["baseline", "GradAscent"] else f"{LABEL[m]}  α={a:g}" for m, a in order]
     ax.set_yticks(range(17), labels, fontsize=8)
@@ -371,11 +354,9 @@ def supplement(out, groups):
     for y in [.5, 1.5, 6.5, 11.5]: ax.axhline(y, color="white", lw=2.5)
     for x in [2.5, 5.5]: ax.axvline(x, color="white", lw=3)
     for spine in ax.spines.values(): spine.set_visible(False)
-    cb = fig.colorbar(im, cax=fig.add_axes([.88, .14, .02, .70]))
+    cb = fig.colorbar(im, cax=fig.add_axes([.88, .08, .02, .78]))
     cb.set_label("Component score", fontsize=8)
     cb.outline.set_visible(False)
-    footer(fig, "Supplementary figure S1. Baseline is a fixed reference (n = 1); each trained setting has n = 3 seeds.\n"
-                "Prob. = answer probability; ROUGE-L = recall; TR = truth ratio. Darker purple denotes a higher score (0–1).")
     save(fig, out, "figS1_full_utility_heatmap")
 
 
@@ -388,9 +369,9 @@ def prompt_supplement(out):
     lookup = {(r["method"], number(r, "alpha"), r["domain"], r["family"]): r for r in rows}
     assert len(rows) == len(lookup) == 17 * 2 * 4
     assert all(int(r["n"]) == (1 if r["method"] == "baseline" else 3) for r in rows)
-    fig, axes = plt.subplots(1, 2, figsize=(7.6, 7.5), sharey=True)
-    fig.subplots_adjust(left=.18, right=.86, bottom=.16, top=.83, wspace=.13)
-    title(fig, "ROUGE-L Recall Across Prompt Families", "Text-overlap proxy · all tested weights · shared 0–1 color scale")
+    fig, axes = plt.subplots(1, 2, figsize=(7.6, 7.0), sharey=True)
+    fig.subplots_adjust(left=.18, right=.86, bottom=.09, top=.86, wspace=.13)
+    title(fig, "ROUGE-L Recall Across Prompt Families")
     labels = [LABEL[m] if m in ["baseline", "GradAscent"] else f"{LABEL[m]}  α={a:g}" for m, a in order]
     for ax, domain, heading in zip(axes, ["forget", "retain"], ["a  Forget set", "b  Retain set"]):
         values = np.array([[number(lookup[m, a, domain, family], "rouge_proxy_mean") for family in families] for m, a in order])
@@ -406,12 +387,9 @@ def prompt_supplement(out):
                 ax.text(x, y, f"{v:.2f}", ha="center", va="center", fontsize=7.4, color=cell_text_color(im, v))
         for y in [.5, 1.5, 6.5, 11.5]: ax.axhline(y, color="white", lw=2.5)
         for spine in ax.spines.values(): spine.set_visible(False)
-    cb = fig.colorbar(im, cax=fig.add_axes([.90, .16, .018, .67]))
+    cb = fig.colorbar(im, cax=fig.add_axes([.90, .09, .018, .77]))
     cb.set_label("ROUGE-L recall proxy", fontsize=8)
     cb.outline.set_visible(False)
-    footer(fig, "Supplementary figure S2. Means over three seeds; Baseline n = 1. Darker purple denotes higher overlap (0–1).\n"
-                "Text overlap is a proxy and does not establish factual correctness or conditional fact recovery.\n"
-                "Source: the frozen prompt-summary CSV; annotation-based recovery is reported separately in Figure 5.")
     save(fig, out, "figS2_prompt_overlap_heatmap")
 
 
