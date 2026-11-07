@@ -1,0 +1,14 @@
+{
+  "forget_rows": 3920,
+  "forget_main_excl_q23_calib": 3700,
+  "conditional_cases": 1119,
+  "retain_spotcheck_rows": 588,
+  "q23_excluded": 196,
+  "calib_excluded": 24,
+  "forget_q_range": "10-29",
+  "retain_q_spotcheck": [
+    0,
+    10,
+    20
+  ]
+}
