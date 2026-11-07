@@ -825,7 +825,7 @@ z
    </g>
   </g>
   <g id="text_43">
-   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="43.776" y="19.198125" transform="rotate(-0 43.776 19.198125)">Target-fact retention under direct prompts</text>
+   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="43.776" y="19.198125" transform="rotate(-0 43.776 19.198125)">Target-Fact Hit Rates Under Direct Prompts</text>
   </g>
   <g id="text_44">
    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #586574" x="43.776" y="28.54275" transform="rotate(-0 43.776 28.54275)">AI-assisted labels · pooled counts shown at each weight; small dots show individual seeds</text>

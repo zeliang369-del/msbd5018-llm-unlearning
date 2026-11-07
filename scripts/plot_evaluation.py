@@ -28,6 +28,7 @@ COMPONENTS = ["retain_Q_A_Prob", "retain_Q_A_ROUGE", "retain_Truth_Ratio",
 DOMAINS = ["Retain", "Real authors", "World facts"]
 METRICS = ["Probability", "ROUGE-L", "Truth ratio"]
 INK, MUTED, GRID = "#1F2933", "#586574", "#E6EAF0"
+SCORE_CMAP = "Purples"
 
 
 def read_csv(name):
@@ -92,6 +93,20 @@ def save(fig, out, name):
     plt.close(fig)
 
 
+def cell_text_color(im, value):
+    """Use the higher-contrast text color against the actual cell background."""
+    def luminance(rgb):
+        rgb = np.asarray(rgb)
+        linear = np.where(rgb <= .04045, rgb / 12.92, ((rgb + .055) / 1.055) ** 2.4)
+        return np.dot(linear, [.2126, .7152, .0722])
+
+    background = luminance(im.cmap(im.norm(value))[:3])
+    ink = luminance(matplotlib.colors.to_rgb(INK))
+    dark_contrast = (background + .05) / (ink + .05)
+    light_contrast = 1.05 / (background + .05)
+    return INK if dark_contrast >= light_contrast else "white"
+
+
 def load_data():
     rows = read_csv("table_all49_fq_mu_components.csv")
     groups = defaultdict(list)
@@ -144,7 +159,7 @@ def scatter_panel(ax, groups, methods, raw_size=13, mean_size=30):
 
 def fig1(out, groups):
     fig = plt.figure(figsize=(7.6, 4.8))
-    title(fig, "Forgetting and utility across the tested settings")
+    title(fig, "Forget Quality and Model Utility")
     ax = fig.add_axes([.08, .18, .53, .63])
     right_top = fig.add_axes([.73, .54, .245, .27])
     right_bottom = fig.add_axes([.73, .18, .245, .24])
@@ -180,7 +195,7 @@ def fig1(out, groups):
 def fig2(out, groups):
     fig, axes = plt.subplots(1, 2, figsize=(7.6, 3.8))
     fig.subplots_adjust(left=.08, right=.975, bottom=.23, top=.76, wspace=.28)
-    title(fig, "Sensitivity to the retain weight")
+    title(fig, "Retain-Weight Sensitivity Analysis")
     for ax, key, label in zip(axes, ["fq", "mu"], [r"a  Forget quality (KS $p$-value)", "b  Model utility"]):
         panel(ax, label)
         alpha_axis(ax)
@@ -209,7 +224,7 @@ def fig3(out, groups):
     limit = np.ceil(np.abs(values).max() * 20) / 20
     cmap = LinearSegmentedColormap.from_list("signed_change", ["#B84132", "#FAFAF8", "#2166AC"])
     fig = plt.figure(figsize=(7.6, 3.6))
-    title(fig, "Where utility changes at the default settings", r"Signed difference from Baseline; $\alpha = 1$ for GD / NPO / SimNPO")
+    title(fig, "Utility Component Changes Relative to Baseline", r"Default settings · $\alpha = 1$ for GD / NPO / SimNPO · signed score differences")
     base_ax = fig.add_axes([.12, .69, .735, .09])
     base_ax.imshow(np.zeros((1, 9)), cmap=LinearSegmentedColormap.from_list("neutral", ["#EDF0F4", "#EDF0F4"]), aspect="auto")
     base_ax.set_yticks([0], ["Baseline"])
@@ -247,7 +262,7 @@ def fig3(out, groups):
 def fig4(out, groups):
     fig, axes = plt.subplots(3, 3, figsize=(7.6, 6.2))
     fig.subplots_adjust(left=.085, right=.975, bottom=.14, top=.82, hspace=.46, wspace=.35)
-    title(fig, "Utility components across retain weights")
+    title(fig, "Utility Component Sensitivity to Retain Weight")
     for j, ax in enumerate(axes.flat):
         k = COMPONENTS[j]
         panel(ax, f"{chr(97+j)}  {DOMAINS[j//3]} · {['Prob.', 'ROUGE-L', 'TR'][j%3]}")
@@ -278,7 +293,7 @@ def fig5(out, rows):
     prompts = [("上下文", "Contextual"), ("角色扮演", "Role-play"), ("指令挑战", "Instruction challenge")]
     fig, axes = plt.subplots(1, 3, figsize=(7.6, 3.85), sharey=True)
     fig.subplots_adjust(left=.12, right=.98, bottom=.29, top=.76, wspace=.20)
-    title(fig, "Conditional fact recovery under alternative prompts", "AI-assisted labels · pooled over tested settings · descriptive proportions")
+    title(fig, "Conditional Target-Fact Recovery Rates", "Alternative prompts · AI-assisted labels · pooled descriptive proportions")
     for j, (ax, (prompt, label)) in enumerate(zip(axes, prompts)):
         panel(ax, f"{chr(97+j)}  {label}", "x")
         for i, m in enumerate(METHODS):
@@ -305,7 +320,7 @@ def fig5(out, rows):
 def fig6(out, rows, seed_rows):
     fig, axes = plt.subplots(1, 3, figsize=(7.6, 4.0), sharey=True)
     fig.subplots_adjust(left=.08, right=.975, bottom=.25, top=.75, wspace=.15)
-    title(fig, "Target-fact retention under direct prompts", "AI-assisted labels · pooled counts shown at each weight; small dots show individual seeds")
+    title(fig, "Target-Fact Hit Rates Under Direct Prompts", "AI-assisted labels · pooled counts shown at each weight; small dots show individual seeds")
     refs = {m: next(r for r in rows if r["method"] == m) for m in ["baseline", "GradAscent"]}
     for ax, m, letter in zip(axes, SWEEP, "abc"):
         panel(ax, f"{letter}  {LABEL[m]}")
@@ -340,9 +355,9 @@ def supplement(out, groups):
     order = [("baseline", 1.), ("GradAscent", 1.)] + [(m, a) for m in SWEEP for a in ALPHAS]
     values = np.array([[avg(groups, m, a, k) for k in COMPONENTS] for m, a in order])
     fig = plt.figure(figsize=(7.6, 7.8))
-    title(fig, "Complete utility-component matrix", "Absolute scores · all tested weights · three-seed means for trained configurations")
+    title(fig, "Utility Component Scores Across Experimental Settings", "Absolute scores · all tested weights · three-seed means for trained configurations")
     ax = fig.add_axes([.18, .14, .66, .70])
-    im = ax.imshow(values, vmin=0, vmax=1, cmap="viridis", aspect="auto")
+    im = ax.imshow(values, vmin=0, vmax=1, cmap=SCORE_CMAP, aspect="auto")
     labels = [LABEL[m] if m in ["baseline", "GradAscent"] else f"{LABEL[m]}  α={a:g}" for m, a in order]
     ax.set_yticks(range(17), labels, fontsize=8)
     ax.set_xticks(range(9), ["Prob.", "ROUGE-L", "TR"] * 3, fontsize=8)
@@ -352,7 +367,7 @@ def supplement(out, groups):
     for y in range(17):
         for x in range(9):
             v = values[y, x]
-            ax.text(x, y, f"{v:.2f}", ha="center", va="center", fontsize=7.2, color="white" if v < .52 else "#15251D")
+            ax.text(x, y, f"{v:.2f}", ha="center", va="center", fontsize=7.2, color=cell_text_color(im, v))
     for y in [.5, 1.5, 6.5, 11.5]: ax.axhline(y, color="white", lw=2.5)
     for x in [2.5, 5.5]: ax.axvline(x, color="white", lw=3)
     for spine in ax.spines.values(): spine.set_visible(False)
@@ -360,7 +375,7 @@ def supplement(out, groups):
     cb.set_label("Component score", fontsize=8)
     cb.outline.set_visible(False)
     footer(fig, "Supplementary figure S1. Baseline is a fixed reference (n = 1); each trained setting has n = 3 seeds.\n"
-                "Prob. = answer probability; ROUGE-L = recall; TR = truth ratio. All cells use the same 0–1 scale.")
+                "Prob. = answer probability; ROUGE-L = recall; TR = truth ratio. Darker purple denotes a higher score (0–1).")
     save(fig, out, "figS1_full_utility_heatmap")
 
 
@@ -375,12 +390,12 @@ def prompt_supplement(out):
     assert all(int(r["n"]) == (1 if r["method"] == "baseline" else 3) for r in rows)
     fig, axes = plt.subplots(1, 2, figsize=(7.6, 7.5), sharey=True)
     fig.subplots_adjust(left=.18, right=.86, bottom=.16, top=.83, wspace=.13)
-    title(fig, "Text overlap across prompt families", "ROUGE-L recall proxy · all tested weights · shared 0–1 color scale")
+    title(fig, "ROUGE-L Recall Across Prompt Families", "Text-overlap proxy · all tested weights · shared 0–1 color scale")
     labels = [LABEL[m] if m in ["baseline", "GradAscent"] else f"{LABEL[m]}  α={a:g}" for m, a in order]
     for ax, domain, heading in zip(axes, ["forget", "retain"], ["a  Forget set", "b  Retain set"]):
         values = np.array([[number(lookup[m, a, domain, family], "rouge_proxy_mean") for family in families] for m, a in order])
         assert np.isfinite(values).all() and ((values >= 0) & (values <= 1)).all()
-        im = ax.imshow(values, vmin=0, vmax=1, cmap="viridis", aspect="auto")
+        im = ax.imshow(values, vmin=0, vmax=1, cmap=SCORE_CMAP, aspect="auto")
         ax.set_title(heading, loc="left", pad=10)
         ax.set_yticks(range(17), labels, fontsize=8)
         ax.set_xticks(range(4), ["Direct", "Context", "Role-play", "Instruction\nchallenge"], fontsize=7.5)
@@ -388,13 +403,13 @@ def prompt_supplement(out):
         for y in range(17):
             for x in range(4):
                 v = values[y, x]
-                ax.text(x, y, f"{v:.2f}", ha="center", va="center", fontsize=7.4, color="white" if v < .52 else "#15251D")
+                ax.text(x, y, f"{v:.2f}", ha="center", va="center", fontsize=7.4, color=cell_text_color(im, v))
         for y in [.5, 1.5, 6.5, 11.5]: ax.axhline(y, color="white", lw=2.5)
         for spine in ax.spines.values(): spine.set_visible(False)
     cb = fig.colorbar(im, cax=fig.add_axes([.90, .16, .018, .67]))
     cb.set_label("ROUGE-L recall proxy", fontsize=8)
     cb.outline.set_visible(False)
-    footer(fig, "Supplementary figure S2. Means over three seeds; Baseline is a fixed reference (n = 1).\n"
+    footer(fig, "Supplementary figure S2. Means over three seeds; Baseline n = 1. Darker purple denotes higher overlap (0–1).\n"
                 "Text overlap is a proxy and does not establish factual correctness or conditional fact recovery.\n"
                 "Source: the frozen prompt-summary CSV; annotation-based recovery is reported separately in Figure 5.")
     save(fig, out, "figS2_prompt_overlap_heatmap")

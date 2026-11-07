@@ -1230,7 +1230,7 @@ z
    </g>
   </g>
   <g id="text_55">
-   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="43.776" y="21.214125" transform="rotate(-0 43.776 21.214125)">Forgetting and utility across the tested settings</text>
+   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="43.776" y="21.214125" transform="rotate(-0 43.776 21.214125)">Forget Quality and Model Utility</text>
   </g>
   <g id="text_56">
    <text style="font-size: 7.1px; font-family: 'DejaVu Sans'; fill: #586574" transform="translate(43.776 325.898422)">Small translucent points: individual runs; outlined markers: seed means; filled markers: default settings.</text>

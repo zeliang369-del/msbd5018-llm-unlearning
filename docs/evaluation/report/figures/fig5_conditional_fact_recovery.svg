@@ -573,10 +573,10 @@ L 536.256 196.812
    </g>
   </g>
   <g id="text_38">
-   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="43.776" y="18.820125" transform="rotate(-0 43.776 18.820125)">Conditional fact recovery under alternative prompts</text>
+   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="43.776" y="18.820125" transform="rotate(-0 43.776 18.820125)">Conditional Target-Fact Recovery Rates</text>
   </g>
   <g id="text_39">
-   <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #586574" x="43.776" y="27.70035" transform="rotate(-0 43.776 27.70035)">AI-assisted labels · pooled over tested settings · descriptive proportions</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #586574" x="43.776" y="27.70035" transform="rotate(-0 43.776 27.70035)">Alternative prompts · AI-assisted labels · pooled descriptive proportions</text>
   </g>
   <g id="text_40">
    <text style="font-size: 7.1px; font-family: 'DejaVu Sans'; fill: #586574" transform="translate(43.776 249.655594)">Eligible cases: Baseline Direct = yes and the tested setting Direct = no. Labels show yes / (yes + no); u = unclear.</text>

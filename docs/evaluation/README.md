@@ -17,3 +17,5 @@ python scripts/plot_evaluation.py --output-dir docs/evaluation/report/figures
 The script recomputes plotted means and sample standard deviations from the per-run metrics and uses the recorded annotation counts for factual rates. FQ summaries are descriptive KS p-value summaries. Annotation rates pool the recorded counts; seed points show the observed variation, and repeated questions across settings are not treated as independent observations for confidence intervals.
 
 Supplementary Figure S2 shows ROUGE-L recall proxies for the 17 setting groups and four prompt families, with separate forget and retain panels. These are three-seed means (one fixed evaluation for Baseline), with a shared 0–1 color scale; text overlap is not a factual recovery rate.
+
+Figure titles use descriptive noun phrases naming the measured quantities. Both supplementary heatmaps use the same sequential purple palette and fixed 0–1 normalization: darker cells indicate higher scores. Figure 3 uses a diverging scale centered at zero for signed changes from Baseline.

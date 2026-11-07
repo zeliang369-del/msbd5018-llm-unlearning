@@ -1092,7 +1092,7 @@ L 521.005021 77.040028
    </g>
   </g>
   <g id="text_29">
-   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="43.776" y="18.694125" transform="rotate(-0 43.776 18.694125)">Sensitivity to the retain weight</text>
+   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="43.776" y="18.694125" transform="rotate(-0 43.776 18.694125)">Retain-Weight Sensitivity Analysis</text>
   </g>
   <g id="text_30">
    <text style="font-size: 7.1px; font-family: 'DejaVu Sans'; fill: #586574" transform="translate(43.776 255.714508)">Markers and error bars: mean ± sample SD across 3 seeds; small points: individual seeds (slightly offset).</text>
