@@ -1,26 +1,31 @@
-# 全组当前进展（截至 2026-10-30）
+# Contributions and delivery provenance
 
-四位成员平等分工。本页只把能查看的提交和交付列为完成；建议角色不代表实际认领或已完成。展示日期为 2026-11-12。
+**English** | [简体中文](TEAM_PROGRESS.zh-CN.md) · [Project home](../README.md)
 
-| 工作 | 已确认来源／贡献 | 当前结果 |
-|---|---|---|
-| SimNPO 方法及训练接入 | B，GitHub caojie1126-loryhbox，PR #3 | 原始提交历史保留；现有五档权重×三个种子的 15 组完整结果 |
-| NPO 方法、样本身份和参照缓存 | B，同账号，PR #4 | 原始提交历史保留；后续真实数据/设备/数值修补单列；15 组完整结果 |
-| GPU 修复与完整实验执行 | A / Zeliang 侧执行、核验与整合 | 38 次新增训练完成；加上既有 10 次，共 48 次训练和 49 组评价 |
-| 权重和种子对照 | 执行端运行，数据和证据已交付 | GD/SimNPO/NPO 各五档×三种子，GA 三个种子，Baseline 固定；同种子采样一致 |
-| 四类提示数据 | 沿用确认的仓库提示，由执行端生成 | 本轮 49×320=15,680 条完整回答；原先 1,600 条及 pilot 分开保留 |
-| 指标、图表与材料 | 已生成并做自动/助手视觉检查，尚不视为 D 独立复核 | 全部 49 组、17 组汇总、九项能力分量、11,760 个配对变化及四张图齐全 |
-| 人工事实标签、分歧处理 | 尚未收到完整可核验的完成标签 | 待全组实际完成；不将自动分数或生成回答视为人工标注 |
-| 最终报告/PPT | 数据材料已齐，最终整合待完成 | 可先写方法与实验，真实标签返回后补事实恢复统计和结论 |
+Updated 8 November 2026. All four members contribute as peers. Research authorship and the account that uploads a file are recorded separately.
 
-## 当前交接
+| Member | GitHub account | Substantive contribution | Evidence |
+|---|---|---|---|
+| A | zeliang369-del | Initial reproduction, proposal, CUDA infrastructure and repairs, experiment execution, verification, grid completion and repository integration | Initial history; PRs #2, #5–#8; frozen run records |
+| B | caojie1126-loryhbox (commit name LORYHBOX) | SimNPO/NPO loss implementations, training adapters, stable sample identity, reference-NLL cache and method tests | PRs #3 and #4; original commits retained in integration ancestry |
+| C | top-linan | Evaluation materials, completed annotation workbook and analysis, revision of the final research figures, reproducible PNG/PDF/SVG exports | Evaluation report and workbook; PRs #10 and #11; clarified team authorship |
+| D | xing-pangdingyu | Initial figure preparation and submission of the evaluation package | PR #9; figures subsequently revised by C |
 
-- [完整结果和按顺序交接](PHASE3_RESULTS.md)
-- [完整矩阵验收](../study/phase3/grid-20261029/progress.json)
-- [新标注包：全量及 core13 子集](../study/phase3/grid-20261029/annotation-grid-20261029.zip)
-- [原包标签复用映射](../study/phase3/grid-20261029/first-round-label-reuse-map.csv)：1,600 条逐条匹配，仅提供映射，不假定已有人工标签。
-- [全部逐次结果](../study/phase3/grid-20261029/all-49-settings.csv) · [三种子均值/波动](../study/phase3/grid-20261029/three-seed-summary.csv)
+## Authorship and revision history
 
-B 的已确认代码贡献来自 PR #3/#4，后续接入和保存问题的修复、失败与重跑证据单列。C/D 的实际独立复核或成稿未收到完成证据，不能预先列为完成。组员通知由 Zeliang 自行决定，本次没有发送群聊、邮件或其他成员消息。
+The evaluation package entered GitHub through D's PR #9. This upload does not make D the author of all its contents: **C authored the evaluation materials**. D prepared the initial figures, and C subsequently revised and finalized their presentation in PR #11. The repository uses the latest figures and retains the earlier versions in Git history. The historical verification log's original “D” heading is artifact metadata, not an override of this authorship clarification.
 
-RMU、更大模型和本轮范围外的超参数搜索仍为未执行的可选后续内容，不混入已经完成的矩阵。
+B's original method commits remain in the graph; A's later integration, cache/data-path fixes, checkpoint-persistence repair and GPU execution are distinct contributions. Commit counts and merge operations are not used as measures of individual research effort.
+
+## Completed delivery
+
+- Four unlearning methods plus a fixed baseline; 48 formal training runs, 49 complete evaluations, and 15,680 full-grid prompt answers.
+- A completed 4,508-label workbook in C's defined scope, with explicit AI-assisted provenance, exclusions and reasons.
+- Evaluation text, statistical tables, six main figures, two supplementary figures, plotting sources and vector exports.
+- Pinned sources, raw outputs, source/checkpoint hashes and saved-record verification tools.
+
+The [annotation guide](DATA_AND_ANNOTATIONS.md) distinguishes delivered labels from independent double-human annotation and adjudication, which are not established by the current evidence. This page records delivered work; obsolete role-claiming tables and execution schedules have been removed from the current documentation.
+
+## Pull-request record
+
+[CUDA results #2](https://github.com/zeliang369-del/msbd5018-llm-unlearning/pull/2) · [SimNPO #3](https://github.com/zeliang369-del/msbd5018-llm-unlearning/pull/3) · [NPO #4](https://github.com/zeliang369-del/msbd5018-llm-unlearning/pull/4) · [Integration #5](https://github.com/zeliang369-del/msbd5018-llm-unlearning/pull/5) · [Coverage #6](https://github.com/zeliang369-del/msbd5018-llm-unlearning/pull/6) · [Checkpoint repair #7](https://github.com/zeliang369-del/msbd5018-llm-unlearning/pull/7) · [Complete grid #8](https://github.com/zeliang369-del/msbd5018-llm-unlearning/pull/8) · [Evaluation upload #9](https://github.com/zeliang369-del/msbd5018-llm-unlearning/pull/9) · [Workbook #10](https://github.com/zeliang369-del/msbd5018-llm-unlearning/pull/10) · [Final figures #11](https://github.com/zeliang369-del/msbd5018-llm-unlearning/pull/11)

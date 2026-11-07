@@ -1,22 +1,15 @@
-# 四人协作约定
+# Contributing
 
-四位成员平等分工，不设组长。文献与数据、方法与训练、评价与鲁棒性、分析与展示建议交叉检查；实际姓名和贡献由完成工作的人填写，不预先编造。
+**English** | [简体中文](CONTRIBUTING.zh-CN.md)
 
-具体角色、浏览器协作步骤、运行排队、双人事实复核及时间安排见 [线上协作方案](docs/ONLINE_COLLABORATION.md)，实际任务见 [待认领任务表](docs/TEAM_TASKS.md)。当前五组方法入口及受控扩展已完成，已确认贡献与下一步见 [全组进展](docs/TEAM_PROGRESS.md)。
+Read the [research report](docs/RESEARCH_REPORT.md), [reproduction guide](docs/REPRODUCIBILITY.md), and [contribution record](docs/TEAM_PROGRESS.md). The repository describes delivered research; proposals and earlier task schedules are not the current specification.
 
-1. 从 `main` 创建主题分支，如 `study/simnpo-resource-check`、`eval/prompt-robustness`、`docs/report`。
-2. 阅读 `docs/RESEARCH_PLAN.md`。既有 `reproduction_full/runs/` 是正式证据，新设置另建目录，不覆盖旧记录。
-3. 提交说明问题、改动、验证和限制；发起 Pull Request。组员复核为可选，必要的自动检查通过后可以直接合并，无需等待其他组员确认。
-4. 推送前运行 `python3 verify_results.py`。再运行 `python3 verify_phase3_delivery.py` 核验第三阶段交付；CI 仅核验已存记录，不训练模型，也不证明新方法普遍有效。
-5. 如需撤销已合并的改动，使用 Git revert 创建回退提交，保留共享提交历史。
+1. Create a topic branch from `main`. Describe the problem, change, verification and limitations in the pull request.
+2. Preserve frozen experiment outputs, source snapshots, hashes and original annotation provenance. New settings and code require fresh run IDs; do not overwrite a completed or failed run.
+3. Run `python3 verify_results.py`, `python3 verify_phase3_delivery.py`, and `python3 verify_phase3_grid_delivery.py --require-visual` in a disposable checkout. These audit saved evidence and may rewrite audit JSON; inspect changes before committing.
+4. Keep English and Chinese principal documents consistent, with reciprocal language links. Preserve metric values, exclusion rules and figure scope across translations.
+5. Teammate review is optional under the repository's existing policy; required automated checks must pass. Use Git revert to undo a merged change without rewriting shared history.
 
-## 实验要求
+Record model/data/source identities, seed, coefficients, sampling, update budget, resource use, failures, checkpoint reload and evaluation scope. Do not describe imported Oracle records as local retraining, cached outputs as new experiments, or AI-assisted labels as independently adjudicated human labels. New factual annotations must preserve case identifiers, reviewer provenance, reasons, exclusions and disagreements.
 
-- 固定模型、数据、源码、种子、处理文本、训练和解码参数。
-- 记录样本抽取、参数量、优化器更新数、资源消耗、失败及续跑状态。
-- 不把官方参照称为本组重训，不把缓存读取称为新实验，不混用 LoRA 和全参数结果。
-- 新方法检查目标函数、有限梯度、资源、保存重载和完整评价后才能标记 completed。
-- 提示测试保存原回答，人工标注“事实恢复 / 未恢复 / 无法判断”，记录理由并交叉审阅。
-- 权重、环境、缓存和个人凭证不进入 Git。大检查点通过 Release 共享，附来源、许可与 SHA256。
-
-中英文提案位于 `output/pdf/`。生成源在 `scripts/proposals/`，重新生成需配置可用字体、安装 ReportLab 并检查一页排版。提案仅引用两篇主论文，代码实现来源保留在源码和许可文件中。
+Do not commit model weights, environments, caches or credentials. Follow the distinct model, data and framework terms in [sources and notices](THIRD_PARTY.md). Preserve authorship independently of upload accounts.

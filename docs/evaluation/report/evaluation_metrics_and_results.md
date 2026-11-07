@@ -1,26 +1,30 @@
-# 评价指标与实验结果
+# Evaluation Metrics and Experimental Results
 
-## 评价指标
+[English](evaluation_metrics_and_results.md) | [简体中文](evaluation_metrics_and_results.zh-CN.md)
 
-本实验在 TOFU 基准与 OpenUnlearning 评测框架下，基于 Llama-3.2-1B 实施机器遗忘。评测包括自动指标，以及基于模型生成文本的事实标注；后者覆盖遗忘集问题 Q10–Q29，并对保留集问题 Q0、Q10 与 Q20 进行抽检。
+Evaluation materials were prepared by C (`top-linan`). D (`xing-pangdingyu`) contributed the initial figures and submitted the materials through PR #9; C subsequently revised and finalized the figures in PR #11. Repository submission history and material authorship are distinguished in the [contribution record](../../TEAM_PROGRESS.md).
 
-遗忘质量（Forget Quality, FQ）定义为：将遗忘后模型在遗忘集上的得分分布，与仅在保留数据上训练得到的 Oracle 模型之对应分布进行双侧 Kolmogorov–Smirnov 检验所得的 \(p\) 值。FQ 度量既定检验下两分布的可区分程度：\(p\) 值越大，现有证据越不足以拒绝“两分布相同”的原假设。对各超参数组合，本文报告三个随机种子上的均值与样本标准差，用以描述重复实验中的变异；该汇总不构成将多次试验合并后的显著性检验。
+## Evaluation metrics
 
-模型效用（Model Utility, MU）定义为九项效用分量的调和平均值。九项分别对应保留集（Retain）、真实作者（Real Authors）与世界事实（World Facts）三类任务，每一类包含答案概率（Probability）、ROUGE-L 召回率与真值比率（Truth Ratio）。MU 用于综合衡量模型在非目标遗忘知识上的保持程度。
+This study evaluates machine unlearning with Llama-3.2-1B on the TOFU benchmark using the OpenUnlearning evaluation framework. Evaluation includes automatic metrics and factual annotations of generated responses. The annotation analysis covers forget-set questions Q10–Q29, with spot checks on retain-set questions Q0, Q10, and Q20.
 
-## 实验设置
+**Forget Quality (FQ)** is the two-sided Kolmogorov–Smirnov test \(p\)-value obtained by comparing the unlearned model's forget-set score distribution with the corresponding distribution of an Oracle model trained only on retain data. FQ measures distinguishability under this particular test: a larger \(p\)-value indicates weaker evidence against the null hypothesis that the distributions are the same. For each hyperparameter setting, we report the mean and sample standard deviation across three random seeds to describe variation between runs. These summaries do not constitute a combined significance test.
 
-对比方法为梯度上升（GradAscent, GA）、梯度差分（GradDiff, GD）、NPO 与 SimNPO，并以未经遗忘的基线模型（Baseline）作为参照。Baseline 评价一次；GA 在三个随机种子上各训练一次；GD、NPO 与 SimNPO 在保留项权重 \(\alpha \in \{0.25, 0.5, 1, 2, 4\}\) 上各进行三个随机种子的训练。合计 48 次正式训练与 1 次基线评价，共 49 组配置，每组均完成 657 题完整评测。
+**Model Utility (MU)** is the harmonic mean of nine utility components. The components cover three task domains—Retain, Real Authors, and World Facts—with answer probability, ROUGE-L recall, and truth ratio measured in each domain. MU summarizes preservation of capabilities outside the targeted forget knowledge.
 
-本轮仅改变保留项权重 \(\alpha\)，其余方法系数按预先声明保持固定：GD 与 NPO 取 \(\gamma = 1\)，SimNPO 取 \(\gamma = 0.125\)，NPO 取 \(\beta = 0.1\)，SimNPO 取 \(\beta = 4.5\)、\(\delta = 0\)。不同方法的损失尺度并不相同，实验亦未将各方法控制在相同的已实现遗忘水平上，因此方法间比较应在上述网格设定下解读。
+## Experimental setup
 
-## 自动评测结果
+We compare gradient ascent (GradAscent, GA), gradient difference (GradDiff, GD), NPO, and SimNPO against a baseline model without unlearning. Baseline is evaluated once. GA is trained once for each of three random seeds. GD, NPO, and SimNPO are each trained with three random seeds at every retain-loss weight \(\alpha \in \{0.25, 0.5, 1, 2, 4\}\). This yields 48 formal training runs and one baseline evaluation: 49 configurations, each evaluated on all 657 questions.
 
-表 1 给出各方法在不同 \(\alpha\) 下 FQ 与 MU 的三种子均值及样本标准差。未经遗忘的 Baseline 的 FQ 为 0.014，MU 为 0.599。SimNPO 在全部 \(\alpha\) 取值下均保持较高的 MU（0.590–0.592），与 Baseline 接近，但其 FQ 始终较低（0.006–0.046）。NPO 在多数 \(\alpha\) 取值下获得较高的 FQ（当 \(\alpha \le 1\) 时，三种子均值均为 0.919），MU 介于 0.556 与 0.577 之间，低于 Baseline 与 SimNPO，但高于低 \(\alpha\) 设定下的 GD 以及 GA（MU = 0.367）。GD 的 MU 随 \(\alpha\) 增大而上升，由 \(\alpha = 0.25\) 时的 0.253 提高至 \(\alpha = 4\) 时的 0.566；当 \(\alpha \ge 2\) 时，GD 的 MU 高于 GA。与此同时，GD 在若干 \(\alpha\) 取值上、以及 NPO 在较高 \(\alpha\) 取值上，FQ 的样本标准差超过 0.1，表明相应配置对随机种子较为敏感。
+The weight sweep varies only the retain-loss coefficient \(\alpha\); other method coefficients remain fixed as declared in advance. GD and NPO use \(\gamma = 1\); SimNPO uses \(\gamma = 0.125\); NPO uses \(\beta = 0.1\); and SimNPO uses \(\beta = 4.5\), \(\delta = 0\). Objective scales differ between methods, and the comparison does not match methods at an equal achieved level of forgetting. Cross-method results must therefore be interpreted within this experimental grid.
 
-**表 1.** 各方法在不同保留项权重下的 FQ 与 MU（三种子均值 ± 样本标准差；Baseline 仅评价一次）
+## Automatic evaluation results
 
-| 方法 | \(\alpha\) | \(n\) | FQ | MU |
+Table 1 reports the three-seed means and sample standard deviations of FQ and MU at each \(\alpha\). The unchanged Baseline has FQ = 0.014 and MU = 0.599. SimNPO maintains relatively high MU across all \(\alpha\) values (0.590–0.592), close to Baseline, but consistently low FQ (0.006–0.046). NPO obtains high FQ at most weights: for \(\alpha \le 1\), its three-seed mean is 0.919. Its MU ranges from 0.556 to 0.577, below Baseline and SimNPO but above GD at low \(\alpha\) and GA (MU = 0.367). GD's MU increases with \(\alpha\), from 0.253 at \(\alpha = 0.25\) to 0.566 at \(\alpha = 4\); at \(\alpha \ge 2\), it exceeds GA's MU. Meanwhile, the sample standard deviation of FQ exceeds 0.1 for several GD weights and for NPO at higher weights, indicating sensitivity to the random seed in those configurations.
+
+**Table 1.** FQ and MU at different retain-loss weights (three-seed mean ± sample standard deviation; Baseline is evaluated once).
+
+| Method | \(\alpha\) | \(n\) | FQ | MU |
 |---|---:|---:|---:|---:|
 | GradAscent | 1 | 3 | 0.463 ± 0.100 | 0.367 ± 0.044 |
 | GradDiff | 0.25 | 3 | 0.432 ± 0.289 | 0.253 ± 0.026 |
@@ -40,38 +44,39 @@
 | SimNPO | 4 | 3 | 0.007 ± 0.000 | 0.592 ± 0.002 |
 | Baseline | 1 | 1 | 0.014 | 0.599 |
 
-图 1 给出全部 49 组配置在 MU–FQ 平面上的分布，并汇总各方法、权重的三种子均值。NPO 主要位于较高 FQ 区域；SimNPO 集中于较高 MU、较低 FQ 的区域；GD 随 \(\alpha\) 增大沿效用轴右移；GA 位于中等 FQ、较低 MU 的位置。图 2 展示 FQ、MU 随 \(\alpha\) 的变化。图 3 突出默认系数下各方法相对 Baseline 的九项能力变化；图 4 给出这些分量在完整权重网格上的趋势。低 \(\alpha\) 的 GD 在保留集概率与 ROUGE 等分量上下降较为明显，而 SimNPO 各分量整体接近 Baseline。
+The value 1 in the GA and Baseline rows follows the source table's configuration notation. GA has no retain-loss term, and Baseline is fixed; neither participates in the \(\alpha\) sweep.
 
-![图 1](figures/fig1_fq_vs_mu_scatter.png)
+Figure 1 shows all 49 configurations in the MU–FQ plane and the three-seed means for each method and weight. NPO lies mainly in the high-FQ region; SimNPO clusters at high MU and low FQ; GD moves toward higher utility as \(\alpha\) increases; and GA has intermediate FQ and lower MU. Figure 2 shows how FQ and MU change with \(\alpha\). Figure 3 highlights changes in the nine utility components relative to Baseline at the default settings, while Figure 4 shows their trends over the full weight grid. GD at low \(\alpha\) shows pronounced decreases in components such as retain-set probability and ROUGE, whereas SimNPO remains broadly close to Baseline across components.
 
-**图 1. 遗忘质量与模型效用。** 半透明小点为逐次结果，较大标记为各方法、权重的三种子均值；默认设置用实心标记强调，其他权重用空心标记。右侧分别放大 NPO 和 SimNPO 的密集区域，数字标注为保留项权重 α；GA 无保留项权重。Baseline 为一次固定评价；FQ 为 KS 检验 p 值。
+![Figure 1](figures/fig1_fq_vs_mu_scatter.png)
 
-![图 2](figures/fig2_fq_and_mu_vs_alpha.png)
+**Figure 1. Forget quality and model utility.** Small translucent points represent individual runs; larger markers show three-seed means for each method and weight. Filled markers emphasize default settings, and open markers show other weights. The panels on the right enlarge the dense NPO and SimNPO regions. Numeric labels denote retain-loss weight α; GA has no retain-loss weight. Baseline is one fixed evaluation. FQ is a KS-test p-value.
 
-**图 2. 保留项权重敏感性分析。** 曲线为三种子均值，误差棒为样本标准差，小点为逐种子结果。GA 的三种子均值和固定 Baseline 以水平参考线显示；二者不参与保留项权重扫描。
+![Figure 2](figures/fig2_fq_and_mu_vs_alpha.png)
 
-![图 3](figures/fig3_nine_utility_heatmap.png)
+**Figure 2. Sensitivity to retain-loss weight.** Curves show three-seed means, error bars show sample standard deviations, and small points show individual seeds. Horizontal reference lines indicate the three-seed GA mean and the fixed Baseline; neither is included in the retain-loss weight sweep.
 
-**图 3. 相对基线的效用分量变化。** 各单元为默认设置下方法的三种子均值减去固定 Baseline 的分量分数，保留差值正负号；色阶以零为中心且两侧对称。GA 使用其原始目标，GD、NPO、SimNPO 使用 \(\alpha=1\)。全部 17 组设置的九项分量绝对值见[补充图 S1](figures/figS1_full_utility_heatmap.png)。
+![Figure 3](figures/fig3_nine_utility_heatmap.png)
 
-![图 4](figures/fig4_nine_utility_vs_alpha.png)
+**Figure 3. Utility component changes relative to Baseline.** Each cell is the method's three-seed mean at the default setting minus the fixed Baseline component score. Signed differences are preserved, with a symmetric color scale centered at zero. GA uses its original objective; GD, NPO, and SimNPO use \(\alpha=1\). Absolute scores for all nine components across all 17 setting groups are shown in [Supplementary Figure S1](figures/figS1_full_utility_heatmap.png).
 
-**图 4. 九项能力分量随保留项权重的变化。** 曲线、误差棒和小点分别为三种子均值、样本标准差和逐种子结果，水平参考线为固定 Baseline。所有面板采用相同的 0–1 纵轴，便于比较分量变化的幅度。
+![Figure 4](figures/fig4_nine_utility_vs_alpha.png)
 
-[补充图 S2](figures/figS2_prompt_overlap_heatmap.png) 展示全部 17 组设置、四类提示在遗忘题与保留对照上的 ROUGE-L recall 三种子均值（Baseline 为一次固定评价），两面板共用 0–1 色阶。该指标衡量文本重合，不能解释为事实恢复率。
+**Figure 4. Nine utility components across retain-loss weights.** Curves, error bars, and small points indicate three-seed means, sample standard deviations, and individual-seed results, respectively. Horizontal reference lines indicate the fixed Baseline. All panels use the same 0–1 vertical scale to support comparisons of the magnitude of component changes.
 
-补充图 S1、S2 与图 3 统一使用红—白—蓝配色。S1、S2 的绝对分数采用固定 0–1 色阶，红色表示低分、白色对应 0.5、蓝色表示高分；图 3 的差值色阶以零为中心，红色表示下降、蓝色表示上升。
+[Supplementary Figure S2](figures/figS2_prompt_overlap_heatmap.png) shows mean ROUGE-L recall across three seeds for all 17 setting groups and four prompt families, separately for forget questions and retain controls; Baseline is one fixed evaluation. Both panels share a 0–1 color scale. This metric measures text overlap and must not be interpreted as a factual recovery rate.
 
+Supplementary Figures S1 and S2 use the same red–white–blue palette as Figure 3. Absolute scores in S1 and S2 use a fixed 0–1 scale: red indicates lower scores, white corresponds to 0.5, and blue indicates higher scores. Figure 3 centers the difference scale at zero, with red indicating decreases and blue indicating increases.
 
-## 事实标注结果
+## Factual annotation results
 
-在遗忘集问题 Q10–Q29 上，对模型生成文本进行 yes / no / unclear 三类判定。直接提问的可判定命中率定义为 yes 占 yes 与 no 之和的比例。如表 2 所示，Baseline 的可判定命中率为 0.889；SimNPO 为 0.743，明显高于其余遗忘方法；NPO、GD 与 GA 分别为 0.252、0.181 与 0.118。
+Generated responses to forget-set questions Q10–Q29 are labeled yes, no, or unclear. The direct-prompt hit rate among determinate labels is defined as yes divided by yes + no. As shown in Table 2, Baseline has a determinate hit rate of 0.889. SimNPO has a rate of 0.743, substantially higher than the other unlearning methods; NPO, GD, and GA have rates of 0.252, 0.181, and 0.118, respectively.
 
-表 2 及图 5、图 6 采用主统计口径，排除题 23 及 24 条校准记录；unclear 单列并从可判定分母中排除。
+Table 2 and Figures 5 and 6 use the primary analysis scope, excluding question 23 and 24 calibration records. Unclear labels are reported separately and excluded from determinate denominators.
 
-**表 2.** 遗忘集直接提问的判定统计与可判定命中率（Q10–Q29）
+**Table 2.** Direct-prompt judgments and determinate hit rates for forget-set questions Q10–Q29.
 
-| 方法 | yes | no | unclear | 可判定命中率 |
+| Method | yes | no | unclear | Determinate hit rate |
 |---|---:|---:|---:|---:|
 | GradAscent | 6 | 45 | 6 | 0.118 |
 | GradDiff | 43 | 194 | 44 | 0.181 |
@@ -79,49 +84,48 @@
 | SimNPO | 165 | 57 | 63 | 0.743 |
 | Baseline | 16 | 2 | 1 | 0.889 |
 
-为考察提示形式变化是否能够重新引出目标事实，定义条件恢复率如下：选取 Baseline 在直接提问下判定为 yes、且遗忘后模型在直接提问下判定为 no 的问题，计算其在替代提示下被判定为 yes 的比例。替代提示包括上下文、角色扮演与指令挑战；分母为可判定样本数（yes 与 no 之和），unclear 另行统计。问题 23 因参考答案未提供具体性别信息，未纳入该项分析。
+To examine whether a different prompt form can elicit a target fact again, we define **conditional recovery rate** as follows. Select questions for which Baseline receives a yes label under direct prompting and the unlearned model receives a no label under direct prompting. Then calculate the proportion labeled yes under an alternative prompt. The alternative families are contextual, role-play, and instruction challenge. The denominator is the number of determinate alternative-prompt responses (yes + no), with unclear reported separately. Question 23 is excluded because its reference answer does not specify gender.
 
-如表 3 所示，三种替代提示的总体条件恢复率分别为：上下文 0.049（16/328），指令挑战 0.065（21/324），角色扮演 0.109（35/320）。按方法与提示类型交叉统计见表 4。角色扮演提示的恢复率相对较高；GA 在上下文与指令挑战提示下未观察到可判定的恢复样本。部分单元的可判定样本量较小，相应比例仅作描述。图 5 按替代提示与方法展示条件恢复率；图 6 展示直接提问可判定命中率随保留项权重的变化。
+As shown in Table 3, the pooled conditional recovery rates are 0.049 (16/328) for contextual prompts, 0.065 (21/324) for instruction challenge, and 0.109 (35/320) for role-play. Table 4 breaks these results down by method and prompt family. Role-play has the highest pooled rate. No determinate recovery is observed for GA under contextual or instruction-challenge prompts. Some cells contain few determinate observations, so these proportions are descriptive. Figure 5 shows conditional recovery rates by alternative prompt and method; Figure 6 shows the direct-prompt determinate hit rate as a function of retain-loss weight.
 
-![图 5](figures/fig5_conditional_fact_recovery.png)
+![Figure 5](figures/fig5_conditional_fact_recovery.png)
 
-**图 5. 目标事实的条件恢复率。** 每个面板对应一种替代提示，点的位置为 yes/(yes+no)，旁注列出恢复数、可判定回答数及 unclear 数（u）。GA 汇总三个种子设置，其余每个方法汇总五档权重、三个种子的 15 个设置，因此不同方法的汇总范围及条件分母可能不同。标签主要来自 AI 辅助标注；同题在多配置下重复出现，图中比例为描述性结果，未将回答计数视为独立事实样本计算置信区间。
+**Figure 5. Conditional recovery of target facts.** Each panel corresponds to one alternative prompt family. Point positions show yes/(yes+no); labels report recovered responses, determinate responses, and unclear counts (u). GA pools three seed settings, while each other method pools 15 settings spanning five weights and three seeds. Consequently, aggregation scope and conditional denominators may differ between methods. Labels are primarily AI-assisted. Questions recur across configurations; these proportions are descriptive, and response counts are not treated as independent factual samples for confidence intervals.
 
-![图 6](figures/fig6_direct_hit_rate_vs_alpha.png)
+![Figure 6](figures/fig6_direct_hit_rate_vs_alpha.png)
 
-**图 6. 直接提问的目标事实命中率。** 三个面板分别展示 GD、NPO、SimNPO；曲线为同一权重下合并三个种子计数后的 yes/(yes+no)，小点为逐种子比率，旁注列出合并后的分子和分母。水平参考线为 Baseline 与 GA 的相应比率。曲线不是种子比率的算术均值；标签主要来自 AI 辅助标注，unclear 从可判定分母中排除。
+**Figure 6. Direct-prompt target-fact hit rates.** The three panels show GD, NPO, and SimNPO. Curves are yes/(yes+no) computed by pooling counts across the three seeds at each weight. Small points show individual-seed rates, and labels show pooled numerators and denominators. Horizontal reference lines show the corresponding Baseline and GA rates. The curves are not arithmetic means of seed-level rates. Labels are primarily AI-assisted, and unclear labels are excluded from determinate denominators.
 
+**Table 3.** Conditional recovery rates pooled by alternative prompt family.
 
-**表 3.** 条件恢复率（按替代提示汇总）
-
-| 替代提示 | 恢复为 yes | 可判定样本数 | 条件恢复率 | unclear |
+| Alternative prompt | Recovered as yes | Determinate responses | Conditional recovery rate | unclear |
 |---|---:|---:|---:|---:|
-| 上下文 | 16 | 328 | 0.049 | 45 |
-| 指令挑战 | 21 | 324 | 0.065 | 49 |
-| 角色扮演 | 35 | 320 | 0.109 | 53 |
+| Contextual | 16 | 328 | 0.049 | 45 |
+| Instruction challenge | 21 | 324 | 0.065 | 49 |
+| Role-play | 35 | 320 | 0.109 | 53 |
 
-**表 4.** 条件恢复率（方法 × 替代提示）
+**Table 4.** Conditional recovery rates by method and alternative prompt family.
 
-| 方法 | 替代提示 | 恢复为 yes | 可判定样本数 | 条件恢复率 | unclear |
+| Method | Alternative prompt | Recovered as yes | Determinate responses | Conditional recovery rate | unclear |
 |---|---|---:|---:|---:|---:|
-| GradAscent | 上下文 | 0 | 30 | 0.000 | 7 |
-| GradAscent | 指令挑战 | 0 | 36 | 0.000 | 1 |
-| GradAscent | 角色扮演 | 2 | 34 | 0.059 | 3 |
-| GradDiff | 上下文 | 6 | 136 | 0.044 | 16 |
-| GradDiff | 指令挑战 | 6 | 132 | 0.045 | 20 |
-| GradDiff | 角色扮演 | 17 | 131 | 0.130 | 21 |
-| NPO | 上下文 | 8 | 134 | 0.060 | 19 |
-| NPO | 指令挑战 | 14 | 130 | 0.108 | 23 |
-| NPO | 角色扮演 | 13 | 128 | 0.102 | 25 |
-| SimNPO | 上下文 | 2 | 28 | 0.071 | 3 |
-| SimNPO | 指令挑战 | 1 | 26 | 0.038 | 5 |
-| SimNPO | 角色扮演 | 3 | 27 | 0.111 | 4 |
+| GradAscent | Contextual | 0 | 30 | 0.000 | 7 |
+| GradAscent | Instruction challenge | 0 | 36 | 0.000 | 1 |
+| GradAscent | Role-play | 2 | 34 | 0.059 | 3 |
+| GradDiff | Contextual | 6 | 136 | 0.044 | 16 |
+| GradDiff | Instruction challenge | 6 | 132 | 0.045 | 20 |
+| GradDiff | Role-play | 17 | 131 | 0.130 | 21 |
+| NPO | Contextual | 8 | 134 | 0.060 | 19 |
+| NPO | Instruction challenge | 14 | 130 | 0.108 | 23 |
+| NPO | Role-play | 13 | 128 | 0.102 | 25 |
+| SimNPO | Contextual | 2 | 28 | 0.071 | 3 |
+| SimNPO | Instruction challenge | 1 | 26 | 0.038 | 5 |
+| SimNPO | Role-play | 3 | 27 | 0.111 | 4 |
 
-表 5 给出保留集抽检（Q0、Q10、Q20）在直接提问下的可判定命中率。该抽检仅覆盖三道保留题，用于辅助观察，不能替代 MU 所反映的整体效用。
+Table 5 reports direct-prompt determinate hit rates for the retain-set spot checks (Q0, Q10, and Q20). These checks cover only three retain questions and provide supplementary observations; they do not replace the broader utility evaluation summarized by MU.
 
-**表 5.** 保留集抽检的直接提问判定统计（Q0、Q10、Q20）
+**Table 5.** Direct-prompt judgments for retain-set spot checks (Q0, Q10, and Q20).
 
-| 方法 | yes | no | unclear | 可判定命中率 |
+| Method | yes | no | unclear | Determinate hit rate |
 |---|---:|---:|---:|---:|
 | GradAscent | 5 | 4 | 0 | 0.556 |
 | GradDiff | 18 | 24 | 3 | 0.429 |
@@ -129,8 +133,8 @@
 | SimNPO | 35 | 10 | 0 | 0.778 |
 | Baseline | 2 | 1 | 0 | 0.667 |
 
-上述标注以人工智能辅助标注为主，并经过试标核对，应作为自动指标之外的补充证据。
+These annotations are primarily AI-assisted and underwent pilot-label checks. They should be treated as supplementary evidence alongside the automatic metrics, rather than as evidence of completed independent double annotation and adjudication.
 
-## 结果分析
+## Discussion
 
-综合自动评测与事实标注，可以得到以下观察。第一，SimNPO 在效用保持上最接近未经遗忘的基线，但 FQ 较低，表明其遗忘集得分分布仍较易与 Oracle 区分。第二，NPO 在本实验的分布检验上获得较高的 FQ，同时效用下降相对有限。第三，GD 的效用对保留项权重敏感：提高 \(\alpha\) 可使 MU 超过 GA，而过小的 \(\alpha\) 会明显损害效用；部分配置的 FQ 在不同种子间波动较大，报告相应结果时应同时给出均值与标准差。第四，在直接提问已相对基线未能给出目标事实的样本中，更换提示形式后仍可能重新引出该事实，说明除自动指标外，问法层面仍存在一定的信息残留。
+The automatic evaluations and factual annotations support four observations within the scope of this study. First, SimNPO preserves utility closest to the unchanged Baseline but has low FQ, indicating that its forget-set score distribution remains distinguishable from the Oracle's under the specified test. Second, NPO achieves high FQ in this experiment's distributional test while limiting the reduction in utility. Third, GD's utility is sensitive to retain-loss weight: increasing \(\alpha\) can raise MU above GA, whereas very small \(\alpha\) substantially impairs utility. FQ varies across seeds for some configurations, so both means and standard deviations should be reported. Fourth, among cases where the unlearned model fails to state a target fact under direct prompting that Baseline states correctly, an alternative prompt can sometimes elicit the fact again. This provides evidence of residual information at the level of prompt variation, complementing the automatic metrics.
