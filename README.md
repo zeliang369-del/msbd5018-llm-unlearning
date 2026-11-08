@@ -23,6 +23,10 @@ A reproducible study of targeted forgetting, retained utility, and prompt-based 
 
 Updated **8 November 2026**. This page reflects the latest evaluation and figure delivery, rather than earlier planning documents.
 
+## Research background
+
+Deleting a training record does not itself update a trained model, and failure to answer one direct question is limited evidence of forgetting. Our [background and related work](docs/RESEARCH_REPORT.md#1-research-questions-and-context) explains why we evaluate forgetting, retained utility, and prompt-based fact recovery together. It connects SISA, TOFU, NPO, SimNPO, RMU/WMDP, robust unlearning tests, and OpenUnlearning to our choice of four post-training objectives and a resource-constrained experimental grid. The expanded discussion and [seven references](THIRD_PARTY.md#research-references) incorporate the research background developed for Part 1 of the group presentation.
+
 ## Main findings
 
 At default coefficients, results are mean ± sample standard deviation across three seeds. Baseline is a single fixed evaluation.

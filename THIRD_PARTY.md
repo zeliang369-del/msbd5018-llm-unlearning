@@ -16,10 +16,14 @@ See `LICENSES/LLAMA_3_2_LICENSE.txt`, `LICENSES/Notice.txt`, and the model publi
 
 ## Research references
 
-- Maini et al. (2024), *TOFU: A Task of Fictitious Unlearning for LLMs*. https://arxiv.org/abs/2401.06121
-- Dorna et al. (2025), *OpenUnlearning: Accelerating LLM Unlearning via Unified Benchmarking of Methods and Metrics*. https://arxiv.org/abs/2506.12618
-- Zhang et al. (2024), *Negative Preference Optimization: From Catastrophic Collapse to Effective Unlearning*. https://arxiv.org/abs/2404.05868
-- Fan et al., *Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning*. https://arxiv.org/abs/2410.07163
-- Li et al. (2024), *The WMDP Benchmark: Measuring and Reducing Malicious Use With Unlearning*. https://arxiv.org/abs/2403.03218
+These sources support the [research background and scope](docs/RESEARCH_REPORT.md#1-research-questions-and-context) ([中文](docs/RESEARCH_REPORT.zh-CN.md#1-研究问题与背景)) and Part 1 of the group presentation. Numbering follows the presentation's reference list.
 
-NPO and SimNPO are implemented and evaluated in the completed experiment grid. WMDP/RMU motivates related work only and is outside this study’s completed scope.
+1. Bourtoule et al. (2021). *Machine Unlearning*. IEEE Symposium on Security and Privacy. [arXiv:1912.03817](https://arxiv.org/abs/1912.03817). Introduces SISA and selective retraining through a training-time organization.
+2. Maini et al. (2024). *TOFU: A Task of Fictitious Unlearning for LLMs*. [arXiv:2401.06121](https://arxiv.org/abs/2401.06121). Provides the fictitious-author benchmark and forgetting–utility evaluation context.
+3. Zhang et al. (2024). *Negative Preference Optimization: From Catastrophic Collapse to Effective Unlearning*. COLM. [arXiv:2404.05868](https://arxiv.org/abs/2404.05868). Defines the reference-relative negative-preference objective.
+4. Fan et al. (2025). *Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning*. NeurIPS. [arXiv:2410.07163](https://arxiv.org/abs/2410.07163). Develops a reference-free, length-normalized objective; first posted as a preprint in 2024.
+5. Li et al. (2024). *The WMDP Benchmark: Measuring and Reducing Malicious Use With Unlearning*. ICML. [Proceedings](https://proceedings.mlr.press/v235/li24bc.html) · [arXiv:2403.03218](https://arxiv.org/abs/2403.03218). Introduces WMDP and the RMU representation-based method.
+6. Lynch et al. (2024). *Eight Methods to Evaluate Robust Unlearning in LLMs*. [arXiv:2402.16835](https://arxiv.org/abs/2402.16835). Motivates evaluation beyond responses to the original wording.
+7. Dorna et al. (2025). *OpenUnlearning: Accelerating LLM Unlearning via Unified Benchmarking of Methods and Metrics*. NeurIPS Datasets and Benchmarks. [arXiv:2506.12618](https://arxiv.org/abs/2506.12618). Provides a unified framework for unlearning methods and evaluation metrics.
+
+GA, GD, NPO, and SimNPO are evaluated in the completed experiment grid using TOFU and the pinned OpenUnlearning source. SISA and WMDP/RMU are related-work context only. Our prompt study does not reproduce the full eight-test suite of Lynch et al. or SimNPO's relearning attacks. Literature findings are not additional experimental results from this repository. These references do not alter the software, dataset, or model notices above.

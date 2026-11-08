@@ -10,13 +10,44 @@ We study the trade-off between targeted forgetting, retained model utility, and 
 
 ## 1. Research questions and context
 
-Machine unlearning aims to remove specified knowledge while preserving useful behavior. We ask:
+### Why unlearning requires more than deleting data
+
+Machine unlearning seeks to reduce the influence of specified training data on an already trained model while preserving useful behavior on retained data. Removing a source record does not itself change the model's learned parameters. Training again without the forget set provides a conceptual reference, but repeating full training can be expensive. This motivates more targeted updates, whose effectiveness must be assessed against both forgetting and retention criteria ([Bourtoule et al., 2021](https://arxiv.org/abs/1912.03817); [Maini et al., 2024](https://arxiv.org/abs/2401.06121)).
+
+For language models, a failed answer to one direct question is limited evidence: target information may still be elicited through a different prompt. Robust evaluation therefore needs to examine more than the original wording ([Lynch et al., 2024](https://arxiv.org/abs/2402.16835)). We organize our study around three complementary questions: whether target behavior changes, what useful behavior is lost, and whether alternative prompts recover a target fact. Our prompt tests are behavioral checks; they do not establish that information has been erased from the model's parameters.
+
+### Selected research directions
+
+The following is a focused map of related work, not an exhaustive taxonomy. Evaluation frameworks complement the algorithmic directions.
+
+| Direction | Representative work | Relevance to this study |
+|---|---|---|
+| Training-time partitioning | SISA ([Bourtoule et al., 2021](https://arxiv.org/abs/1912.03817)) | Organizes training into isolated components so a removal request can trigger selective retraining. This requires a training-time design and is not a post-hoc baseline in our experiments. |
+| Post-training objectives | GA/GD in [TOFU](https://arxiv.org/abs/2401.06121), [NPO](https://arxiv.org/abs/2404.05868), and [SimNPO](https://arxiv.org/abs/2410.07163) | Modify an existing checkpoint through forgetting and, where applicable, retention losses. These are the four methods evaluated here. |
+| Representation intervention | RMU in [WMDP](https://proceedings.mlr.press/v235/li24bc.html) | Changes representations on forget data while constraining changes on retained data. It provides related-work context; we did not run RMU or the WMDP benchmark. |
+| Evaluation and benchmarking | [TOFU](https://arxiv.org/abs/2401.06121), [robust unlearning tests](https://arxiv.org/abs/2402.16835), and [OpenUnlearning](https://arxiv.org/abs/2506.12618) | Supply controlled targets, complementary tests, and shared implementations of methods and metrics. They motivate examining forgetting, utility, and robustness together. |
+
+### Why we chose this experimental scope
+
+| Choice | Reason and question enabled |
+|---|---|
+| GA and GD | GA supplies a simple forgetting-only baseline. GD adds an explicit retain-loss term, allowing us to examine the effect of retention and its weight. |
+| NPO and SimNPO | NPO uses a lower-bounded negative-preference objective relative to a fixed reference. SimNPO uses a reference-free, response-length-normalized formulation. This compares established formulations with different design choices; it is not a single-factor ablation of reference-model use. |
+| TOFU forget01 | Fictitious author facts provide identifiable forgetting targets, retained facts, and a retain-only reference. This supports controlled measurement, rather than a claim about deletion of arbitrary real-world knowledge. |
+| OpenUnlearning | A shared framework provides method implementations and evaluation definitions, with pinned versions and execution adaptations documented in this repository. |
+| A 1B model and full-parameter updates | This is a project resource choice that allowed repeated runs on the available hardware. It supports a controlled grid, not conclusions about larger models. |
+
+The method distinctions follow [NPO](https://arxiv.org/abs/2404.05868) and [SimNPO](https://arxiv.org/abs/2410.07163); the dataset and framework choices build on [TOFU](https://arxiv.org/abs/2401.06121) and [OpenUnlearning](https://arxiv.org/abs/2506.12618). The exact model size, ten-update budget, coefficients, and seeds are our course-project design choices, not settings prescribed by these papers. Sharing a budget does not match methods at equal achieved forgetting or make their loss scales equivalent.
+
+### Research questions and contribution
+
+Within this scope, we ask:
 
 1. How do four unlearning objectives change forgetting and utility under a shared resource-constrained protocol?
 2. How sensitive are the measured outcomes to retain-loss weight and random seed?
 3. When a target fact is absent under direct questioning, can a different prompt elicit it again?
 
-The study uses TOFU and OpenUnlearning. The algorithms are upstream methods; our contribution is resource adaptation, numerical and provenance checks, controlled experiments, prompt evaluation, and analysis. The project does not introduce a new unlearning objective.
+The algorithms are upstream methods; our contribution is resource adaptation, numerical and provenance checks, controlled experiments, prompt evaluation, and analysis. The project does not introduce a new unlearning objective. Our four prompt families do not reproduce the full eight-test suite of Lynch et al. or the relearning attacks studied in the SimNPO paper. The literature motivates the evaluation questions; the evidence for our findings comes from the completed runs and annotated subset described below.
 
 ## 2. Methods and experimental design
 
